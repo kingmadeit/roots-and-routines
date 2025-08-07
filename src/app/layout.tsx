@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Quicksand, Nunito } from "next/font/google";
 import "./globals.css";
+import { Footer, Header } from "@/components";
 
+// Load fonts
 
 const quicksand = Quicksand({
   subsets: ['latin'],
@@ -55,9 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${quicksand.variable} antialiased w-full bg-primary`}
+        className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

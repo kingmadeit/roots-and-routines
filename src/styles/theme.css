@@ -14,10 +14,10 @@
 .bg-secondary-light { background-color: var(--bg-secondary-light); }
 .bg-accent { background-color: var(--bg-accent); }
 
-/* Text utilities */
-.text-primary { color: var(--bg-primary); }
-.text-secondary { color: var(--bg-secondary); }
-.text-accent { color: var(--bg-accent); }
+
+/* Add hover utilities */
+.hover\:text-accent:hover { color: var(--bg-accent); }
+.hover\:text-orange-500:hover { color: #f97316; }
 
 /* Font utilities */
 .text-body {
