@@ -7,7 +7,8 @@ import { SiteData } from "@/types";
 export const siteData: SiteData = {
   company: {
     name: "Roots & Routines",
-    tagline: "Tailored Support for the Modern Family", 
+    tagline: "Empowering Families to Thrive",
+    slogan: "Tailored Support for the Modern Family", 
     mission: "Whether you're navigating early parenthood, school admissions, or simply juggling life's many moving parts, we're here to help simplify the process and to help families feel rooted in their values and confident in their routines – through curated, caring and comprehensive support.",
     whyItMatters: "Families today are stretched – and we believe support shouldn't be one-size-fits-all. With a background in childcare, nutrition, household management, office management, research skills and administration, Roots & Routines was born to provide modern families with the kind of personal, reliable and thoughtful support they truly deserve.",
     foundedWith: "At Roots & Routines we believe every family deserves tailored support to feel grounded, balanced and at ease in their daily lives. Our support is parent led and experience based. Founded with care and intention, Roots and Routines Family Concierge is a personalised service dedicated to helping families create smoother home routines, find trusted support and make confident decisions for their child's wellbeing."

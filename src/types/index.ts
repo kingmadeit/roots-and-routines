@@ -52,6 +52,7 @@ export interface Founder {
 export interface CompanyInfo {
   name: string;
   tagline?: string;
+  slogan?: string;
   mission: string;
   whyItMatters: string;
   foundedWith: string;

@@ -40,6 +40,13 @@
   font-weight: 700;
 }
 
+.text-sub-heading {
+  font-family: var(--font-nunito), sans-serif;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+  line-height: 1;
+  font-weight: 400;
+}
+
 /* (Optional) Add spacing utilities */
 .p-4 { padding: 1rem; }
 .m-4 { margin: 1rem; }
