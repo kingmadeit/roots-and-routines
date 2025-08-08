@@ -5,6 +5,36 @@
   --font-quicksand: 'Quicksand', sans-serif;
   --font-nunito: 'Nunito', sans-serif;
 }
+
 body {
   font-family: var(--font-quicksand), sans-serif;
+}
+
+.font-nunito {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+.font-quicksand {
+  font-family: var(--font-quicksand), sans-serif;
+}
+
+.link-lightning::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 2px;
+  border-radius: 5px;
+  width: 0%;
+  opacity: 1;
+  background-color: var(--bg-secondary);
+  transition: width 0.2s ease-out, opacity 0.2s ease-in;
+}
+
+.link-lightning:hover::after {
+  width: 100%;
+  opacity: 0.5;
+}
+
+.after-bottom-0::after {
+  bottom: 0;
 }
