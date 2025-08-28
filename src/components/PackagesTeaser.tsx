@@ -1,6 +1,5 @@
 "use client";
 import { pagesData } from "@/data";
-import Link from "next/link";
 
 const {
   home: {

@@ -1,5 +1,4 @@
 import { ElementType } from "react";
-import { IconType } from "react-icons";
 
 export interface MetaData {
   title: string;

@@ -1,4 +1,4 @@
-import { PagesData, SiteData } from "@/types";
+import { PagesData } from "@/types";
 import { siteData } from "@/data";
 
 export const pagesData: PagesData = {

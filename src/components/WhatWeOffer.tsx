@@ -1,11 +1,5 @@
-import { siteData } from "@/data";
-
-const { company: {foundedWith, whyItMatters} } = siteData;
 const WhatWeOffer = () => {
-  return (
-    <section>
-    </section>
-  )
-}
+  return <section></section>;
+};
 
-export default WhatWeOffer
+export default WhatWeOffer;
