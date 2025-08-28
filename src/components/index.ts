@@ -9,6 +9,8 @@ import ServiceTeaser from "./ServiceTeaser";
 import PackagesTeaser from "./PackagesTeaser";
 import FeaturedService from "./FeaturedService";
 import FounderQuote from "./FounderQuote";
+import ContactTeaser from "./ContactTeaser";
+import ContactInfo from "./ContactInfo";
 export {
   Nav,
   Header,
@@ -21,4 +23,6 @@ export {
   PackagesTeaser,
   FeaturedService,
   FounderQuote,
+  ContactTeaser,
+  ContactInfo,
 };

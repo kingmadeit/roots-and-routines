@@ -1,23 +1,18 @@
-import { Nav } from "@/components"
-import Image from "next/image"
-import Link from "next/link"
+import { Nav } from "@/components";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header className="header z-10 absolute top-0 left-0 w-full flex items-center justify-between px-16">
-      <div className="logo rounded-full overflow-hidden">
+      <div className="logo translate-y-5 rounded-full overflow-hidden">
         <Link href="/" className="cursor-pointer">
-          <Image
-            src="/logo.png"
-            alt="Company Logo"
-            width={100}
-            height={50}
-          />
+          <Image src="/logo.png" alt="Company Logo" width={100} height={50} />
         </Link>
       </div>
       <Nav />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

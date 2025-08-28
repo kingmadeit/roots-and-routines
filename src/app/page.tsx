@@ -4,6 +4,7 @@ import {
   ServiceTeaser,
   PackagesTeaser,
   FounderQuote,
+  ContactTeaser,
 } from "@/components";
 import { pagesData } from "@/data";
 import { siteData } from "@/data";
@@ -24,7 +25,7 @@ export default function Home() {
       {/* pricing */}
       <PackagesTeaser />
       {/* Founder Quote */}
-      <FounderQuote
+      <ContactTeaser
         founderName={siteData.founder.name}
         quote={siteData.company.philosophy}
       />
