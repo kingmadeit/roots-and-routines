@@ -3,7 +3,6 @@ import {
   AboutTeaser,
   ServiceTeaser,
   PackagesTeaser,
-  FounderQuote,
   ContactTeaser,
 } from "@/components";
 import { pagesData } from "@/data";

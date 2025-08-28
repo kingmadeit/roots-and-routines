@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { pagesData } from "@/data";
 import { PiShootingStarLight } from "react-icons/pi";
 import { PiStarFourFill } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ type HeroProps = {
 let splitTitle: string[];
 
 export default function Hero({ info }: HeroProps) {
-  const { title, subtitle, titleSeparator, cta, image } = info;
+  const { title, subtitle, titleSeparator } = info;
 
   if (titleSeparator) splitTitle = title.split(titleSeparator);
 

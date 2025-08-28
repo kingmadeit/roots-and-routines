@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FeaturedService } from "@/components";
 import { ServicesTeaser } from "@/types";
 
