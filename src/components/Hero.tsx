@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section className="hero leading-[0.5]">
       <div className="flex flex-col space-y-4 items-center">
-        <h1 className="text-heading text-[#fff8a9] max-w-[80%] md:max-w-[60%] text-shadow-md">
+        <h1 className="hero-title text-[#fff8a9] max-w-[80%] md:max-w-[60%] text-shadow-md">
           {splitTitle ? (
             <>
               <span className="block w-full">{splitTitle[0]}</span>

@@ -1,14 +1,24 @@
-import { siteData } from "@/data";
+import { pagesData } from "@/data";
+import Link from "next/link";
 
-const { company: {foundedWith, whyItMatters} } = siteData;
+const {
+  home: {
+    aboutTeaser: { title, shortCopy, cta },
+  },
+} = pagesData;
+
 const CompanySummary = () => {
   return (
-    <section className="company-summary p-8 bg-secondary-light rounded-[3rem]">
-      <h4 className="text-sub-heading text-accent">ABOUT US</h4>
-      <h2 className="text-heading text-primary leading-1">{whyItMatters}</h2>
-      <p className="text-body text-accent">{foundedWith}</p>
-    </section>
-  )
-}
+    <section className="company-summary px-4 md:px-16 py-8 md:py-16 bg-secondary rounded-t-[3rem]">
+      <h4 className="text-sub-heading text-accent">About Us</h4>
 
-export default CompanySummary
+      <div>
+        <h2 className="text-heading text-blanchedalmond">{title}</h2>
+        <p className="text-body text-white">{shortCopy}</p>
+        <Link href={cta.href}>{cta.label}</Link>
+      </div>
+    </section>
+  );
+};
+
+export default CompanySummary;

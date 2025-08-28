@@ -1,7 +1,7 @@
-import { SiteData } from "@/types";
+import { PagesData, SiteData } from "@/types";
 import { siteData } from "@/data";
 
-export const pagesData = {
+export const pagesData: PagesData = {
   home: {
     meta: {
       title: `${siteData.company.name} | ${siteData.company.tagline}`,
@@ -10,12 +10,13 @@ export const pagesData = {
     },
     hero: {
       title: siteData.company.slogan,
-      titleSeparator: siteData.company.sloganSplit,
-      subtitle: siteData.company.subline,
+      titleSeparator: siteData.company.sloganSplit ?? "",
+      subtitle: siteData.company.subline ?? "",
       cta: { label: "Get Started", href: "/contact" },
       image: "/img-2.jpg",
     },
     aboutTeaser: {
+      title: siteData.company.tagline,
       shortCopy: siteData.company.story,
       cta: { label: "Learn More", href: "/about" },
     },

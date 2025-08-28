@@ -73,3 +73,169 @@ export interface SiteData {
   founder: FounderData;
   contact: ContactData;
 }
+
+/// full data
+// Common types
+interface Meta {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+interface CTA {
+  label: string;
+  href: string;
+}
+
+// Home page types
+interface HeroSection {
+  title: string;
+  titleSeparator: string;
+  subtitle: string;
+  cta: CTA;
+  image: string;
+}
+
+interface AboutTeaser {
+  title: string;
+  shortCopy: string;
+  cta: CTA;
+}
+
+interface FeaturedService {
+  id: string;
+  title: string;
+  shortCopy: string;
+  href: string;
+}
+
+interface ServicesTeaser {
+  title: string;
+  description: string;
+  featuredServices: FeaturedService[];
+}
+
+interface FeaturedPackage {
+  id: string;
+  name: string;
+  price: number;
+  currency: string;
+  shortDescription: string;
+  href: string;
+  isPopular: boolean;
+}
+
+interface PackagesTeaser {
+  title: string;
+  description: string;
+  featuredPackages: FeaturedPackage[];
+}
+
+interface FounderTeaser {
+  name: string;
+  title: string;
+  shortCopy: string;
+  href: string;
+}
+
+interface ContactCTA {
+  title: string;
+  description: string;
+  cta: CTA;
+}
+
+interface HomePage {
+  meta: Meta;
+  hero: HeroSection;
+  aboutTeaser: AboutTeaser;
+  servicesTeaser: ServicesTeaser;
+  packagesTeaser: PackagesTeaser;
+  founderTeaser: FounderTeaser;
+  contactCTA: ContactCTA;
+}
+
+// About page types
+interface FounderDetails {
+  name: string;
+  title: string;
+  fullCopy: string;
+  background: string[];
+  meta: Meta;
+}
+
+interface AboutPage {
+  meta: Meta;
+  fullCopy: string;
+  mission: string;
+  philosophy: string;
+  whyItMatters: string;
+  founder: FounderDetails;
+  title: string;
+}
+
+// Founder page types
+interface FounderPage {
+  meta: Meta;
+  fullCopy: string;
+  background: string[];
+}
+
+// Service page types
+interface ServicePage {
+  meta?: Meta;
+  title: string;
+  fullCopy: string;
+  features: string[];
+}
+
+// Package page types
+interface PackagePage {
+  meta?: Meta;
+  name: string;
+  price: number;
+  currency: string;
+  duration?: string;
+  description: string;
+  features: string[];
+  isPopular: boolean;
+}
+
+// Contact page types
+interface ContactPage {
+  meta: Meta;
+  email: string;
+  phone: string;
+  whatsapp: string;
+  businessHours: string;
+}
+
+// Main PagesData type
+export interface PagesData {
+  home: HomePage;
+  about: AboutPage;
+  founder: FounderPage;
+  services: Record<string, ServicePage>;
+  packages: Record<string, PackagePage>;
+  contact: ContactPage;
+}
+
+// Export individual page types for convenience
+export type {
+  Meta,
+  CTA,
+  HomePage,
+  AboutPage,
+  FounderPage,
+  ServicePage,
+  PackagePage,
+  ContactPage,
+  HeroSection,
+  AboutTeaser,
+  FeaturedService,
+  ServicesTeaser,
+  FeaturedPackage,
+  PackagesTeaser,
+  FounderTeaser,
+  FounderDetails,
+  ContactCTA,
+};
