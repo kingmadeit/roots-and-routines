@@ -24,7 +24,7 @@ export const pagesData: PagesData = {
       title: "Our Services",
       description:
         "Practical, personalized support for every stage of family life.",
-      featuredServices: siteData.services.map((service) => ({
+      packages: siteData.services.map((service) => ({
         id: service.id,
         title: service.title,
         shortCopy: service.shortCopy,
@@ -34,15 +34,7 @@ export const pagesData: PagesData = {
     packagesTeaser: {
       title: "Packages & Pricing",
       description: "Flexible support options to fit your family’s needs.",
-      featuredPackages: siteData.packages.map((pkg) => ({
-        id: pkg.id,
-        name: pkg.name,
-        price: pkg.price,
-        currency: pkg.currency,
-        shortDescription: pkg.description,
-        href: `/packages/${pkg.id}`,
-        isPopular: pkg.isPopular ?? false,
-      })),
+      packages: siteData.packages,
     },
     founderTeaser: {
       name: siteData.founder.name,

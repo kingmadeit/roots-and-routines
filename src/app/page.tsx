@@ -1,11 +1,15 @@
-import { Hero, CompanySummary } from "@/components";
+import { Hero, CompanySummary, ServiceTeaser, PackagesTeaser } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      {/* About short copy */}
+      {/* About */}
       <CompanySummary />
+      {/* service */}
+      <ServiceTeaser />
+      {/* pricing */}
+      <PackagesTeaser />
     </>
   );
 }

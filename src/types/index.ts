@@ -128,7 +128,8 @@ interface FeaturedPackage {
 interface PackagesTeaser {
   title: string;
   description: string;
-  featuredPackages: FeaturedPackage[];
+  packages: Package[];
+  featuredPackages?: FeaturedPackage[];
 }
 
 interface FounderTeaser {

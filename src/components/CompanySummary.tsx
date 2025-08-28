@@ -9,7 +9,7 @@ const {
 
 const CompanySummary = () => {
   return (
-    <section className="company-summary px-4 md:px-16 py-8 md:py-16 bg-secondary rounded-t-[3rem]">
+    <section className="company-summary px-4 md:px-16 pt-8 pb-32 md:pt-16 bg-secondary rounded-t-[3rem]">
       <h4 className="text-sub-heading text-accent">About Us</h4>
 
       <div>
