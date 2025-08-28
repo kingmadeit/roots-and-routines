@@ -9,8 +9,9 @@ export const pagesData = {
       image: "/images/home-og.jpg",
     },
     hero: {
-      title: siteData.company.tagline,
-      subtitle: siteData.company.slogan,
+      title: siteData.company.slogan,
+      titleSeparator: siteData.company.sloganSplit,
+      subtitle: siteData.company.subline,
       cta: { label: "Get Started", href: "/contact" },
       image: "/img-2.jpg",
     },

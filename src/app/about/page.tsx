@@ -1,4 +1,5 @@
-import React from 'react'
+import { pagesData } from "@/data";
+
 export const metadata = {
   title: "About Us",
   description: "Supporting parents with routines, school activities, and more.",
@@ -8,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "About Roots and Routines",
     description: "Supporting families with services they can trust.",
-    url: "https://yourdomain.com/about",
+    url: "https://rootsnroutines.com/about",
     siteName: "Roots and Routines",
     images: [
       {
@@ -23,13 +24,12 @@ export const metadata = {
   },
 };
 
+const {
+  about: {},
+} = pagesData;
 
 const About = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <section className="w-full p-16"></section>;
+};
 
 export default About;
-
-

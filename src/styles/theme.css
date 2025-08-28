@@ -1,29 +1,52 @@
-
 :root {
-  --bg-primary: #FDF2E0;
-  --bg-primary-light: #F0BF99;
-  --bg-secondary: #788A68;
-  --bg-secondary-light: #A3B185;
-  --bg-accent: #D59363;
+  --bg-primary: #fdf2e0;
+  --bg-primary-light: #f0bf99;
+  --bg-secondary: #788a68;
+  --bg-secondary-light: #a3b185;
+  --bg-accent: #d59363;
 }
 
 /* Background utilities */
-.bg-primary { background-color: var(--bg-primary); }
-.bg-primary-light { background-color: var(--bg-primary-light); }
-.bg-secondary { background-color: var(--bg-secondary); }
-.bg-secondary-light { background-color: var(--bg-secondary-light); }
-.bg-accent { background-color: var(--bg-accent); }
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+.bg-primary-light {
+  background-color: var(--bg-primary-light);
+}
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+.bg-secondary-light {
+  background-color: var(--bg-secondary-light);
+}
+.bg-accent {
+  background-color: var(--bg-accent);
+}
 
 /* Text color utilities */
-.text-primary { color: var(--bg-primary); }
-.text-secondary { color: var(--bg-secondary); }
-.text-accent { color: var(--bg-accent); }
-.text-primary-light { color: var(--bg-primary-light); }
-.text-secondary-light { color: var(--bg-secondary-light); }
+.text-primary {
+  color: var(--bg-primary);
+}
+.text-secondary {
+  color: var(--bg-secondary);
+}
+.text-accent {
+  color: var(--bg-accent);
+}
+.text-primary-light {
+  color: var(--bg-primary-light);
+}
+.text-secondary-light {
+  color: var(--bg-secondary-light);
+}
 
 /* Add hover utilities */
-.hover\:text-accent:hover { color: var(--bg-accent); }
-.hover\:text-orange-500:hover { color: #f97316; }
+.hover\:text-accent:hover {
+  color: var(--bg-accent);
+}
+.hover\:text-orange-500:hover {
+  color: #f97316;
+}
 
 /* Font utilities */
 .text-body {
@@ -36,8 +59,9 @@
 .text-heading {
   font-family: var(--font-quicksand), sans-serif;
   font-size: clamp(2rem, 2vw + 1rem, 3rem);
-  line-height: 2;
+  line-height: 1.2;
   font-weight: 700;
+  text-align: center;
 }
 
 .text-sub-heading {
@@ -48,6 +72,9 @@
 }
 
 /* (Optional) Add spacing utilities */
-.p-4 { padding: 1rem; }
-.m-4 { margin: 1rem; }
-
+.p-4 {
+  padding: 1rem;
+}
+.m-4 {
+  margin: 1rem;
+}

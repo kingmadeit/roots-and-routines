@@ -6,22 +6,23 @@ import { Footer, Header } from "@/components";
 // Load fonts
 
 const quicksand = Quicksand({
-  subsets: ['latin'],
-  variable: '--font-quicksand',
-  weight: ['400', '700'],  // Regular & Bold
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+  weight: ["400", "700"], // Regular & Bold
+  display: "swap",
 });
 
 const nunito = Nunito({
-  subsets: ['latin'],
-  variable: '--font-nunito',
-  weight: ['400', '700'],  // Regular & Bold
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  weight: ["400", "700"], // Regular & Bold
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Roots and Routines",
-  description: "personalised service dedicated to helping families create smoother home routines, find trusted support and make confident decisions for their child’s wellbeing.",
+  description:
+    "personalised service dedicated to helping families create smoother home routines, find trusted support and make confident decisions for their child’s wellbeing.",
   // icons: {
   //   icon: "/favicon.ico",
   //   apple: "/apple-touch-icon.png",
@@ -46,7 +47,6 @@ export const metadata: Metadata = {
       url: "https://rootsnroutines.com.uk",
     },
   ],
-           
 };
 
 export default function RootLayout({
@@ -59,11 +59,11 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
-        <Header />
-        <main className="flex min-h-screen flex-col">
+        <main className="flex min-h-screen flex-col absolute z-10">
+          <Header />
           {children}
+          <Footer />
         </main>
-        <Footer />
       </body>
     </html>
   );

@@ -7,7 +7,9 @@ export interface MetaData {
 export interface CompanyData {
   name: string;
   tagline: string;
+  subline?: string;
   slogan: string;
+  sloganSplit?: string;
   mission: string;
   philosophy: string;
   story: string;
@@ -27,8 +29,8 @@ export interface SocialLink {
 export interface ServiceData {
   id: string;
   title: string;
-  shortCopy: string;      // homepage teaser
-  fullCopy: string;       // detailed page copy
+  shortCopy: string; // homepage teaser
+  fullCopy: string; // detailed page copy
   features: string[];
   categories?: string[];
   meta?: MetaData;
@@ -39,7 +41,7 @@ export interface PackageData {
   name: string;
   price: number;
   currency: string;
-  duration?: string;      // e.g., "month"
+  duration?: string; // e.g., "month"
   description: string;
   features: string[];
   isPopular?: boolean;
@@ -49,8 +51,8 @@ export interface PackageData {
 export interface FounderData {
   name: string;
   title: string;
-  shortCopy: string;      // homepage teaser
-  fullCopy: string;       // detailed about/founder page copy
+  shortCopy: string; // homepage teaser
+  fullCopy: string; // detailed about/founder page copy
   background: string[];
   meta?: MetaData;
 }

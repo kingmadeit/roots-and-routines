@@ -7,21 +7,41 @@ import { FaRegPaperPlane } from "react-icons/fa";
 
 const {
   home: {
-    hero: { title, subtitle, cta, image },
+    hero: { title, subtitle, titleSeparator, cta, image },
   },
 } = pagesData;
 
+let splitTitle: string[];
+if (titleSeparator) splitTitle = title.split(titleSeparator);
+
 export default function Hero() {
   return (
-    <section className="hero">
-      <div className="z-10 flex flex-col items-center">
-        <h1 className="text-heading text-[#fff8a9]">{title}</h1>
-        <h2 className="text-sub-heading text-accent">{subtitle}</h2>
+    <section className="hero leading-[0.5]">
+      <div className="flex flex-col space-y-4 items-center">
+        <h1 className="text-heading text-[#fff8a9] max-w-[80%] md:max-w-[60%] text-shadow-md">
+          {splitTitle ? (
+            <>
+              <span className="block w-full">{splitTitle[0]}</span>
+              <span className="block w-full">{splitTitle[1]}</span>
+            </>
+          ) : (
+            title
+          )}
+        </h1>
+        <h2 className="hero-sub-title max-w-[90%] md:max-w-[55%]">
+          {subtitle}
+        </h2>
         <div className="flex gap-4 mt-6 relative">
-          <Button variant="destructive" size="lg">
+          <Button
+            className="bg-[var(--bg-secondary)] font-bold cursor-pointer"
+            size="lg"
+          >
             Get Started
           </Button>
-          <Button variant="secondary" size="lg">
+          <Button
+            className="bg-[var(--bg-accent)] font-bold cursor-pointer"
+            size="lg"
+          >
             Learn More
           </Button>
           <FaRegPaperPlane className="absolute bottom-[-50px] left-[0] w-6 h-6 text-accent" />
