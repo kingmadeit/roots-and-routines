@@ -43,8 +43,11 @@
 
 body {
   font-family: var(--font-quicksand), sans-serif;
+  @apply relative bg-[url(/img-2.jpg)] bg-cover bg-no-repeat bg-fixed;
 }
-
+body:after {
+  @apply fixed w-full z-0 h-full content-[''] bg-[#6e5327] opacity-80 inset-0
+}
 .font-nunito {
   font-family: var(--font-nunito), sans-serif;
 }
@@ -160,3 +163,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.hero {
+  @apply w-full h-[100vh] min-h-screen grid place-content-center;
+  /* @apply relative bg-[url(/img-2.jpg)] bg-cover bg-no-repeat bg-fixed; */
+}
+

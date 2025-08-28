@@ -4,8 +4,8 @@ import Link from "next/link"
 
 const Header = () => {
   return (
-    <header className="header absolute top-0 left-0 w-full flex items-center justify-between px-16">
-      <div className="logo">
+    <header className="header z-10 absolute top-0 left-0 w-full flex items-center justify-between px-16">
+      <div className="logo rounded-full overflow-hidden">
         <Link href="/" className="cursor-pointer">
           <Image
             src="/logo.png"

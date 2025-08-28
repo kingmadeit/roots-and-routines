@@ -6,7 +6,7 @@ const Nav = () => {
       <ul className="flex gap-4">
         {siteData.navigation.map((item) => (
           <li key={item.href}>
-            <Link href={item.href} className="relative text-accent font-bold link-lightning text-accent hover:text-orange-500">
+            <Link href={item.href} className="relative text-white font-bold link-lightning hover:text-orange-300">
               {item.label}
             </Link>
           </li>

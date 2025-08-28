@@ -60,7 +60,7 @@ export default function RootLayout({
         className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
         <Header />
-        <main className="flex min-h-screen flex-col px-16">
+        <main className="flex min-h-screen flex-col">
           {children}
         </main>
         <Footer />
