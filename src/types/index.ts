@@ -1,79 +1,73 @@
-// Navigation and Social Links
-export interface SocialLink {
-  platform: 'instagram' | 'tiktok' | 'whatsapp' | 'email' | 'phone';
-  url: string;
-  display?: string;
-}
-
-export interface NavigationItem {
-  label: string;
-  href: string;
-  external?: boolean;
-}
-
-// Services and Offerings
-export interface ServiceCategory {
-  id: string;
+export interface MetaData {
   title: string;
   description: string;
-  items: string[];
+  image?: string; // optional OG image
 }
 
-export interface Service {
+export interface CompanyData {
+  name: string;
+  tagline: string;
+  slogan: string;
+  mission: string;
+  philosophy: string;
+  story: string;
+}
+
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export interface SocialLink {
+  platform: "instagram" | "tiktok" | "email" | "whatsapp" | "phone" | string;
+  url: string;
+  display: string;
+}
+
+export interface ServiceData {
   id: string;
   title: string;
-  shortDescription: string;
+  shortCopy: string;      // homepage teaser
+  fullCopy: string;       // detailed page copy
   features: string[];
-  categories: ServiceCategory[];
+  categories?: string[];
+  meta?: MetaData;
 }
 
-// Pricing and Packages
-export interface Package {
+export interface PackageData {
   id: string;
   name: string;
   price: number;
   currency: string;
-  duration?: string;
+  duration?: string;      // e.g., "month"
   description: string;
   features: string[];
   isPopular?: boolean;
+  meta?: MetaData;
 }
 
-// Founder Information
-export interface Founder {
+export interface FounderData {
   name: string;
   title: string;
-  bio: string;
+  shortCopy: string;      // homepage teaser
+  fullCopy: string;       // detailed about/founder page copy
   background: string[];
-  image?: string;
+  meta?: MetaData;
 }
 
-// Company Information
-export interface CompanyInfo {
-  name: string;
-  tagline?: string;
-  slogan?: string;
-  mission: string;
-  whyItMatters: string;
-  foundedWith: string;
-}
-
-// Contact Information
-export interface ContactInfo {
+export interface ContactData {
   email: string;
-  phone?: string;
+  phone: string;
   whatsapp?: string;
-  address?: string;
   businessHours?: string;
 }
 
-// Main Site Data Structure
 export interface SiteData {
-  company: CompanyInfo;
-  navigation: NavigationItem[];
+  company: CompanyData;
+  navigation: NavLink[];
   socialLinks: SocialLink[];
-  services: Service[];
-  packages: Package[];
-  founder: Founder;
-  contact: ContactInfo;
+  services: ServiceData[];
+  packages: PackageData[];
+  founder: FounderData;
+  contact: ContactData;
 }
