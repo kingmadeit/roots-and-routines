@@ -24,11 +24,12 @@ export const pagesData: PagesData = {
       title: "Our Services",
       description:
         "Practical, personalized support for every stage of family life.",
-      packages: siteData.services.map((service) => ({
+      featuredServices: siteData.services.map((service) => ({
         id: service.id,
         title: service.title,
         shortCopy: service.shortCopy,
         href: `/services/${service.id}`,
+        icon: service.icon,
       })),
     },
     packagesTeaser: {

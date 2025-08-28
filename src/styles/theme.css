@@ -61,6 +61,8 @@
   font-size: clamp(2rem, 2vw + 1rem, 3rem);
   line-height: 1.2;
   font-weight: 700;
+  color: var(--bg-heading);
+  text-align: center;
 }
 
 .text-sub-heading {

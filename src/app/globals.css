@@ -45,6 +45,8 @@
   --secondary-light: #a3b185;
   --secondary-foreground: #a3b185;
   --accent: #d59363;
+
+  --bg-heading: #fff8a9;
 }
 
 body {
@@ -192,4 +194,8 @@ body:after {
   text-align: center;
   margin-top: 1rem;
   @apply text-primary text-shadow-md;
+}
+
+.section-name {
+  @apply text-primary opacity-30;
 }

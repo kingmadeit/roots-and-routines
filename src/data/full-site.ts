@@ -1,4 +1,10 @@
 import { SiteData } from "@/types";
+import { PiBabyBold } from "react-icons/pi";
+import { IoNutritionOutline } from "react-icons/io5";
+import { RiUserSearchLine } from "react-icons/ri";
+import { TbSchool } from "react-icons/tb";
+import { AiOutlineSchedule } from "react-icons/ai";
+import { TbHealthRecognition } from "react-icons/tb";
 
 const sloganSplit = "--split--";
 
@@ -40,6 +46,7 @@ export const siteData: SiteData = {
   services: [
     {
       id: "family-meals",
+      icon: IoNutritionOutline,
       title: "Family Meals & Nutrition",
       shortCopy:
         "Stress-free meal planning and nutrition support tailored to your family.",
@@ -61,6 +68,7 @@ export const siteData: SiteData = {
     },
     {
       id: "parent-support",
+      icon: PiBabyBold,
       title: "New Parent Support",
       shortCopy:
         "Guidance and trusted referrals for new parents navigating early family life.",
@@ -81,6 +89,7 @@ export const siteData: SiteData = {
     },
     {
       id: "sourcing-referrals",
+      icon: RiUserSearchLine,
       title: "Sourcing & Referrals",
       shortCopy:
         "Vetted professionals and family-friendly services delivered to your fingertips.",
@@ -101,6 +110,7 @@ export const siteData: SiteData = {
     },
     {
       id: "education-guidance",
+      icon: TbSchool,
       title: "School & Activity Guidance",
       shortCopy:
         "Expert guidance to find schools, nurseries, and activities aligned with your values.",
@@ -120,6 +130,7 @@ export const siteData: SiteData = {
     },
     {
       id: "routines-scheduling",
+      icon: AiOutlineSchedule,
       title: "Routines & Scheduling",
       shortCopy:
         "Custom family routines and scheduling support for a smoother daily flow.",
@@ -139,6 +150,7 @@ export const siteData: SiteData = {
     },
     {
       id: "family-wellness",
+      icon: TbHealthRecognition,
       title: "Family Wellness Add-Ons",
       shortCopy:
         "Holistic support for sleep, emotional regulation, and stress reduction.",

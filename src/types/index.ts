@@ -1,3 +1,6 @@
+import { ElementType } from "react";
+import { IconType } from "react-icons";
+
 export interface MetaData {
   title: string;
   description: string;
@@ -34,6 +37,8 @@ export interface ServiceData {
   features: string[];
   categories?: string[];
   meta?: MetaData;
+  href?: string;
+  icon: ElementType;
 }
 
 export interface PackageData {

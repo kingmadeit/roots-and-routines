@@ -6,7 +6,8 @@ import Testimonial from "./Testimonial";
 import Hero from "./Hero";
 import CompanySummary from "./CompanySummary";
 import ServiceTeaser from "./ServiceTeaser";
-import PackagesTeaser from "./PackagesTeaser"
+import PackagesTeaser from "./PackagesTeaser";
+import FeaturedService from "./FeaturedService";
 export {
   Nav,
   Header,
@@ -16,5 +17,6 @@ export {
   Hero,
   CompanySummary,
   ServiceTeaser,
-  PackagesTeaser
+  PackagesTeaser,
+  FeaturedService,
 };
