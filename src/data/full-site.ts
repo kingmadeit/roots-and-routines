@@ -22,6 +22,7 @@ export const siteData: SiteData = {
       "Families today are stretched, and one-size-fits-all solutions don’t work. Our experience in childcare, nutrition, and household management ensures personalized, reliable support for your unique family needs.",
     story:
       "Founded with care and intention, Roots & Routines Family Concierge is a personalised service dedicated to helping families create smoother home routines, find trusted support, and make confident decisions for their child's wellbeing.",
+    logo: "/logo.png",
   },
 
   navigation: [

@@ -8,6 +8,7 @@ export interface MetaData {
 }
 
 export interface CompanyData {
+  logo: string;
   name: string;
   tagline: string;
   subline?: string;

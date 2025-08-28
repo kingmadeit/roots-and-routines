@@ -36,7 +36,7 @@
   --bg-primary-light: #f0bf99;
   --bg-secondary: #788a68;
   --bg-secondary-light: #a3b185;
-  --bg-accent: #d59363;
+  --bg-accent: #ca6c28; /*#d59363;*/
 
   --primary: #fdf2e0;
   --primary-foreground: #f0bf99;
@@ -44,7 +44,7 @@
   --secondary: #788a68;
   --secondary-light: #a3b185;
   --secondary-foreground: #a3b185;
-  --accent: #d59363;
+  --accent: #ca6c28; /*#d59363;*/
 
   --bg-heading: #fff8a9;
 }
