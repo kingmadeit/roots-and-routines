@@ -4,17 +4,19 @@ import { PiShootingStarLight } from "react-icons/pi";
 import { PiStarFourFill } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { FaRegPaperPlane } from "react-icons/fa";
+import { HeroSection } from "@/types";
 
-const {
-  home: {
-    hero: { title, subtitle, titleSeparator, cta, image },
-  },
-} = pagesData;
+type HeroProps = {
+  info: HeroSection;
+};
 
 let splitTitle: string[];
-if (titleSeparator) splitTitle = title.split(titleSeparator);
 
-export default function Hero() {
+export default function Hero({ info }: HeroProps) {
+  const { title, subtitle, titleSeparator, cta, image } = info;
+
+  if (titleSeparator) splitTitle = title.split(titleSeparator);
+
   return (
     <section className="hero leading-[0.5]">
       <div className="flex flex-col space-y-4 items-center">
@@ -33,13 +35,13 @@ export default function Hero() {
         </h2>
         <div className="flex gap-4 mt-6 relative">
           <Button
-            className="bg-[var(--bg-secondary)] font-bold cursor-pointer"
+            className="bg-[var(--bg-secondary)] hover:scale-[0.9] hover:bg-[var(--bg-secondary)] text-white font-bold cursor-pointer"
             size="lg"
           >
             Get Started
           </Button>
           <Button
-            className="bg-[var(--bg-accent)] font-bold cursor-pointer"
+            className="bg-[var(--bg-accent)] text-white hover:scale-[0.9] hover:bg-[var(--bg-accent)] font-bold cursor-pointer"
             size="lg"
           >
             Learn More

@@ -10,11 +10,18 @@ const FeatureService = ({ service }: FeaturedServiceProps) => {
   const { title, shortCopy, href, icon: Icon } = service;
 
   return (
-    <section className="group rounded-xl max-w-full md:w-[400px] p-8 flex bg-primary text-center text-secondary flex-col space-y-4 items-center transition-all duration-300 ease-in-out transform will-change-transform hover:-translate-y-2">
-      <div className='bg-secondary/30 p-4 rounded-full'>{Icon && <Icon className="w-6 h-6 group-hover:scale-[1.5] transition-all duration-300 ease-in-out transform" />}</div>
+    <section className="group rounded-xl max-w-full shadow-lg md:w-[400px] p-8 flex bg-primary text-center text-secondary flex-col space-y-4 items-center transition-all duration-300 ease-in-out transform will-change-transform hover:-translate-y-2">
+      <div className="bg-secondary/30 p-4 rounded-full">
+        {Icon && (
+          <Icon className="w-6 h-6 group-hover:scale-[1.5] transition-all duration-300 ease-in-out transform" />
+        )}
+      </div>
       <h3 className="font-bold text-xl">{title}</h3>
       <p className="font-normal">{shortCopy}</p>
-      <Link href={href!} className="font-semibold">
+      <Link
+        href={href!}
+        className="font-semibold text-accent/70 group-hover:text-accent"
+      >
         Learn more
         <FaArrowRightLong className="ml-2 inline" />
       </Link>

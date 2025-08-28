@@ -101,7 +101,7 @@ interface HeroSection {
   image: string;
 }
 
-interface AboutTeaser {
+export interface AboutTeaser {
   title: string;
   shortCopy: string;
   cta: CTA;

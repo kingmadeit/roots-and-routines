@@ -10,7 +10,8 @@ const {
 
 export default function PackagesTeaser() {
   return (
-    <div className="relative top-[-50px] px-4 md:px-16 pt-8 md:pt-16 pb-32 bg-primary rounded-t-[3rem]">
+    <div className="translate-y-[-100px] px-4 md:px-16 pb-32 bg-primary rounded-t-[3rem]">
+      <h4 className="absolute top-10 section-name text-secondary!">Pricing</h4>
       <Pricing4 />
     </div>
   );
@@ -165,7 +166,7 @@ const PricingCard = ({
   >
     {isFeatured && (
       <div className="absolute -top-3 right-6">
-        <span className="inline-flex items-center rounded-full bg-white/20 text-white/90 text-xs font-semibold px-3 py-1 backdrop-blur">
+        <span className="inline-flex items-center rounded-full bg-accent/70 text-white/90 text-xs font-semibold px-3 py-1 backdrop-blur">
           Most popular
         </span>
       </div>

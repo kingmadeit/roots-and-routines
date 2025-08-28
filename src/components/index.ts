@@ -4,10 +4,11 @@ import Footer from "./Footer";
 import PaymentForm from "./PaymentForm";
 import Testimonial from "./Testimonial";
 import Hero from "./Hero";
-import CompanySummary from "./CompanySummary";
+import AboutTeaser from "./AboutTeaser";
 import ServiceTeaser from "./ServiceTeaser";
 import PackagesTeaser from "./PackagesTeaser";
 import FeaturedService from "./FeaturedService";
+import FounderQuote from "./FounderQuote";
 export {
   Nav,
   Header,
@@ -15,8 +16,9 @@ export {
   PaymentForm,
   Testimonial,
   Hero,
-  CompanySummary,
+  AboutTeaser,
   ServiceTeaser,
   PackagesTeaser,
   FeaturedService,
+  FounderQuote,
 };

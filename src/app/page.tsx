@@ -1,15 +1,33 @@
-import { Hero, CompanySummary, ServiceTeaser, PackagesTeaser } from "@/components";
+import {
+  Hero,
+  AboutTeaser,
+  ServiceTeaser,
+  PackagesTeaser,
+  FounderQuote,
+} from "@/components";
+import { pagesData } from "@/data";
+import { siteData } from "@/data";
+const {
+  home: { hero, servicesTeaser, aboutTeaser, meta },
+} = pagesData;
+
+export const metaData = meta;
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero info={hero} />
       {/* About */}
-      <CompanySummary />
+      <AboutTeaser about={aboutTeaser} />
       {/* service */}
-      <ServiceTeaser />
+      <ServiceTeaser services={servicesTeaser} />
       {/* pricing */}
       <PackagesTeaser />
+      {/* Founder Quote */}
+      <FounderQuote
+        founderName={siteData.founder.name}
+        quote={siteData.company.philosophy}
+      />
     </>
   );
 }
