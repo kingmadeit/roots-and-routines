@@ -101,7 +101,7 @@ interface HeroSection {
   image: string;
 }
 
-export interface IAboutTeaser {
+interface IAboutTeaser {
   title: string;
   shortCopy: string;
   cta: CTA;
@@ -133,7 +133,7 @@ interface FeaturedPackage {
 interface PackagesTeaser {
   title: string;
   description: string;
-  packages: Package[];
+  packages: PackageData[];
   featuredPackages?: FeaturedPackage[];
 }
 
