@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { PiShootingStarLight } from "react-icons/pi";
 import { PiStarFourFill } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
