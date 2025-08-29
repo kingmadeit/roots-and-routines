@@ -1,8 +1,8 @@
-import { type AboutTeaser } from "@/types/index";
+import { IAboutTeaser } from "@/types/index";
 import Link from "next/link";
 
 type AboutTeaserProps = {
-  about: AboutTeaser;
+  about: IAboutTeaser;
 };
 
 const AboutTeaser = ({ about }: AboutTeaserProps) => {

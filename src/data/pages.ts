@@ -57,6 +57,7 @@ export const pagesData: PagesData = {
       description: siteData.company.story,
       image: "/images/about-og.jpg",
     },
+    title: "About",
     fullCopy: siteData.company.story,
     mission: siteData.company.mission,
     philosophy: siteData.company.philosophy,
@@ -66,12 +67,12 @@ export const pagesData: PagesData = {
       title: siteData.founder.title,
       fullCopy: siteData.founder.fullCopy,
       background: siteData.founder.background,
-      meta: siteData.founder.meta,
+      meta: siteData.founder.meta!,
     },
   },
 
   founder: {
-    meta: siteData.founder.meta,
+    meta: siteData.founder.meta!,
     fullCopy: siteData.founder.fullCopy,
     background: siteData.founder.background,
   },
@@ -109,7 +110,7 @@ export const pagesData: PagesData = {
     },
     email: siteData.contact.email,
     phone: siteData.contact.phone,
-    whatsapp: siteData.contact.whatsapp,
-    businessHours: siteData.contact.businessHours,
+    whatsapp: siteData.contact.whatsapp!,
+    businessHours: siteData.contact.businessHours!,
   },
 };

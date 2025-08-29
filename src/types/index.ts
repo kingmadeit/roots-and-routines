@@ -101,7 +101,7 @@ interface HeroSection {
   image: string;
 }
 
-export interface AboutTeaser {
+interface IAboutTeaser {
   title: string;
   shortCopy: string;
   cta: CTA;
@@ -133,7 +133,7 @@ interface FeaturedPackage {
 interface PackagesTeaser {
   title: string;
   description: string;
-  packages: Package[];
+  packages: PackageData[];
   featuredPackages?: FeaturedPackage[];
 }
 
@@ -153,7 +153,7 @@ interface ContactCTA {
 interface HomePage {
   meta: Meta;
   hero: HeroSection;
-  aboutTeaser: AboutTeaser;
+  aboutTeaser: IAboutTeaser;
   servicesTeaser: ServicesTeaser;
   packagesTeaser: PackagesTeaser;
   founderTeaser: FounderTeaser;
@@ -236,7 +236,7 @@ export type {
   PackagePage,
   ContactPage,
   HeroSection,
-  AboutTeaser,
+  IAboutTeaser,
   FeaturedService,
   ServicesTeaser,
   FeaturedPackage,

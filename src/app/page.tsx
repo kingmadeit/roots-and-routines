@@ -11,7 +11,7 @@ const {
   home: { hero, servicesTeaser, aboutTeaser, meta },
 } = pagesData;
 
-export const metaData = meta;
+export const metadata = meta;
 
 export default function Home() {
   return (
