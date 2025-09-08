@@ -9,7 +9,10 @@ const {
 
 export default function PackagesTeaser() {
   return (
-    <div className="translate-y-[-100px] px-4 md:px-16 pb-32 bg-primary rounded-t-[3rem]">
+    <div
+      id="pricing"
+      className="translate-y-[-100px] px-4 md:px-16 pb-32 bg-primary rounded-t-[3rem]"
+    >
       <h4 className="absolute top-10 section-name text-secondary!">Pricing</h4>
       <Pricing4 />
     </div>
