@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="header z-10 absolute top-0 left-0 w-full flex items-center justify-between px-16 backdrop-blur-sm"
     >

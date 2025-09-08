@@ -21,7 +21,7 @@ export default function Hero({ info }: HeroProps) {
       <div className="flex flex-col space-y-4 items-center">
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="hero-title text-[#fff8a9] max-w-[80%] md:max-w-[60%] text-shadow-md"
         >
@@ -36,7 +36,7 @@ export default function Hero({ info }: HeroProps) {
         </motion.h1>
         <motion.h2
           initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="hero-sub-title max-w-[90%] md:max-w-[55%]"
         >
@@ -45,7 +45,7 @@ export default function Hero({ info }: HeroProps) {
         <div className="flex gap-4 mt-6 relative">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
           >
             <Button
@@ -58,7 +58,7 @@ export default function Hero({ info }: HeroProps) {
           </motion.div>
           <motion.div
             initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
           >
             <Button
