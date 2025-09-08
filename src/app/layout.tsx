@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand, Nunito } from "next/font/google";
 import "./globals.css";
 import { Footer, Header } from "@/components";
-
+import Image from "next/image";
 // Load fonts
 
 const quicksand = Quicksand({
@@ -59,11 +59,27 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
-        <main className="w-full flex min-h-screen flex-col absolute z-10">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <div className="relative min-h-screen overflow-x-hidden">
+          <div className="fixed inset-0 -z-10 site-bg-img-container">
+            {/* Background Image */}
+            <Image
+              src="/img-2.jpg"
+              alt=""
+              fill
+              priority
+              quality={85}
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
+
+          {/* Content */}
+          <main className="w-full flex min-h-screen flex-col absolute z-10">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </div>
       </body>
     </html>
   );
