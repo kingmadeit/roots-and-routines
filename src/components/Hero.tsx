@@ -18,7 +18,7 @@ export default function Hero({ info }: HeroProps) {
 
   return (
     <section className="hero leading-[0.5]">
-      <div className="flex flex-col space-y-4 items-center">
+      <div className="p-4 md:p-16 flex flex-col space-y-4 items-center">
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
