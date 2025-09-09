@@ -3,6 +3,7 @@ import { useState } from "react";
 import { siteData } from "@/data";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import * as motion from "motion/react-client";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,12 @@ const Nav = () => {
   return (
     <nav className="nav">
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex gap-4 pr-4">
+      <motion.ul
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="hidden md:flex gap-4 pr-4"
+      >
         {siteData.navigation.map((item) => (
           <li key={item.href}>
             <Link
@@ -21,7 +27,7 @@ const Nav = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </motion.ul>
 
       {/* Mobile Burger Button */}
       <button
