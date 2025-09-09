@@ -2,8 +2,6 @@
 @import "../styles/theme.css";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --font-quicksand: "Quicksand", sans-serif;
   --font-nunito: "Nunito", sans-serif;
@@ -52,9 +50,10 @@
 body {
   font-family: var(--font-quicksand), sans-serif;
   overflow-x: hidden;
-  @apply relative bg-[url(/img-2.jpg)] bg-cover bg-no-repeat bg-fixed;
+  /* @apply relative bg-[url(/img-2.jpg)] bg-cover bg-no-repeat bg-fixed; */
 }
-body:after {
+
+.site-bg-img-container:after {
   @apply fixed w-full z-0 h-full content-[''] bg-[#6e5327] opacity-80 inset-0;
 }
 .font-nunito {
@@ -130,45 +129,12 @@ body:after {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
+    scroll-behavior: smooth;
     @apply bg-background text-foreground;
   }
 }
@@ -180,7 +146,7 @@ body:after {
 
 .hero-title {
   font-family: var(--font-quicksand), sans-serif;
-  font-size: max(2rem, min(4vw + 1rem, 5rem));
+  font-size: max(2rem, min(3.5vw + 1rem, 5rem));
   line-height: 1.2;
   font-weight: 700;
   text-align: center;
@@ -188,7 +154,7 @@ body:after {
 
 .hero-sub-title {
   font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+  font-size: clamp(0.8rem, 1vw + 1rem, 1.5rem);
   line-height: 1.2;
   font-weight: 400;
   text-align: center;
@@ -198,4 +164,22 @@ body:after {
 
 .section-name {
   @apply text-primary opacity-30;
+}
+
+.logo-container {
+  container-type: inline-size;
+  width: clamp(3rem, 8cqi, 6rem); /* Container query units */
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Fallback for browsers without container query support */
+@supports not (width: 1cqi) {
+  .logo-container {
+    width: clamp(3rem, 8vw, 6rem);
+  }
 }

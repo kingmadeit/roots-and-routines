@@ -8,7 +8,10 @@ type ServiceTeaserProps = {
 export default function ServiceTeaser({ services }: ServiceTeaserProps) {
   const { title, description, featuredServices } = services;
   return (
-    <section className="translate-y-[-50px] px-4 md:px-16 pt-8 pb-32 bg-accent rounded-t-[3rem]">
+    <section
+      id="services"
+      className="translate-y-[-50px] px-4 md:px-16 pt-8 pb-32 bg-accent rounded-t-[3rem]"
+    >
       <h4 className="section-name">{title}</h4>
 
       <div className="flex flex-col space-y-16 ">
