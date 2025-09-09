@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FaRegPaperPlane } from "react-icons/fa";
 import { HeroSection } from "@/types";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 
 type HeroProps = {
   info: HeroSection;
@@ -53,7 +54,7 @@ export default function Hero({ info }: HeroProps) {
               className="bg-[var(--bg-secondary)] hover:scale-[0.9] hover:bg-[var(--bg-secondary)] text-white font-bold cursor-pointer"
               size="lg"
             >
-              <a href="/#pricing">Get Started</a>
+              <Link href="/#pricing">Get Started</Link>
             </Button>
           </motion.div>
           <motion.div
@@ -66,7 +67,7 @@ export default function Hero({ info }: HeroProps) {
               className="bg-[var(--bg-accent)] text-white hover:scale-[0.9] hover:bg-[var(--bg-accent)] font-bold cursor-pointer"
               size="lg"
             >
-              <a href="/#services">Learn More</a>
+              <Link href="/#services">Learn More</Link>
             </Button>
           </motion.div>
           <FaRegPaperPlane className="absolute bottom-[-50px] left-[0] w-6 h-6 text-accent" />
