@@ -1,5 +1,6 @@
 "use client";
 import { pagesData } from "@/data";
+import { SectionTag } from ".";
 
 const {
   home: {
@@ -11,9 +12,9 @@ export default function PackagesTeaser() {
   return (
     <div
       id="pricing"
-      className="translate-y-[-100px] px-4 md:px-16 pb-32 bg-primary rounded-t-[3rem]"
+      className="rounded-section translate-y-[-100px] bg-primary pt-0!"
     >
-      <h4 className="absolute top-10 section-name text-secondary!">Pricing</h4>
+      <SectionTag tag="Pricing" className="text-accent! top-5" />
       <Pricing4 />
     </div>
   );
