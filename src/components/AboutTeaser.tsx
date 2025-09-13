@@ -1,6 +1,8 @@
 import { IAboutTeaser } from "@/types/index";
 import Link from "next/link";
-import Carousel from "./ui/carousel";
+import * as motion from "motion/react-client";
+import { SectionTag, CarouselWrapper } from ".";
+import { slideUpTransition } from "@/styles/animations";
 
 type AboutTeaserProps = {
   about: IAboutTeaser;
@@ -10,17 +12,23 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
   const { title, shortCopy, cta } = about;
 
   return (
-    <section className="flex min-h-screen  flex-col space-y-4 md:space-y-8 px-4 md:px-16 pt-8 pb-32 md:pt-16 bg-secondary rounded-t-[3rem]">
-      <h4 className="section-name">About Us</h4>
-      <div className="container flex flex-col space-y-4 md:space-y-8 mx-auto">
-        <h2 className="text-heading text-blanchedalmond">{title}</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+    <section className="rounded-section bg-secondary">
+      <SectionTag tag="About Us" />
+      <div className="container min-h-full flex flex-col space-y-4 md:space-y-8 mx-auto">
+        <motion.h2
+          {...slideUpTransition}
+          viewport={{ once: true }}
+          className="text-heading text-blanchedalmond"
+        >
+          {title}
+        </motion.h2>
+        <div className="min-h-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div>
             <p className="text-body text-white">{shortCopy}</p>
             <Link href={cta.href}>{cta.label}</Link>
           </div>
           <div>
-            <Carousel />
+            <CarouselWrapper />
           </div>
         </div>
       </div>
