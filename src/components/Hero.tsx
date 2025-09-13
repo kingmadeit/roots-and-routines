@@ -5,6 +5,7 @@ import { FaRegPaperPlane } from "react-icons/fa";
 import { HeroSection } from "@/types";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import { slideUpTransition } from "@/styles/animations";
 
 type HeroProps = {
   info: HeroSection;
@@ -21,9 +22,7 @@ export default function Hero({ info }: HeroProps) {
     <section className="hero leading-[0.5]">
       <div className="p-4 md:p-16 flex flex-col space-y-4 items-center container">
         <motion.h1
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          {...slideUpTransition}
           className="hero-title text-[#fff8a9] max-w-[80%] md:max-w-[60%] text-shadow-md"
         >
           {splitTitle ? (
