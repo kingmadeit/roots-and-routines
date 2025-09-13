@@ -11,6 +11,8 @@ import FeaturedService from "./FeaturedService";
 import FounderQuote from "./FounderQuote";
 import ContactTeaser from "./ContactTeaser";
 import ContactInfo from "./ContactInfo";
+import SectionTag from "./SectionTag";
+import CarouselWrapper from "./CarouselWrapper";
 export {
   Nav,
   Header,
@@ -25,4 +27,6 @@ export {
   FounderQuote,
   ContactTeaser,
   ContactInfo,
+  SectionTag,
+  CarouselWrapper,
 };

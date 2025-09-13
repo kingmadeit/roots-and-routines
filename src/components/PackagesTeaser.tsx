@@ -1,5 +1,8 @@
 "use client";
 import { pagesData } from "@/data";
+import { SectionTag } from ".";
+import { slideUpTransition } from "@/styles/animations";
+import * as motion from "motion/react-client";
 
 const {
   home: {
@@ -11,9 +14,9 @@ export default function PackagesTeaser() {
   return (
     <div
       id="pricing"
-      className="translate-y-[-100px] px-4 md:px-16 pb-32 bg-primary rounded-t-[3rem]"
+      className="rounded-section translate-y-[-100px] bg-primary pt-0!"
     >
-      <h4 className="absolute top-10 section-name text-secondary!">Pricing</h4>
+      <SectionTag tag="Pricing" className="text-accent! top-5" />
       <Pricing4 />
     </div>
   );
@@ -113,11 +116,14 @@ const Header = () => (
       aria-hidden="true"
     ></div>
 
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-quicksand font-bold leading-tight tracking-tighter animate-fade-in-down">
+    <motion.h1
+      {...slideUpTransition}
+      className="text-4xl sm:text-5xl md:text-6xl font-quicksand font-bold leading-tight tracking-tighter animate-fade-in-down"
+    >
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">
         {title}
       </span>
-    </h1>
+    </motion.h1>
 
     <p
       className="text-secondary mt-6 text-base sm:text-lg max-w-2xl mx-auto animate-fade-in-down"

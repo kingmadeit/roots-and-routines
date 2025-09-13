@@ -183,3 +183,7 @@ body {
     width: clamp(3rem, 8vw, 6rem);
   }
 }
+
+.rounded-section {
+  @apply flex min-h-screen flex-col space-y-4 md:space-y-8 px-4 md:px-16 pt-8 pb-32 md:pt-16 rounded-t-[3rem];
+}
