@@ -16,7 +16,7 @@ export default function Footer() {
   const { company, navigation, socialLinks, contact } = siteData;
 
   return (
-    <footer className="bg-accent py-12 translate-y-[60px]">
+    <footer className="bg-secondary py-12 translate-y-[60px]">
       <div className=" max-w-7xl mx-auto px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Logo + Hours + Socials */}
         <div>

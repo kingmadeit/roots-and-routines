@@ -37,6 +37,7 @@ export default function Hero({ info }: HeroProps) {
         <motion.h2
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="hero-sub-title max-w-[90%] md:max-w-[55%]"
         >
@@ -46,6 +47,7 @@ export default function Hero({ info }: HeroProps) {
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
             <Button
@@ -59,6 +61,7 @@ export default function Hero({ info }: HeroProps) {
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
             <Button

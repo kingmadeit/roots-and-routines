@@ -1,6 +1,8 @@
 "use client";
 import { pagesData } from "@/data";
 import { SectionTag } from ".";
+import { slideUpTransition } from "@/styles/animations";
+import * as motion from "motion/react-client";
 
 const {
   home: {
@@ -114,11 +116,14 @@ const Header = () => (
       aria-hidden="true"
     ></div>
 
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-quicksand font-bold leading-tight tracking-tighter animate-fade-in-down">
+    <motion.h1
+      {...slideUpTransition}
+      className="text-4xl sm:text-5xl md:text-6xl font-quicksand font-bold leading-tight tracking-tighter animate-fade-in-down"
+    >
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">
         {title}
       </span>
-    </h1>
+    </motion.h1>
 
     <p
       className="text-secondary mt-6 text-base sm:text-lg max-w-2xl mx-auto animate-fade-in-down"

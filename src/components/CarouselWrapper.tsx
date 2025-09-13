@@ -1,7 +1,5 @@
 "use client";
 import { useInView } from "react-intersection-observer";
-import { defaultTransition, slideLeftTransition } from "@/styles/animations";
-import * as motion from "motion/react-client";
 import dynamic from "next/dynamic";
 
 const Carousel = dynamic(
@@ -25,15 +23,11 @@ export default function CarouselWrapper() {
   });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="min-h-[50vh]">
       {inView ? (
-        <motion.div
-          {...slideLeftTransition}
-          viewport={{ once: true }}
-          transition={{ ...defaultTransition, delay: 1 }}
-        >
+        <div>
           <Carousel />
-        </motion.div>
+        </div>
       ) : (
         <div className="w-full h-full bg-gray-100 rounded animate-pulse" />
       )}
