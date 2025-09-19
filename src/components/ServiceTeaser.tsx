@@ -10,10 +10,7 @@ type ServiceTeaserProps = {
 export default function ServiceTeaser({ services }: ServiceTeaserProps) {
   const { title, description, featuredServices } = services;
   return (
-    <section
-      id="services"
-      className="rounded-section translate-y-[-50px] bg-accent"
-    >
+    <section id="services" className="rounded-section w-[90%] bg-accent">
       <SectionTag tag={title} />
 
       <div className="flex flex-col space-y-16 ">

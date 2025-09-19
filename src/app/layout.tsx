@@ -47,6 +47,10 @@ export const metadata: Metadata = {
       url: "https://rootsnroutines.com.uk",
     },
   ],
+  other: {
+    "color-scheme": "light",
+    "darkreader-lock": "",
+  },
 };
 
 export default function RootLayout({
@@ -55,31 +59,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="theme-light" suppressHydrationWarning={true}>
       <body
         className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
-        <div className="relative min-h-screen overflow-x-hidden">
-          <div className="fixed inset-0 -z-10 site-bg-img-container">
-            {/* Background Image */}
-            <Image
-              src="/img-2.jpg"
-              alt=""
-              fill
-              priority
-              quality={85}
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-          </div>
-
-          {/* Content */}
-          <main className="w-full flex min-h-screen flex-col absolute z-10">
-            <Header />
-            {children}
-            <Footer />
-          </main>
-        </div>
+        <main className="w-full flex min-h-screen flex-col absolute z-10">
+          <Header />
+          <div className="container mx-auto">{children}</div>
+          <Footer />
+        </main>
       </body>
     </html>
   );

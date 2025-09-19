@@ -8,7 +8,7 @@ type FounderQuoteProps = {
 
 const ContactTeaser = ({ quote }: FounderQuoteProps) => {
   return (
-    <section className="rounded-section translate-y-[-150px] bg-accent">
+    <section className="rounded-section bg-accent">
       <SectionTag tag="Get Started" />
       <div className="flex flex-col justify-center min-h-screen">
         <div className="rounded-full w-[70%] mx-auto bg-primary text-secondary text-center font-bold p-16 ">

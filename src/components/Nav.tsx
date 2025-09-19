@@ -21,7 +21,7 @@ const Nav = () => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="relative text-shadow-md text-white font-bold link-lightning hover:text-orange-300"
+              className="relative text-accent font-bold link-lightning hover:text-orange-300"
             >
               {item.label}
             </Link>
@@ -42,7 +42,7 @@ const Nav = () => {
       {/* Mobile Navigation - Full Screen */}
       {isOpen && (
         <ul
-          className="fixed inset-0 bg-accent/95 backdrop-blur-sm md:hidden grid place-items-center z-50"
+          className="fixed inset-0 bg-accent/95 md:hidden grid place-items-center z-50"
           style={{
             gridTemplateRows: `repeat(${siteData.navigation.length}, 1fr)`,
           }}
@@ -54,7 +54,7 @@ const Nav = () => {
             >
               <Link
                 href={item.href}
-                className="text-shadow-md text-primary font-bold link-lightning hover:text-orange-300 text-2xl text-center"
+                className="text-primary font-bold link-lightning hover:text-orange-300 text-2xl text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

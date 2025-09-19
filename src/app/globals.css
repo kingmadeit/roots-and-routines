@@ -216,7 +216,7 @@ body {
 
 .hero-title {
   font-family: var(--font-quicksand), sans-serif;
-  font-size: max(2rem, min(3.5vw + 1rem, 5rem));
+  font-size: max(2rem, min(2vw + 1rem, 3rem));
   line-height: 1.2;
   font-weight: 700;
   text-align: center;
@@ -224,7 +224,7 @@ body {
 
 .hero-sub-title {
   font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(0.8rem, 1vw + 1rem, 1.5rem);
+  font-size: clamp(0.8rem, 0.5vw + 1rem, 1.5rem);
   line-height: 1.2;
   font-weight: 400;
   text-align: center;
