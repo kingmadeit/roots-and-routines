@@ -38,7 +38,7 @@ export interface ServiceData {
   categories?: string[];
   meta?: MetaData;
   href?: string;
-  icon: ElementType;
+  icon?: ElementType;
 }
 
 export interface PackageData {

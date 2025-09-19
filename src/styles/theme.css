@@ -4,6 +4,7 @@
   --bg-secondary: #788a68;
   --bg-secondary-light: #a3b185;
   --bg-accent: #d59363;
+  --bg-complimentary: #bc9b0a;
 }
 
 /* Background utilities */
@@ -22,7 +23,9 @@
 .bg-accent {
   background-color: var(--bg-accent);
 }
-
+.bg-complimentary {
+  background-color: var(--bg-complimentary);
+}
 /* Text color utilities */
 .text-primary {
   color: var(--bg-primary);

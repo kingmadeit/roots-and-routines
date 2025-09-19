@@ -20,7 +20,8 @@ export default function Home() {
       {/* About */}
       <AboutTeaser about={aboutTeaser} />
       {/* service */}
-      <ServiceTeaser services={servicesTeaser} />
+      {/* <ServiceTeaser services={servicesTeaser} /> */}
+      <ServiceTeaser />
       {/* pricing */}
       <PackagesTeaser />
       {/* Founder Quote */}
