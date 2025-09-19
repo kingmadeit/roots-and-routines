@@ -2,39 +2,108 @@
 @import "../styles/theme.css";
 @import "tw-animate-css";
 
+html {
+  color-scheme: light !important;
+  -webkit-app-region: no-drag;
+}
+
+html[data-darkreader-mode],
+html[data-darkreader-scheme] {
+  color-scheme: light !important;
+}
+
+[data-darkreader-mode] * {
+  color-scheme: light !important;
+}
+/* Add these more specific rules to your globals.css */
+
+/* Force light theme at the root level */
 :root {
+  color-scheme: light !important;
+  -webkit-color-scheme: light !important;
+}
+
+/* Target Dark Reader's injected elements directly */
+style[class*="darkreader"] {
+  display: none !important;
+}
+
+.darkreader {
+  display: none !important;
+}
+
+/* Prevent Dark Reader from modifying any elements */
+*[data-darkreader-mode] {
+  filter: none !important;
+}
+
+*[data-darkreader-scheme] {
+  filter: none !important;
+}
+
+/* Force your theme colors on all elements */
+* {
+  --darkreader-inline-bgcolor: unset !important;
+  --darkreader-inline-color: unset !important;
+  --darkreader-inline-fill: unset !important;
+  --darkreader-inline-stroke: unset !important;
+  --darkreader-inline-border: unset !important;
+  --darkreader-inline-border-bottom: unset !important;
+  --darkreader-inline-border-left: unset !important;
+  --darkreader-inline-border-right: unset !important;
+  --darkreader-inline-border-top: unset !important;
+  --darkreader-inline-outline: unset !important;
+}
+
+/* Ensure your background colors take precedence */
+body {
+  /* background-color: var(--bg-primary) !important; */
+  background: darkslategrey;
+}
+* {
+  --darkreader-inline-bgcolor: unset !important;
+  --darkreader-inline-color: unset !important;
+  --darkreader-inline-fill: unset !important;
+  --darkreader-inline-stroke: unset !important;
+}
+
+.theme-light {
   --font-quicksand: "Quicksand", sans-serif;
   --font-nunito: "Nunito", sans-serif;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+
+  --background: oklch(100% 0 0);
+  --foreground: oklch(14.5% 0 0);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(14.5% 0 0);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(14.5% 0 0);
+  --muted: oklch(97% 0 0);
+  --muted-foreground: oklch(55.6% 0 0);
+  --border: oklch(92.2% 0 0);
+  --input: oklch(92.2% 0 0);
+  --ring: oklch(70.8% 0 0);
+
+  --chart-1: oklch(64.6% 0.222 41.116);
+  --chart-2: oklch(60% 0.118 184.704);
+  --chart-3: oklch(39.8% 0.07 227.392);
+  --chart-4: oklch(82.8% 0.189 84.429);
+  --chart-5: oklch(76.9% 0.188 70.08);
+
+  --sidebar: oklch(98.5% 0 0);
+  --sidebar-foreground: oklch(14.5% 0 0);
+  --sidebar-primary: oklch(20.5% 0 0);
+  --sidebar-primary-foreground: oklch(98.5% 0 0);
+  --sidebar-accent: oklch(97% 0 0);
+  --sidebar-accent-foreground: oklch(20.5% 0 0);
+  --sidebar-border: oklch(92.2% 0 0);
+  --sidebar-ring: oklch(70.8% 0 0);
+
   --bg-primary: #fdf2e0;
   --bg-primary-light: #f0bf99;
   --bg-secondary: #788a68;
   --bg-secondary-light: #a3b185;
-  --bg-accent: #ca6c28; /*#d59363;*/
+  --bg-accent: #ca6c28;
 
   --primary: #fdf2e0;
   --primary-foreground: #f0bf99;
@@ -42,9 +111,10 @@
   --secondary: #788a68;
   --secondary-light: #a3b185;
   --secondary-foreground: #a3b185;
-  --accent: #ca6c28; /*#d59363;*/
-
+  --accent: #ca6c28;
   --bg-heading: #fff8a9;
+  -webkit-app-region: no-drag;
+  color-scheme: light !important;
 }
 
 body {
@@ -159,7 +229,7 @@ body {
   font-weight: 400;
   text-align: center;
   margin-top: 1rem;
-  @apply text-primary text-shadow-md;
+  @apply text-accent;
 }
 
 .section-name {
@@ -185,5 +255,5 @@ body {
 }
 
 .rounded-section {
-  @apply flex min-h-screen flex-col space-y-4 md:space-y-8 px-4 md:px-16 pt-8 pb-32 md:pt-16 rounded-t-[3rem];
+  @apply flex max-w-[90%] mx-auto my-32 min-h-screen flex-col space-y-4 md:space-y-8 px-4 md:px-16 pt-8 pb-32 md:pt-16 rounded-[3rem];
 }
