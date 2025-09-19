@@ -437,6 +437,7 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 import { slideUpTransition } from "@/styles/animations";
+import { StarKite } from "./svgs";
 
 // Types
 interface ServiceData {
@@ -830,7 +831,8 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = ({
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 relative">
+          <StarKite className="absolute top-[-2rem] left-0 text-accent opacity-30" />
           <motion.h2
             {...slideUpTransition}
             className="text-heading text-accent! max-w-xl mx-auto"

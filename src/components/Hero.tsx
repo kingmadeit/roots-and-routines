@@ -9,7 +9,7 @@ import Link from "next/link";
 import { slideUpTransition } from "@/styles/animations";
 import Lottie from "lottie-react";
 import animationData from "../../public/animations/family-animation.json";
-import { CurlyArrow } from "./svgs";
+import { CurlyArrow, DottedArrow, Sunshine } from "./svgs";
 
 type HeroProps = {
   info: HeroSection;
@@ -23,7 +23,7 @@ export default function Hero({ info }: HeroProps) {
   if (titleSeparator) splitTitle = title.split(titleSeparator);
 
   return (
-    <section className="hero leading-[0.5] relative">
+    <section className="hero leading-[0.5] relative mb-32">
       <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 content-center">
         <div className="p-4 md:p-16 flex flex-col space-y-4 items-center justify-center">
           <motion.h1
@@ -48,7 +48,9 @@ export default function Hero({ info }: HeroProps) {
           >
             {subtitle}
           </motion.h2>
+          <Sunshine className=" w-20 h-20 text-accent opacity-30" />
           <motion.div
+            className="relative"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -61,6 +63,7 @@ export default function Hero({ info }: HeroProps) {
             >
               <Link href="/#pricing">Get Started</Link>
             </Button>
+            <DottedArrow className="absolute bottom-[calc(100% + 2rem)] -left-15 w-40 h-40 text-accent opacity-30" />
           </motion.div>
           {/* <div className="flex gap-4 mt-6 relative">
             <motion.div
@@ -94,7 +97,7 @@ export default function Hero({ info }: HeroProps) {
             <FaRegPaperPlane className="absolute bottom-[-50px] left-[0] w-6 h-6 text-accent" />
           </div> */}
         </div>
-        <div className="h-full">
+        <div className="h-full relative">
           <Lottie
             loop={false}
             autoplay={false}
@@ -107,7 +110,7 @@ export default function Hero({ info }: HeroProps) {
 
       <PiStarFourFill className="absolute bottom-[-60px] right-[-20px] w-16 h-16 text-accent opacity-30 animate-pulse" />
       <PiShootingStarLight className="absolute top-[-80px] left-[-20px] w-16 h-16 text-secondary-light opacity-90 animate-pulse" />
-      <CurlyArrow className="absolute bottom-[1rem] left-1/2 -translate-x-1/2 w-40 h-40 text-accent opacity-30" />
+      <CurlyArrow className="absolute bottom-[-7rem] left-1/2 -translate-x-1/2 w-40 h-40 text-accent opacity-30" />
     </section>
   );
 }

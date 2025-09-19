@@ -7,6 +7,7 @@ import { slideLeftTransition, slideUpTransition } from "@/styles/animations";
 import { Button } from "./ui/button";
 import Lottie from "lottie-react";
 import animationData from "../../public/animations/empower.json";
+import { Flower } from "./svgs";
 
 type AboutTeaserProps = {
   about: IAboutTeaser;
@@ -16,7 +17,8 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
   const { title, shortCopy, cta } = about;
 
   return (
-    <section className="rounded-section bg-secondary/80 mt-0!">
+    <section className="rounded-section bg-secondary-light mt-0! relative">
+      <Flower className="absolute -bottom-10 right-0 w-40 h-40 text-primary opacity-20" />
       <SectionTag tag="About Us" />
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
         {/* <motion.div {...slideLeftTransition}>

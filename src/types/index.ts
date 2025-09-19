@@ -245,3 +245,5 @@ export type {
   FounderDetails,
   ContactCTA,
 };
+
+export type SVGElementProps = React.SVGProps<SVGSVGElement>;
