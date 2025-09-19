@@ -20,7 +20,7 @@ export default function ServiceTeaser({ services }: ServiceTeaserProps) {
         >
           {description}
         </motion.h2>
-        <div className="flex flex-col justify-center md:flex-row md:flex-wrap gap-4 items-center">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] lg:grid-cols-3">
           {featuredServices.map((service, i) => (
             <motion.div
               {...fadeInTransition}

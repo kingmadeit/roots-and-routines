@@ -61,7 +61,7 @@
   font-size: clamp(2rem, 2vw + 1rem, 3rem);
   line-height: 1.2;
   font-weight: 700;
-  color: var(--bg-heading);
+  color: var(--bg-primary);
   text-align: center;
 }
 

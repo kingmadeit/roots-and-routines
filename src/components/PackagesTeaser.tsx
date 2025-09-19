@@ -12,7 +12,7 @@ const {
 
 export default function PackagesTeaser() {
   return (
-    <div id="pricing" className="rounded-section w-[80%] bg-secondary/70 pt-0!">
+    <div id="pricing" className="rounded-section w-full py-0!">
       <SectionTag tag="Pricing" className="text-accent! top-5" />
       <Pricing4 />
     </div>

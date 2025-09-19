@@ -23,7 +23,7 @@ export default function CarouselWrapper() {
   });
 
   return (
-    <div ref={ref} className="min-h-[50vh]">
+    <div ref={ref}>
       {inView ? (
         <div>
           <Carousel />

@@ -23,7 +23,7 @@ export default function Hero({ info }: HeroProps) {
 
   return (
     <section className="hero leading-[0.5]">
-      <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2">
+      <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 content-center">
         <div className="p-4 md:p-16 flex flex-col space-y-4 items-center justify-center">
           <motion.h1
             {...slideUpTransition}
@@ -47,7 +47,21 @@ export default function Hero({ info }: HeroProps) {
           >
             {subtitle}
           </motion.h2>
-          <div className="flex gap-4 mt-6 relative">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            <Button
+              asChild
+              className="bg-[var(--bg-secondary)] mt-4 hover:scale-[0.9] hover:bg-[var(--bg-secondary)] text-white font-bold cursor-pointer"
+              size="lg"
+            >
+              <Link href="/#pricing">Get Started</Link>
+            </Button>
+          </motion.div>
+          {/* <div className="flex gap-4 mt-6 relative">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -77,7 +91,7 @@ export default function Hero({ info }: HeroProps) {
               </Button>
             </motion.div>
             <FaRegPaperPlane className="absolute bottom-[-50px] left-[0] w-6 h-6 text-accent" />
-          </div>
+          </div> */}
         </div>
         <div className="h-full">
           <Lottie
