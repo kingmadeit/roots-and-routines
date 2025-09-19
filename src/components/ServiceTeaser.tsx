@@ -664,7 +664,6 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
       if (selectedButton && container) {
         const rect = selectedButton.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
-        debugger;
         setDimensions({
           width: rect.width,
           left: rect.left - containerRect.left - 8,
