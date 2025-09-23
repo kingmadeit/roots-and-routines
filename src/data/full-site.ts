@@ -261,4 +261,71 @@ export const siteData: SiteData = {
     whatsapp: "#123456789",
     businessHours: "Monday - Friday, 9:00 AM - 6:00 PM",
   },
+  faq: {
+    title: "Frequently Asked Questions",
+    subtitle: "Everything you need to know about our family support services",
+    questions: [
+      {
+        id: "what-is-roots-routines",
+        question: "What is Roots & Routines Family Concierge?",
+        answer: "We're a personalized family support service that helps busy families create smoother routines, find trusted childcare, and make confident decisions for their children's wellbeing. From meal planning to school searches, we provide tailored guidance and vetted referrals to simplify your family life."
+      },
+      {
+        id: "how-to-get-started",
+        question: "How do I get started with your services?",
+        answer: "The best way to start is with our First Steps Call - a one-hour consultation where we understand your family's unique needs and provide immediate, actionable guidance. From there, we can recommend the most suitable ongoing support package for your situation."
+      },
+      {
+        id: "areas-covered",
+        question: "What areas do you cover?",
+        answer: "We primarily serve families in the UK, with specialized knowledge of local schools, childcare providers, and family services. For certain services like meal planning and routine guidance, we can support families remotely regardless of location."
+      },
+      {
+        id: "meal-planning-process",
+        question: "How does your meal planning service work?",
+        answer: "We create customized weekly meal plans based on your family's dietary needs, preferences, and busy schedule. This includes tailored grocery shopping lists, light meal prep guidance, and strategies for picky eaters. We focus on nutritious, family-friendly meals that fit your lifestyle."
+      },
+      {
+        id: "childcare-vetting",
+        question: "How do you vet childcare providers?",
+        answer: "All our childcare referrals undergo thorough background checks, reference verification, and personal interviews. We assess their experience, qualifications, and compatibility with different family dynamics. We only recommend providers we would trust with our own families."
+      },
+      {
+        id: "school-search-support",
+        question: "What's included in your school search guidance?",
+        answer: "We help you identify schools and nurseries aligned with your family values, provide shortlisting support, prepare you for visits and interviews, assist with applications, and connect you with trusted educational professionals. Our guidance is tailored to your child's specific needs and your family's priorities."
+      },
+      {
+        id: "routine-customization",
+        question: "How do you customize family routines?",
+        answer: "We assess your current family dynamics, work schedules, and goals to create bespoke daily, weekly, and monthly routines. This includes calendar organization, habit-building support, and flexible systems that grow with your family's changing needs."
+      },
+      {
+        id: "package-differences",
+        question: "What's the difference between your service packages?",
+        answer: "Our First Steps Call (£60) is perfect for immediate guidance on specific questions. The Family Planning Session (£250) offers comprehensive support across multiple areas like school searches and routine planning. Our Monthly Concierge (£400) provides ongoing flexible support with weekly check-ins and unlimited email access."
+      },
+      {
+        id: "payment-options",
+        question: "What payment options do you offer?",
+        answer: "We accept bank transfers, online payments, and can arrange payment plans for our Monthly Concierge service. Payment is required at the time of booking for consultations, and monthly packages are billed in advance."
+      },
+      {
+        id: "response-time",
+        question: "How quickly do you respond to requests?",
+        answer: "We aim to respond to all emails within 24 hours during business days (Monday-Friday, 9 AM-6 PM). Monthly concierge clients receive priority response times, typically within 4-6 hours during business hours."
+      },
+      {
+        id: "emergency-support",
+        question: "Do you offer emergency childcare support?",
+        answer: "While we don't provide emergency services, our network includes trusted providers who may have last-minute availability. Monthly concierge clients have priority access to our rapid referral service for urgent childcare needs."
+      },
+      {
+        id: "follow-up-support",
+        question: "What follow-up support do you provide?",
+        answer: "All consultations include a detailed follow-up email with personalized recommendations and trusted resources. We're available for brief follow-up questions via email, and can schedule additional sessions as your family's needs evolve."
+      }
+    ]
+  }
+
 };

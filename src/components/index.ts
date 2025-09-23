@@ -13,6 +13,7 @@ import ContactTeaser from "./ContactTeaser";
 import ContactInfo from "./ContactInfo";
 import SectionTag from "./SectionTag";
 import CarouselWrapper from "./CarouselWrapper";
+import FAQ from "./FAQ";
 export {
   Nav,
   Header,
@@ -29,4 +30,5 @@ export {
   ContactInfo,
   SectionTag,
   CarouselWrapper,
+  FAQ
 };

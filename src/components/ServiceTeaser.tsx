@@ -586,7 +586,7 @@ const tabs: TabData[] = [
   {
     id: "wellness-growth",
     title: "Wellness & Growth",
-    color: "bg-complimentary",
+    color: "bg-complementary",
     description: "Support your family's wellbeing journey",
     cardContent: null,
   },
@@ -731,7 +731,7 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             {
               "bg-accent/40": selectedTab?.id === "daily-operations",
               "bg-secondary/40": selectedTab?.id === "finding-support",
-              "bg-complimentary/40": selectedTab?.id === "wellness-growth",
+              "bg-complementary/40": selectedTab?.id === "wellness-growth",
             }
           )}
         >

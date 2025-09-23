@@ -4,7 +4,7 @@
   --bg-secondary: #788a68;
   --bg-secondary-light: #a3b185;
   --bg-accent: #d59363;
-  --bg-complimentary: #bc9b0a;
+  --bg-complementary: #bc9b0a;
 }
 
 /* Background utilities */
@@ -23,8 +23,8 @@
 .bg-accent {
   background-color: var(--bg-accent);
 }
-.bg-complimentary {
-  background-color: var(--bg-complimentary);
+.bg-complementary {
+  background-color: var(--bg-complementary);
 }
 /* Text color utilities */
 .text-primary {
@@ -64,7 +64,6 @@
   font-size: clamp(2rem, 2vw + 1rem, 3rem);
   line-height: 1.2;
   font-weight: 700;
-  color: var(--bg-primary);
   text-align: center;
 }
 

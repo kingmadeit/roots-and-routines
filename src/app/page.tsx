@@ -45,7 +45,11 @@ const ContactSection = memo(function ContactSection() {
 });
 
 const FAQSection = memo(function FAQSection() {
-  return <FAQ data={faq} showTitle={false} maxItemsToShow={6} />
+  return (
+    <div className="rounded-section bg-accent relative">
+      <FAQ data={faq} maxItemsToShow={6} />
+    </div>
+  );
 });
 
 // Main page component

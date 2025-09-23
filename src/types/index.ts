@@ -77,6 +77,7 @@ export interface SiteData {
   packages: PackageData[];
   founder: FounderData;
   contact: ContactData;
+  faq: FAQData;
 }
 
 /// full data
@@ -225,6 +226,40 @@ export interface PagesData {
   contact: ContactPage;
 }
 
+//====================================
+// FAQ Types
+//====================================
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface FAQData {
+  title: string;
+  subtitle: string;
+  questions: FAQItem[];
+}
+
+export interface FAQComponentProps {
+  data: FAQData;
+  showTitle?: boolean;
+  maxItemsToShow?: number;
+  className?: string;
+}
+
+// Internal component props
+export interface AccordionItemProps {
+  item: FAQItem;
+  isOpen: boolean;
+  onToggle: () => void;
+  index: number;
+}
+
+export interface FAQHeaderProps {
+  title: string;
+  subtitle: string;
+}
 // Export individual page types for convenience
 export type {
   Meta,
