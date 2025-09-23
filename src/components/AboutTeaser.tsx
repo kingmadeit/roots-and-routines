@@ -2,8 +2,8 @@
 import { IAboutTeaser } from "@/types/index";
 import Link from "next/link";
 import * as motion from "motion/react-client";
-import { SectionTag, CarouselWrapper } from ".";
-import { slideLeftTransition, slideUpTransition } from "@/styles/animations";
+import { SectionTag } from ".";
+import { slideUpTransition } from "@/styles/animations";
 import { Button } from "./ui/button";
 import Lottie from "lottie-react";
 import animationData from "../../public/animations/empower.json";

@@ -1,34 +1,63 @@
-import {
-  Hero,
-  AboutTeaser,
-  ServiceTeaser,
-  PackagesTeaser,
-  ContactTeaser,
+import { memo } from "react";
+import { 
+  Hero, 
+  AboutTeaser, 
+  ServiceTeaser, 
+  PackagesTeaser, 
+  ContactTeaser, 
+  FAQ
 } from "@/components";
-import { pagesData } from "@/data";
-import { siteData } from "@/data";
+import { pagesData, siteData } from "@/data";
+
 const {
-  home: { hero, servicesTeaser, aboutTeaser, meta },
+  home: { hero, aboutTeaser, meta }
 } = pagesData;
 
-export const metadata = meta;
+const { 
+  founder: { name: founderName },
+  company: { philosophy: companyPhilosophy },
+  faq
+} = siteData;
 
-export default function Home() {
+const HeroSection = memo(function HeroSection() {
+  return <Hero info={hero} />;
+});
+
+const AboutSection = memo(function AboutSection() {
+  return <AboutTeaser about={aboutTeaser} />;
+});
+
+const ServiceSection = memo(function ServiceSection() {
+  return <ServiceTeaser />;
+});
+
+const PricingSection = memo(function PricingSection() {
+  return <PackagesTeaser />;
+});
+
+const ContactSection = memo(function ContactSection() {
+  return (
+    <ContactTeaser 
+      founderName={founderName}
+      quote={companyPhilosophy}
+    />
+  );
+});
+
+const FAQSection = memo(function FAQSection() {
+  return <FAQ data={faq} showTitle={false} maxItemsToShow={6} />
+});
+
+// Main page component
+export default function HomePage() {
   return (
     <>
-      <Hero info={hero} />
-      {/* About */}
-      <AboutTeaser about={aboutTeaser} />
-      {/* service */}
-      {/* <ServiceTeaser services={servicesTeaser} /> */}
-      <ServiceTeaser />
-      {/* pricing */}
-      <PackagesTeaser />
-      {/* Founder Quote */}
-      <ContactTeaser
-        founderName={siteData.founder.name}
-        quote={siteData.company.philosophy}
-      />
+      <HeroSection />
+      <AboutSection />
+      <ServiceSection />
+      <PricingSection />
+      <ContactSection />
+      <FAQSection />
     </>
   );
 }
