@@ -1,6 +1,6 @@
 "use client";
 import { memo, useMemo } from "react";
-import { PiShootingStarLight, PiStarFourFill } from "react-icons/pi";
+import { Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/types";
 import { motion } from "motion/react";
@@ -58,7 +58,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
       ) : (
         title
       )}
-      <PiShootingStarLight className="absolute top-[-3rem] right-[50%] w-16 h-16 text-secondary-light opacity-40"/>
+      <Sparkles className="absolute top-[-3rem] right-[50%] w-16 h-16 text-secondary-light opacity-40"/>
 
     </motion.h1>
   );
@@ -68,7 +68,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
 const BackgroundDecorations = memo(function BackgroundDecorations() {
   return (
     <>
-      <PiStarFourFill className="absolute bottom-[-60px] right-[-20px] w-16 h-16 text-accent opacity-30 animate-pulse" />
+      <Star className="absolute bottom-[-60px] right-[-20px] w-16 h-16 text-accent opacity-30 animate-pulse" />
       <CurlyArrow className="absolute bottom-[2rem] left-1/2 -translate-x-1/2 w-40 h-40 text-accent opacity-30 animate-[var(--animate-periodic-bounce)]" />
 
       {/* TODO :: ADD BLUR COLORFUL BG WITH BACKDROP FILTER */}

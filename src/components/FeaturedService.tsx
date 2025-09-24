@@ -1,6 +1,5 @@
 import { ServiceData } from "@/types";
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 type FeaturedServiceProps = {
   service: Partial<ServiceData>;
@@ -23,7 +22,6 @@ const FeatureService = ({ service }: FeaturedServiceProps) => {
         className="font-semibold text-accent group-hover:scale-[1.1] will-change transition-all duration-300 ease-in-out transform will-change:transform"
       >
         Learn more
-        <FaArrowRightLong className="ml-2 inline" />
       </Link>
     </section>
   );

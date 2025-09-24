@@ -1,7 +1,7 @@
 "use client";
 import { memo, useState, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { HiPlus, HiMinus } from "react-icons/hi";
+import { Plus, Minus } from "lucide-react";
 import clsx from "clsx";
 import { FAQData, FAQItem } from "@/types";
 
@@ -64,9 +64,9 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
           "flex-shrink-0 w-6 h-6 flex items-center bg-primary/20 rounded-full justify-center transition-transform duration-200",
         )}>
           {isOpen ? (
-            <HiMinus className="w-4 h-4" />
+            <Minus className="w-4 h-4" />
           ) : (
-            <HiPlus className="w-4 h-4" />
+            <Plus className="w-4 h-4" />
           )}
         </div>
       </button>

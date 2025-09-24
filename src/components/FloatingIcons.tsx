@@ -2,30 +2,44 @@
 import { memo, useMemo, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import {
-  PiStarFourFill,
-  PiShootingStarLight,
-  PiBabyBold,
-  PiBookOpenBold,
-  PiHeartBold,
-  PiSunBold,
-  PiFlowerBold,
-  PiButterflyBold,
-  PiRainbowBold,
-} from "react-icons/pi";
-import {
-  IoNutritionOutline,
-  IoCalendarOutline,
-  IoHomeOutline,
-  IoSchoolOutline,
-} from "react-icons/io5";
-import {
-  HiOutlineSparkles,
-  HiOutlineHeart,
-  HiOutlineAcademicCap,
-  HiOutlineCake,
-} from "react-icons/hi";
-import { LuCalendarCheck2, LuApple, LuSun } from "react-icons/lu";
-import { TbBalloon, TbPuzzle } from "react-icons/tb";
+  Sparkles,
+  Star,
+  Baby,
+  BookOpen,
+  Heart,
+  Sun,
+  Flower,
+  Rainbow,
+  Apple,
+  Calendar,
+  Home,
+  GraduationCap,
+  Cake,
+  CalendarCheck2,
+  School,
+  Puzzle,
+  Crown,
+  Gift,
+  Smile,
+  Music,
+  TreePine,
+  Gamepad2,
+  Palette,
+  Camera,
+  Rocket,
+  CloudSun,
+  Leaf,
+  Cherry,
+  Cookie,
+  IceCream,
+  Snowflake,
+  Zap,
+  Moon,
+  Stars,
+  Wand2,
+  PartyPopper,
+  Candy,
+} from "lucide-react";
 
 // Types
 interface FloatingIconsProps {
@@ -40,7 +54,7 @@ interface FloatingIconsProps {
 
 interface FloatingIcon {
   id: string;
-  Icon: React.ComponentType<{ className?: string }>;
+  Icon: React.ComponentType<{ className?: string; size?: number }>;
   size: string;
   color: string;
   position: {
@@ -59,30 +73,48 @@ interface FloatingIcon {
   opacity: number;
 }
 
-// Constants
+// Constants - Family-friendly floating icons
 const FAMILY_ICONS = [
-  PiStarFourFill,
-  PiShootingStarLight,
-  PiBabyBold,
-  PiBookOpenBold,
-  PiHeartBold,
-  PiSunBold,
-  PiFlowerBold,
-  PiButterflyBold,
-  PiRainbowBold,
-  IoNutritionOutline,
-  IoCalendarOutline,
-  IoHomeOutline,
-  IoSchoolOutline,
-  HiOutlineSparkles,
-  HiOutlineHeart,
-  HiOutlineAcademicCap,
-  HiOutlineCake,
-  LuCalendarCheck2,
-  LuApple,
-  LuSun,
-  TbBalloon,
-  TbPuzzle,
+  // Original core icons
+  Star,           // PiStarFourFill
+  Sparkles,       // PiShootingStarLight, HiOutlineSparkles
+  Baby,           // PiBabyBold
+  BookOpen,       // PiBookOpenBold
+  Heart,          // PiHeartBold, HiOutlineHeart
+  Sun,            // PiSunBold, LuSun
+  Flower,         // PiFlowerBold
+  Rainbow,        // PiRainbowBold
+  Apple,          // IoNutritionOutline, LuApple
+  Calendar,       // IoCalendarOutline
+  Home,           // IoHomeOutline
+  School,         // IoSchoolOutline
+  GraduationCap,  // HiOutlineAcademicCap
+  Cake,           // HiOutlineCake
+  CalendarCheck2, // LuCalendarCheck2
+  Puzzle,         // TbPuzzle
+  
+  // Additional family & childhood icons
+  Crown,          // Royal/princess themes
+  Gift,           // Present/celebration
+  Smile,          // Happy faces
+  Music,          // Musical notes
+  TreePine,       // Nature/Christmas
+  Gamepad2,       // Fun/games
+  Palette,        // Creativity/art
+  Camera,         // Memories/photos
+  Rocket,         // Adventure/space
+  CloudSun,       // Weather/sky
+  Leaf,           // Nature/growth
+  Cherry,         // Sweet treats
+  Cookie,         // Snacks/treats
+  IceCream,       // Desserts
+  Snowflake,      // Winter/unique
+  Zap,            // Energy/excitement
+  Moon,           // Night/dreams
+  Stars,          // Multiple stars
+  Wand2,          // Magic/fairy tales
+  PartyPopper,    // Celebrations
+  Candy,          // Sweets
 ] as const;
 
 const SIZE_CLASSES = {
@@ -225,7 +257,6 @@ const FloatingIconItem = memo<{
         left: position.left,
         right: position.right,
         zIndex: 1,
-        // opacity: 1,
       }}
       initial={{ opacity: 0.8, scale: 0.5 }}
       animate={{ opacity, scale: 0.5 }}

@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, memo } from "react";
-import { FaCheck, FaCircle } from "react-icons/fa";
+import { Check, Circle } from "lucide-react";
 import { pagesData } from "@/data";
 import { slideUpTransition } from "@/styles/animations";
 import * as motion from "motion/react-client";
@@ -49,7 +49,7 @@ const FeatureListItem = memo<{ children: React.ReactNode; isFeatured: boolean }>
     return (
       <li className="flex items-start gap-3">
         <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${styles.checkBg}`}>
-          <FaCheck className={`${styles.checkIcon} w-3.5 h-3.5`} />
+          <Check className={`${styles.checkIcon} w-3.5 h-3.5`} />
         </div>
         <span className={`text-sm ${styles.featureText}`}>
           {children}
@@ -111,7 +111,7 @@ const PricingCard = memo<{
       )}
       
       <div className="flex items-center gap-3 mb-6">
-        <FaCircle className={`w-5 h-5 ${styles.textSecondary}`} />
+        <Circle className={`w-5 h-5 ${styles.textSecondary}`} />
         <h3 className={`text-xs font-bold tracking-widest uppercase ${styles.textSecondary}`}>
           {plan}
         </h3>
