@@ -5,10 +5,12 @@ import {
   ServiceTeaser, 
   PackagesTeaser, 
   ContactTeaser, 
-  FAQ
+  FAQ,
+  FloatingIcons
 } from "@/components";
 import { pagesData, siteData } from "@/data";
 
+// Extract data at module level for better performance
 const {
   home: { hero, aboutTeaser, meta }
 } = pagesData;
@@ -19,6 +21,7 @@ const {
   faq
 } = siteData;
 
+// Memoized section components
 const HeroSection = memo(function HeroSection() {
   return <Hero info={hero} />;
 });
@@ -52,16 +55,32 @@ const FAQSection = memo(function FAQSection() {
   );
 });
 
-// Main page component
+// Export metadata
+export const metadata = meta;
+
+// Main page component with floating icons overlay
 export default function HomePage() {
   return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <ServiceSection />
-      <PricingSection />
-      <ContactSection />
-      <FAQSection />
-    </>
+    <div className="relative">
+      {/* Floating Icons - covers entire page */}
+      <FloatingIcons 
+        count={8}
+        iconSize="md"
+        enableAnimation={true}
+        opacityRange={[0.2, 0.5]}
+        colorVariants={['accent', 'secondary']}
+        containerClassName="fixed inset-0 z-0"
+      />
+      
+      {/* Main content - positioned above floating icons */}
+      <div className="relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <ServiceSection />
+        <PricingSection />
+        <ContactSection />
+        <FAQSection />
+      </div>
+    </div>
   );
 }

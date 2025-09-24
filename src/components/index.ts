@@ -14,6 +14,7 @@ import ContactInfo from "./ContactInfo";
 import SectionTag from "./SectionTag";
 import CarouselWrapper from "./CarouselWrapper";
 import FAQ from "./FAQ";
+import FloatingIcons from "./FloatingIcons";
 export {
   Nav,
   Header,
@@ -30,5 +31,6 @@ export {
   ContactInfo,
   SectionTag,
   CarouselWrapper,
-  FAQ
+  FAQ,
+  FloatingIcons
 };
