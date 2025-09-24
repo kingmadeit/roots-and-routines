@@ -256,17 +256,6 @@ body {
   @apply text-primary opacity-30;
 }
 
-.logo-container {
-  container-type: inline-size;
-  width: clamp(3rem, 8cqi, 6rem); /* Container query units */
-}
-
-.logo {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
 /* Fallback for browsers without container query support */
 @supports not (width: 1cqi) {
   .logo-container {

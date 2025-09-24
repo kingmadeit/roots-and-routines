@@ -4,12 +4,12 @@ import * as motion from "motion/react-client";
 
 const Logo = () => {
   return (
-    <Link href="/" className="cursor-pointer">
+    <Link href="/" className="cursor-pointer translate-y-15 scale-175 w-[clamp(6rem,6vw,6rem)] h-[clamp(6rem,6vw,6rem)]">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="logo-container w-[clamp(6rem,6vw,6rem)] h-[clamp(6rem,6vw,6rem)]"
+        className="w-full h-full"
       >
         <Image
           src="/logo.png"

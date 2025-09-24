@@ -15,7 +15,7 @@ const Nav = () => {
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="hidden md:flex gap-4 pr-4"
+        className="hidden md:flex gap-4"
       >
         {siteData.navigation.map((item) => (
           <li key={item.href}>
