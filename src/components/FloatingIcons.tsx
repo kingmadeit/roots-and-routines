@@ -35,7 +35,7 @@ interface FloatingIconsProps {
   enableAnimation?: boolean;
   iconSize?: 'sm' | 'md' | 'lg' | 'xl';
   opacityRange?: [number, number];
-  colorVariants?: ('accent' | 'secondary' | 'secondary-light' | 'complimentary')[];
+  colorVariants?: ('accent' | 'secondary' | 'secondary-light' | 'complementary')[];
 }
 
 interface FloatingIcon {
@@ -103,16 +103,17 @@ const POSITION_ZONES = [
   // Corners
   { top: '10px', left: '10px' },
   { top: '10px', right: '3rem' },
-  { bottom: '10px', left: '10px' },
-  { bottom: '10x', right: '10x' },
+  { bottom: '30%', left: '10px' },
+  { bottom: '10x', right: '10%' },
   // Edges
   { top: '20%', left: '10px' },
+  { top: '20%', left: '10%' },
   { top: '20%', right: '10px' },
   { top: '40%', right: '10%' },
   { bottom: '20%', left: '10px' },
   { bottom: '20%', right: '10px' },
   // Mid positions
-  { top: '30%', right: '15%' },
+  { top: '30%', right: '30%' },
   { top: '50%', left: '50%' },
   { top: '50%', left: '30%' },
   { top: '40%', left: '20px' },
@@ -131,23 +132,23 @@ const generateFloatingAnimation = () => ({
   delay: getRandomInRange(0, 5),
   x: [
     0,
-    getRandomInRange(-30, 30),
-    getRandomInRange(-20, 20),
-    getRandomInRange(-40, 40),
+    getRandomInRange(10, 30),
+    getRandomInRange(10, 100),
+    getRandomInRange(0, 500),
     0
   ],
   y: [
     0,
-    getRandomInRange(-40, 40),
-    getRandomInRange(-60, 60),
-    getRandomInRange(-30, 30),
+    getRandomInRange(0, 500),
+    getRandomInRange(10, 300),
+    getRandomInRange(20, 30),
     0
   ],
   rotate: [
     0,
-    getRandomInRange(-15, 15),
-    getRandomInRange(-10, 10),
-    getRandomInRange(-20, 20),
+    getRandomInRange(0, 15),
+    getRandomInRange(0, 10),
+    getRandomInRange(0, 20),
     0
   ],
 });
@@ -170,7 +171,7 @@ const useFloatingIcons = (
     for (let i = 0; i < count; i++) {
       const Icon = getRandomItem(FAMILY_ICONS);
       const sizeClass = getRandomItem(SIZE_CLASSES[iconSize || 'md']);
-      const colorVariant = getRandomItem(colorVariants || ['accent', 'secondary', 'secondary-light']);
+      const colorVariant = getRandomItem(colorVariants || ['accent', 'secondary', 'secondary-light', 'complementary']);
       const colorClass = COLOR_CLASSES[colorVariant];
       const opacity = getRandomInRange(opacityRange[0], opacityRange[1]);
       
@@ -224,9 +225,9 @@ const FloatingIconItem = memo<{
         left: position.left,
         right: position.right,
         zIndex: 1,
-        opacity,
+        // opacity: 1,
       }}
-      initial={{ opacity: 0.3, scale: 0.5 }}
+      initial={{ opacity: 0.8, scale: 0.5 }}
       animate={{ opacity, scale: 0.5 }}
       transition={{ 
         duration: 0.6, 
@@ -247,7 +248,7 @@ const FloatingIcons = memo<FloatingIconsProps>(function FloatingIcons({
   enableAnimation = true,
   iconSize = 'md',
   opacityRange = [0.3, 0.6],
-  colorVariants = ['accent', 'secondary', 'secondary-light', 'complimentary'],
+  colorVariants = ['accent', 'secondary', 'secondary-light', 'complementary'],
 }) {
   const [shouldRender, setShouldRender] = useState(false);
   
@@ -262,19 +263,14 @@ const FloatingIcons = memo<FloatingIconsProps>(function FloatingIcons({
   if (!shouldRender) return null;
 
   return (
-    <div 
-      className={`absolute inset-0 overflow-hidden pointer-events-none ${containerClassName}`}
-      aria-hidden="true"
-    >
-      <div className={`relative w-full h-full ${className}`}>
-        {icons.map((icon) => (
-          <FloatingIconItem
-            key={icon.id}
-            icon={icon}
-            enableAnimation={enableAnimation}
-          />
-        ))}
-      </div>
+    <div className={`relative w-full h-full ${className}`}>
+      {icons.map((icon) => (
+        <FloatingIconItem
+          key={icon.id}
+          icon={icon}
+          enableAnimation={enableAnimation}
+        />
+      ))}
     </div>
   );
 });

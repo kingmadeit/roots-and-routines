@@ -63,23 +63,21 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
-        <main className="w-full flex min-h-screen flex-col absolute z-10">
-          <div className="relative z-5">
-            {/* Floating Icons - covers entire page */}
-            <FloatingIcons 
-              count={8}
-              iconSize="md"
-              enableAnimation={true}
-              opacityRange={[0.2, 0.5]}
-              colorVariants={['accent', 'secondary']}
-              containerClassName="fixed inset-0 z-0"
-            />
-          </div>
+          {/* Floating Icons - covers entire page */}
+          <FloatingIcons 
+            count={12}
+            iconSize="md"
+            enableAnimation={true}
+            opacityRange={[0.3, 0.7]}
+            colorVariants={['accent', 'secondary', 'complementary', 'secondary-light']}
+            containerClassName="fixed inset-0 z-0"
+          />
           {/* Main content - positioned above floating icons */}
-          <Header />
-          <div className="container mx-auto">{children}</div>
-          <Footer />
-        </main>
+          <main className="w-full flex min-h-screen flex-col absolute z-10">
+            <Header />
+            <div className="container mx-auto">{children}</div>
+            <Footer />
+          </main>
       </body>
     </html>
   );
