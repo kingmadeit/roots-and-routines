@@ -5,7 +5,7 @@ import * as motion from "motion/react-client";
 
 const Header = () => {
   return (
-    <motion.header className="header z-10 absolute top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 backdrop-blur-sm">
+    <motion.header className="header z-10 absolute top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 ">
       <div className="logo translate-y-5 rounded-full overflow-hidden">
         <Link href="/" className="cursor-pointer">
           <motion.div
