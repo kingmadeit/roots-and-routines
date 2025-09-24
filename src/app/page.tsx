@@ -60,7 +60,7 @@ export const metadata = meta;
 // Main page component with floating icons overlay
 export default function HomePage() {
   return (
-      <div className="relative z-10">
+      <div className="relative">
         <HeroSection />
         <AboutSection />
         <ServiceSection />

@@ -87,7 +87,7 @@ const ContentSection = memo<{
       
       <motion.h2
         {...ANIMATION_CONFIG.subtitle}
-        className="hero-sub-title max-w-[90%] font-nunito"
+        className="hero-sub-title max-w-[90%] md:max-w-[65%] font-nunito"
       >
         {subtitle}
       </motion.h2>
@@ -118,7 +118,7 @@ const Hero = memo<HeroProps>(function Hero({ info }) {
   );
 
   return (
-    <section className="hero relative leading-[0.5] relative mb-32 font-nunito">
+    <section className="hero leading-[0.5] relative mb-32 font-nunito">
       <div className="w-full min-h-screen grid grid-cols-1 content-center">
         <ContentSection 
           title={title} 
