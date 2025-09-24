@@ -51,10 +51,10 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
       {splitTitle ? (
         <>
           <span className="block w-full text-[clamp(5rem,5vw,7rem)] text-accent opacity-80">{splitTitle[0]}</span>
-          <span className="block w-full uppercase text-[clamp(7rem,5vw,8rem)] text-secondary">{splitTitle[1]}</span>
+          <span className="block w-full uppercase text-[clamp(7rem,5vw,8rem)] text-gradient-secondary font-nunito">{splitTitle[1]}</span>
           <span className="w-full text-[clamp(2.5rem,2.5vw,4rem)] text-white">{splitTitle[2]}</span>
-          <span className="w-full text-accent text-[clamp(3rem,3vw,5rem)]">{splitTitle[3]}</span>
-          <span className="block w-full text-secondary-light text-[clamp(1.5rem,3vw,3rem)] text-center leading-[1.5]">{splitTitle[4]}</span>
+          <span className="w-full text-accent text-[clamp(3rem,3vw,5rem)] font-nunito">{splitTitle[3]}</span>
+          <span className="block w-full text-accent/40 text-[clamp(1.5rem,3vw,3rem)] text-center leading-[1.5]">{splitTitle[4]}</span>
         </>
       ) : (
         title

@@ -257,7 +257,7 @@ body {
   font-size: max(2rem, min(2vw + 1rem, 3rem));
   line-height: 1;
   font-weight: 700;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .hero-sub-title {
@@ -268,6 +268,22 @@ body {
   text-align: center;
   margin-top: 1rem;
   @apply text-accent;
+}
+
+.text-gradient-secondary {
+    /* Define the specific gradient colors using RGBA to control opacity */
+    background-image: linear-gradient(
+        to right,
+        /* --secondary: #788a68 is rgba(120, 138, 104, 0.7) */
+        rgba(120, 138, 104, 1), 
+        /* --secondary-light: #a3b185 is rgba(163, 177, 133, 0.7) */
+        rgba(163, 177, 133, 0.5)
+    );
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
 }
 
 .section-name {
