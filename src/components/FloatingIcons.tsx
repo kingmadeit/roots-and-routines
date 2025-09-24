@@ -40,6 +40,7 @@ import {
   PartyPopper,
   Candy,
 } from "lucide-react";
+import { Animated } from ".";
 
 // Types
 interface FloatingIconsProps {
@@ -248,7 +249,7 @@ const FloatingIconItem = memo<{
     .join(' ');
 
   return (
-    <motion.div
+    <Animated as="div"
       key={icon.id}
       className={`absolute ${positionClasses} pointer-events-none select-none`}
       style={{
@@ -268,7 +269,7 @@ const FloatingIconItem = memo<{
       {...motionProps}
     >
       <Icon className={`${size} ${color}`} />
-    </motion.div>
+    </Animated>
   );
 });
 

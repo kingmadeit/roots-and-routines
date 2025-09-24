@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Plus, Minus } from "lucide-react";
 import clsx from "clsx";
 import { FAQData, FAQItem } from "@/types";
-
+import {Animated} from ".";
 
 interface FAQComponentProps {
   data: FAQData;
@@ -45,7 +45,8 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
   const { question, answer } = item;
 
   return (
-    <motion.div
+    <Animated 
+      as="div"
       {...ANIMATION_CONFIG.stagger}
       transition={{ ...ANIMATION_CONFIG.stagger.transition, delay: index * 0.05 }}
       className="border-b border-white/20"
@@ -73,7 +74,7 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
 
       <AnimatePresence mode="wait">
         {isOpen && (
-          <motion.div
+          <Animated as="div"
             id={`answer-${item.id}`}
             {...ANIMATION_CONFIG.accordion}
             
@@ -83,10 +84,10 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
                 {answer}
               </p>
             </div>
-          </motion.div>
+          </Animated>
         )}
       </AnimatePresence>
-    </motion.div>
+    </Animated>
   );
 });
 

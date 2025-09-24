@@ -15,6 +15,7 @@ import CarouselWrapper from "./CarouselWrapper";
 import FAQ from "./FAQ";
 import FloatingIcons from "./FloatingIcons";
 import Logo from "./Logo";
+import Animated from "./Animated";
 export {
   Logo,
   Nav,
@@ -32,5 +33,6 @@ export {
   ContactInfo,
   CarouselWrapper,
   FAQ,
-  FloatingIcons
+  FloatingIcons,
+  Animated
 };

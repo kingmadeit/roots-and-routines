@@ -1,12 +1,11 @@
-"use client";
 import { memo, useMemo } from "react";
 import { Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/types";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { slideUpTransition } from "@/styles/animations";
 import { CurlyArrow, DottedArrow } from "./svgs";
+import { Animated } from ".";
 
 // Types
 interface HeroProps {
@@ -45,7 +44,7 @@ const splitTitleBySeparator = (title: string, separator?: string): string[] | nu
 // Memoized Components
 const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, splitTitle }) {
   return (
-    <motion.h1
+    <Animated as="h1"
       {...slideUpTransition}
       className="hero-title relative text-secondary max-w-[80%] font-nunito"
     >
@@ -60,7 +59,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
       )}
       <Sparkles className="absolute top-[-3rem] right-[50%] w-16 h-16 text-secondary-light opacity-40"/>
 
-    </motion.h1>
+    </Animated>
   );
 });
 
@@ -85,15 +84,15 @@ const ContentSection = memo<{
     <div className="p-4 md:p-16 flex flex-col space-y-4 items-center justify-center">
       <TitleDisplay title={title} splitTitle={splitTitle} />
       
-      <motion.h2
+      <Animated as="h2"
         {...ANIMATION_CONFIG.subtitle}
         className="hero-sub-title max-w-[90%] md:max-w-[65%] font-nunito"
       >
         {subtitle}
-      </motion.h2>
+      </Animated>
       
       {/* TODO:: I still think this button is valuable -- confirm with client */}
-      <motion.div className="relative hidden" {...ANIMATION_CONFIG.button}>
+      <Animated as="div" className="relative hidden" {...ANIMATION_CONFIG.button}>
         <Button
           asChild
           className={BUTTON_STYLES}
@@ -104,7 +103,7 @@ const ContentSection = memo<{
           </Link>
         </Button>
         <DottedArrow className="absolute bottom-[calc(100% + 2rem)] -left-15 w-40 h-40 text-accent opacity-30" />
-      </motion.div>
+      </Animated>
     </div>
   );
 });

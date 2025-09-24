@@ -3,15 +3,15 @@ import { useState } from "react";
 import { siteData } from "@/data";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import * as motion from "motion/react-client";
-
+import {Animated} from ".";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="nav">
       {/* Desktop Navigation */}
-      <motion.ul
+      <Animated
+        as="ul"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -27,7 +27,7 @@ const Nav = () => {
             </Link>
           </li>
         ))}
-      </motion.ul>
+      </Animated>
 
       {/* Mobile Burger Button */}
       <button

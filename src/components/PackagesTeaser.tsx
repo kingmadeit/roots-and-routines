@@ -3,8 +3,7 @@ import { useMemo, memo } from "react";
 import { Check, Circle } from "lucide-react";
 import { pagesData } from "@/data";
 import { slideUpTransition } from "@/styles/animations";
-import * as motion from "motion/react-client";
-
+import { motion } from "motion/react";
 // Constants
 const ANIMATION_DELAY = "0.4s";
 const BLUR_SIZE = "w-96 h-96";

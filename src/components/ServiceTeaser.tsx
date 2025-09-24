@@ -1,5 +1,5 @@
 "use client";
-import React, { ElementType, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import clsx from "clsx";
 import { slideUpTransition } from "@/styles/animations";

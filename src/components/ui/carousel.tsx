@@ -141,7 +141,7 @@ export default function Carousel() {
       >
         <div className="relative flex w-full flex-col rounded-3xl border border-primary/10 bg-primary/30 p-4 pb-8 pt-6 md:p-6">
           <div className="relative w-full h-[280px] md:h-[420px] flex items-center justify-center pt-12">
-            <motion.div
+            <Animated as="div"
               className="w-full h-full flex items-center justify-center"
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
@@ -157,7 +157,7 @@ export default function Carousel() {
                   totalCards={cardData.length}
                 />
               ))}
-            </motion.div>
+            </Animated>
           </div>
 
           <div className="flex items-center justify-center gap-6 mt-6">
@@ -201,7 +201,7 @@ function Card({ card, index, activeIndex, totalCards }: CardProps) {
   };
 
   return (
-    <motion.div
+    <Animated as="div"
       className="absolute w-1/2 h-[95%]"
       style={{
         transformStyle: "preserve-3d",
@@ -225,6 +225,6 @@ function Card({ card, index, activeIndex, totalCards }: CardProps) {
           <h4 className="text-white text-lg font-semibold">{card.title}</h4>
         </div>
       </div>
-    </motion.div>
+    </Animated>
   );
 }
