@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { Variants } from "motion";
 
 const slideUp: Variants = {
   initial: { y: 100, opacity: 0 },

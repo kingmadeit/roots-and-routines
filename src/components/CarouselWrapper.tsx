@@ -1,5 +1,5 @@
 "use client";
-import { useInView } from "react-intersection-observer";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 const Carousel = dynamic(
@@ -16,11 +16,30 @@ const Carousel = dynamic(
 );
 
 export default function CarouselWrapper() {
-  const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-    rootMargin: "100px 0px", // Load 100px before it comes into view
-  });
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // triggerOnce: true equivalent
+        }
+      },
+      {
+        threshold: 0,
+        rootMargin: "100px 0px", // Load 100px before it comes into view
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div ref={ref}>

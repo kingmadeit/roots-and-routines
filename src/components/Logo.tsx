@@ -5,7 +5,7 @@ import { Animated } from ".";
 
 const Logo = () => {
   return (
-    <Link href="/" className="cursor-pointer">
+    <Link href="/" className="cursor-pointer translate-y-15">
       <Animated 
         as='div'
         initial={{ x: -100, opacity: 0, scale: 1.75 }}
