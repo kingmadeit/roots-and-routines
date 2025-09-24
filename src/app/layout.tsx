@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Quicksand, Nunito } from "next/font/google";
+import { Quicksand, Nunito, Antonio } from "next/font/google";
 import "./globals.css";
 import { FloatingIcons, Footer, Header } from "@/components";
-import Image from "next/image";
 // Load fonts
 
 const quicksand = Quicksand({
@@ -15,6 +14,13 @@ const quicksand = Quicksand({
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-nunito",
+  weight: ["400", "700"], // Regular & Bold
+  display: "swap",
+});
+
+const antonio = Antonio({
+  subsets: ["latin"],
+  variable: "--font-antonio",
   weight: ["400", "700"], // Regular & Bold
   display: "swap",
 });
@@ -61,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="theme-light" suppressHydrationWarning={true}>
       <body
-        className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
+        className={`${quicksand.variable} ${nunito.variable} ${antonio.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
           {/* Floating Icons - covers entire page */}
           <FloatingIcons 

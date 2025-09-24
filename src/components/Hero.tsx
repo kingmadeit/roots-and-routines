@@ -46,13 +46,15 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
   return (
     <Animated as="h1"
       {...slideUpTransition}
-      className="hero-title relative text-secondary max-w-[80%] font-nunito"
+      className="hero-title relative text-secondary max-w-[80%] font-nunito hyphens-auto"
     >
       {splitTitle ? (
         <>
-          <span className="block w-full">{splitTitle[0]}</span>
-          <span className="block w-full">{splitTitle[1]}</span>
-          <span className="block w-full">{splitTitle[2]}</span>
+          <span className="block w-full text-[clamp(5rem,5vw,7rem)] text-accent opacity-80">{splitTitle[0]}</span>
+          <span className="block w-full uppercase text-[clamp(7rem,5vw,8rem)] text-secondary">{splitTitle[1]}</span>
+          <span className="w-full text-[clamp(2.5rem,2.5vw,4rem)] text-white">{splitTitle[2]}</span>
+          <span className="w-full text-accent text-[clamp(3rem,3vw,5rem)]">{splitTitle[3]}</span>
+          <span className="block w-full text-secondary-light text-[clamp(1.5rem,3vw,3rem)] text-center leading-[1.5]">{splitTitle[4]}</span>
         </>
       ) : (
         title
@@ -83,7 +85,6 @@ const ContentSection = memo<{
   return (
     <div className="p-4 md:p-16 flex flex-col space-y-4 items-center justify-center">
       <TitleDisplay title={title} splitTitle={splitTitle} />
-      
       <Animated as="h2"
         {...ANIMATION_CONFIG.subtitle}
         className="hero-sub-title max-w-[90%] md:max-w-[65%] font-nunito"
@@ -118,7 +119,7 @@ const Hero = memo<HeroProps>(function Hero({ info }) {
 
   return (
     <section className="hero leading-[0.5] relative mb-32 font-nunito">
-      <div className="w-full min-h-screen grid grid-cols-1 content-center">
+      <div className="w-full hero-container grid grid-cols-1 content-center">
         <ContentSection 
           title={title} 
           subtitle={subtitle} 

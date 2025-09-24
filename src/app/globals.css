@@ -70,6 +70,7 @@ body {
 .theme-light {
   --font-quicksand: "Quicksand", sans-serif;
   --font-nunito: "Nunito", sans-serif;
+  --font-antonio: "Antonio", sans-serif;
   --radius: 0.625rem;
 
   --background: oklch(100% 0 0);
@@ -131,6 +132,10 @@ body {
 }
 .font-nunito {
   font-family: var(--font-nunito), sans-serif;
+}
+
+.font-antonio {
+  font-family: var(--font-antonio), sans-serif;
 }
 
 .font-quicksand {
@@ -234,17 +239,30 @@ body {
   @apply w-full h-[100vh] min-h-screen grid place-content-center;
 }
 
+.hero-container {
+ backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+    background: radial-gradient(
+        ellipse at center,
+        /* A semi-transparent primary-light color in the center */
+        rgba(240, 191, 153, 0.9) 0%,
+        /* Fading to a fully transparent version of the same color */
+        rgba(240, 191, 153, 0) 70%
+    );
+    border-radius: 20px;
+    
+}
 .hero-title {
   font-family: var(--font-quicksand), sans-serif;
   font-size: max(2rem, min(2vw + 1rem, 3rem));
-  line-height: 1.2;
+  line-height: 1;
   font-weight: 700;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .hero-sub-title {
   font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(0.8rem, 0.5vw + 1rem, 1.5rem);
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
   line-height: 1.2;
   font-weight: 400;
   text-align: center;
@@ -265,4 +283,19 @@ body {
 
 .rounded-section {
   @apply flex max-w-[90%] p-8 md:p-16 mx-auto my-32 flex-col rounded-[3rem];
+}
+
+
+.perspective-1000 {
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }

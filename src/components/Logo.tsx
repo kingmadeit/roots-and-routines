@@ -5,11 +5,11 @@ import { Animated } from ".";
 
 const Logo = () => {
   return (
-    <Link href="/" className="cursor-pointer translate-y-15">
+    <Link href="/" className="cursor-pointer translate-y-5">
       <Animated 
         as='div'
-        initial={{ x: -100, opacity: 0, scale: 1.75 }}
-        animate={{ x: 0, opacity: 1, scale: 1.75 }}
+        initial={{ x: -100, opacity: 0, scale: 1.25 }}
+        animate={{ x: 0, opacity: 1, scale: 1.25 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-[clamp(6rem,6vw,6rem)] h-[clamp(6rem,6vw,6rem)]"
       >
