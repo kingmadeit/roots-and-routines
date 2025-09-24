@@ -295,7 +295,7 @@ const FloatingIcons = memo<FloatingIconsProps>(function FloatingIcons({
   if (!shouldRender) return null;
 
   return (
-    <div className={`relative w-full h-full ${className}`}>
+    <div className={`fixed w-full h-full ${className}`}>
       {icons.map((icon) => (
         <FloatingIconItem
           key={icon.id}
