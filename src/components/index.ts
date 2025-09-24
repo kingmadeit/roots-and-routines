@@ -14,7 +14,9 @@ import ContactInfo from "./ContactInfo";
 import CarouselWrapper from "./CarouselWrapper";
 import FAQ from "./FAQ";
 import FloatingIcons from "./FloatingIcons";
+import Logo from "./Logo";
 export {
+  Logo,
   Nav,
   Header,
   Footer,
