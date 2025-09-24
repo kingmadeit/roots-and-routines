@@ -6,7 +6,6 @@ import {
   PackagesTeaser, 
   ContactTeaser, 
   FAQ,
-  FloatingIcons
 } from "@/components";
 import { pagesData, siteData } from "@/data";
 
@@ -61,18 +60,6 @@ export const metadata = meta;
 // Main page component with floating icons overlay
 export default function HomePage() {
   return (
-    <div className="relative">
-      {/* Floating Icons - covers entire page */}
-      <FloatingIcons 
-        count={8}
-        iconSize="md"
-        enableAnimation={true}
-        opacityRange={[0.2, 0.5]}
-        colorVariants={['accent', 'secondary']}
-        containerClassName="fixed inset-0 z-0"
-      />
-      
-      {/* Main content - positioned above floating icons */}
       <div className="relative z-10">
         <HeroSection />
         <AboutSection />
@@ -81,6 +68,5 @@ export default function HomePage() {
         <ContactSection />
         <FAQSection />
       </div>
-    </div>
   );
 }

@@ -102,17 +102,19 @@ const COLOR_CLASSES = {
 const POSITION_ZONES = [
   // Corners
   { top: '10px', left: '10px' },
-  { top: '10px', right: '10px' },
+  { top: '10px', right: '3rem' },
   { bottom: '10px', left: '10px' },
-  { bottom: '10px', right: '10px' },
+  { bottom: '10x', right: '10x' },
   // Edges
   { top: '20%', left: '10px' },
   { top: '20%', right: '10px' },
+  { top: '40%', right: '10%' },
   { bottom: '20%', left: '10px' },
   { bottom: '20%', right: '10px' },
   // Mid positions
   { top: '30%', right: '15%' },
-  { top: '70%', left: '15%' },
+  { top: '50%', left: '50%' },
+  { top: '50%', left: '30%' },
   { top: '40%', left: '20px' },
   { bottom: '30%', right: '20px' },
 ] as const;
