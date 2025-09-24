@@ -7,7 +7,6 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { slideUpTransition } from "@/styles/animations";
 import { CurlyArrow, DottedArrow } from "./svgs";
-import { LuCalendarCheck2 } from "react-icons/lu";
 
 // Types
 interface HeroProps {
@@ -48,7 +47,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
   return (
     <motion.h1
       {...slideUpTransition}
-      className="hero-title text-secondary max-w-[80%] font-nunito"
+      className="hero-title relative text-secondary max-w-[80%] font-nunito"
     >
       {splitTitle ? (
         <>
@@ -59,6 +58,8 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
       ) : (
         title
       )}
+      <PiShootingStarLight className="absolute top-[-3rem] right-[50%] w-16 h-16 text-secondary-light opacity-40"/>
+
     </motion.h1>
   );
 });
@@ -68,9 +69,7 @@ const BackgroundDecorations = memo(function BackgroundDecorations() {
   return (
     <>
       <PiStarFourFill className="absolute bottom-[-60px] right-[-20px] w-16 h-16 text-accent opacity-30 animate-pulse" />
-      <PiShootingStarLight className="absolute top-[-80px] left-[-20px] w-16 h-16 text-secondary-light opacity-90 animate-pulse" />
       <CurlyArrow className="absolute bottom-[2rem] left-1/2 -translate-x-1/2 w-40 h-40 text-accent opacity-30 animate-[var(--animate-periodic-bounce)]" />
-      <LuCalendarCheck2 className="absolute top-[7rem] right-1/3 w-40 h-40 text-accent opacity-30" />
 
       {/* TODO :: ADD BLUR COLORFUL BG WITH BACKDROP FILTER */}
     </>

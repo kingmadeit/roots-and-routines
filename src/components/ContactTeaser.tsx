@@ -1,4 +1,3 @@
-import { SectionTag } from ".";
 import { Button } from "./ui/button";
 
 type FounderQuoteProps = {
@@ -9,7 +8,6 @@ type FounderQuoteProps = {
 const ContactTeaser = ({ quote }: FounderQuoteProps) => {
   return (
     <section className="rounded-section pt-0! mt-0!">
-      <SectionTag tag="Get Started" />
       <div className="flex flex-col justify-center min-h-screen/2">
         <div className="rounded-full w-[70%] mx-auto bg-secondary-light text-secondary text-center font-bold p-16 ">
           <div className="text-center">

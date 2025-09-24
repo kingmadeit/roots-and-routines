@@ -2,7 +2,6 @@
 import { useMemo, memo } from "react";
 import { FaCheck, FaCircle } from "react-icons/fa";
 import { pagesData } from "@/data";
-import { SectionTag } from ".";
 import { slideUpTransition } from "@/styles/animations";
 import * as motion from "motion/react-client";
 
@@ -196,7 +195,6 @@ Pricing4.displayName = "Pricing4";
 export default function PackagesTeaser() {
   return (
     <div id="pricing" className="rounded-section mt-0! w-full py-0!">
-      <SectionTag tag="Pricing" className="text-accent! top-5" />
       <Pricing4 />
     </div>
   );
