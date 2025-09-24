@@ -212,6 +212,22 @@ body {
     scroll-behavior: smooth;
     @apply bg-background text-foreground;
   }
+
+  :root {
+    --animate-periodic-bounce: periodic-bounce 4s ease-in-out infinite;
+  }
+
+  @keyframes periodic-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-20%);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+  }
 }
 
 .hero {
