@@ -17,26 +17,18 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
     <section className="rounded-section bg-secondary-light mt-0! relative">
       <Flower className="absolute -bottom-10 right-0 w-40 h-40 text-primary opacity-20" />
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
-        {/* <motion.div {...slideLeftTransition}>
-          <CarouselWrapper />
-        </motion.div> */}
-        <div className="text-center">
-          <motion.h2 {...slideUpTransition} className="text-heading">
-            {title}
-          </motion.h2>
-          <motion.p
-            {...slideUpTransition}
-            className="my-8 text-body text-white"
-          >
+        <div className="border">
+          <motion.h3 {...slideUpTransition} className="text-1xl sm:text-2xl md:text-3xl font-nunito font-bold text-primary">
             {shortCopy}
-          </motion.p>
-          <Button
+          </motion.h3>
+
+          {/* <Button
             asChild
             className="bg-[var(--bg-accent)] hover:scale-[0.9] hover:bg-[var(--bg-accent)] text-white font-bold cursor-pointer"
             size="lg"
           >
             <Link href={cta.href}>{cta.label}</Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

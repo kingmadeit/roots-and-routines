@@ -35,10 +35,10 @@ export interface ServiceData {
   shortCopy: string; // homepage teaser
   fullCopy: string; // detailed page copy
   features: string[];
-  categories?: string[];
+  category: string;
+  icon: ElementType;
   meta?: MetaData;
   href?: string;
-  icon?: ElementType;
 }
 
 export interface PackageData {

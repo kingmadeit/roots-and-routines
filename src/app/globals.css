@@ -113,7 +113,7 @@ body {
   --secondary-light: #a3b185;
   --secondary-foreground: #a3b185;
   --accent: #ca6c28;
-  --complimentary: #bc9b0a;
+  --complementary: #bc9b0a;
   --bg-heading: #fff8a9;
 
   -webkit-app-region: no-drag;
@@ -182,7 +182,7 @@ body {
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-complimentary: var(--complimentary);
+  --color-complementary: var(--complementary);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
@@ -201,7 +201,7 @@ body {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --bg-complementary: var(--complimentary);
+  --bg-complementary: var(--complementary);
 }
 
 @layer base {
@@ -232,7 +232,6 @@ body {
 
 .hero {
   @apply w-full h-[100vh] min-h-screen grid place-content-center;
-  /* @apply relative bg-[url(/img-2.jpg)] bg-cover bg-no-repeat bg-fixed; */
 }
 
 .hero-title {
