@@ -30,6 +30,7 @@ export const siteData: SiteData = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Founder", href: "/about/founder" },
     { label: "Contact", href: "/contact" },
   ],
 
