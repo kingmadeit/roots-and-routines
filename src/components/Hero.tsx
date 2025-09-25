@@ -46,14 +46,14 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
   return (
     <Animated as="h1"
       {...slideUpTransition}
-      className="hero-title relative text-secondary max-w-[80%] font-nunito hyphens-auto"
+      className="hero-title relative text-secondary font-nunito hyphens-auto"
     >
       {splitTitle ? (
         <>
-          <span className="block w-full text-[clamp(5rem,5vw,7rem)] text-accent opacity-90">{splitTitle[0]}</span>
-          <span className="block w-full uppercase text-[clamp(7rem,5vw,8rem)] text-gradient-secondary font-nunito">{splitTitle[1]}</span>
-          <span className="w-full text-[clamp(2rem,2vw,4rem)] text-white">{splitTitle[2]}</span>
-          <span className="w-full text-complementary text-[clamp(3rem,3vw,5rem)] font-nunito">{splitTitle[3]}</span>
+          <span className="block w-full text-[clamp(3rem,9vw,10rem)] text-accent opacity-90">{splitTitle[0]}</span>
+          <span className="block w-full uppercase text-[clamp(5rem,10vw,12rem)] text-gradient-secondary font-nunito">{splitTitle[1]}</span>
+          <span className="w-full text-[clamp(1.5rem,2.5vw,4rem)] text-white">{splitTitle[2]}</span>
+          <span className="w-full text-complementary text-[clamp(2rem,3vw,5rem)] font-nunito">{splitTitle[3]}</span>
           <span className="block w-full text-secondary-light text-[clamp(1rem,2vw,2.5rem)] text-center leading-[1.5]">{splitTitle[4]}</span>
         </>
       ) : (

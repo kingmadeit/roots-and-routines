@@ -14,7 +14,7 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
     <section className="max-w-[90%] mx-auto md:max-w-[70%] mt-0! relative">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
         <div className="p-4 gradient-container-white">
-          <Animated as="h3" {...slideUpTransition} className="leading-11 text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-secondary mb-4 text-center">
+          <Animated as="h3" {...slideUpTransition} className="leading-11 text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-secondary/50 mb-4 text-center">
             <span className="block">Founded with</span>
             <span className="font-bold text-3xl md:text-5xl text-complementary"  > care and intention, </span>
             <span className="block">Roots & Routines Family Concierge is a</span>

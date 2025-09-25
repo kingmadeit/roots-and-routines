@@ -318,7 +318,7 @@ body {
   background: radial-gradient(
     ellipse at center,
     /* A semi-transparent white color in the center */
-    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 0%,
     /* Fading to a fully transparent version of the same color */
     rgba(255, 255, 255, 0) 70%
     );
