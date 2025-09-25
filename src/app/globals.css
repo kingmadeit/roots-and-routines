@@ -239,19 +239,55 @@ body {
   @apply w-full h-[100vh] min-h-screen grid place-content-center;
 }
 
-.hero-container {
- backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* For Safari support */
-    background: radial-gradient(
-        ellipse at center,
-        /* A semi-transparent primary-light color in the center */
-        rgba(240, 191, 153, 0.9) 0%,
-        /* Fading to a fully transparent version of the same color */
-        rgba(240, 191, 153, 0) 70%
+.gradient-container-primary {
+  background: radial-gradient(
+    ellipse at center,
+    /* A semi-transparent primary-light color in the center */
+    rgba(240, 191, 153, 0.9) 0%,
+    /* Fading to a fully transparent version of the same color */
+    rgba(240, 191, 153, 0) 70%
     );
     border-radius: 20px;
+    @apply backdrop-blur-md;
     
 }
+
+.gradient-container-secondary {
+  background: radial-gradient(
+    ellipse at center,
+    /* A semi-transparent secondary-light color in the center */
+    rgba(163, 177, 133, 0.8) 0%,
+    /* Fading to a fully transparent version of the same color */
+    rgba(163, 177, 133, 0) 70%
+    );
+    border-radius: 20px;
+    @apply backdrop-blur-md;  
+}
+
+.gradient-container-accent {
+  background: radial-gradient(
+    ellipse at center,
+    /* A semi-transparent accent color in the center */
+    rgba(202, 108, 40, 0.8) 0%,
+    /* Fading to a fully transparent version of the same color */
+    rgba(202, 108, 40, 0) 70%
+    );
+    border-radius: 20px;
+    @apply backdrop-blur-md;  
+}
+
+.gradient-container-complementary {
+  background: radial-gradient(
+    ellipse at center,
+    /* A semi-transparent complementary color in the center */
+    rgba(188, 155, 10, 0.5) 0%,
+    /* Fading to a fully transparent version of the same color */
+    rgba(188, 155, 10, 0) 70%
+    );
+    border-radius: 20px;
+    @apply backdrop-blur-md;  
+}
+
 .hero-title {
   font-family: var(--font-quicksand), sans-serif;
   font-size: max(2rem, min(2vw + 1rem, 3rem));

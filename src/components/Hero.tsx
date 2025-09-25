@@ -54,7 +54,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
           <span className="block w-full uppercase text-[clamp(7rem,5vw,8rem)] text-gradient-secondary font-nunito">{splitTitle[1]}</span>
           <span className="w-full text-[clamp(2rem,2vw,4rem)] text-white">{splitTitle[2]}</span>
           <span className="w-full text-complementary text-[clamp(3rem,3vw,5rem)] font-nunito">{splitTitle[3]}</span>
-          <span className="block w-full text-accent/40 text-[clamp(1.5rem,3vw,3rem)] text-center leading-[1.5]">{splitTitle[4]}</span>
+          <span className="block w-full text-secondary-light text-[clamp(1rem,2vw,2.5rem)] text-center leading-[1.5]">{splitTitle[4]}</span>
         </>
       ) : (
         title
@@ -116,7 +116,7 @@ const Hero = memo<HeroProps>(function Hero({ info }) {
 
   return (
     <section className="hero leading-[0.5] relative mb-32 font-nunito">
-      <div className="w-full hero-container grid grid-cols-1 content-center">
+      <div className="w-full gradient-container-primary grid grid-cols-1 content-center">
         <ContentSection 
           title={title} 
           subtitle={subtitle} 

@@ -12,12 +12,16 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
   const { shortCopy } = about;
 
   return (
-    <section className="rounded-section bg-secondary-light mt-0! relative">
+    <section className="max-w-[90%] mx-auto md:max-w-[70%] mt-0! relative -translate-y-40">
       <Flower className="absolute -bottom-10 right-0 w-40 h-40 text-primary opacity-20" />
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
-        <div className="border">
-          <Animated as="h3" {...slideUpTransition} className="text-1xl sm:text-2xl md:text-3xl font-nunito font-bold text-primary">
-            {shortCopy}
+        <div className="p-4 gradient-container-complementary">
+          <Animated as="h3" {...slideUpTransition} className="leading-11 text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-secondary mb-4 text-center">
+            <span className="block">Founded with</span>
+            <span className="font-bold text-3xl md:text-5xl text-accent"  > care and intention, </span>
+            <span className="block">Roots & Routines Family Concierge is a</span>
+            <span className="text-3xl md:text-5xl text-accent"> personalized service dedicated to helping families </span>
+            create smoother home routines, find trusted support, and make confident decisions for their child&apos;s wellbeing.
           </Animated>
 
           {/* <Button
@@ -27,6 +31,9 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
           >
             <Link href={cta.href}>{cta.label}</Link>
           </Button> */}
+        </div>
+        <div className="w-full bg-accent/50 rounded-r-2xl">
+
         </div>
       </div>
     </section>
