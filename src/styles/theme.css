@@ -51,29 +51,6 @@
   color: #f97316;
 }
 
-/* Font utilities */
-.text-body {
-  font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-.text-heading {
-  font-family: var(--font-quicksand), sans-serif;
-  font-size: clamp(2rem, 2vw + 1rem, 3rem);
-  line-height: 1.2;
-  font-weight: 700;
-  text-align: center;
-}
-
-.text-sub-heading {
-  font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
-  line-height: 1;
-  font-weight: 400;
-}
-
 /* (Optional) Add spacing utilities */
 .p-4 {
   padding: 1rem;

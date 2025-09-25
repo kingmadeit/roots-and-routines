@@ -69,7 +69,7 @@ const PricingHeader = memo(() => {
       />
       <motion.h1
         {...slideUpTransition}
-        className="text-4xl sm:text-5xl md:text-6xl font-nunito font-bold leading-tight tracking-tighter animate-fade-in-down"
+        className="text-heading"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">
           {title}

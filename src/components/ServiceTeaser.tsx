@@ -291,9 +291,9 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
         <div className="text-center mb-12 relative">
           <motion.h2
             {...slideUpTransition}
-            className="text-heading text-accent! max-w-xl mx-auto"
+            className="text-heading text-accent! mx-auto"
           >
-            Supporting families through every stage
+            Supporting families <br/> through every stage
           </motion.h2>
           <motion.p
             {...slideUpTransition}
