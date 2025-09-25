@@ -1,6 +1,6 @@
 'use client';
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type GL = Renderer['gl'];
 
@@ -414,6 +414,7 @@ class App {
 
   isDown: boolean = false;
   start: number = 0;
+  isActive: boolean = false; // NEW: Track if component is in view
 
   constructor(
     container: HTMLElement,
@@ -439,7 +440,30 @@ class App {
     this.createGeometry();
     this.createMedias(items, bend, textColor, borderRadius, font);
     this.update();
-    this.addEventListeners();
+  }
+
+  // NEW: Methods to control active state
+  setActive(active: boolean) {
+    if (this.isActive === active) return;
+    
+    this.isActive = active;
+    
+    if (active) {
+      console.log('adding raf');
+      this.addEventListeners();
+      // Resume RAF loop if it was stopped
+      if (!this.raf) {
+        this.update();
+      }
+    } else {
+      this.removeEventListeners();
+      // Stop RAF loop to save CPU
+      console.log('removing raf');
+      if (this.raf) {
+        window.cancelAnimationFrame(this.raf);
+        this.raf = 0;
+      }
+    }
   }
 
   createRenderer() {
@@ -601,6 +625,9 @@ class App {
   }
 
   update() {
+    // Only update when active
+    if (!this.isActive) return;
+    
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     if (this.medias) {
@@ -628,17 +655,22 @@ class App {
     window.addEventListener('touchend', this.boundOnTouchUp);
   }
 
+  removeEventListeners() {
+    if (this.boundOnResize) window.removeEventListener('resize', this.boundOnResize);
+    if (this.boundOnWheel) {
+      window.removeEventListener('mousewheel', this.boundOnWheel);
+      window.removeEventListener('wheel', this.boundOnWheel);
+    }
+    if (this.boundOnTouchDown) window.removeEventListener('mousedown', this.boundOnTouchDown);
+    if (this.boundOnTouchMove) window.removeEventListener('mousemove', this.boundOnTouchMove);
+    if (this.boundOnTouchUp) window.removeEventListener('mouseup', this.boundOnTouchUp);
+    if (this.boundOnTouchDown) window.removeEventListener('touchstart', this.boundOnTouchDown);
+    if (this.boundOnTouchMove) window.removeEventListener('touchmove', this.boundOnTouchMove);
+    if (this.boundOnTouchUp) window.removeEventListener('touchend', this.boundOnTouchUp);
+  }
+
   destroy() {
-    window.cancelAnimationFrame(this.raf);
-    window.removeEventListener('resize', this.boundOnResize);
-    window.removeEventListener('mousewheel', this.boundOnWheel);
-    window.removeEventListener('wheel', this.boundOnWheel);
-    window.removeEventListener('mousedown', this.boundOnTouchDown);
-    window.removeEventListener('mousemove', this.boundOnTouchMove);
-    window.removeEventListener('mouseup', this.boundOnTouchUp);
-    window.removeEventListener('touchstart', this.boundOnTouchDown);
-    window.removeEventListener('touchmove', this.boundOnTouchMove);
-    window.removeEventListener('touchend', this.boundOnTouchUp);
+    this.setActive(false); // This will remove event listeners and stop RAF
     if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
       this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas as HTMLCanvasElement);
     }
@@ -665,8 +697,32 @@ export default function CircularGallery({
   scrollEase = 0.05
 }: CircularGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const appRef = useRef<App | null>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  // Intersection Observer to track visibility
   useEffect(() => {
     if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: '50px 0px' // Start 50px before entering viewport
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Initialize the WebGL app
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
     const app = new App(containerRef.current, {
       items,
       bend,
@@ -676,9 +732,21 @@ export default function CircularGallery({
       scrollSpeed,
       scrollEase
     });
+    
+    appRef.current = app;
+
     return () => {
       app.destroy();
+      appRef.current = null;
     };
   }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
+
+  // Control app activity based on visibility
+  useEffect(() => {
+    if (appRef.current) {
+      appRef.current.setActive(isInView);
+    }
+  }, [isInView]);
+
   return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }
