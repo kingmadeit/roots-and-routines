@@ -1,6 +1,5 @@
 "use client";
 import { IAboutTeaser } from "@/types/index";
-import { Flower } from "./svgs";
 import { Animated } from ".";
 import { slideUpTransition } from "@/styles/animations";
 
@@ -13,7 +12,6 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
 
   return (
     <section className="max-w-[90%] mx-auto md:max-w-[70%] mt-0! relative">
-      <Flower className="absolute -bottom-10 right-0 w-40 h-40 text-primary opacity-20" />
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
         <div className="p-4 gradient-container-white">
           <Animated as="h3" {...slideUpTransition} className="leading-11 text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-secondary mb-4 text-center">

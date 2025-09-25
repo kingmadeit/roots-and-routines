@@ -37,7 +37,7 @@ const GallerySection = memo(function GallerySection() {
 
 const AutonomySection = memo(function AutonomySection() {
   return (
-    <div className="container mx-auto text-center -translate-y-70 text-5xl font-nunito bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary-light font-extrabold tracking-tighter mb-32">
+    <div className="container mx-auto text-center -translate-y-70 text-5xl font-nunito bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary-light font-extrabold tracking-tighter mb-32">
       Your Home. Your Pace. Your Peace.
     </div>
   );

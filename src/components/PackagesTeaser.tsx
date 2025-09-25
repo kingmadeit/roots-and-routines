@@ -6,7 +6,6 @@ import { slideUpTransition } from "@/styles/animations";
 import { motion } from "motion/react";
 // Constants
 const ANIMATION_DELAY = "0.4s";
-const BLUR_SIZE = "w-96 h-96";
 
 // Utility functions
 const getFeaturedStyles = (isFeatured: boolean) => ({
@@ -15,7 +14,7 @@ const getFeaturedStyles = (isFeatured: boolean) => ({
     : "bg-white/40 text-white shadow-lg",
   button: isFeatured
     ? "hover:bg-[#514117] text-[#e7be52] cursor-pointer bg-[#251c06]"
-    : "bg-[#e5f6d7] text-shadow-white text-secondary cursor-pointer hover:bg-secondary hover:text-white/80! ring-secondary ring-offset-secondary/20",
+    : "bg-[#ecf5e6] text-shadow-white text-secondary cursor-pointer hover:bg-secondary hover:text-white/80! ring-secondary ring-offset-secondary/20",
   text: isFeatured ? "text-white" : "text-[#48543e]",
   textSecondary: isFeatured ? "text-white/70" : "text-secondary",
   textTertiary: isFeatured ? "text-white/90" : "text-[#546148]",
