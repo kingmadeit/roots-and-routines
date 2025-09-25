@@ -12,7 +12,7 @@ import { pagesData, siteData } from "@/data";
 
 // Extract data at module level for better performance
 const {
-  home: { hero, aboutTeaser, meta }
+  home: { hero, aboutTeaser, meta, gallery }
 } = pagesData;
 
 const { 
@@ -21,44 +21,49 @@ const {
   faq
 } = siteData;
 
+
 // Memoized section components
 const HeroSection = memo(function HeroSection() {
-  return <Hero info={hero} />;
+  return <div className="container mx-auto"><Hero info={hero} /></div>;
 });
 
 const GallerySection = memo(function GallerySection() {
   return (
-    <div style={{ height: '600px', position: 'relative' }}>
-      <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
+    <div className="h-[600px] relative -translate-y-100">
+      <CircularGallery items={gallery} bend={5} textColor="#ca6c28" font="1.5rem font-quicksand" borderRadius={0.05} scrollEase={0.02} />
     </div>
   );
 });
 
 const AboutSection = memo(function AboutSection() {
-  return <AboutTeaser about={aboutTeaser} />;
+  return <div className="container mx-auto"><AboutTeaser about={aboutTeaser} /></div>;
 });
 
 const ServiceSection = memo(function ServiceSection() {
-  return <ServiceTeaser />;
+  return <div className="container mx-auto"><ServiceTeaser /></div>;
 });
 
 const PricingSection = memo(function PricingSection() {
-  return <PackagesTeaser />;
+  return <div className="container mx-auto"><PackagesTeaser /></div>;
 });
 
 const ContactSection = memo(function ContactSection() {
   return (
-    <ContactTeaser 
-      founderName={founderName}
-      quote={companyPhilosophy}
-    />
+    <div className="container mx-auto">
+      <ContactTeaser 
+        founderName={founderName}
+        quote={companyPhilosophy}
+      />
+    </div>
   );
 });
 
 const FAQSection = memo(function FAQSection() {
   return (
-    <div className="rounded-section bg-accent/90 relative">
-      <FAQ data={faq} maxItemsToShow={6} />
+    <div className="container mx-auto">
+      <div className="rounded-section bg-accent/90 relative">
+        <FAQ data={faq} maxItemsToShow={6} />
+      </div>
     </div>
   );
 });

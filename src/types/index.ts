@@ -159,6 +159,7 @@ interface HomePage {
   packagesTeaser: PackagesTeaser;
   founderTeaser: FounderTeaser;
   contactCTA: ContactCTA;
+  gallery: { image: string; text: string }[];
 }
 
 // About page types

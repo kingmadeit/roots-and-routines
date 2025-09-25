@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/types";
 import Link from "next/link";
 import { slideUpTransition } from "@/styles/animations";
-import { CurlyArrow, DottedArrow } from "./svgs";
+import { DottedArrow } from "./svgs";
 import { Animated } from ".";
 
 // Types
@@ -70,9 +70,6 @@ const BackgroundDecorations = memo(function BackgroundDecorations() {
   return (
     <>
       <Star className="absolute bottom-[-60px] right-[-20px] w-16 h-16 text-accent opacity-30 animate-pulse" />
-      <CurlyArrow className="absolute bottom-[2rem] left-1/2 -translate-x-1/2 w-40 h-40 text-accent opacity-30 animate-[var(--animate-periodic-bounce)]" />
-
-      {/* TODO :: ADD BLUR COLORFUL BG WITH BACKDROP FILTER */}
     </>
   );
 });

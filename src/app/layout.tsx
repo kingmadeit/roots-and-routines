@@ -81,7 +81,7 @@ export default function RootLayout({
           {/* Main content - positioned above floating icons */}
           <main className="w-full flex min-h-screen flex-col absolute z-10">
             <Header />
-            <div className="container mx-auto">{children}</div>
+            <div className="w-full h-full">{children}</div>
             <Footer />
           </main>
       </body>

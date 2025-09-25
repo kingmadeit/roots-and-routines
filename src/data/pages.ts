@@ -49,6 +49,56 @@ export const pagesData: PagesData = {
         "Not sure what you need? Start with a call and we'll guide you from there.",
       cta: { label: "Contact Us", href: "/contact" },
     },
+    gallery: [
+      {
+        image: `img-1.jpg`,
+        text: 'Playing'
+      },
+      {
+        image: `img-2.jpg`,
+        text: 'Reading'
+      },
+      {
+        image: `img-3.jpg`,
+        text: 'Scheduling'
+      },
+      {
+        image: `img-4.jpg`,
+        text: 'Strawberries'
+      },
+      {
+        image: `img-2.jpg`,
+        text: 'Referral'
+      },
+      {
+        image: `img-1.jpg`,
+        text: 'Train Track'
+      },
+      {
+        image: `img-2.jpg`,
+        text: 'Santorini'
+      },
+      {
+        image: `img-4.jpg`,
+        text: 'Blurry Lights'
+      },
+      {
+        image: `img-3.jpg`,
+        text: 'New York'
+      },
+      {
+        image: `img-1.jpg`,
+        text: 'Good Boy'
+      },
+      {
+        image: `img-2.jpg`,
+        text: 'Coastline'
+      },
+      {
+        image: `img-4.jpg`,
+        text: 'Palm Trees'
+      }
+    ]
   },
 
   about: {
