@@ -35,8 +35,16 @@ const GallerySection = memo(function GallerySection() {
   );
 });
 
+const AutonomySection = memo(function AutonomySection() {
+  return (
+    <div className="container mx-auto text-center -translate-y-70 text-5xl font-nunito bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary-light font-extrabold tracking-tighter mb-32">
+      Your Home. Your Pace. Your Peace.
+    </div>
+  );
+});
+
 const AboutSection = memo(function AboutSection() {
-  return <div className="container mx-auto"><AboutTeaser about={aboutTeaser} /></div>;
+  return <div className="-translate-y-40 container mx-auto"><AboutTeaser about={aboutTeaser} /></div>;
 });
 
 const ServiceSection = memo(function ServiceSection() {
@@ -77,6 +85,7 @@ export default function HomePage() {
       <div className="relative">
         <HeroSection />
         <GallerySection />
+        <AutonomySection />
         <AboutSection />
         <ServiceSection />
         <PricingSection />

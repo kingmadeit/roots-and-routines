@@ -12,7 +12,7 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
   const { shortCopy } = about;
 
   return (
-    <section className="max-w-[90%] mx-auto md:max-w-[70%] mt-0! relative -translate-y-40">
+    <section className="max-w-[90%] mx-auto md:max-w-[70%] mt-0! relative">
       <Flower className="absolute -bottom-10 right-0 w-40 h-40 text-primary opacity-20" />
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
         <div className="p-4 gradient-container-complementary">
