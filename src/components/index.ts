@@ -17,6 +17,7 @@ import FloatingIcons from "./FloatingIcons";
 import Logo from "./Logo";
 import Animated from "./Animated";
 import CircularGallery from "./CircularGallery";
+import ComingSoon from "./ComingSoon";
 export {
   Logo,
   Nav,
@@ -36,5 +37,9 @@ export {
   FAQ,
   FloatingIcons,
   Animated,
-  CircularGallery
+  CircularGallery,
+
+
+
+  ComingSoon,
 };
