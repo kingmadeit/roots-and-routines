@@ -36,22 +36,10 @@ export default function Footer() {
   const { company, navigation, socialLinks, contact } = siteData;
 
   return (
-    <footer className="bg-secondary py-12 translate-y-[60px]">
+    <footer className="bg-secondary/90 py-12 translate-y-[60px] rounded-t-full">
       <div className=" max-w-7xl mx-auto px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Logo + Hours + Socials */}
         <div>
-          <div className="logo rounded-full overflow-hidden">
-            <Link href="/" className="cursor-pointer">
-              <Image
-                className="rounded-full"
-                src="/logo.png"
-                alt="Company Logo"
-                width={100}
-                height={50}
-                objectFit="cover"
-              />
-            </Link>
-          </div>
           <h2 className="text-2xl font-bold mb-4">{company.name}</h2>
           <p className="text-sm mb-4">{contact.businessHours}</p>
           <div className="flex gap-4">
