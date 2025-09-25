@@ -275,7 +275,7 @@ body {
     background-image: linear-gradient(
         to right,
         /* --secondary: #788a68 is rgba(120, 138, 104, 0.7) */
-        rgba(120, 138, 104, 1), 
+        rgb(79, 118, 47), 
         /* --secondary-light: #a3b185 is rgba(163, 177, 133, 0.7) */
         rgba(163, 177, 133, 0.5)
     );

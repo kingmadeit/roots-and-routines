@@ -16,6 +16,7 @@ import FAQ from "./FAQ";
 import FloatingIcons from "./FloatingIcons";
 import Logo from "./Logo";
 import Animated from "./Animated";
+import CircularGallery from "./CircularGallery";
 export {
   Logo,
   Nav,
@@ -34,5 +35,6 @@ export {
   CarouselWrapper,
   FAQ,
   FloatingIcons,
-  Animated
+  Animated,
+  CircularGallery
 };

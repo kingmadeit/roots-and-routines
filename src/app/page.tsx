@@ -6,6 +6,7 @@ import {
   PackagesTeaser, 
   ContactTeaser, 
   FAQ,
+  CircularGallery,
 } from "@/components";
 import { pagesData, siteData } from "@/data";
 
@@ -23,6 +24,14 @@ const {
 // Memoized section components
 const HeroSection = memo(function HeroSection() {
   return <Hero info={hero} />;
+});
+
+const GallerySection = memo(function GallerySection() {
+  return (
+    <div style={{ height: '600px', position: 'relative' }}>
+      <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
+    </div>
+  );
 });
 
 const AboutSection = memo(function AboutSection() {
@@ -48,7 +57,7 @@ const ContactSection = memo(function ContactSection() {
 
 const FAQSection = memo(function FAQSection() {
   return (
-    <div className="rounded-section bg-accent relative">
+    <div className="rounded-section bg-accent/90 relative">
       <FAQ data={faq} maxItemsToShow={6} />
     </div>
   );
@@ -62,6 +71,7 @@ export default function HomePage() {
   return (
       <div className="relative">
         <HeroSection />
+        <GallerySection />
         <AboutSection />
         <ServiceSection />
         <PricingSection />
