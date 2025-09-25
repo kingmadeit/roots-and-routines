@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { siteData } from "@/data";
 import { Mail, Phone } from "lucide-react";
 
@@ -34,24 +33,22 @@ const socialIcons: Record<string, IconComponent> = {
 
 export default function Footer() {
   const { company, navigation, socialLinks, contact } = siteData;
-
+  const [ weekDays, time ] = contact.businessHours!.split(',');
   return (
-    <footer className="bg-secondary/90 py-12 translate-y-[60px] rounded-t-full">
+    <footer className="bg-secondary/90 pt-12 pb-8 translate-y-[60px] rounded-t-full">
       <div className=" max-w-7xl mx-auto px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Logo + Hours + Socials */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">{company.name}</h2>
-          <p className="text-sm mb-4">{contact.businessHours}</p>
-          <div className="flex gap-4">
+        <div className="text-center sm:text-center">
+          <div className="flex gap-4 justify-center items-center">
             {socialLinks.map(({ platform, url, display }) => {
               const Icon = socialIcons[platform];
               return (
                 <Link
-                  key={platform}
-                  href={url}
-                  aria-label={display}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                key={platform}
+                href={url}
+                aria-label={display}
+                target="_blank"
+                rel="noopener noreferrer"
                 >
                   {Icon && (
                     <Icon className="h-5 w-5 hover:text-white transition" />
@@ -60,10 +57,12 @@ export default function Footer() {
               );
             })}
           </div>
+          <p className="text-sm mt-4">{weekDays}</p>
+          <p className="text-sm mt-4">{time}</p>
         </div>
 
         {/* Column 2: Main Nav */}
-        <div>
+        <div className="text-center sm:text-center">
           <h4 className="text-lg font-semibold mb-4">Explore</h4>
           <ul className="space-y-2 text-sm">
             {navigation.map(({ label, href }) => (
@@ -77,7 +76,7 @@ export default function Footer() {
         </div>
 
         {/* Column 3: Quick Links */}
-        <div>
+        <div className="text-center sm:text-center">
           <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             <li>
@@ -94,7 +93,7 @@ export default function Footer() {
         </div>
 
         {/* Column 4: Utility Pages */}
-        <div>
+        <div className="text-center sm:text-center">
           <h4 className="text-lg font-semibold mb-4">Legal</h4>
           <ul className="space-y-2 text-sm">
             <li>
@@ -112,7 +111,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom note */}
-      <div className="mt-10 text-center text-xs">
+      <div className="mt-10 text-center text-x text-white/30">
         © {new Date().getFullYear()} {company.name}. All rights reserved.
       </div>
     </footer>

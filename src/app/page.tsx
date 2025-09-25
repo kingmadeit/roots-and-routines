@@ -29,7 +29,7 @@ const HeroSection = memo(function HeroSection() {
 
 const GallerySection = memo(function GallerySection() {
   return (
-    <div className="h-[600px] relative -translate-y-100">
+    <div className="h-[600px] relative -translate-y-100 gallery-container">
       <CircularGallery items={gallery} bend={5} textColor="#ca6c28" font="1.5rem font-quicksand" borderRadius={0.05} scrollEase={0.02} />
     </div>
   );

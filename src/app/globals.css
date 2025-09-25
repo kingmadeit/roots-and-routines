@@ -5,6 +5,36 @@
 html {
   color-scheme: light !important;
   -webkit-app-region: no-drag;
+  scrollbar-color: var(--bg-accent) var(--bg-primary-50);
+}
+
+/* For Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 4px !important; /* 4px is the new standard */
+  height: 4px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-radius: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--bg-accent);
+  border-radius: 1rem;
+  border: 1px solid var(--bg-primary); /* Adds definition */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-complementary);
+}
+
+/* Corner where horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: var(--bg-primary);
 }
 
 html[data-darkreader-mode],
@@ -100,7 +130,8 @@ body {
   --sidebar-border: oklch(92.2% 0 0);
   --sidebar-ring: oklch(70.8% 0 0);
 
-  --bg-primary: #fdf2e0;
+  --bg-primary: rgb(253, 242, 224);
+  --bg-primary-50: rgba(253, 242, 224, 0.5);
   --bg-primary-light: #f0bf99;
   --bg-secondary: #788a68;
   --bg-secondary-light: #a3b185;
@@ -380,4 +411,25 @@ body {
 .transform-gpu {
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+.gallery-container {
+  position: relative;
+  /* your existing styles */
+}
+
+.gallery-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px; /* Adjust fade height as needed */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--bg-primary) 100%
+  );
+  pointer-events: none; /* Allows interactions with gallery below */
+  z-index: 5;
 }
