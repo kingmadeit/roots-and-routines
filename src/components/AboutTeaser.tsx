@@ -11,8 +11,8 @@ type AboutTeaserProps = {
 const AboutTeaser = ({ about }: AboutTeaserProps) => {
 
   return (
-    <section className="max-w-[90%] mx-auto md:max-w-[70%] mt-0! relative">
-      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
+    <section className="relative">
+      <div className="grid grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
         <div className="p-4 gradient-container-white">
           <Animated as="h3" {...slideUpTransition} className="leading-11 text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-secondary/50 mb-4 text-center">
             <span className="block">Founded with</span>
@@ -30,7 +30,10 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
             <Link href={cta.href}>{cta.label}</Link>
           </Button> */}
         </div>
-        <div className="w-full bg-accent/50 rounded-r-2xl">
+        <div className="w-full bg-accent/50 rounded-4xl">
+
+        </div>
+        <div className="w-full h-80 lg:col-span-2 bg-secondary/50 rounded-4xl">
 
         </div>
       </div>

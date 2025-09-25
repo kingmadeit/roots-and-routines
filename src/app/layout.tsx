@@ -84,6 +84,13 @@ export default function RootLayout({
             <div className="w-full h-full">{children}</div>
             <Footer />
           </main>
+
+          {/* DEV / TESTING / DEBUGGING */}
+        <div className="fixed bottom-4 right-4 bg-black text-white px-3 py-2 rounded text-sm">
+          <span className="md:hidden">Mobile (-md)</span>
+          <span className="hidden md:block lg:hidden">Tablet (md)</span>
+          <span className="hidden lg:block">Desktop (lg+)</span>
+        </div>
       </body>
     </html>
   );
