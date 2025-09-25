@@ -148,7 +148,6 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
   };
 
   const selectedTab = tabs.find((tab) => tab.id === selected);
-  console.log(selectedTab);
   const selectedServices = services.filter(
     (service) => service.category === selected
   );

@@ -1,6 +1,5 @@
 "use client";
 import { memo, useMemo, useEffect, useState } from "react";
-import { motion } from "motion/react";
 import {
   Sparkles,
   Star,

@@ -10,8 +10,8 @@ html {
 
 /* For Webkit browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
-  width: 4px !important; /* 4px is the new standard */
-  height: 4px !important;
+  width: 2px !important; 
+  height: 2px !important;
 }
 
 /* Track */
@@ -419,17 +419,17 @@ body {
 }
 
 .gallery-container::after {
-  content: '';
+content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px; /* Adjust fade height as needed */
+  height: 150px;
   background: linear-gradient(
     to bottom,
     transparent 0%,
     var(--bg-primary) 100%
   );
-  pointer-events: none; /* Allows interactions with gallery below */
+  pointer-events: none;
   z-index: 5;
 }

@@ -20,7 +20,7 @@ function Animated<T extends ElementType = typeof defaultElement>({
   as,
   ...props
 }: AnimatedComponentProps<T>) {
-  const MotionComponent = motion(as || defaultElement) as ForwardRefComponent<T, MotionProps>;
+  const MotionComponent = motion.create(as || defaultElement) as ForwardRefComponent<T, MotionProps>;
   return <MotionComponent {...props} />;
 }
 

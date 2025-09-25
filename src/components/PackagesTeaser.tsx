@@ -11,17 +11,17 @@ const BLUR_SIZE = "w-96 h-96";
 // Utility functions
 const getFeaturedStyles = (isFeatured: boolean) => ({
   card: isFeatured
-    ? "bg-gradient-to-b from-red-500 to-orange-500 text-white shadow-2xl lg:scale-105"
-    : "bg-white text-gray-900 shadow-lg",
+    ? "bg-gradient-to-b from-[#ad8d3b] to-[#cba647] text-white shadow-2xl lg:scale-105"
+    : "bg-white/40 text-white shadow-lg",
   button: isFeatured
-    ? "bg-white text-orange-700 hover:text-orange-800 ring-orange-500 ring-offset-orange-500/20"
-    : "bg-gray-200 text-gray-800 hover:bg-gray-300 ring-gray-300 ring-offset-white",
-  text: isFeatured ? "text-white" : "text-gray-900",
-  textSecondary: isFeatured ? "text-white/70" : "text-gray-400",
-  textTertiary: isFeatured ? "text-white/85" : "text-gray-600",
-  checkBg: isFeatured ? "bg-white/25" : "bg-gray-200",
-  checkIcon: isFeatured ? "text-white" : "text-gray-700",
-  featureText: isFeatured ? "text-white/90" : "text-gray-600",
+    ? "hover:bg-[#514117] text-[#e7be52] cursor-pointer bg-[#251c06]"
+    : "bg-[#e5f6d7] text-shadow-white text-secondary cursor-pointer hover:bg-secondary hover:text-white/80! ring-secondary ring-offset-secondary/20",
+  text: isFeatured ? "text-white" : "text-[#48543e]",
+  textSecondary: isFeatured ? "text-white/70" : "text-secondary",
+  textTertiary: isFeatured ? "text-white/90" : "text-[#546148]",
+  checkBg: isFeatured ? "bg-white/25" : "bg-secondary/20",
+  checkIcon: isFeatured ? "text-white" : "text-secondary",
+  featureText: isFeatured ? "text-white" : "text-[#546148]",
 });
 
 // Memoized components
@@ -64,7 +64,6 @@ const PricingHeader = memo(() => {
   return (
     <header className="relative text-center mb-12 md:mb-20 px-4 z-10">
       <div
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${BLUR_SIZE} bg-secondary rounded-full filter blur-3xl opacity-20 -z-10`}
         aria-hidden="true"
       />
       <motion.h1
@@ -103,14 +102,17 @@ const PricingCard = memo<{
     >
       {isFeatured && (
         <div className="absolute -top-3 right-6">
-          <span className="inline-flex items-center rounded-full bg-accent/70 text-white/90 text-xs font-semibold px-3 py-1 backdrop-blur">
+          <span className="inline-flex items-center rounded-full bg-[#b45f22] text-white/80 text-xs font-semibold px-3 py-1 backdrop-blur">
             Most popular
           </span>
         </div>
       )}
       
       <div className="flex items-center gap-3 mb-6">
-        <Circle className={`w-5 h-5 ${styles.textSecondary}`} />
+        <div className="relative">
+          <Circle className={`w-5 h-5 ${styles.textSecondary}`} />
+          <Circle className={`w-2 h-2 ${styles.textSecondary}`} />
+        </div>
         <h3 className={`text-xs font-bold tracking-widest uppercase ${styles.textSecondary}`}>
           {plan}
         </h3>
