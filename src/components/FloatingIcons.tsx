@@ -259,7 +259,7 @@ const FloatingIconItem = memo<{
         right: position.right,
         zIndex: 1,
       }}
-      initial={{ opacity: 0.8, scale: 0.5 }}
+      initial={{ opacity: 0.5, scale: 0.5 }}
       animate={{ opacity, scale: 0.5 }}
       transition={{ 
         duration: 0.6, 
