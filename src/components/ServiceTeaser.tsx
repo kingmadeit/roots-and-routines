@@ -290,13 +290,13 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
         <div className="text-center mb-12 relative">
           <motion.h2
             {...slideUpTransition}
-            className="text-heading text-accent! mx-auto"
+            className="text-heading text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent"
           >
             Supporting families <br/> through every stage
           </motion.h2>
           <motion.p
             {...slideUpTransition}
-            className="my-8 mx-auto text-body text-secondary max-w-xl"
+            className="my-8 mx-auto text-body text-secondary max-w-xl font-medium"
           >
             From daily meal planning to finding the right childcare, we&apos;re here
             to make family life smoother and more joyful.

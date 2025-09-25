@@ -10,11 +10,11 @@ const ANIMATION_DELAY = "0.4s";
 // Utility functions
 const getFeaturedStyles = (isFeatured: boolean) => ({
   card: isFeatured
-    ? "bg-gradient-to-b from-[#ad8d3b] to-[#cba647] text-white shadow-2xl lg:scale-105"
+    ? "bg-gradient-to-b from-[#aa8c08] to-[#bc9b0a] text-white shadow-2xl lg:scale-105"
     : "bg-white/40 text-white shadow-lg",
   button: isFeatured
-    ? "hover:bg-[#514117] text-[#e7be52] cursor-pointer bg-[#251c06]"
-    : "bg-[#ecf5e6] text-shadow-white text-secondary cursor-pointer hover:bg-secondary hover:text-white/80! ring-secondary ring-offset-secondary/20",
+    ? "bg-[#b45f22] cursor-pointer border hover:border-white border-white/50 text-white/80 ring-[#aa8c08] ring-offset-[#fff3b0]/20"
+    : "bg-secondary/20 text-shadow-white text-secondary cursor-pointer hover:bg-secondary/60 hover:text-white/80! ring-secondary ring-offset-secondary/20",
   text: isFeatured ? "text-white" : "text-[#48543e]",
   textSecondary: isFeatured ? "text-white/70" : "text-secondary",
   textTertiary: isFeatured ? "text-white/90" : "text-[#546148]",
@@ -69,7 +69,7 @@ const PricingHeader = memo(() => {
         {...slideUpTransition}
         className="text-heading"
       >
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent">
           {title}
         </span>
       </motion.h1>
@@ -101,7 +101,7 @@ const PricingCard = memo<{
     >
       {isFeatured && (
         <div className="absolute -top-3 right-6">
-          <span className="inline-flex items-center rounded-full bg-[#b45f22] text-white/80 text-xs font-semibold px-3 py-1 backdrop-blur">
+          <span className="border border-white inline-flex items-center rounded-full bg-[#b45f22] text-white/80 text-xs font-semibold px-3 py-1 backdrop-blur">
             Most popular
           </span>
         </div>
