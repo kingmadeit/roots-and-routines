@@ -1,7 +1,9 @@
 "use client";
 import { IAboutTeaser } from "@/types/index";
-import { Animated } from ".";
+import { Animated, ContactOptions, ContactsPopover } from ".";
 import { slideUpTransition } from "@/styles/animations";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 type AboutTeaserProps = {
   about: IAboutTeaser;
@@ -31,10 +33,19 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
           </Button> */}
         </div>
         <div className="w-full bg-accent/50 rounded-4xl">
-
         </div>
         <div className="w-full h-80 lg:col-span-2 bg-secondary/50 rounded-4xl">
-
+          <Dialog>
+            <DialogTrigger>Open</DialogTrigger>
+            <DialogContent className="bg-secondary rounded-4xl md:max-w-3xl w-[90%]">
+              <DialogHeader>
+                <DialogTitle>Excited to connect!</DialogTitle>
+                <DialogDescription className="my-4">
+                  <ContactOptions />
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
