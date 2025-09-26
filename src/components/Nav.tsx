@@ -47,10 +47,7 @@ const Nav = () => {
             gridTemplateRows: `repeat(${siteData.navigation.length}, 1fr)`,
           }}
         >
-          {siteData.navigation.map((item, i) => {
-            const bgOpacity = i * 10 + 50;
-            const hoverOpacity = i * 10 + 40;
-            return (
+          {siteData.navigation.map((item) => (
               <li
                 key={item.href}
                 className={`
@@ -58,10 +55,7 @@ const Nav = () => {
                     bg-accent/[var(--bg-opacity)]
                     hover:bg-accent/[var(--hover-opacity)]
                   `}
-                  style={{
-                    '--bg-opacity': `${bgOpacity}%`,
-                    '--hover-opacity': `${hoverOpacity}%`,
-                  }} >
+                >
                 <Link
                   href={item.href}
                   className="text-primary font-bold link-lightning hover:text-orange-300 text-2xl text-center"
@@ -70,7 +64,7 @@ const Nav = () => {
                   {item.label}
                 </Link>
               </li>
-          )})}  
+          ))}  
         </ul>
       )}
     </nav>

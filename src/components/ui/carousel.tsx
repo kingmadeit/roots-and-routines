@@ -1,16 +1,61 @@
 "use client";
-
+import Image, { ImageProps } from 'next/image';
 import React, { useState, useEffect, useRef } from "react";
 import { motion, PanInfo } from "motion/react";
 
+// ===============================
+
+// The URL for the fallback image
+const FALLBACK_IMAGE_URL = "https://placehold.co/400x600/1e1e1e/ffffff?text=Image+Missing";
+
+// Define the required props for the Image component
+interface ImageWithFallbackProps extends Omit<ImageProps, 'src'> {
+  src: string; // Ensure src is always a string
+  // You might want to add width and height to this interface
+  // as they are required unless `fill` is used.
+}
+
+const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ 
+  src,
+  alt,
+  className,
+  ...rest // captures width, height, layout, etc.
+}) => {
+  // Use state to track if the main image failed to load
+  const [imgSrc, setImgSrc] = useState(src);
+  
+  // A second state to ensure we only trigger the fallback once, preventing infinite loops
+  const [hasError, setHasError] = useState(false);
+
+  // If the source URL changes, reset the error state
+  React.useEffect(() => {
+    setImgSrc(src);
+    setHasError(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!hasError) {
+      setImgSrc(FALLBACK_IMAGE_URL);
+      setHasError(true);
+    }
+  };
+
+  return (
+    <Image
+      src={imgSrc}
+      alt={alt}
+      className={className}
+      onError={handleError}
+      {...rest} 
+    />
+  );
+};
+
+// ===============================
 interface CardData {
   id: number;
   imageUrl: string;
   title: string;
-}
-
-interface IconProps {
-  className?: string;
 }
 
 interface CardProps {
@@ -19,23 +64,6 @@ interface CardProps {
   activeIndex: number;
   totalCards: number;
 }
-
-const SparklesIcon: React.FC<IconProps> = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M9.93 2.25 12 7.5l2.07-5.25a.5.5 0 0 1 .9 0L17.25 8.5l4.16.34a.5.5 0 0 1 .29.88l-3.2 3.1.95 4.5a.5.5 0 0 1-.73.53L12 14.5l-3.72 2.33a.5.5 0 0 1-.73-.53l.95-4.5-3.2-3.1a.5.5 0 0 1 .29-.88l4.16-.34Z" />
-  </svg>
-);
 
 const cardData: CardData[] = [
   {
@@ -84,6 +112,8 @@ const cardData: CardData[] = [
     title: "Celestial Waters",
   },
 ];
+
+
 
 export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(
@@ -210,16 +240,12 @@ function Card({ card, index, activeIndex, totalCards }: CardProps) {
       initial={false}
     >
       <div className="relative w-full h-full rounded-3xl shadow-2xl overflow-hidden bg-gray-200">
-        <img
+        <ImageWithFallback
           src={card.imageUrl}
           alt={card.title}
           className="w-full h-full object-cover pointer-events-none"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.onerror = null;
-            target.src =
-              "https://placehold.co/400x600/1e1e1e/ffffff?text=Image+Missing";
-          }}
+          width={400} // Set the intrinsic width of the image
+          height={600} // Set the intrinsic height of the image
         />
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
           <h4 className="text-white text-lg font-semibold">{card.title}</h4>
@@ -228,3 +254,5 @@ function Card({ card, index, activeIndex, totalCards }: CardProps) {
     </motion.div>
   );
 }
+
+
