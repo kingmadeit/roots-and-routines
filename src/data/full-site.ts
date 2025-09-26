@@ -35,12 +35,12 @@ export const siteData: SiteData = {
   ],
 
   socialLinks: [
-    { platform: "instagram", url: "#", display: "Instagram" },
+    { platform: "instagram", url: "https://www.instagram.com/routinesandroots", display: "Instagram" },
     { platform: "tiktok", url: "#", display: "TikTok" },
     {
       platform: "email",
-      url: "mailto:hello@rootsandroutines.co.uk",
-      display: "hello@rootsandroutines.co.uk",
+      url: "mailto:rootsandroutines@gmail.com",
+      display: "rootsandroutines@gmail.com",
     },
     { platform: "whatsapp", url: "#", display: "WhatsApp" },
     { platform: "phone", url: "tel:+44", display: "+44" },
