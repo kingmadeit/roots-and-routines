@@ -162,31 +162,38 @@ const getRandomItem = <T,>(array: readonly T[]): T =>
 const getRandomInRange = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
-const generateFloatingAnimation = () => ({
-  duration: getRandomInRange(15, 25),
-  delay: getRandomInRange(0, 5),
-  x: [
-    0,
-    getRandomInRange(10, 30),
-    getRandomInRange(10, 100),
-    getRandomInRange(0, 500),
-    0
-  ],
-  y: [
-    0,
-    getRandomInRange(0, 500),
-    getRandomInRange(10, 300),
-    getRandomInRange(20, 30),
-    0
-  ],
-  rotate: [
-    0,
-    getRandomInRange(0, 15),
-    getRandomInRange(0, 10),
-    getRandomInRange(0, 20),
-    0
-  ],
-});
+const generateFloatingAnimation = () => {
+  // Get viewport dimensions for full-screen movement
+  const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
+  const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
+  
+  return {
+    // Much slower, more subtle movement (30-50 seconds vs 15-25)
+    duration: getRandomInRange(30, 50),
+    delay: getRandomInRange(0, 8),
+    x: [
+      0, // Start from current position
+      getRandomInRange(-viewportWidth * 0.3, viewportWidth * 0.3),   
+      getRandomInRange(-viewportWidth * 0.5, viewportWidth * 0.5),   
+      getRandomInRange(-viewportWidth * 0.2, viewportWidth * 0.2),   
+      0  
+    ],
+    y: [
+      0, // Start from current position
+      getRandomInRange(-viewportHeight * 0.2, viewportHeight * 0.2), 
+      getRandomInRange(-viewportHeight * 0.4, viewportHeight * 0.4), 
+      getRandomInRange(-viewportHeight * 0.15, viewportHeight * 0.15), 
+      0 
+    ],
+    rotate: [
+      0,
+      getRandomInRange(-8, 8),     
+      getRandomInRange(-5, 5),      
+      getRandomInRange(-3, 3),      
+      0
+    ],
+  };
+};
 
 const generateRandomPosition = (): FloatingIcon['position'] => {
   const zone = getRandomItem(POSITION_ZONES);
@@ -231,7 +238,8 @@ const useFloatingIcons = (
   }, [count, iconSize, opacityRange, colorVariants]);
 };
 
-// Memoized icon component
+const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1] as [number, number, number, number]; // Memoized icon component
+
 const FloatingIconItem = memo<{ 
   icon: FloatingIcon; 
   enableAnimation: boolean 
@@ -246,9 +254,9 @@ const FloatingIconItem = memo<{
     },
     transition: {
       duration: animation.duration,
-      delay: animation.delay,
+      delay: animation.delay * 0.1,
       repeat: Infinity,
-      ease: "linear",
+      ease,
     },
   } : {};
 
@@ -268,11 +276,11 @@ const FloatingIconItem = memo<{
         zIndex: 1,
       }}
       initial={{ opacity: 0.5, scale: 0.5 }}
-      animate={{ opacity, scale: 0.5 }}
+      animate={{ opacity, scale: 0.6 }}
       transition={{ 
-        duration: 0.6, 
-        delay: animation.delay * 0.2,
-        ease: "easeOut" 
+        duration: 1.2, 
+        delay: animation.delay * 0.1,
+        ease,
       }}
       {...motionProps}
     >
@@ -287,7 +295,7 @@ const FloatingIcons = memo<FloatingIconsProps>(function FloatingIcons({
   containerClassName = "",
   enableAnimation = true,
   iconSize = 'md',
-  opacityRange = [0.3, 0.6],
+  opacityRange = [0.15, 0.5],
   colorVariants = ['accent', 'secondary', 'secondary-light', 'complementary'],
 }) {
   const [shouldRender, setShouldRender] = useState(false);
