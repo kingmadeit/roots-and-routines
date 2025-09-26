@@ -18,6 +18,8 @@ import Logo from "./Logo";
 import Animated from "./Animated";
 import CircularGallery from "./CircularGallery";
 import ComingSoon from "./ComingSoon";
+import ContactsPopover from "./ContactsPopover";
+import ContactOptions from "./ContactOptions";
 export {
   Logo,
   Nav,
@@ -39,7 +41,7 @@ export {
   Animated,
   CircularGallery,
 
-
-
+  ContactsPopover,
+  ContactOptions,
   ComingSoon,
 };
