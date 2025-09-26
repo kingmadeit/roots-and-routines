@@ -8,12 +8,12 @@ const {
 const ContactOptions = () => {
   return (
     <div className='w-full p-4 rounded-2xl bg-white/20 text-white grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center items-center'>
-      <div className='w-full h-full bg-accent/40 rounded-2xl mb-4'>
+      <div className='w-full h-full bg-white/40 rounded-4xl mb-4'>
 
       </div>
       <div className='flex flex-col items-center space-y-8 text-center font-bold'>
         <h3 className='text-primary font-extrabold text-3xl md:text-4xl'>Our team is here to help</h3>
-        <span className='text-sm font-semibold text-primary'>Please reach out to us through one of the following methods:</span>
+        <span className='text-sm font-semibold text-primary'>Contact us today to schedule your free consultation and take the first step towards a more organized, joyful home.</span>
         <div className="flex space-x-4 md:space-x-8 text-2xl">
           <a className="rounded-full bg-white/40 hover:bg-white/50 p-4 text-white" rel="noopener noreferrer" href={`mailto:${email}`} >
               <Mail />

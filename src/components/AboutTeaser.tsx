@@ -38,7 +38,7 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
             <DialogTrigger>Open</DialogTrigger>
             <DialogContent className="bg-secondary rounded-4xl md:max-w-3xl w-[90%]">
               <DialogHeader>
-                <DialogTitle>Excited to connect!</DialogTitle>
+                <DialogTitle>Ready to transform your family&apos;s daily life?</DialogTitle>
                 <DialogDescription className="my-4">
                   <ContactOptions />
                 </DialogDescription>
