@@ -1,7 +1,7 @@
 import React from "react";
 import { SVGElementProps } from "@/types";
 
-export const StarKite: React.FC = (props: SVGElementProps) => {
+export const StarKite: React.FC<SVGElementProps> = (props) => {
   return (
     <svg
       width="64"

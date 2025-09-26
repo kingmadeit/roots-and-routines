@@ -1,6 +1,6 @@
 import { SVGElementProps } from "@/types";
 
-export const CurlyArrow: React.FC = (props: SVGElementProps) => {
+export const CurlyArrow: React.FC<SVGElementProps> = (props) => {
   return (
     <svg
       viewBox="0 0 534 534"

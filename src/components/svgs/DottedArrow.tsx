@@ -1,7 +1,7 @@
 import React from "react";
 import { SVGElementProps } from "@/types";
 
-export const DottedArrow: React.FC = (props: SVGElementProps) => {
+export const DottedArrow: React.FC<SVGElementProps> = (props) => {
   return (
     <svg
       {...props}

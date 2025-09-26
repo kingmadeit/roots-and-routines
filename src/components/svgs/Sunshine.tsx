@@ -1,7 +1,7 @@
 import React from "react";
 import { SVGElementProps } from "@/types";
 
-export const Sunshine: React.FC = (props: SVGElementProps) => {
+export const Sunshine: React.FC<SVGElementProps> = (props) => {
   return (
     <svg
       width={64}
