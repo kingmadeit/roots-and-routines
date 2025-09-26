@@ -8,7 +8,7 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="nav">
+    <nav className="nav z-11">
       {/* Desktop Navigation */}
       <Animated
         as="ul"
@@ -32,7 +32,7 @@ const Nav = () => {
       {/* Mobile Burger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 text-white fixed top-5 right-5 z-55"
+        className={`md:hidden p-2 ${isOpen ? 'text-white bg-white/20' : 'text-accent bg-accent/20'} fixed top-5 rounded-full right-5 z-55`}
         aria-label="Toggle navigation"
         aria-expanded={isOpen}
       >
