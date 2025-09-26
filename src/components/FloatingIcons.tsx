@@ -128,9 +128,12 @@ const COLOR_CLASSES = {
   accent: 'text-accent',
   secondary: 'text-secondary',
   'secondary-light': 'text-secondary-light',
-  complimentary: 'text-complimentary',
+  complementary: 'text-complementary',
 } as const;
 
+type ColorClassKey = keyof typeof COLOR_CLASSES;
+
+// Position zones to ensure even distribution
 const POSITION_ZONES = [
   // Corners
   { top: '10px', left: '10px' },
@@ -203,8 +206,14 @@ const useFloatingIcons = (
     for (let i = 0; i < count; i++) {
       const Icon = getRandomItem(FAMILY_ICONS);
       const sizeClass = getRandomItem(SIZE_CLASSES[iconSize || 'md']);
-      const colorVariant = getRandomItem(colorVariants || ['accent', 'secondary', 'secondary-light', 'complementary']);
+      
+      const defaultColors: ColorClassKey[] = ['accent', 'secondary', 'secondary-light', 'complementary'];
+      const validColorVariants = colorVariants && colorVariants.length ? colorVariants : defaultColors;
+      
+      // The type assertion (as ColorClassKey) fixes the TS error
+      const colorVariant = getRandomItem(validColorVariants) as ColorClassKey;
       const colorClass = COLOR_CLASSES[colorVariant];
+      
       const opacity = getRandomInRange(opacityRange[0], opacityRange[1]);
       
       icons.push({
@@ -294,7 +303,7 @@ const FloatingIcons = memo<FloatingIconsProps>(function FloatingIcons({
   if (!shouldRender) return null;
 
   return (
-    <div className={`fixed w-full h-full ${className}`}>
+    <div className={`fixed w-full h-full ${className} ${containerClassName}`}>
       {icons.map((icon) => (
         <FloatingIconItem
           key={icon.id}
