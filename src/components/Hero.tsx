@@ -5,11 +5,15 @@ import { HeroSection } from "@/types";
 import Link from "next/link";
 import { slideUpTransition } from "@/styles/animations";
 import { DottedArrow } from "./svgs";
-import { Animated } from ".";
+import { Animated, CircularGallery } from ".";
 
 // Types
 interface HeroProps {
   info: HeroSection;
+  gallery?: {
+    image: string;
+    text: string;
+  }[];
 }
 
 interface TitleDisplayProps {
@@ -106,7 +110,7 @@ const ContentSection = memo<{
   );
 });
 
-const Hero = memo<HeroProps>(function Hero({ info }) {
+const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
   const { title, subtitle, titleSeparator } = info;
   
   const splitTitle = useMemo(() => 
@@ -115,8 +119,8 @@ const Hero = memo<HeroProps>(function Hero({ info }) {
   );
 
   return (
-    <section className="hero leading-[0.5] relative mb-32 font-nunito">
-      <div className="w-full gradient-container-primary grid grid-cols-1 content-center">
+    <section className="hero leading-[0.5] relative mb-100 font-nunito">
+      <div className="w-full gradient-container-primary">
         <ContentSection 
           title={title} 
           subtitle={subtitle} 
@@ -124,6 +128,9 @@ const Hero = memo<HeroProps>(function Hero({ info }) {
         />
       </div>
       <BackgroundDecorations />
+      <div className="absolute! h-[600px] -bottom-80 gallery-container">
+        <CircularGallery items={gallery} bend={5} textColor="#ca6c28" font="1.5rem font-quicksand" borderRadius={0.05} scrollEase={0.02} />
+      </div>      
     </section>
   );
 });

@@ -749,5 +749,5 @@ export default function CircularGallery({
     }
   }, [isInView]);
 
-  return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+  return <div className="w-screen h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }

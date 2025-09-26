@@ -267,7 +267,7 @@ body {
 }
 
 .hero {
-  @apply w-full h-[100vh] min-h-screen grid place-content-center;
+  @apply w-screen min-h-screen flex flex-col justify-center items-center text-center;
 }
 
 .gradient-container-primary {

@@ -6,7 +6,6 @@ import {
   PackagesTeaser, 
   ContactTeaser, 
   FAQ,
-  CircularGallery,
 } from "@/components";
 import { pagesData, siteData } from "@/data";
 import RotatingText from "@/components/RotatingText";
@@ -25,25 +24,17 @@ const {
 
 // Memoized section components
 const HeroSection = memo(function HeroSection() {
-  return <div className="container mx-auto"><Hero info={hero} /></div>;
-});
-
-const GallerySection = memo(function GallerySection() {
-  return (
-    <div className="h-[600px] relative -translate-y-90 gallery-container">
-      <CircularGallery items={gallery} bend={5} textColor="#ca6c28" font="1.5rem font-quicksand" borderRadius={0.05} scrollEase={0.02} />
-    </div>
-  );
+  return  <Hero info={hero} gallery={gallery} />;
 });
 
 const AutonomySection = memo(function AutonomySection() {
   return (
     <>
     
-    <div className="container mx-auto text-center -translate-y-70 text-5xl font-nunito bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary-light font-extrabold tracking-tighter mb-32">
+    <div className="container mx-auto text-center text-5xl font-nunito bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary-light font-extrabold tracking-tighter mb-32">
       Your Home. Your Pace. Your Peace.
     </div>
-    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center space-x-4 mb-32 -translate-y-70">
+    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center space-x-4 mb-32">
       <span className="text-accent">Your</span>
       <span className="w-[150px]">
         <RotatingText
@@ -66,7 +57,7 @@ const AutonomySection = memo(function AutonomySection() {
 });
 
 const AboutSection = memo(function AboutSection() {
-  return <div className="-translate-y-40 container mx-auto"><AboutTeaser about={aboutTeaser} /></div>;
+  return <div className="container mx-auto"><AboutTeaser about={aboutTeaser} /></div>;
 });
 
 const ServiceSection = memo(function ServiceSection() {
@@ -116,7 +107,6 @@ export default function HomePage() {
   return (
       <div className="relative">
         <HeroSection />
-        <GallerySection />
         <AutonomySection />
         <AboutSection />
         <ServiceSection />
