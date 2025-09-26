@@ -1,8 +1,7 @@
 "use client";
 import { IAboutTeaser } from "@/types/index";
-import { Animated, ContactOptions, ContactsPopover } from ".";
+import { Animated, ContactOptions } from ".";
 import { slideUpTransition } from "@/styles/animations";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 type AboutTeaserProps = {
@@ -13,7 +12,7 @@ type AboutTeaserProps = {
 const AboutTeaser = ({ about }: AboutTeaserProps) => {
 
   return (
-    <section className="relative">
+    <section className="relative md:max-w-[95%] mx-auto">
       <div className="grid grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
         <div className="p-4 gradient-container-white">
           <Animated as="h3" {...slideUpTransition} className="leading-11 text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-secondary/50 mb-4 text-center">
