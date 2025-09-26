@@ -40,7 +40,7 @@ export default function Footer() {
   const { company, navigation, socialLinks, contact } = siteData;
   const [ weekDays, time ] = contact.businessHours!.split(',');
   return (
-    <footer className="bg-secondary/90 pt-12 pb-8 translate-y-[60px] rounded-t-full">
+    <footer className="bg-secondary/90 pt-12 pb-8 translate-y-[60px] rounded-t-2xl">
       <div className=" max-w-7xl mx-auto px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {/* Column 1: Logo + Hours + Socials */}
         <div className="text-center sm:text-center">
