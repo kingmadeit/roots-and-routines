@@ -1,6 +1,5 @@
 import { ServiceData } from "@/types";
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 type FeaturedServiceProps = {
   service: Partial<ServiceData>;
@@ -10,7 +9,7 @@ const FeatureService = ({ service }: FeaturedServiceProps) => {
   const { title, shortCopy, href, icon: Icon } = service;
 
   return (
-    <section className="group rounded-xl max-w-full shadow-md md:w-[400px] p-8 flex bg-white/20 hover:bg-white/40 text-center text-white flex-col space-y-4 items-center transition-all duration-300 ease-in-out transform will-change-transform hover:-translate-y-2">
+    <section className="group rounded-xl max-w-full h-full p-8 flex bg-white/20 hover:bg-white/40 text-center text-white flex-col space-y-4 items-center transition-all duration-300 ease-in-out transform will-change-transform hover:-translate-y-2">
       <div className="bg-secondary/70 p-4 rounded-full">
         {Icon && (
           <Icon className="w-6 h-6 group-hover:scale-[1.5] transition-all duration-300 ease-in-out transform will-change:transform" />
@@ -23,7 +22,6 @@ const FeatureService = ({ service }: FeaturedServiceProps) => {
         className="font-semibold text-accent group-hover:scale-[1.1] will-change transition-all duration-300 ease-in-out transform will-change:transform"
       >
         Learn more
-        <FaArrowRightLong className="ml-2 inline" />
       </Link>
     </section>
   );

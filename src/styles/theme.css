@@ -4,6 +4,7 @@
   --bg-secondary: #788a68;
   --bg-secondary-light: #a3b185;
   --bg-accent: #d59363;
+  --bg-complementary: #bc9b0a;
 }
 
 /* Background utilities */
@@ -22,7 +23,9 @@
 .bg-accent {
   background-color: var(--bg-accent);
 }
-
+.bg-complementary {
+  background-color: var(--bg-complementary);
+}
 /* Text color utilities */
 .text-primary {
   color: var(--bg-primary);
@@ -46,30 +49,6 @@
 }
 .hover\:text-orange-500:hover {
   color: #f97316;
-}
-
-/* Font utilities */
-.text-body {
-  font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-.text-heading {
-  font-family: var(--font-quicksand), sans-serif;
-  font-size: clamp(2rem, 2vw + 1rem, 3rem);
-  line-height: 1.2;
-  font-weight: 700;
-  color: var(--bg-heading);
-  text-align: center;
-}
-
-.text-sub-heading {
-  font-family: var(--font-nunito), sans-serif;
-  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
-  line-height: 1;
-  font-weight: 400;
 }
 
 /* (Optional) Add spacing utilities */

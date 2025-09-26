@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Quicksand, Nunito } from "next/font/google";
+import { Quicksand, Nunito, Antonio } from "next/font/google";
 import "./globals.css";
-import { Footer, Header } from "@/components";
-import Image from "next/image";
+import { FloatingIcons, Footer, Header } from "@/components";
 // Load fonts
 
 const quicksand = Quicksand({
@@ -15,6 +14,13 @@ const quicksand = Quicksand({
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-nunito",
+  weight: ["400", "700"], // Regular & Bold
+  display: "swap",
+});
+
+const antonio = Antonio({
+  subsets: ["latin"],
+  variable: "--font-antonio",
   weight: ["400", "700"], // Regular & Bold
   display: "swap",
 });
@@ -47,6 +53,10 @@ export const metadata: Metadata = {
       url: "https://rootsnroutines.com.uk",
     },
   ],
+  other: {
+    "color-scheme": "light",
+    "darkreader-lock": "",
+  },
 };
 
 export default function RootLayout({
@@ -55,30 +65,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="theme-light" suppressHydrationWarning={true}>
       <body
-        className={`${quicksand.variable} ${nunito.variable} font-quicksand antialiased w-full text-primary bg-primary`}
+        className={`${quicksand.variable} ${nunito.variable} ${antonio.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
-        <div className="relative min-h-screen overflow-x-hidden">
-          <div className="fixed inset-0 -z-10 site-bg-img-container">
-            {/* Background Image */}
-            <Image
-              src="/img-2.jpg"
-              alt=""
-              fill
-              priority
-              quality={85}
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-          </div>
-
-          {/* Content */}
+          {/* Floating Icons - covers entire page */}
+          <FloatingIcons 
+            count={12}
+            iconSize="md"
+            enableAnimation={true}
+            opacityRange={[0.3, 0.7]}
+            colorVariants={['accent', 'secondary', 'complementary', 'secondary-light']}
+            containerClassName="fixed inset-0 z-0"
+          />
+          {/* Main content - positioned above floating icons */}
           <main className="w-full flex min-h-screen flex-col absolute z-10">
             <Header />
-            {children}
+            <div className="w-full h-full">{children}</div>
             <Footer />
           </main>
+
+          {/* DEV / TESTING / DEBUGGING */}
+        <div className="fixed bottom-4 right-4 bg-black text-white px-3 py-2 rounded text-sm">
+          <span className="md:hidden">Mobile (-md)</span>
+          <span className="hidden md:block lg:hidden">Tablet (md)</span>
+          <span className="hidden lg:block">Desktop (lg+)</span>
         </div>
       </body>
     </html>

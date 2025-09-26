@@ -1,5 +1,7 @@
+import {ComingSoon} from "@/components";
+
 const ServicePage = () => {
-  return <div>SchoolGuidance</div>;
+  return <ComingSoon />;
 };
 
 export default ServicePage;

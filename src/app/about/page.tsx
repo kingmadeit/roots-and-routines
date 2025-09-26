@@ -1,3 +1,4 @@
+import { ComingSoon } from "@/components";
 import { pagesData } from "@/data";
 
 export const metadata = {
@@ -29,7 +30,7 @@ const {
 } = pagesData;
 
 const About = () => {
-  return <section className="w-full p-16"></section>;
+  return <ComingSoon />;
 };
 
 export default About;

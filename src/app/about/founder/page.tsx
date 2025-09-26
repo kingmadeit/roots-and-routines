@@ -1,5 +1,7 @@
-const Founder = () => {
-  return <div>Founder</div>;
-};
+import { ComingSoon } from "@/components";
 
-export default Founder;
+export default function FounderPage() {
+  return (
+      <ComingSoon />
+  );
+}

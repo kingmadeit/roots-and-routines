@@ -11,9 +11,16 @@ import FeaturedService from "./FeaturedService";
 import FounderQuote from "./FounderQuote";
 import ContactTeaser from "./ContactTeaser";
 import ContactInfo from "./ContactInfo";
-import SectionTag from "./SectionTag";
 import CarouselWrapper from "./CarouselWrapper";
+import FAQ from "./FAQ";
+import FloatingIcons from "./FloatingIcons";
+import Logo from "./Logo";
+import Animated from "./Animated";
+import CircularGallery from "./CircularGallery";
+import ComingSoon from "./ComingSoon";
+import ContactOptions from "./ContactOptions";
 export {
+  Logo,
   Nav,
   Header,
   Footer,
@@ -27,6 +34,12 @@ export {
   FounderQuote,
   ContactTeaser,
   ContactInfo,
-  SectionTag,
   CarouselWrapper,
+  FAQ,
+  FloatingIcons,
+  Animated,
+  CircularGallery,
+
+  ContactOptions,
+  ComingSoon,
 };

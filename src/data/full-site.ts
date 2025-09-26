@@ -1,11 +1,12 @@
 import { SiteData } from "@/types";
-import { PiBabyBold } from "react-icons/pi";
-import { IoNutritionOutline } from "react-icons/io5";
-import { RiUserSearchLine } from "react-icons/ri";
-import { TbSchool } from "react-icons/tb";
-import { AiOutlineSchedule } from "react-icons/ai";
-import { TbHealthRecognition } from "react-icons/tb";
-
+import {
+  Heart,
+  Baby,
+  Utensils,
+  Clock,
+  GraduationCap,
+  UserSearch,
+} from "lucide-react";
 const sloganSplit = "--split--";
 
 export const siteData: SiteData = {
@@ -14,7 +15,7 @@ export const siteData: SiteData = {
     tagline: "Empowering Families to Thrive",
     subline:
       "From school searches to meal planning and trusted childcare, we make daily life simpler—so you can focus on what matters most.",
-    slogan: `Tailored Support ${sloganSplit} for the Modern Family`,
+    slogan: `tailored${sloganSplit} support ${sloganSplit} for the ${sloganSplit} Modern Family ${sloganSplit} Parent led and experience based`,
     sloganSplit,
     mission:
       "We help families feel grounded, confident, and supported in their daily lives, simplifying routines and providing trusted guidance every step of the way.",
@@ -29,6 +30,7 @@ export const siteData: SiteData = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Founder", href: "/about/founder" },
     { label: "Contact", href: "/contact" },
   ],
 
@@ -47,12 +49,11 @@ export const siteData: SiteData = {
   services: [
     {
       id: "family-meals",
-      icon: IoNutritionOutline,
       title: "Family Meals & Nutrition",
       shortCopy:
         "Stress-free meal planning and nutrition support tailored to your family.",
       fullCopy:
-        "Dinner doesn’t have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for picky eaters, ensuring every child gets the nourishment they need.",
+        "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for picky eaters, ensuring every child gets the nourishment they need.",
       features: [
         "Weekly meal planning",
         "Tailored grocery shopping lists",
@@ -60,37 +61,26 @@ export const siteData: SiteData = {
         "Child nutrition tips",
         "Picky eater strategies",
       ],
-      categories: [],
-      meta: {
-        title: "Family Meals & Nutrition | Roots & Routines",
-        description:
-          "Tailored meal planning, grocery lists, and nutrition guidance to simplify mealtimes for your family.",
-      },
+      category: "daily-operations",
+      icon: Utensils,
     },
     {
-      id: "parent-support",
-      icon: PiBabyBold,
-      title: "New Parent Support",
+      id: "routines-scheduling",
+      title: "Routines & Scheduling",
       shortCopy:
-        "Guidance and trusted referrals for new parents navigating early family life.",
+        "Custom family routines and scheduling support for a smoother daily flow.",
       fullCopy:
-        "Navigating early parenthood can be overwhelming. We provide referrals to trusted maternity and night nannies, offer breastfeeding and weaning tips, support daily routines and sleep schedules, and provide emotional well-being guidance to help parents feel supported and confident.",
+        "We create bespoke daily, weekly, and monthly routines to help your family thrive. From calendars to consistent habits, our support ensures structure without stress, making it easier to balance work, school, and family life.",
       features: [
-        "Trusted maternity and night nanny referrals",
-        "Breastfeeding and weaning guidance",
-        "Daily routine and sleep support",
-        "Emotional well-being strategies for parents",
+        "Custom daily/weekly/monthly routines",
+        "Calendar and schedule planning",
+        "Support building consistent habits",
       ],
-      categories: [],
-      meta: {
-        title: "New Parent Support | Roots & Routines",
-        description:
-          "Trusted referrals, sleep and routine support, and guidance for new parents to navigate early parenthood.",
-      },
+      category: "daily-operations",
+      icon: Clock,
     },
     {
       id: "sourcing-referrals",
-      icon: RiUserSearchLine,
       title: "Sourcing & Referrals",
       shortCopy:
         "Vetted professionals and family-friendly services delivered to your fingertips.",
@@ -102,16 +92,11 @@ export const siteData: SiteData = {
         "Holiday clubs and after-school activities",
         "Family-friendly events and outings",
       ],
-      categories: [],
-      meta: {
-        title: "Sourcing & Referrals | Roots & Routines",
-        description:
-          "Vetted childcare, tutors, and family activities to simplify planning and ensure trusted support.",
-      },
+      category: "finding-support",
+      icon: UserSearch,
     },
     {
       id: "education-guidance",
-      icon: TbSchool,
       title: "School & Activity Guidance",
       shortCopy:
         "Expert guidance to find schools, nurseries, and activities aligned with your values.",
@@ -122,55 +107,41 @@ export const siteData: SiteData = {
         "Support with visits, shortlisting, and applications",
         "Referrals to tutors and educational therapists",
       ],
-      categories: [],
-      meta: {
-        title: "School & Activity Guidance | Roots & Routines",
-        description:
-          "Support in choosing schools, nurseries, and activities for your child with expert guidance and referrals.",
-      },
+      category: "finding-support",
+      icon: GraduationCap,
     },
     {
-      id: "routines-scheduling",
-      icon: AiOutlineSchedule,
-      title: "Routines & Scheduling",
+      id: "parent-support",
+      title: "New Parent Support",
       shortCopy:
-        "Custom family routines and scheduling support for a smoother daily flow.",
+        "Guidance and trusted referrals for new parents navigating early family life.",
       fullCopy:
-        "We create bespoke daily, weekly, and monthly routines to help your family thrive. From calendars to consistent habits, our support ensures structure without stress, making it easier to balance work, school, and family life.",
+        "Navigating early parenthood can be overwhelming. We provide referrals to trusted maternity and night nannies, offer breastfeeding and weaning tips, support daily routines and sleep schedules, and provide emotional well-being guidance to help parents feel supported and confident.",
       features: [
-        "Custom daily/weekly/monthly routines",
-        "Calendar and schedule planning",
-        "Support building consistent habits",
+        "Trusted maternity and night nanny referrals",
+        "Breastfeeding and weaning guidance",
+        "Daily routine and sleep support",
+        "Emotional well-being strategies for parents",
       ],
-      categories: [],
-      meta: {
-        title: "Routines & Scheduling | Roots & Routines",
-        description:
-          "Personalized family routines and scheduling solutions to simplify your household flow.",
-      },
+      category: "wellness-growth",
+      icon: Baby,
     },
     {
       id: "family-wellness",
-      icon: TbHealthRecognition,
       title: "Family Wellness Add-Ons",
       shortCopy:
         "Holistic support for sleep, emotional regulation, and stress reduction.",
       fullCopy:
-        "We offer additional wellness support for families, including establishing healthy sleep and hygiene routines, strategies for children’s emotional regulation, and stress reduction plans for parents, ensuring the entire family thrives together.",
+        "We offer additional wellness support for families, including establishing healthy sleep and hygiene routines, strategies for children's emotional regulation, and stress reduction plans for parents, ensuring the entire family thrives together.",
       features: [
         "Sleep and hygiene routines",
         "Emotional regulation strategies for children",
         "Parent stress reduction plans and wellness support",
       ],
-      categories: [],
-      meta: {
-        title: "Family Wellness | Roots & Routines",
-        description:
-          "Support your family’s overall wellbeing with sleep, emotional regulation, and stress reduction guidance.",
-      },
+      category: "wellness-growth",
+      icon: Heart,
     },
   ],
-
   packages: [
     {
       id: "first-steps",
@@ -261,4 +232,71 @@ export const siteData: SiteData = {
     whatsapp: "#123456789",
     businessHours: "Monday - Friday, 9:00 AM - 6:00 PM",
   },
+  faq: {
+    title: "Frequently Asked Questions",
+    subtitle: "Everything you need to know about our family support services",
+    questions: [
+      {
+        id: "what-is-roots-routines",
+        question: "What is Roots & Routines Family Concierge?",
+        answer: "We're a personalized family support service that helps busy families create smoother routines, find trusted childcare, and make confident decisions for their children's wellbeing. From meal planning to school searches, we provide tailored guidance and vetted referrals to simplify your family life."
+      },
+      {
+        id: "how-to-get-started",
+        question: "How do I get started with your services?",
+        answer: "The best way to start is with our First Steps Call - a one-hour consultation where we understand your family's unique needs and provide immediate, actionable guidance. From there, we can recommend the most suitable ongoing support package for your situation."
+      },
+      {
+        id: "areas-covered",
+        question: "What areas do you cover?",
+        answer: "We primarily serve families in the UK, with specialized knowledge of local schools, childcare providers, and family services. For certain services like meal planning and routine guidance, we can support families remotely regardless of location."
+      },
+      {
+        id: "meal-planning-process",
+        question: "How does your meal planning service work?",
+        answer: "We create customized weekly meal plans based on your family's dietary needs, preferences, and busy schedule. This includes tailored grocery shopping lists, light meal prep guidance, and strategies for picky eaters. We focus on nutritious, family-friendly meals that fit your lifestyle."
+      },
+      {
+        id: "childcare-vetting",
+        question: "How do you vet childcare providers?",
+        answer: "All our childcare referrals undergo thorough background checks, reference verification, and personal interviews. We assess their experience, qualifications, and compatibility with different family dynamics. We only recommend providers we would trust with our own families."
+      },
+      {
+        id: "school-search-support",
+        question: "What's included in your school search guidance?",
+        answer: "We help you identify schools and nurseries aligned with your family values, provide shortlisting support, prepare you for visits and interviews, assist with applications, and connect you with trusted educational professionals. Our guidance is tailored to your child's specific needs and your family's priorities."
+      },
+      {
+        id: "routine-customization",
+        question: "How do you customize family routines?",
+        answer: "We assess your current family dynamics, work schedules, and goals to create bespoke daily, weekly, and monthly routines. This includes calendar organization, habit-building support, and flexible systems that grow with your family's changing needs."
+      },
+      {
+        id: "package-differences",
+        question: "What's the difference between your service packages?",
+        answer: "Our First Steps Call (£60) is perfect for immediate guidance on specific questions. The Family Planning Session (£250) offers comprehensive support across multiple areas like school searches and routine planning. Our Monthly Concierge (£400) provides ongoing flexible support with weekly check-ins and unlimited email access."
+      },
+      {
+        id: "payment-options",
+        question: "What payment options do you offer?",
+        answer: "We accept bank transfers, online payments, and can arrange payment plans for our Monthly Concierge service. Payment is required at the time of booking for consultations, and monthly packages are billed in advance."
+      },
+      {
+        id: "response-time",
+        question: "How quickly do you respond to requests?",
+        answer: "We aim to respond to all emails within 24 hours during business days (Monday-Friday, 9 AM-6 PM). Monthly concierge clients receive priority response times, typically within 4-6 hours during business hours."
+      },
+      {
+        id: "emergency-support",
+        question: "Do you offer emergency childcare support?",
+        answer: "While we don't provide emergency services, our network includes trusted providers who may have last-minute availability. Monthly concierge clients have priority access to our rapid referral service for urgent childcare needs."
+      },
+      {
+        id: "follow-up-support",
+        question: "What follow-up support do you provide?",
+        answer: "All consultations include a detailed follow-up email with personalized recommendations and trusted resources. We're available for brief follow-up questions via email, and can schedule additional sessions as your family's needs evolve."
+      }
+    ]
+  }
+
 };
