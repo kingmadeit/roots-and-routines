@@ -29,7 +29,7 @@ const HeroSection = memo(function HeroSection() {
 
 const AutonomySection = memo(function AutonomySection() {
   return (
-    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center space-x-4 mb-32">
+    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center -translate-y-10 space-x-4 mb-32">
       <span className="text-accent">Your</span>
       <span className="w-[150px]">
         <RotatingText
