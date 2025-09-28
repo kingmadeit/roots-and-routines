@@ -1,4 +1,5 @@
-import { memo, useMemo } from "react";
+'use client'
+import { memo, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import { Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/types";
@@ -6,6 +7,9 @@ import Link from "next/link";
 import { slideUpTransition } from "@/styles/animations";
 import { DottedArrow } from "./svgs";
 import { Animated, CircularGallery } from ".";
+import { useGalleryPeekHeight } from "@/hooks";
+
+
 
 // Types
 interface HeroProps {
@@ -37,7 +41,6 @@ const ANIMATION_CONFIG = {
   },
 } as const;
 
-
 const BUTTON_STYLES = "bg-[var(--bg-secondary)] mt-4 hover:scale-[0.9] hover:bg-[var(--bg-secondary)] text-white font-nunito font-bold cursor-pointer" as const;
 
 // Utility function
@@ -64,17 +67,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
         title
       )}
       <Sparkles className="absolute top-[-3rem] right-[50%] w-16 h-16 text-secondary-light opacity-40"/>
-
     </Animated>
-  );
-});
-
-
-const BackgroundDecorations = memo(function BackgroundDecorations() {
-  return (
-    <>
-      <Star className="absolute bottom-[-60px] right-[-20px] w-16 h-16 text-accent opacity-30 animate-pulse" />
-    </>
   );
 });
 
@@ -112,6 +105,7 @@ const ContentSection = memo<{
 
 const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
   const { title, subtitle, titleSeparator } = info;
+  const peekHeight = useCallback(()=> useGalleryPeekHeight(), []);
   
   const splitTitle = useMemo(() => 
     splitTitleBySeparator(title, titleSeparator), 
@@ -119,18 +113,29 @@ const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
   );
 
   return (
-    <section className="hero leading-[0.5] relative mb-100 font-nunito">
-      <div className="w-full gradient-container-primary">
-        <ContentSection 
-          title={title} 
-          subtitle={subtitle} 
-          splitTitle={splitTitle || undefined} 
-        />
+    <section className="hero-section">
+      {/* Hero content takes remaining space */}
+      <div className="hero-content">
+        <div className="w-full gradient-container-primary">
+          <ContentSection 
+            title={title} 
+            subtitle={subtitle} 
+            splitTitle={splitTitle || undefined} 
+          />
+        </div>
       </div>
-      <BackgroundDecorations />
-      <div className="absolute! h-[600px] -bottom-80 gallery-container">
-        <CircularGallery items={gallery} bend={5} textColor="#ca6c28" font="1.5rem font-quicksand" borderRadius={0.05} scrollEase={0.02} />
-      </div>      
+      
+      {/* Gallery peek area with calculated height */}
+      <div className="gallery-peek-area" style={{ height: `${peekHeight}px` }}>
+        <div className="gallery-container">
+          <CircularGallery 
+            items={gallery} 
+            bend={5} 
+            borderRadius={0.05} 
+            scrollEase={0.02} 
+          />
+        </div>
+      </div>
     </section>
   );
 });

@@ -26,109 +26,6 @@ function autoBind(instance: any): void {
   });
 }
 
-function getFontSize(font: string): number {
-  const match = font.match(/(\d+)px/);
-  return match ? parseInt(match[1], 10) : 30;
-}
-
-function createTextTexture(
-  gl: GL,
-  text: string,
-  font: string = 'bold 30px monospace',
-  color: string = 'black'
-): { texture: Texture; width: number; height: number } {
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
-  if (!context) throw new Error('Could not get 2d context');
-
-  context.font = font;
-  const metrics = context.measureText(text);
-  const textWidth = Math.ceil(metrics.width);
-  const fontSize = getFontSize(font);
-  const textHeight = Math.ceil(fontSize * 1.2);
-
-  canvas.width = textWidth + 20;
-  canvas.height = textHeight + 20;
-
-  context.font = font;
-  context.fillStyle = color;
-  context.textBaseline = 'middle';
-  context.textAlign = 'center';
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillText(text, canvas.width / 2, canvas.height / 2);
-
-  const texture = new Texture(gl, { generateMipmaps: false });
-  texture.image = canvas;
-  return { texture, width: canvas.width, height: canvas.height };
-}
-
-interface TitleProps {
-  gl: GL;
-  plane: Mesh;
-  renderer: Renderer;
-  text: string;
-  textColor?: string;
-  font?: string;
-}
-
-class Title {
-  gl: GL;
-  plane: Mesh;
-  renderer: Renderer;
-  text: string;
-  textColor: string;
-  font: string;
-  mesh!: Mesh;
-
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }: TitleProps) {
-    autoBind(this);
-    this.gl = gl;
-    this.plane = plane;
-    this.renderer = renderer;
-    this.text = text;
-    this.textColor = textColor;
-    this.font = font;
-    this.createMesh();
-  }
-
-  createMesh() {
-    const { texture, width, height } = createTextTexture(this.gl, this.text, this.font, this.textColor);
-    const geometry = new Plane(this.gl);
-    const program = new Program(this.gl, {
-      vertex: `
-        attribute vec3 position;
-        attribute vec2 uv;
-        uniform mat4 modelViewMatrix;
-        uniform mat4 projectionMatrix;
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragment: `
-        precision highp float;
-        uniform sampler2D tMap;
-        varying vec2 vUv;
-        void main() {
-          vec4 color = texture2D(tMap, vUv);
-          if (color.a < 0.1) discard;
-          gl_FragColor = color;
-        }
-      `,
-      uniforms: { tMap: { value: texture } },
-      transparent: true
-    });
-    this.mesh = new Mesh(this.gl, { geometry, program });
-    const aspect = width / height;
-    const textHeightScaled = this.plane.scale.y * 0.15;
-    const textWidthScaled = textHeightScaled * aspect;
-    this.mesh.scale.set(textWidthScaled, textHeightScaled, 1);
-    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeightScaled * 0.5 - 0.05;
-    this.mesh.setParent(this.plane);
-  }
-}
-
 interface ScreenSize {
   width: number;
   height: number;
@@ -148,12 +45,9 @@ interface MediaProps {
   renderer: Renderer;
   scene: Transform;
   screen: ScreenSize;
-  text: string;
   viewport: Viewport;
   bend: number;
-  textColor: string;
   borderRadius?: number;
-  font?: string;
 }
 
 class Media {
@@ -166,15 +60,11 @@ class Media {
   renderer: Renderer;
   scene: Transform;
   screen: ScreenSize;
-  text: string;
   viewport: Viewport;
   bend: number;
-  textColor: string;
   borderRadius: number;
-  font?: string;
   program!: Program;
   plane!: Mesh;
-  title!: Title;
   scale!: number;
   padding!: number;
   width!: number;
@@ -193,12 +83,9 @@ class Media {
     renderer,
     scene,
     screen,
-    text,
     viewport,
     bend,
-    textColor,
     borderRadius = 0,
-    font
   }: MediaProps) {
     this.geometry = geometry;
     this.gl = gl;
@@ -208,15 +95,11 @@ class Media {
     this.renderer = renderer;
     this.scene = scene;
     this.screen = screen;
-    this.text = text;
     this.viewport = viewport;
     this.bend = bend;
-    this.textColor = textColor;
     this.borderRadius = borderRadius;
-    this.font = font;
     this.createShader();
     this.createMesh();
-    this.createTitle();
     this.onResize();
   }
 
@@ -303,17 +186,6 @@ class Media {
     this.plane.setParent(this.scene);
   }
 
-  createTitle() {
-    this.title = new Title({
-      gl: this.gl,
-      plane: this.plane,
-      renderer: this.renderer,
-      text: this.text,
-      textColor: this.textColor,
-      font: this.font
-    });
-  }
-
   update(scroll: { current: number; last: number }, direction: 'right' | 'left') {
     this.plane.position.x = this.x - scroll.current - this.extra;
 
@@ -376,11 +248,9 @@ class Media {
 }
 
 interface AppConfig {
-  items?: { image: string; text: string }[];
+  items?: { image: string }[];
   bend?: number;
-  textColor?: string;
   borderRadius?: number;
-  font?: string;
   scrollSpeed?: number;
   scrollEase?: number;
 }
@@ -402,7 +272,7 @@ class App {
   scene!: Transform;
   planeGeometry!: Plane;
   medias: Media[] = [];
-  mediasImages: { image: string; text: string }[] = [];
+  mediasImages: { image: string }[] = [];
   screen!: { width: number; height: number };
   viewport!: { width: number; height: number };
   raf: number = 0;
@@ -415,16 +285,14 @@ class App {
 
   isDown: boolean = false;
   start: number = 0;
-  isActive: boolean = false; // NEW: Track if component is in view
+  isActive: boolean = false;
 
   constructor(
     container: HTMLElement,
     {
       items,
       bend = 1,
-      textColor = '#ffffff',
       borderRadius = 0,
-      font = 'bold 30px Figtree',
       scrollSpeed = 2,
       scrollEase = 0.05
     }: AppConfig
@@ -439,11 +307,10 @@ class App {
     this.createScene();
     this.onResize();
     this.createGeometry();
-    this.createMedias(items, bend, textColor, borderRadius, font);
+    this.createMedias(items, bend, borderRadius);
     this.update();
   }
 
-  // NEW: Methods to control active state
   setActive(active: boolean) {
     if (this.isActive === active) return;
     
@@ -452,13 +319,11 @@ class App {
     if (active) {
       console.log('adding raf');
       this.addEventListeners();
-      // Resume RAF loop if it was stopped
       if (!this.raf) {
         this.update();
       }
     } else {
       this.removeEventListeners();
-      // Stop RAF loop to save CPU
       console.log('removing raf');
       if (this.raf) {
         window.cancelAnimationFrame(this.raf);
@@ -496,61 +361,23 @@ class App {
   }
 
   createMedias(
-    items: { image: string; text: string }[] | undefined,
+    items: { image: string }[] | undefined,
     bend: number = 1,
-    textColor: string,
-    borderRadius: number,
-    font: string
+    borderRadius: number
   ) {
     const defaultItems = [
-      {
-        image: `img-1.jpg`,
-        text: 'Playing'
-      },
-      {
-        image: `img-2.jpg`,
-        text: 'Reading'
-      },
-      {
-        image: `img-3.jpg`,
-        text: 'Scheduling'
-      },
-      {
-        image: `img-4.jpg`,
-        text: 'Strawberries'
-      },
-      {
-        image: `img-2.jpg`,
-        text: 'Referral'
-      },
-      {
-        image: `img-1.jpg`,
-        text: 'Train Track'
-      },
-      {
-        image: `img-2.jpg`,
-        text: 'Santorini'
-      },
-      {
-        image: `img-4.jpg`,
-        text: 'Blurry Lights'
-      },
-      {
-        image: `img-3.jpg`,
-        text: 'New York'
-      },
-      {
-        image: `img-1.jpg`,
-        text: 'Good Boy'
-      },
-      {
-        image: `img-2.jpg`,
-        text: 'Coastline'
-      },
-      {
-        image: `img-4.jpg`,
-        text: 'Palm Trees'
-      }
+      { image: `img-1.jpg` },
+      { image: `img-2.jpg` },
+      { image: `img-3.jpg` },
+      { image: `img-4.jpg` },
+      { image: `img-2.jpg` },
+      { image: `img-1.jpg` },
+      { image: `img-2.jpg` },
+      { image: `img-4.jpg` },
+      { image: `img-3.jpg` },
+      { image: `img-1.jpg` },
+      { image: `img-2.jpg` },
+      { image: `img-4.jpg` }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -564,12 +391,9 @@ class App {
         renderer: this.renderer,
         scene: this.scene,
         screen: this.screen,
-        text: data.text,
         viewport: this.viewport,
         bend,
-        textColor,
-        borderRadius,
-        font
+        borderRadius
       });
     });
   }
@@ -626,7 +450,6 @@ class App {
   }
 
   update() {
-    // Only update when active
     if (!this.isActive) return;
     
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
@@ -671,7 +494,7 @@ class App {
   }
 
   destroy() {
-    this.setActive(false); // This will remove event listeners and stop RAF
+    this.setActive(false);
     if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
       this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas as HTMLCanvasElement);
     }
@@ -679,11 +502,9 @@ class App {
 }
 
 interface CircularGalleryProps {
-  items?: { image: string; text: string }[];
+  items?: { image: string }[];
   bend?: number;
-  textColor?: string;
   borderRadius?: number;
-  font?: string;
   scrollSpeed?: number;
   scrollEase?: number;
 }
@@ -691,9 +512,7 @@ interface CircularGalleryProps {
 export default function CircularGallery({
   items,
   bend = 3,
-  textColor = '#ffffff',
   borderRadius = 0.05,
-  font = 'bold 50px font-nunito',
   scrollSpeed = 2,
   scrollEase = 0.05
 }: CircularGalleryProps) {
@@ -710,8 +529,8 @@ export default function CircularGallery({
         setIsInView(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Trigger when 10% visible
-        rootMargin: '50px 0px' // Start 50px before entering viewport
+        threshold: 0.1,
+        rootMargin: '50px 0px'
       }
     );
 
@@ -727,9 +546,7 @@ export default function CircularGallery({
     const app = new App(containerRef.current, {
       items,
       bend,
-      textColor,
       borderRadius,
-      font,
       scrollSpeed,
       scrollEase
     });
@@ -740,7 +557,7 @@ export default function CircularGallery({
       app.destroy();
       appRef.current = null;
     };
-  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
+  }, [items, bend, borderRadius, scrollSpeed, scrollEase]);
 
   // Control app activity based on visibility
   useEffect(() => {
