@@ -32,7 +32,7 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
             <Link href={cta.href}>{cta.label}</Link>
           </Button> */}
         </div>
-        <div className="w-full bg-accent/60 rounded-4xl overflow-hidden">
+        <div className="w-full bg-accent/60 rounded-4xl overflow-hidden flex justify-center items-center">
           <Image src="/hi-illustration.jpg" alt="hi illustration" width={500} height={600} className="mix-blend-multiply"/>
         </div>
         <div className="w-full h-80 lg:col-span-2 bg-complementary/70 rounded-4xl">
