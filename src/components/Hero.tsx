@@ -103,7 +103,7 @@ const ContentSection = memo<{
   );
 });
 
-const Hero = memo<React.FC<HeroProps>>(function Hero({ info, gallery }) {
+const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
   const { title, subtitle, titleSeparator } = info;
   const peekHeight = useGalleryPeekHeight();
   
