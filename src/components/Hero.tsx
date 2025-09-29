@@ -1,6 +1,6 @@
 'use client'
-import { memo, useMemo, useState, useEffect, useRef, useCallback } from "react";
-import { Star, Sparkles } from "lucide-react";
+import { memo, useMemo } from "react";
+import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/types";
 import Link from "next/link";
@@ -103,9 +103,9 @@ const ContentSection = memo<{
   );
 });
 
-const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
+const Hero = memo<React.FC<HeroProps>>(function Hero({ info, gallery }) {
   const { title, subtitle, titleSeparator } = info;
-  const peekHeight = useCallback(()=> useGalleryPeekHeight(), []);
+  const peekHeight = useGalleryPeekHeight();
   
   const splitTitle = useMemo(() => 
     splitTitleBySeparator(title, titleSeparator), 
