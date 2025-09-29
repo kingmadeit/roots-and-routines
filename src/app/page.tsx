@@ -29,12 +29,7 @@ const HeroSection = memo(function HeroSection() {
 
 const AutonomySection = memo(function AutonomySection() {
   return (
-    <>
-    
-    <div className="container mx-auto text-center text-5xl font-nunito bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary-light font-extrabold tracking-tighter mb-32">
-      Your Home. Your Pace. Your Peace.
-    </div>
-    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center space-x-4 mb-32">
+    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center -translate-y-10 space-x-4 mb-32">
       <span className="text-accent">Your</span>
       <span className="w-[150px]">
         <RotatingText
@@ -52,7 +47,6 @@ const AutonomySection = memo(function AutonomySection() {
       </span>
       
     </div>
-    </>
   );
 });
 
@@ -105,7 +99,7 @@ export const metadata = meta;
 // Main page component with floating icons overlay
 export default function HomePage() {
   return (
-      <div className="relative">
+      <>
         <HeroSection />
         <AutonomySection />
         <AboutSection />
@@ -114,6 +108,6 @@ export default function HomePage() {
         <ContactSection />
         <FAQSection />
         <LeadSection />
-      </div>
+      </>
   );
 }
