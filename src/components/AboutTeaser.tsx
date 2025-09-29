@@ -3,6 +3,7 @@ import { IAboutTeaser } from "@/types/index";
 import { Animated, ContactOptions } from ".";
 import { slideUpTransition } from "@/styles/animations";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import Image from "next/image";
 
 type AboutTeaserProps = {
   about: IAboutTeaser;
@@ -31,9 +32,10 @@ const AboutTeaser = ({ about }: AboutTeaserProps) => {
             <Link href={cta.href}>{cta.label}</Link>
           </Button> */}
         </div>
-        <div className="w-full bg-accent/50 rounded-4xl">
+        <div className="w-full bg-accent/60 rounded-4xl overflow-hidden flex justify-center items-center">
+          <Image src="/hi-illustration.jpg" alt="hi illustration" width={500} height={600} className="mix-blend-multiply"/>
         </div>
-        <div className="w-full h-80 lg:col-span-2 bg-secondary/50 rounded-4xl">
+        <div className="w-full h-80 lg:col-span-2 bg-complementary/70 rounded-4xl">
           <Dialog>
             <DialogTrigger>Open</DialogTrigger>
             <DialogContent className="bg-secondary rounded-4xl md:max-w-3xl w-[90%]">
