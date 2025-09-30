@@ -19,6 +19,9 @@ import Animated from "./Animated";
 import CircularGallery from "./CircularGallery";
 import ComingSoon from "./ComingSoon";
 import ContactOptions from "./ContactOptions";
+import PageWrapper from "./PageWrapper";
+import MediaBlock from "./MediaBlock";
+
 export {
   Logo,
   Nav,
@@ -39,7 +42,8 @@ export {
   FloatingIcons,
   Animated,
   CircularGallery,
-
+  PageWrapper,
   ContactOptions,
   ComingSoon,
+  MediaBlock
 };
