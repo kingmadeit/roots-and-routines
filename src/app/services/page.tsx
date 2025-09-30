@@ -1,34 +1,11 @@
-"use client";
-import React, { useCallback, useState } from "react";
-import { ServiceCategory, serviceCategories } from "@/constants/services";
-import SmoothTabNav from "@/components/SmoothTabNav";
+import { serviceCategories } from "@/constants/services";
+import ClientServicePage from "./ClientServicePage"; // 👈 New file
 
 const categoriesWithLinks = serviceCategories.map((category) => ({
-  ...category, linksTo: `/services/${category.id}`
-}))
+  ...category,
+  linksTo: `/services/${category.id}`,
+}));
 
-interface SmoothTabProps {
-  categories?: ServiceCategory[];
+export default function ServicePage() {
+  return <ClientServicePage categories={categoriesWithLinks} />;
 }
-
-const ServicePage: React.FC<SmoothTabProps> = ({ categories = categoriesWithLinks }) => {
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
-
-  const handleTabHovered = useCallback((categoryId: string): void => {
-    const index = categories.findIndex(c => c.id === categoryId);
-    if (index !== -1) setSelectedIndex(index);
-  }, [categories]);
-
-  return (
-    <div className="container h-screen">
-      <SmoothTabNav
-        tabs={categories}
-        selectedIndex={selectedIndex}
-        onChange={handleTabHovered}
-        className="h-[50%] w-full flex items-center justify-center"
-      />
-    </div>
-  );
-};
-
-export default ServicePage;
