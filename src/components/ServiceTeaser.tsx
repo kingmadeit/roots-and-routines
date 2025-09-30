@@ -1,18 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import clsx from "clsx";
 import { slideUpTransition } from "@/styles/animations";
 import { siteData } from "@/data/full-site";
 import { ServiceData } from "@/types";
+import { ServiceCategory, serviceCategories } from "@/constants/services";
+import SmoothTabNav from "./SmoothTabNav";
 
-interface TabData {
-  id: string;
-  title: string;
-  color: string;
-  description: string;
-  cardContent: React.ReactNode | null;
-}
 
 interface ServiceCardProps {
   service: ServiceData;
@@ -26,29 +21,7 @@ interface ServiceTeaserProps {
   services?: ServiceData[];
 }
 
-const tabs: TabData[] = [
-  {
-    id: "daily-operations",
-    title: "Daily Operations",
-    color: "bg-accent",
-    description: "Streamline your family's daily routines",
-    cardContent: null,
-  },
-  {
-    id: "finding-support",
-    title: "Finding Support",
-    color: "bg-secondary",
-    description: "Connect with trusted professionals",
-    cardContent: null,
-  },
-  {
-    id: "wellness-growth",
-    title: "Wellness & Growth",
-    color: "bg-complementary",
-    description: "Support your family's wellbeing journey",
-    cardContent: null,
-  },
-];
+const tabs = serviceCategories;
 
 const { services } = siteData;
 
@@ -108,48 +81,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
 };
 
 const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
-  const [selected, setSelected] = useState<string>("daily-operations");
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
-  const [dimensions, setDimensions] = useState<{ width: number; left: number }>(
-    { width: 0, left: 0 }
-  );
+  const selectedTab = tabs[selectedIndex];
 
-  const buttonRefs = React.useRef<Map<string, HTMLButtonElement>>(new Map());
-  const containerRef = React.useRef<HTMLDivElement>(null);
 
-  React.useLayoutEffect(() => {
-    const updateDimensions = (): void => {
-      const selectedButton = buttonRefs.current.get(selected);
-      const container = containerRef.current;
-
-      if (selectedButton && container) {
-        const rect = selectedButton.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        setDimensions({
-          width: rect.width,
-          left: rect.left - containerRect.left - 8,
-        });
-      }
-    };
-
-    requestAnimationFrame(() => {
-      updateDimensions();
-    });
-
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, [selected]);
-
-  const handleTabClick = (tabId: string): void => {
-    const currentIndex = tabs.findIndex((tab) => tab.id === selected);
-    const newIndex = tabs.findIndex((tab) => tab.id === tabId);
-    setDirection(newIndex > currentIndex ? 1 : -1);
-    setSelected(tabId);
-  };
-
-  const selectedTab = tabs.find((tab) => tab.id === selected);
   const selectedServices = services.filter(
-    (service) => service.category === selected
+    (service) => service.category === selectedTab.id
   );
 
   const slideVariants = {
@@ -178,76 +116,27 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
     ease: [0.32, 0.72, 0, 1] as const,
   };
 
+  const handleTabClick = useCallback((tabId: string): void => {
+    const currentIndex = tabs.findIndex((tab) => tab.id === selectedTab.id);
+    const newIndex = tabs.findIndex((tab) => tab.id === tabId);
+    setDirection(newIndex > currentIndex ? 1 : -1);
+    setSelectedIndex(newIndex);
+  },[]);
+
   return (
     <div className={`w-full max-w-[90%] mx-auto ${className || ""}`}>
-      {/* Tab Navigation - Moved to top */}
-      <div className="flex justify-center mb-8">
-        <div
-          ref={containerRef}
-          className={clsx(
-            "flex items-start gap-2 p-2 relative rounded-3xl max-w-full",
-            {
-              "bg-accent/40": selectedTab?.id === "daily-operations",
-              "bg-secondary/40": selectedTab?.id === "finding-support",
-              "bg-complementary/40": selectedTab?.id === "wellness-growth",
-            }
-          )}
-        >
-          {/* Sliding Background */}
-          <motion.div
-            className={`absolute rounded-2xl z-[1] ${
-              selectedTab?.color || "bg-accent"
-            } shadow-lg`}
-            initial={false}
-            animate={{
-              width: dimensions.width,
-              x: dimensions.left,
-              opacity: 1,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 30,
-            }}
-            style={{ height: "calc(100% - 16px)", top: "8px" }}
-          />
-
-          <div className="flex gap-2 relative z-[2]">
-            {tabs.map((tab) => {
-              const isSelected = selected === tab.id;
-              return (
-                <motion.button
-                  key={tab.id}
-                  ref={(el) => {
-                    if (el) buttonRefs.current.set(tab.id, el);
-                    else buttonRefs.current.delete(tab.id);
-                  }}
-                  type="button"
-                  onClick={() => handleTabClick(tab.id)}
-                  className={`relative flex flex-col items-center text-white/90 hover:text-white justify-center rounded-2xl px-6 py-4 text-sm font-medium transition-all duration-300 whitespace-nowrap min-w-0 ${
-                    isSelected && "text-white"
-                  }`}
-                >
-                  <span className="font-semibold">{tab.title}</span>
-                  <span
-                    className={`text-xs mt-1 font-nunito ${
-                      isSelected ? "text-white" : "text-white/90"
-                    }`}
-                  >
-                    {tab.description}
-                  </span>
-                </motion.button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      {/* Tab Navigation */}
+      <SmoothTabNav
+        tabs={tabs}
+        selectedIndex={selectedIndex}
+        onChange={handleTabClick}
+      />
 
       {/* Content Area with tab color background */}
       <div className="relative min-h-[500px]">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
-            key={selected}
+            key={selectedTab.id}
             custom={direction}
             variants={slideVariants}
             initial="enter"

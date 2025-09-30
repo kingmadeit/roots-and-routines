@@ -1,7 +1,34 @@
-import {ComingSoon} from "@/components";
+"use client";
+import React, { useCallback, useState } from "react";
+import { ServiceCategory, serviceCategories } from "@/constants/services";
+import SmoothTabNav from "@/components/SmoothTabNav";
 
-const ServicePage = () => {
-  return <ComingSoon />;
+const categoriesWithLinks = serviceCategories.map((category) => ({
+  ...category, linksTo: `/services/${category.id}`
+}))
+
+interface SmoothTabProps {
+  categories?: ServiceCategory[];
+}
+
+const ServicePage: React.FC<SmoothTabProps> = ({ categories = categoriesWithLinks }) => {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+  const handleTabHovered = useCallback((categoryId: string): void => {
+    const index = categories.findIndex(c => c.id === categoryId);
+    if (index !== -1) setSelectedIndex(index);
+  }, [categories]);
+
+  return (
+    <div className="container h-screen">
+      <SmoothTabNav
+        tabs={categories}
+        selectedIndex={selectedIndex}
+        onChange={handleTabHovered}
+        className="h-[50%] w-full flex items-center justify-center"
+      />
+    </div>
+  );
 };
 
 export default ServicePage;

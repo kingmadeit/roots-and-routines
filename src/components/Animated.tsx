@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, MotionProps } from 'motion/react';
+import { motion, MotionProps, AnimatePresence } from 'motion/react';
 import React, { ElementType, ComponentPropsWithRef } from 'react';
 
 const defaultElement = 'div';
@@ -18,5 +18,7 @@ function Animated<T extends ElementType = typeof defaultElement>({
   
   return <MotionComponent {...props} />;
 }
+
+export {motion, AnimatePresence};
 
 export default Animated;
