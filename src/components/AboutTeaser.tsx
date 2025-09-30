@@ -3,7 +3,6 @@ import { IAboutTeaser } from "@/types/index";
 import { Animated, ContactOptions, MediaBlock } from ".";
 import { slideUpTransition } from "@/styles/animations";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import Image from "next/image";
 
 type AboutTeaserProps = {
   about: IAboutTeaser;

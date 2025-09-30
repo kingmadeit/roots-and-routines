@@ -1,11 +1,10 @@
 "use client";
 import React, { useState, useLayoutEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import clsx from "clsx";
 import { slideUpTransition } from "@/styles/animations";
 import { siteData } from "@/data/full-site";
 import { ServiceData } from "@/types";
-import { ServiceCategory, serviceCategories } from "@/constants/services";
+import { serviceCategories } from "@/constants/services";
 import SmoothTabNav from "./SmoothTabNav";
 
 
@@ -79,6 +78,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
     </div>
   );
 };
+
 
 const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);

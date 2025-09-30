@@ -1,49 +1,23 @@
-import Nav from "./Nav";
-import Header from "./Header";
-import Footer from "./Footer";
-import PaymentForm from "./PaymentForm";
-import Testimonial from "./Testimonial";
-import Hero from "./Hero";
-import AboutTeaser from "./AboutTeaser";
-import ServiceTeaser from "./ServiceTeaser";
-import PackagesTeaser from "./PackagesTeaser";
-import FeaturedService from "./FeaturedService";
-import FounderQuote from "./FounderQuote";
-import ContactTeaser from "./ContactTeaser";
-import ContactInfo from "./ContactInfo";
-import CarouselWrapper from "./CarouselWrapper";
-import FAQ from "./FAQ";
-import FloatingIcons from "./FloatingIcons";
-import Logo from "./Logo";
-import Animated from "./Animated";
-import CircularGallery from "./CircularGallery";
-import ComingSoon from "./ComingSoon";
-import ContactOptions from "./ContactOptions";
-import PageWrapper from "./PageWrapper";
-import MediaBlock from "./MediaBlock";
-
-export {
-  Logo,
-  Nav,
-  Header,
-  Footer,
-  PaymentForm,
-  Testimonial,
-  Hero,
-  AboutTeaser,
-  ServiceTeaser,
-  PackagesTeaser,
-  FeaturedService,
-  FounderQuote,
-  ContactTeaser,
-  ContactInfo,
-  CarouselWrapper,
-  FAQ,
-  FloatingIcons,
-  Animated,
-  CircularGallery,
-  PageWrapper,
-  ContactOptions,
-  ComingSoon,
-  MediaBlock
-};
+export { default as Nav } from './Nav';
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+export { default as PaymentForm } from './PaymentForm';
+export { default as Testimonial } from './Testimonial';
+export { default as Hero } from './Hero';
+export { default as AboutTeaser } from './AboutTeaser';
+export { default as ServiceTeaser } from './ServiceTeaser';
+export { default as PackagesTeaser } from './PackagesTeaser';
+export { default as FeaturedService } from './FeaturedService';
+export { default as FounderQuote } from './FounderQuote';
+export { default as ContactTeaser } from './ContactTeaser';
+export { default as ContactInfo } from './ContactInfo';
+export { default as CarouselWrapper } from './CarouselWrapper';
+export { default as FAQ } from './FAQ';
+export { default as FloatingIcons } from './FloatingIcons';
+export { default as Logo } from './Logo';
+export { default as CircularGallery } from './CircularGallery';
+export { default as ComingSoon } from './ComingSoon';
+export { default as ContactOptions } from './ContactOptions';
+export { default as PageWrapper } from './PageWrapper';
+export { default as MediaBlock } from './MediaBlock';
+export { default as Animated } from './Animated';

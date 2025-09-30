@@ -1,7 +1,7 @@
 import { ServiceCategory } from "@/constants/services";
 import clsx from "clsx";
-import { useLayoutEffect, useRef, useState, useCallback, CSSProperties, ReactNode, memo } from "react";
-import Animated, { motion } from "./Animated";
+import React, { useLayoutEffect, useRef, useState, useCallback, CSSProperties, ReactNode, memo } from "react";
+import Animated from "./Animated";
 import Link from "next/link";
 
 const bgColorMap: Record<string, string> = {
@@ -60,7 +60,7 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
           className={clsx("flex w-full h-full items-start gap-2 p-2 relative rounded-3xl", 
           bgColorMap[selectedTab.color] || 'bg-accent/40')}
         > 
-          <motion.div
+          <Animated as="div"
             className={`absolute rounded-2xl z-[1] ${selectedTab?.color || "bg-accent"} shadow-lg`}
             initial={false}
             animate={{
@@ -94,9 +94,9 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
                 <Animated
                   as="button"
                   key={tab.id}
-                  ref={(el) => (el ? buttonRefs.current.set(tab.id, el) : buttonRefs.current.delete(tab.id))}
+                  ref={(el: HTMLButtonElement) => {el ? buttonRefs.current.set(tab.id, el) : buttonRefs.current.delete(tab.id)}}
                   type="button"
-                  onClick={(e) => isLink ? e.preventDefault() : handleOnChange(tab)}
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => isLink ? e.preventDefault() : handleOnChange(tab)}
                   onMouseEnter={() => isLink && handleOnChange(tab)}
                   className={clsx(
                     "relative flex flex-col items-center justify-center px-6 py-4 text-sm font-medium rounded-2xl transition-all duration-300 whitespace-nowrap",
@@ -119,7 +119,5 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
     </div>
   );
 });
-
-SmoothTabNav.displayName = 'SmoothTabNav';
 
 export default SmoothTabNav;
