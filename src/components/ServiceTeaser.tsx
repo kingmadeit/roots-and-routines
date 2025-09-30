@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import clsx from "clsx";
 import { slideUpTransition } from "@/styles/animations";
@@ -113,12 +113,12 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
     return () => window.removeEventListener("resize", updateDimensions);
   }, [selected]);
 
-  const handleTabClick = (tabId: string): void => {
+  const handleTabClick = useCallback((tabId: string): void => {
     const currentIndex = tabs.findIndex((tab) => tab.id === selected);
     const newIndex = tabs.findIndex((tab) => tab.id === tabId);
     setDirection(newIndex > currentIndex ? 1 : -1);
     setSelected(tabId);
-  };
+  },[]);
 
   const selectedTab = tabs.find((tab) => tab.id === selected);
   const selectedServices = services.filter(

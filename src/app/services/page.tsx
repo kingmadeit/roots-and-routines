@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { ServiceCategory, serviceCategories } from "@/constants/services";
 import SmoothTabNav from "@/components/SmoothTabNav";
 
@@ -15,9 +15,9 @@ interface SmoothTabProps {
 const ServicePage: React.FC<SmoothTabProps> = ({ categories = categoriesWithLinks }) => {
   const [selected, setSelected] = useState<string>(categories[0].id);
 
-  const handleTabClick = (categoryId: string): void => {
+  const handleTabClick = useCallback((categoryId: string): void => {
     setSelected(categoryId);
-  };
+  },[]);
 
   const selectedTab = categories.find((category) => category.id === selected);
 
