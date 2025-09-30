@@ -4,11 +4,15 @@ import { ServiceCategory, serviceCategories } from "@/constants/services";
 import SmoothTabNav from "@/components/SmoothTabNav";
 
 
+const categoriesWithLinks = serviceCategories.map((category) => ({
+  ...category, linksTo: `/services/${category.id}`
+}))
+
 interface SmoothTabProps {
   categories?: ServiceCategory[];
 }
 
-const ServicePage: React.FC<SmoothTabProps> = ({ categories = serviceCategories }) => {
+const ServicePage: React.FC<SmoothTabProps> = ({ categories = categoriesWithLinks }) => {
   const [selected, setSelected] = useState<string>(categories[0].id);
 
   const handleTabClick = (categoryId: string): void => {

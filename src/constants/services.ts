@@ -3,6 +3,7 @@ export interface ServiceCategory {
     title: string;
     color: string;
     description: string;
+    linksTo?: string;
   }
   
 export const serviceCategories: ServiceCategory[] = [

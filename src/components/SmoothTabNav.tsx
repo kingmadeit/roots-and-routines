@@ -1,7 +1,8 @@
 import { ServiceCategory } from "@/constants/services";
 import clsx from "clsx";
-import { useLayoutEffect, useRef, useState, useCallback, CSSProperties } from "react";
+import { useLayoutEffect, useRef, useState, useCallback, CSSProperties, ReactNode } from "react";
 import Animated, { motion } from "./Animated";
+import Link from "next/link";
 
 interface SmoothTabNavProps {
   className?: string;
@@ -36,7 +37,8 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = ({ tabs, className, selectedTa
     return () => window.removeEventListener("resize", handleResize);
   }, [updateDimensions]);
 
-  const handleClick = (tab: ServiceCategory) => {
+  const handleOnChange = (tab: ServiceCategory) => {
+    debugger
     requestAnimationFrame(updateDimensions);
     onChange(tab.id, tab);
   };
@@ -72,22 +74,37 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = ({ tabs, className, selectedTa
           <div className="flex gap-2 h-full relative z-[2]">
             {tabs.map((tab) => {
               const isSelected = selectedTab.id === tab.id;
+              const isLink = !!tab.linksTo; 
+
+              const content: ReactNode = (
+                <>
+                  <span className="font-semibold">{tab.title}</span>
+                  <span className={`text-xs mt-1 font-nunito ${isSelected ? "text-white" : "text-white/90"}`}>
+                    {tab.description}
+                  </span>
+                </>
+              );
+
               return (
                 <Animated
                   as="button"
                   key={tab.id}
                   ref={(el) => (el ? buttonRefs.current.set(tab.id, el) : buttonRefs.current.delete(tab.id))}
                   type="button"
-                  onClick={() => handleClick(tab)}
+                  onClick={(e) => isLink ? e.preventDefault() : handleOnChange(tab)}
+                  onMouseEnter={(e) => isLink ? handleOnChange(tab): e.preventDefault()}
                   className={clsx(
                     "relative flex flex-col items-center justify-center px-6 py-4 text-sm font-medium rounded-2xl transition-all duration-300 whitespace-nowrap",
                     isSelected ? "text-white" : "text-white/90",
                   )}
                 >
-                  <span className="font-semibold">{tab.title}</span>
-                  <span className={`text-xs mt-1 font-nunito ${isSelected ? "text-white" : "text-white/90"}`}>
-                    {tab.description}
-                  </span>
+                  {isLink ? (
+                    <Link href={tab.linksTo!} className="w-full h-full">
+                      {content}
+                    </Link>
+                  ) : (
+                    content
+                  )}
                 </Animated>
               );
             })}
