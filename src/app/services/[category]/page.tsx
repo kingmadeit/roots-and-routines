@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { siteData } from '@/data';
 import { ServiceCategory, ServiceCategoryContent } from '@/components';
+import { serviceCategories } from '@/constants/services';
 
 type Params = {
   category: string;
@@ -38,16 +39,18 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
+
 export default function ServiceCategoryPage({ params }: { params: Params }) {
   const { category } = params;
   const filteredServices = siteData.services.filter((s) => s.category === category);
+  const categoryColor = serviceCategories.find(c => c.id === category)?.color;
 
   if (!filteredServices.length) {
-    return <div>Service category not found.</div>;
+    return (<div>Service category not found.</div>);
   }
 
   return (
-    <ServiceCategory heroClassName="bg-accent/40" contentClassName="text-accent">
+    <ServiceCategory heroClassName={`${categoryColor}/40`} contentClassName="text-accent">
       <ServiceCategoryContent services={filteredServices} />
     </ServiceCategory>
   );
