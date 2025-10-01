@@ -17,8 +17,8 @@ interface ServiceContentContentProps {
 export default function ServiceCategoryContent({ services }: ServiceContentContentProps) {
   return (
     <>
-      {services.map((service) => (
-        <MediaBlock key={service.id} type="video" src="/hi-illustration.jpg">
+      {services.map((service, i) => (
+        <MediaBlock key={service.id} type="image" isReverse={(i+1)%2===0} src="/hi-illustration.jpg">
           <h1>{service.title}</h1>
           <p>{service.fullCopy}</p>
           <Animated

@@ -10,9 +10,10 @@ interface MediaBlockProps {
     type: 'image' | 'video';
     mediaContainerClassName?: string;
     contentContainerClassName?: string;
+    isReverse?: boolean;
 }
 
-const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClassName = '', contentContainerClassName = ''}) => {
+const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClassName = '', contentContainerClassName = '', isReverse = false}) => {
 
     const mediaContent: ReactNode = type === 'video' ? (
         <video 
@@ -35,12 +36,16 @@ const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClas
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
-            <Animated as="div" {...slideUpTransition} className={clsx("p-4 gradient-container-white", contentContainerClassName)}>
+            <Animated as="div" {...slideUpTransition} className={
+                clsx("p-4 gradient-container-white", 
+                isReverse ? 'order-1 md:order-2' : 'order-1',
+                contentContainerClassName)}>
                {children}
             </Animated>
             <div className={
                 clsx(
                     'w-full sticky top-0 rounded-4xl overflow-hidden flex justify-center items-center',
+                    isReverse ? 'order-2 md:order-1' : 'order-2',
                     mediaContainerClassName
                 )}>
                 {mediaContent}
