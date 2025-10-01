@@ -8,8 +8,6 @@ interface ServiceCategoryProps {
     contentClassName?: string;
 }
 
-console.log('HERE')
-
 export default function ServiceCategory (
     {type, children, heroClassName='', contentClassName=''}: ServiceCategoryProps
 ) {

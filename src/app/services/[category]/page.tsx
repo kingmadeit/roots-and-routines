@@ -7,15 +7,18 @@ type Params = {
 };
 
 // use this non-dynamic service routes
-const exclude: string[] = []; // ['wellness-growth', 'daily-operations'];
+const exclude: string[] = ['']; // ['wellness-growth', 'daily-operations'];
+console.log('HERE from /service/[]/page.tsx')
 
 export async function generateStaticParams() {
   const categories = [...new Set(siteData.services.map((s) => s.category))].filter((category) => !exclude.includes(category));
   return categories.map((category) => ({ category }));
 }
 
+console.log(await generateStaticParams())
+
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const { category } = params;
+  const { category } = await params;
   const serviceData = siteData.services.filter((s) => s.category === category);
 
   if (!serviceData.length) {
