@@ -21,3 +21,5 @@ export { default as ContactOptions } from './ContactOptions';
 export { default as PageWrapper } from './PageWrapper';
 export { default as MediaBlock } from './MediaBlock';
 export { default as Animated } from './Animated';
+export { default as ServiceCategory} from './ServiceCategory'
+export { default as ServiceCategoryContent} from './ServiceCategoryContent'

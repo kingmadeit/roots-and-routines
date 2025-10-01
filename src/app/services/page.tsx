@@ -1,5 +1,5 @@
 import { serviceCategories } from "@/constants/services";
-import ClientServicePage from "./ClientServicePage"; // 👈 New file
+import ClientServicePage from "./ClientServicePage"; 
 
 const categoriesWithLinks = serviceCategories.map((category) => ({
   ...category,
