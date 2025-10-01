@@ -10,25 +10,29 @@ interface MediaBlockProps {
     type: 'image' | 'video';
     mediaContainerClassName?: string;
     contentContainerClassName?: string;
+    wrapperClassName?: string;
     isReverse?: boolean;
 }
 
-const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClassName = '', contentContainerClassName = '', isReverse = false}) => {
+const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClassName = '', contentContainerClassName = '', wrapperClassName = '', isReverse = false}) => {
 
     const mediaContent: ReactNode = type === 'video' ? (
         <video 
-            src={src} 
-            controls 
+            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" 
+            controls={false} 
             className="rounded-[20%]"
             width={500}
             height={600}
+            autoPlay={true}
+            loop={true}
+            muted
         />
     ) : (
         <Image 
             src={src} 
             alt="hi illustration" 
-            width={500} 
-            height={600}
+            width={300} 
+            height={300}
             className="mix-blend-multiply rounded-[20%]"
             quality={75}
             loading="lazy"
@@ -37,9 +41,9 @@ const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClas
     
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 content-center">
+        <div className={clsx('grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 content-center', wrapperClassName)}>
             <Animated as="div" {...slideUpTransition} className={
-                clsx("p-4 gradient-container-white", 
+                clsx("p-4", 
                 isReverse ? 'order-1 md:order-2' : 'order-1',
                 contentContainerClassName)}>
                {children}

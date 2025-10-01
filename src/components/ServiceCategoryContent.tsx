@@ -18,7 +18,7 @@ export default function ServiceCategoryContent({ services }: ServiceContentConte
   return (
     <>
       {services.map((service, i) => (
-        <MediaBlock key={service.id} type="image" isReverse={(i+1)%2===0} src="/hi-illustration.jpg">
+        <MediaBlock key={service.id} type={(i+1)%2===0? 'video': 'image'} isReverse={(i+1)%2===0} src="/hi-illustration.jpg">
           <h1>{service.title}</h1>
           <p>{service.fullCopy}</p>
           <Animated

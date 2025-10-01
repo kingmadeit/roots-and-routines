@@ -1,5 +1,6 @@
-import { ComingSoon } from "@/components";
+import { ComingSoon, PageWrapper } from "@/components";
 import { pagesData } from "@/data";
+import ClientAboutPage from "./ClientAboutPage";
 
 export const metadata = {
   title: "About Us",
@@ -30,7 +31,10 @@ const {
 } = pagesData;
 
 const About = () => {
-  return <ComingSoon />;
+  return (
+    <ClientAboutPage />
+  // <PageWrapper><ComingSoon /></PageWrapper>
+  );
 };
 
 export default About;

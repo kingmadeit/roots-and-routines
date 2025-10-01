@@ -15,7 +15,7 @@ const AboutSection = dynamic(() => import('./AboutSection'), {loading});
 
 const ServiceSection = dynamic(() => import('./ServicesSection'), {loading})
 
-const PricingSection = dynamic(() => import('./ServicesSection'), {loading})
+const PricingSection = dynamic(() => import('./PricingSection'), {loading})
 
 const ContactSection = dynamic(() => import('./ContactSection'), {loading})
 
@@ -33,13 +33,9 @@ export default function HomePage() {
         <HeroSection />
         <AutonomySection />
         <AboutSection />
-        <LazyLoadOnView>
-          <ServiceSection />
-        </LazyLoadOnView>
-        <LazyLoadOnView>
-          <PricingSection />
-          <FAQSection />
-        </LazyLoadOnView>
+        <ServiceSection />
+        <PricingSection />
+        <FAQSection />
         <LazyLoadOnView>
           <ContactSection />
         </LazyLoadOnView>
