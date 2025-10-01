@@ -1,15 +1,10 @@
 "use client";
-import { IAboutTeaser } from "@/types/index";
 import { Animated, ContactOptions, MediaBlock } from ".";
 import { slideUpTransition } from "@/styles/animations";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 
-type AboutTeaserProps = {
-  about: IAboutTeaser;
-};
-
 // const { shortCopy } = about;
-const AboutTeaser = ({ about }: AboutTeaserProps) => {
+const AboutTeaser = () => {
 
   return (
     <section className="relative md:max-w-[95%] mx-auto">

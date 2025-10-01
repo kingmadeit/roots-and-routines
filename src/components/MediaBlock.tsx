@@ -35,7 +35,7 @@ const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClas
     
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 content-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 content-center">
             <Animated as="div" {...slideUpTransition} className={
                 clsx("p-4 gradient-container-white", 
                 isReverse ? 'order-1 md:order-2' : 'order-1',
