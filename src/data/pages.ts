@@ -51,51 +51,51 @@ export const pagesData: PagesData = {
     },
     gallery: [
       {
-        image: `img-1.jpg`,
+        image: `img-1.webp`,
         text: 'Playing'
       },
       {
-        image: `img-2.jpg`,
+        image: `img-2.webp`,
         text: 'Reading'
       },
       {
-        image: `img-3.jpg`,
+        image: `img-3.webp`,
         text: 'Scheduling'
       },
       {
-        image: `img-4.jpg`,
+        image: `img-4.webp`,
         text: 'Strawberries'
       },
       {
-        image: `img-2.jpg`,
+        image: `img-2.webp`,
         text: 'Referral'
       },
       {
-        image: `img-1.jpg`,
+        image: `img-1.webp`,
         text: 'Train Track'
       },
       {
-        image: `img-2.jpg`,
+        image: `img-2.webp`,
         text: 'Santorini'
       },
       {
-        image: `img-4.jpg`,
+        image: `img-4.webp`,
         text: 'Blurry Lights'
       },
       {
-        image: `img-3.jpg`,
+        image: `img-3.webp`,
         text: 'New York'
       },
       {
-        image: `img-1.jpg`,
+        image: `img-1.webp`,
         text: 'Good Boy'
       },
       {
-        image: `img-2.jpg`,
+        image: `img-2.webp`,
         text: 'Coastline'
       },
       {
-        image: `img-4.jpg`,
+        image: `img-4.webp`,
         text: 'Palm Trees'
       }
     ]

@@ -30,6 +30,8 @@ const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClas
             width={500} 
             height={600}
             className="mix-blend-multiply rounded-[20%]"
+            quality={75}
+            loading="lazy"
         />
     );
     

@@ -46,6 +46,8 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
       alt={alt}
       className={className}
       onError={handleError}
+      quality={75}
+      loading="lazy"
       {...rest} 
     />
   );

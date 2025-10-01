@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef, useState } from 'react';
 
@@ -48,6 +49,7 @@ interface MediaProps {
   viewport: Viewport;
   bend: number;
   borderRadius?: number;
+  loadingColor?: [number, number, number, number]
 }
 
 class Media {
@@ -73,6 +75,7 @@ class Media {
   speed: number = 0;
   isBefore: boolean = false;
   isAfter: boolean = false;
+  loadingColor: [number, number, number, number];
 
   constructor({
     geometry,
@@ -86,6 +89,7 @@ class Media {
     viewport,
     bend,
     borderRadius = 0,
+    loadingColor = [0.741, 0.612, 0.039, 0.5]
   }: MediaProps) {
     this.geometry = geometry;
     this.gl = gl;
@@ -98,6 +102,7 @@ class Media {
     this.viewport = viewport;
     this.bend = bend;
     this.borderRadius = borderRadius;
+    this.loadingColor = loadingColor;
     this.createShader();
     this.createMesh();
     this.onResize();
@@ -132,13 +137,15 @@ class Media {
         uniform vec2 uPlaneSizes;
         uniform sampler2D tMap;
         uniform float uBorderRadius;
+        uniform vec4 uLoadingColor;     
+        uniform float uTextureLoaded;  
         varying vec2 vUv;
-        
+
         float roundedBoxSDF(vec2 p, vec2 b, float r) {
           vec2 d = abs(p) - b;
           return length(max(d, vec2(0.0))) + min(max(d.x, d.y), 0.0) - r;
         }
-        
+
         void main() {
           vec2 ratio = vec2(
             min((uPlaneSizes.x / uPlaneSizes.y) / (uImageSizes.x / uImageSizes.y), 1.0),
@@ -148,14 +155,18 @@ class Media {
             vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
             vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
           );
-          vec4 color = texture2D(tMap, uv);
-          
+
+          vec4 color;
+
+          if (uTextureLoaded < 1.0) {
+            color = uLoadingColor; 
+          } else {
+            color = texture2D(tMap, uv);
+          }
+
           float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
-          
-          // Smooth antialiasing for edges
           float edgeSmooth = 0.002;
           float alpha = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d);
-          
           gl_FragColor = vec4(color.rgb, alpha);
         }
       `,
@@ -165,7 +176,9 @@ class Media {
         uImageSizes: { value: [0, 0] },
         uSpeed: { value: 0 },
         uTime: { value: 100 * Math.random() },
-        uBorderRadius: { value: this.borderRadius }
+        uBorderRadius: { value: this.borderRadius },
+        uTextureLoaded: { value: 0 },
+        uLoadingColor: { value: this.loadingColor }
       },
       transparent: true
     });
@@ -175,6 +188,7 @@ class Media {
     img.onload = () => {
       texture.image = img;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
+      this.program.uniforms.uTextureLoaded.value = 1;
     };
   }
 
@@ -253,6 +267,7 @@ interface AppConfig {
   borderRadius?: number;
   scrollSpeed?: number;
   scrollEase?: number;
+  isMobile?:boolean;
 }
 
 class App {
@@ -276,6 +291,7 @@ class App {
   screen!: { width: number; height: number };
   viewport!: { width: number; height: number };
   raf: number = 0;
+  isMobile:boolean;
 
   boundOnResize!: () => void;
   boundOnWheel!: (e: Event) => void;
@@ -294,12 +310,14 @@ class App {
       bend = 1,
       borderRadius = 0,
       scrollSpeed = 2,
-      scrollEase = 0.05
+      scrollEase = 0.05,
+      isMobile = false
     }: AppConfig
   ) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scrollSpeed = scrollSpeed;
+    this.isMobile = isMobile;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
     this.onCheckDebounce = debounce(this.onCheck.bind(this), 200);
     this.createRenderer();
@@ -365,19 +383,29 @@ class App {
     bend: number = 1,
     borderRadius: number
   ) {
-    const defaultItems = [
-      { image: `img-1.jpg` },
-      { image: `img-2.jpg` },
-      { image: `img-3.jpg` },
-      { image: `img-4.jpg` },
-      { image: `img-2.jpg` },
-      { image: `img-1.jpg` },
-      { image: `img-2.jpg` },
-      { image: `img-4.jpg` },
-      { image: `img-3.jpg` },
-      { image: `img-1.jpg` },
-      { image: `img-2.jpg` },
-      { image: `img-4.jpg` }
+
+    // TODO: CHANGE THIS (for testing)
+    const defaultItems = this.isMobile ? 
+    [
+      { image: `img-1.webp` },
+      { image: `img-2.webp` },
+      { image: `img-3.webp` },
+      { image: `img-4.webp` },
+      { image: `img-2.webp` },
+    ] :
+    [
+      { image: `img-1.webp` },
+      { image: `img-2.webp` },
+      { image: `img-3.webp` },
+      { image: `img-4.webp` },
+      { image: `img-2.webp` },
+      { image: `img-1.webp` },
+      { image: `img-2.webp` },
+      { image: `img-4.webp` },
+      { image: `img-3.webp` },
+      { image: `img-1.webp` },
+      { image: `img-2.webp` },
+      { image: `img-4.webp` }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -519,6 +547,7 @@ export default function CircularGallery({
   const containerRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<App | null>(null);
   const [isInView, setIsInView] = useState(false);
+  const isMobile = useIsMobile();
 
   // Intersection Observer to track visibility
   useEffect(() => {
@@ -548,7 +577,8 @@ export default function CircularGallery({
       bend,
       borderRadius,
       scrollSpeed,
-      scrollEase
+      scrollEase,
+      isMobile
     });
     
     appRef.current = app;
