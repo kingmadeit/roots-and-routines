@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useLayoutEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { slideUpTransition } from "@/styles/animations";
 import { siteData } from "@/data/full-site";
@@ -84,44 +84,9 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
   const selectedTab = tabs[selectedIndex];
-
-  const buttonRefs = React.useRef<Map<string, HTMLButtonElement>>(new Map());
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    const updateDimensions = (): void => {
-      const selectedButton = buttonRefs.current.get(selected);
-      const container = containerRef.current;
-
-      if (selectedButton && container) {
-        const rect = selectedButton.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        setDimensions({
-          width: rect.width,
-          left: rect.left - containerRect.left - 8,
-        });
-      }
-    };
-
-    requestAnimationFrame(() => {
-      updateDimensions();
-    });
-
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, [selected]);
-
-  const handleTabClick = useCallback((tabId: string): void => {
-    const currentIndex = tabs.findIndex((tab) => tab.id === selected);
-    const newIndex = tabs.findIndex((tab) => tab.id === tabId);
-    setDirection(newIndex > currentIndex ? 1 : -1);
-    setSelected(tabId);
-  },[]);
-
   const selectedServices = services.filter(
     (service) => service.category === selectedTab.id
   );
-
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? "100%" : "-100%",
