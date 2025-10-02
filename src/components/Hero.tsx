@@ -4,10 +4,9 @@ import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/types";
 import Link from "next/link";
-import { slideUpTransition } from "@/styles/animations";
 import { DottedArrow } from "./svgs";
-import { Animated, CircularGallery } from ".";
 import { useGalleryPeekHeight } from "@/hooks";
+import CircularGallery from "./CircularGallery";
 
 
 
@@ -77,15 +76,13 @@ const ContentSection = memo<{
   return (
     <div className="p-4 md:p-16 flex flex-col space-y-4 items-center justify-center">
       <TitleDisplay title={title} splitTitle={splitTitle} />
-      <Animated as="h2"
-        {...ANIMATION_CONFIG.subtitle}
-        className="hero-sub-title max-w-[90%] md:max-w-[65%] font-nunito"
+      <h2 className="animate-on-scroll hero-sub-title max-w-[90%] md:max-w-[400px] font-nunito"
       >
         {subtitle}
-      </Animated>
+      </h2>
       
       {/* TODO:: I still think this button is valuable -- confirm with client */}
-      <Animated as="div" className="relative hidden" {...ANIMATION_CONFIG.button}>
+      <div className="relative hidden">
         <Button
           asChild
           className={BUTTON_STYLES}
@@ -96,7 +93,7 @@ const ContentSection = memo<{
           </Link>
         </Button>
         <DottedArrow className="absolute bottom-[calc(100% + 2rem)] -left-15 w-40 h-40 text-accent opacity-30" />
-      </Animated>
+      </div>
     </div>
   );
 });
