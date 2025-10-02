@@ -1,9 +1,8 @@
-import Animated from "@/components/Animated";
-import ComingSoon from "@/components/ComingSoon";
+'use client'
 import MediaBlock from "@/components/MediaBlock";
-import { slideUpTransition } from "@/styles/animations";
 import { Sparkles } from "lucide-react";
 import { pagesData } from "@/data/pages";
+import useInViewObserver from "@/hooks/useInViewObserver";
 
 const {
     about: {
@@ -12,6 +11,8 @@ const {
 } = pagesData;
 
 const ClientAboutPage = () => {
+    useInViewObserver({selector: '.animate-on-scroll'});
+    
     return (
         <div className="w-full">
             <div className="container pt-32">
