@@ -174,7 +174,7 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 relative">
-          <motion.h2
+          <motion.h2 
             {...slideUpTransition}
             className="text-heading text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent"
           >
