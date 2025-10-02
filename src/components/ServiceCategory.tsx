@@ -17,7 +17,7 @@ export default function ServiceCategory (
        <div className={clsx('container', contentClassName)}>
           {children}
         </div>
-        <div className="w-full h-[60px] md:h-[100px]  bg-primary rounded-lg absolute top-0"></div>
+        <div className="w-full h-[80px] md:h-[100px]  bg-primary rounded-lg absolute top-0"></div>
       </div>        
     )
 }

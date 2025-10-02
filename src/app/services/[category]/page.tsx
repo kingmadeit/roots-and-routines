@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 
-export default function ServiceCategoryPage({ params }: { params: Params }) {
-  const { category } = params;
+export default async function ServiceCategoryPage({ params }: { params: Params }) {
+  const { category } = await params;
   const filteredServices = siteData.services.filter((s) => s.category === category);
   const categoryColor = serviceCategories.find(c => c.id === category)?.color;
 
