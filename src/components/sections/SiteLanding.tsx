@@ -1,7 +1,9 @@
+'use client'
 import { pagesData } from "@/data";
 import dynamic from "next/dynamic";
 import LazyLoadOnView from "@/components/sections/LazyLoadOnView";
 import HeroSection from "./HeroSection";
+import useInViewObserver from "@/hooks/useInViewObserver";
 
 
 const { home: {  meta } } = pagesData;
@@ -28,6 +30,7 @@ export const metadata = meta;
 
 // Main page component with floating icons overlay
 export default function HomePage() {
+  useInViewObserver({selector:'.animate-on-scroll'})
   return (
       <>
         <HeroSection />

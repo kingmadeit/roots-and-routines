@@ -51,9 +51,7 @@ const splitTitleBySeparator = (title: string, separator?: string): string[] | nu
 // Memoized Components
 const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, splitTitle }) {
   return (
-    <Animated as="h1"
-      {...slideUpTransition}
-      className="hero-title relative text-secondary font-nunito hyphens-auto"
+    <h1 className="animate-on-scroll hero-title relative text-secondary font-nunito hyphens-auto"
     >
       {splitTitle ? (
         <>
@@ -67,7 +65,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
         title
       )}
       <Sparkles className="absolute top-[-3rem] right-[50%] w-16 h-16 text-secondary-light opacity-40"/>
-    </Animated>
+    </h1>
   );
 });
 

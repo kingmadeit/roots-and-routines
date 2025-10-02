@@ -42,12 +42,12 @@ const MediaBlock:FC<MediaBlockProps> = ({type, src, children, mediaContainerClas
 
     return (
         <div className={clsx('grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 content-center', wrapperClassName)}>
-            <Animated as="div" {...slideUpTransition} className={
-                clsx("p-4", 
+            <div className={
+                clsx("p-4 animate-on-scroll", 
                 isReverse ? 'order-1 md:order-2' : 'order-1',
                 contentContainerClassName)}>
                {children}
-            </Animated>
+            </div>
             <div className={
                 clsx(
                     'w-full sticky top-0 rounded-4xl overflow-hidden flex justify-center items-center',

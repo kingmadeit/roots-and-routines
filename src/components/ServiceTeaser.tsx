@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { slideUpTransition } from "@/styles/animations";
 import { siteData } from "@/data/full-site";
 import { ServiceData } from "@/types";
 import { serviceCategories } from "@/constants/services";
@@ -174,19 +173,17 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 relative">
-          <motion.h2 
-            {...slideUpTransition}
-            className="text-heading text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent"
+          <h2 
+            className="animate-on-scroll text-heading text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent"
           >
             Supporting families <br/> through every stage
-          </motion.h2>
-          <motion.p
-            {...slideUpTransition}
-            className="my-8 mx-auto text-body text-secondary max-w-xl font-medium"
+          </h2>
+          <p
+            className="animate-on-scroll my-8 mx-auto text-body text-secondary max-w-xl font-medium"
           >
             From daily meal planning to finding the right childcare, we&apos;re here
             to make family life smoother and more joyful.
-          </motion.p>
+          </p>
         </div>
 
         <SmoothTab />

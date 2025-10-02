@@ -2,8 +2,6 @@
 import { useMemo, memo } from "react";
 import { Check, Circle } from "lucide-react";
 import { pagesData } from "@/data";
-import { slideUpTransition } from "@/styles/animations";
-import { motion } from "motion/react";
 // Constants
 const ANIMATION_DELAY = "0.4s";
 
@@ -65,14 +63,13 @@ const PricingHeader = memo(() => {
       <div
         aria-hidden="true"
       />
-      <motion.h1
-        {...slideUpTransition}
-        className="text-heading"
+      <h1
+        className="animate-on-scroll text-heading"
       >
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent">
           {title}
         </span>
-      </motion.h1>
+      </h1>
       <p
         className="text-secondary mt-6 text-base sm:text-lg max-w-2xl mx-auto animate-fade-in-down"
         style={{ animationDelay: ANIMATION_DELAY }}

@@ -2,27 +2,22 @@ import { Variants } from "motion";
 
 const slideUp: Variants = {
   initial: { y: 100, opacity: 0 },
-  whileInView: { y: 0, opacity: 1 },
 };
 
 const slideDown: Variants = {
   initial: { y: 100, opacity: 0 },
-  whileInView: { y: 0, opacity: 1 },
 };
 
 const slideLeft: Variants = {
   initial: { x: 300, opacity: 0 },
-  whileInView: { x: 0, opacity: 1 },
 };
 
 const slideRight: Variants = {
   initial: { x: -300, opacity: 0 },
-  whileInView: { x: 0, opacity: 1 },
 };
 
 const fadeIn: Variants = {
   initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
 };
 
 export const defaultTransition = {
