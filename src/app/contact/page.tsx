@@ -1,9 +1,13 @@
-import {ComingSoon} from '@/components'
-import React from 'react'
+import ContactOptions from '@/components/ContactOptions'
+import { div } from 'motion/react-client'
 
 const Contact = () => {
   return (
-    <ComingSoon />
+    <div className='container'>
+      <div className='w-full min-h-screen grid grid-col-1 place-content-center'>
+        <ContactOptions />
+      </div>
+    </div>
   )
 }
 
