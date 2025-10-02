@@ -6,6 +6,7 @@ const categoriesWithLinks = serviceCategories.map((category) => ({
   linksTo: `/services/${category.id}`,
 }));
 
+
 export default function ServicePage() {
   return <ClientServicePage categories={categoriesWithLinks} />;
 }

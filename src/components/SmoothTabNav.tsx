@@ -52,6 +52,7 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
 
   console.log(selectedTab.color)
 
+
   return (
     <div className={`w-full h-full mx-auto flex justify-center items-center`}>
       <div className={`flex justify-center mb-8 ${className || ""}`}>
@@ -98,6 +99,7 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
                   type="button"
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => isLink ? e.preventDefault() : handleOnChange(tab)}
                   onMouseEnter={() => isLink && handleOnChange(tab)}
+
                   className={clsx(
                     "relative flex flex-col items-center justify-center px-6 py-4 text-sm font-medium rounded-2xl transition-all duration-300 whitespace-nowrap",
                     isSelected ? "text-white" : "text-white/90",
