@@ -1,7 +1,3 @@
-"use client";
-import ContactOptions from "./ContactOptions";
-import MediaBlock from "./MediaBlock";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 // const { shortCopy } = about;
 const AboutTeaser = () => {
@@ -36,17 +32,6 @@ const AboutTeaser = () => {
             <span className="text-3xl md:text-5xl text-secondary">family more time to connect. </span><br />
             Let us help you build a flow that works for you
           </h3>
-          <Dialog>
-            <DialogTrigger>Open</DialogTrigger>
-            <DialogContent className="bg-secondary rounded-4xl md:max-w-3xl w-[90%]">
-              <DialogHeader>
-                <DialogTitle>Ready to transform your family&apos;s daily life?</DialogTitle>
-                <DialogDescription className="my-4">
-                  <ContactOptions />
-                </DialogDescription>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
         </div>
       </div>
     </section>

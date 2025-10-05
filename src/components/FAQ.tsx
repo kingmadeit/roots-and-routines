@@ -1,6 +1,6 @@
 "use client";
 import { memo, useState, useCallback, useMemo } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import { Plus, Minus } from "lucide-react";
 import clsx from "clsx";
 import { FAQData, FAQItem } from "@/types";
@@ -91,9 +91,8 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
   );
 });
 
-const FAQHeader = memo<{ title: string; subtitle: string }>(function FAQHeader({
+const FAQHeader = memo<{ title: string }>(function FAQHeader({
   title,
-  subtitle
 }) {
   return (
     <div className="text-center mb-12">
@@ -135,7 +134,7 @@ const FAQ = memo<FAQComponentProps>(function FAQ({
     <section className={clsx("py-16 px-4 font-nunito", className)}>
       <div className="max-w-4xl mx-auto">
         {showTitle && (
-          <FAQHeader title={data.title} subtitle={data.subtitle} />
+          <FAQHeader title={data.title} />
         )}
 
         <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white flex flex-col">
