@@ -14,7 +14,7 @@ export const siteData: SiteData = {
     name: "Roots & Routines",
     tagline: "Empowering Families to Thrive",
     subline:
-      "From school searches to meal planning and trusted childcare, we make daily life simpler—so you can focus on what matters most.",
+      "Support that grows with your family - helping to bring structure, calm & clarity. From early years to school transitions and beyond",
     slogan: `tailored${sloganSplit} support ${sloganSplit} for the ${sloganSplit} Modern Family ${sloganSplit} Parent led and experience based`,
     sloganSplit,
     mission:

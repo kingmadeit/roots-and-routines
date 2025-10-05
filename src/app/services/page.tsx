@@ -1,5 +1,5 @@
 import { serviceCategories } from "@/constants/services";
-import ClientServicePage from "./ClientServicePage"; 
+import ClientServicePage from "./ClientServicePage";
 
 const categoriesWithLinks = serviceCategories.map((category) => ({
   ...category,
@@ -8,5 +8,5 @@ const categoriesWithLinks = serviceCategories.map((category) => ({
 
 
 export default function ServicePage() {
-  return <ClientServicePage categories={categoriesWithLinks} />;
+  return <ClientServicePage />;
 }
