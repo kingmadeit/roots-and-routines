@@ -27,7 +27,7 @@ const AboutTeaser = () => {
             </h3>
           </div>
         </div>
-        <div className="w-full h-80 lg:col-span-2 border border-green rounded-4xl">
+        <div className="w-full h-80 lg:col-span-2  rounded-4xl">
           <h3 className="leading-11 animate-on-scroll text-1xl sm:text-1xl md:text-2xl font-nunito font-bold text-accent/50 mb-4 text-center">
             <span className="block font-bold text-3xl md:text-5xl text-secondary">No more guess work.</span>
             Ever feel like you&apos;re winging it everyday? <br />The mental load that comes with parenting is real. Having a home structure helps to

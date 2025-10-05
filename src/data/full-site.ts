@@ -236,65 +236,122 @@ export const siteData: SiteData = {
     title: "Frequently Asked Questions",
     subtitle: "Everything you need to know about our family support services",
     questions: [
+      // General
       {
         id: "what-is-roots-routines",
+        category: "general",
         question: "What is Roots & Routines Family Concierge?",
-        answer: "We're a personalized family support service that helps busy families create smoother routines, find trusted childcare, and make confident decisions for their children's wellbeing. From meal planning to school searches, we provide tailored guidance and vetted referrals to simplify your family life."
+        answer: "Roots & Routines is a family-focused concierge service designed to bring ease, structure, and support into your home. We help parents with everything from meal planning and nutrition guidance to sourcing childcare, setting routines, and finding trusted family resources. Think of us as your go-to support system for family life."
+      },
+      {
+        id: "who-can-benefit",
+        category: "general",
+        question: "Who can benefit from your services?",
+        answer: "Any parent, parent-to-be, or family who wants extra support in managing the busy demands of home life. Whether you're a new parent navigating sleepless nights, a busy family juggling schedules, or simply looking for more structure and calm—we're here for you."
       },
       {
         id: "how-to-get-started",
-        question: "How do I get started with your services?",
-        answer: "The best way to start is with our First Steps Call - a one-hour consultation where we understand your family's unique needs and provide immediate, actionable guidance. From there, we can recommend the most suitable ongoing support package for your situation."
+        category: "general",
+        question: "How do I get started with Roots & Routines?",
+        answer: "You can start by reaching out through our contact form or social media links. We'll arrange an initial consultation to understand your family's needs and create a tailored support plan that works for you."
       },
       {
         id: "areas-covered",
-        question: "What areas do you cover?",
-        answer: "We primarily serve families in the UK, with specialized knowledge of local schools, childcare providers, and family services. For certain services like meal planning and routine guidance, we can support families remotely regardless of location."
+        category: "general",
+        question: "Do you work with families outside of your location?",
+        answer: "Yes! While we love working with families locally, many of our services—such as meal planning, nutrition support, routines, and sourcing—can be provided virtually."
+      },
+
+      // Services & Support
+      {
+        id: "new-parent-support",
+        category: "services",
+        question: "What types of support do you provide for new parents?",
+        answer: "We offer practical and emotional support including referrals to trusted maternity and night nannies, breastfeeding and weaning guidance, sleep and hygiene routines, and wellbeing add-ons like stress reduction and emotional regulation tips for new parents."
       },
       {
-        id: "meal-planning-process",
-        question: "How does your meal planning service work?",
-        answer: "We create customized weekly meal plans based on your family's dietary needs, preferences, and busy schedule. This includes tailored grocery shopping lists, light meal prep guidance, and strategies for picky eaters. We focus on nutritious, family-friendly meals that fit your lifestyle."
+        id: "childcare-help",
+        category: "services",
+        question: "Do you help with finding childcare (nannies, babysitters, maternity nurses, night nannies)?",
+        answer: "Yes. We carefully source and recommend childcare professionals, ensuring they are trusted, experienced, and suited to your family's unique needs."
       },
       {
-        id: "childcare-vetting",
-        question: "How do you vet childcare providers?",
-        answer: "All our childcare referrals undergo thorough background checks, reference verification, and personal interviews. We assess their experience, qualifications, and compatibility with different family dynamics. We only recommend providers we would trust with our own families."
+        id: "meal-planning",
+        category: "services",
+        question: "Can you assist with meal planning and nutrition?",
+        answer: "Absolutely. From tailored weekly grocery lists to healthy meal prep and child nutrition advice, we help families eat well with ease."
       },
       {
-        id: "school-search-support",
-        question: "What's included in your school search guidance?",
-        answer: "We help you identify schools and nurseries aligned with your family values, provide shortlisting support, prepare you for visits and interviews, assist with applications, and connect you with trusted educational professionals. Our guidance is tailored to your child's specific needs and your family's priorities."
+        id: "schools-nurseries",
+        category: "services",
+        question: "Do you help families find schools, nurseries, or after-school clubs?",
+        answer: "Yes—we research and provide recommendations for schools, nurseries, after-school activities, holiday clubs, and even family-friendly events to fit your lifestyle and needs."
       },
       {
-        id: "routine-customization",
-        question: "How do you customize family routines?",
-        answer: "We assess your current family dynamics, work schedules, and goals to create bespoke daily, weekly, and monthly routines. This includes calendar organization, habit-building support, and flexible systems that grow with your family's changing needs."
+        id: "routine-support",
+        category: "services",
+        question: "Do you provide routine or scheduling support for families?",
+        answer: "We specialise in creating personalised routines that bring balance to your home—covering sleep, meals, school schedules, playtime, and parent self-care."
+      },
+
+      // Bookings & Pricing
+      {
+        id: "how-to-book",
+        category: "booking",
+        question: "How do I book your services?",
+        answer: "Simply contact us via email or social media. We'll arrange a consultation to understand your needs and suggest the best support package."
       },
       {
-        id: "package-differences",
-        question: "What's the difference between your service packages?",
-        answer: "Our First Steps Call (£60) is perfect for immediate guidance on specific questions. The Family Planning Session (£250) offers comprehensive support across multiple areas like school searches and routine planning. Our Monthly Concierge (£400) provides ongoing flexible support with weekly check-ins and unlimited email access."
+        id: "consultation-types",
+        category: "booking",
+        question: "Do you offer one-time consultations or ongoing support packages?",
+        answer: "Both. Some families prefer one-time guidance, while others benefit from ongoing, hands-on support. We'll work with you to find the right fit."
       },
       {
-        id: "payment-options",
-        question: "What payment options do you offer?",
-        answer: "We accept bank transfers, online payments, and can arrange payment plans for our Monthly Concierge service. Payment is required at the time of booking for consultations, and monthly packages are billed in advance."
+        id: "pricing",
+        category: "booking",
+        question: "What are your rates?",
+        answer: "Our services are tailored, so pricing depends on your specific needs. We'll provide a clear outline after our initial consultation."
       },
       {
-        id: "response-time",
-        question: "How quickly do you respond to requests?",
-        answer: "We aim to respond to all emails within 24 hours during business days (Monday-Friday, 9 AM-6 PM). Monthly concierge clients receive priority response times, typically within 4-6 hours during business hours."
+        id: "commitment",
+        category: "booking",
+        question: "Is there a minimum or maximum commitment required?",
+        answer: "No—you can book what works best for your family, whether that's a single session or a long-term package."
+      },
+
+      // Trust & Safety
+      {
+        id: "vetting-professionals",
+        category: "trust",
+        question: "How do you choose or vet the professionals you recommend (nannies, therapists, etc.)?",
+        answer: "We only recommend trusted, experienced professionals. Each referral is thoroughly researched, and we ensure they meet high standards for safety, professionalism, and care."
       },
       {
-        id: "emergency-support",
-        question: "Do you offer emergency childcare support?",
-        answer: "While we don't provide emergency services, our network includes trusted providers who may have last-minute availability. Monthly concierge clients have priority access to our rapid referral service for urgent childcare needs."
+        id: "confidentiality",
+        category: "trust",
+        question: "Are your services confidential?",
+        answer: "Yes. Your family's privacy is our priority. All conversations and arrangements are kept completely confidential."
       },
       {
-        id: "follow-up-support",
-        question: "What follow-up support do you provide?",
-        answer: "All consultations include a detailed follow-up email with personalized recommendations and trusted resources. We're available for brief follow-up questions via email, and can schedule additional sessions as your family's needs evolve."
+        id: "references",
+        category: "trust",
+        question: "Do you provide references or testimonials?",
+        answer: "Yes—upon request, we're happy to share feedback from families we've supported."
+      },
+
+      // Extras
+      {
+        id: "gift-services",
+        category: "extras",
+        question: "Can I gift Roots & Routines services to a family member or friend?",
+        answer: "Yes! Support is a beautiful gift. We offer gift options for expecting parents, new parents, and busy families."
+      },
+      {
+        id: "virtual-support",
+        category: "extras",
+        question: "Do you offer virtual support as well as in-person?",
+        answer: "Yes—many of our services, such as meal planning, routines, nutrition support, and sourcing, are available virtually for families everywhere."
       }
     ]
   }
