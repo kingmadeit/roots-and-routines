@@ -6,7 +6,7 @@ import useInViewObserver from "@/hooks/useInViewObserver";
 
 
 const ClientAboutPage = () => {
-    useInViewObserver({ selector: `.animate-on-scroll` });
+    // useInViewObserver({ selector: `.animate-on-scroll` });
 
     return (
         <div className="w-full">
@@ -19,7 +19,7 @@ const ClientAboutPage = () => {
                     From school searches to nanny placements, from nutritional meal prep to activity planning - we`&apos;re here to take the stress out of the everyday so you can focus on what matters most: connection, calm and quality time.
                 </p>
                 <MediaBlock src={""} type={"video"} wrapperClassName="bg-complementary/80 rounded-xl p-4 my-24" contentContainerClassName="gradient-container-complementary text-white">
-                    <h1 className="animate-on-scroll text-xl relative font-large text-inherit font-nunito hyphens-auto" >
+                    <h1 className=" text-xl relative font-large text-inherit font-nunito hyphens-auto" >
                         Families today are stretched - and we believe support shouldn`&apos;t be one-size-fits-all. With a background in childcare, nutrition, household management, office management, research skills and administration, Routes & Routines was born to provide modern families with the kind of personal, reliable and thoughtful support they truly deserve.
                         <Sparkles className="absolute top-[-4rem] right-[50%] w-16 h-16 text-complementary opacity-40" />
                     </h1>

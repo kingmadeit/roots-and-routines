@@ -16,7 +16,7 @@ const ContactTeaser = ({ quote }: FounderQuoteProps) => {
           <div className="text-center">
 
             <h2 className="text-heading  text-primary!">
-              prices start from E60
+              Prices start from E60
             </h2>
             <p className="font-medium text-primary inline-block mt-4 w-[70%]">get in touch to get started</p>
           </div>
