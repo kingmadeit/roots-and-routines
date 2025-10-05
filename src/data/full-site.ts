@@ -15,7 +15,7 @@ export const siteData: SiteData = {
     tagline: "Empowering Families to Thrive",
     subline:
       "Support that grows with your family - helping to bring structure, calm & clarity. From early years to school transitions and beyond",
-    slogan: `tailored${sloganSplit} support ${sloganSplit} for the ${sloganSplit} Modern Family ${sloganSplit} Parent led and experience based`,
+    slogan: `Tailored${sloganSplit} support ${sloganSplit} for the ${sloganSplit} Modern Family ${sloganSplit} Parent led and experience based`,
     sloganSplit,
     mission:
       "We help families feel grounded, confident, and supported in their daily lives, simplifying routines and providing trusted guidance every step of the way.",

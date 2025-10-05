@@ -5,6 +5,7 @@ import { siteData } from "@/data/full-site";
 import { ServiceData } from "@/types";
 import { serviceCategories } from "@/constants/services";
 import SmoothTabNav from "./SmoothTabNav";
+import Link from "next/link";
 
 
 interface ServiceCardProps {
@@ -43,37 +44,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       <p className="text-white/90 mb-6 flex-grow text-sm leading-relaxed font-nunito">
         {service.fullCopy}
       </p>
-
-      <div className="space-y-3 mb-6">
-        {service.features.slice(0, 3).map((feature, index) => (
-          <div key={index} className="flex items-start text-sm">
-            <div className="w-1.5 h-1.5 bg-white/60 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-            <span className="text-white/80">{feature}</span>
-          </div>
-        ))}
-        {service.features.length > 3 && (
-          <div className="text-sm text-white/60 ml-4">
-            +{service.features.length - 3} more features
-          </div>
-        )}
-      </div>
-
-      <button className="bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center group backdrop-blur-sm border border-white/30">
-        Learn More
-        <svg
-          className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
     </div>
   );
 };
@@ -117,7 +87,7 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
     const newIndex = tabs.findIndex((tab) => tab.id === tabId);
     setDirection(newIndex > currentIndex ? 1 : -1);
     setSelectedIndex(newIndex);
-  },[]);
+  }, []);
 
   return (
     <div className={`w-full max-w-[90%] mx-auto ${className || ""}`}>
@@ -139,9 +109,8 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             animate="center"
             exit="exit"
             transition={transition}
-            className={`${
-              selectedTab?.color || "bg-accent/40"
-            } rounded-3xl p-8 relative overflow-hidden`}
+            className={`${selectedTab?.color || "bg-accent/40"
+              } rounded-3xl p-8 relative overflow-hidden`}
           >
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-white/10 rounded-3xl"></div>
@@ -161,6 +130,25 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
                 </motion.div>
               ))}
             </div>
+            <Link href={`/services/${selectedTab.id}`} className="relative cursor-pointer z-11">
+              <button className=" mx-auto mt-8 bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center group backdrop-blur-sm border border-white/30">
+                Learn More
+                <svg
+                  className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+
+              </button>
+            </Link>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -173,10 +161,10 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 relative">
-          <h2 
+          <h2
             className="animate-on-scroll text-heading text-transparent bg-clip-text bg-gradient-to-r from-complementary to-accent"
           >
-            Supporting families <br/> through every stage
+            Supporting families <br /> through every stage
           </h2>
           <p
             className="animate-on-scroll my-8 mx-auto text-body text-secondary max-w-xl font-medium"
