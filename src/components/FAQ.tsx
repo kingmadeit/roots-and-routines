@@ -1,10 +1,10 @@
 "use client";
 import { memo, useState, useCallback, useMemo } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import { Plus, Minus } from "lucide-react";
 import clsx from "clsx";
 import { FAQData, FAQItem } from "@/types";
-import {Animated} from ".";
+import Animated from "./Animated";
 
 interface FAQComponentProps {
   data: FAQData;
@@ -36,16 +36,16 @@ const ANIMATION_CONFIG = {
 } as const;
 
 // Memoized Components
-const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ 
-  item, 
-  isOpen, 
-  onToggle, 
-  index 
+const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
+  item,
+  isOpen,
+  onToggle,
+  index
 }) {
   const { question, answer } = item;
 
   return (
-    <Animated 
+    <Animated
       as="div"
       {...ANIMATION_CONFIG.stagger}
       transition={{ ...ANIMATION_CONFIG.stagger.transition, delay: index * 0.05 }}
@@ -77,7 +77,7 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
           <Animated as="div"
             id={`answer-${item.id}`}
             {...ANIMATION_CONFIG.accordion}
-            
+
           >
             <div className="px-6 pb-5 pt-4 bg-primary/10 rounded-t-lg">
               <p className="font-nunito leading-relaxed text-sm md:text-base">
@@ -91,34 +91,26 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
   );
 });
 
-const FAQHeader = memo<{ title: string; subtitle: string }>(function FAQHeader({ 
-  title, 
-  subtitle 
+const FAQHeader = memo<{ title: string }>(function FAQHeader({
+  title,
 }) {
   return (
     <div className="text-center mb-12">
-      <motion.h1
+      <Animated as="h1"
         {...ANIMATION_CONFIG.stagger}
         className="text-heading text-primary mb-4"
       >
         {title}
-      </motion.h1>
-      <motion.p
-        {...ANIMATION_CONFIG.stagger}
-        transition={{ ...ANIMATION_CONFIG.stagger.transition, delay: 0.1 }}
-        className="text-lg md:text-xl text-primary max-w-3xl mx-auto font-nunito"
-      >
-        {subtitle}
-      </motion.p>
+      </Animated>
     </div>
   );
 });
 
-const FAQ = memo<FAQComponentProps>(function FAQ({ 
-  data, 
-  showTitle = true, 
+const FAQ = memo<FAQComponentProps>(function FAQ({
+  data,
+  showTitle = true,
   maxItemsToShow,
-  className = "" 
+  className = ""
 }) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
@@ -142,9 +134,9 @@ const FAQ = memo<FAQComponentProps>(function FAQ({
     <section className={clsx("py-16 px-4 font-nunito", className)}>
       <div className="max-w-4xl mx-auto">
         {showTitle && (
-          <FAQHeader title={data.title} subtitle={data.subtitle} />
+          <FAQHeader title={data.title} />
         )}
-        
+
         <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white flex flex-col">
           {displayedQuestions.map((question, index) => (
             <AccordionItem
