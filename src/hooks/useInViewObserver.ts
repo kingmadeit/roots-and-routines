@@ -2,9 +2,9 @@
 import { useEffect } from 'react';
 
 interface useInViewObserverProps {
-    selector?: string;
+  selector?: string;
 }
-export default function useInViewObserver({selector = '.animate-on-scroll'}: useInViewObserverProps) {
+export default function useInViewObserver({ selector = '.animate-on-scroll' }: useInViewObserverProps) {
   useEffect(() => {
     const elements = document.querySelectorAll(selector);
     if (!elements.length) return;
@@ -15,12 +15,12 @@ export default function useInViewObserver({selector = '.animate-on-scroll'}: use
           if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
           } else {
-            entry.target.classList.remove('in-view'); // remove if you want toggle behavior
+            // entry.target.classList.remove('in-view'); // remove if you want toggle behavior
           }
         });
       },
       {
-        threshold: 0.1, 
+        threshold: 0.1,
         rootMargin: '50px',
       }
     );
