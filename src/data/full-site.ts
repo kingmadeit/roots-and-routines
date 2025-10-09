@@ -62,7 +62,7 @@ export const siteData: SiteData = {
         "Picky eater strategies",
       ],
       category: "daily-operations",
-      icon: Utensils,
+      icon: 'Utensils',
     },
     {
       id: "routines-scheduling",
@@ -77,7 +77,7 @@ export const siteData: SiteData = {
         "Support building consistent habits",
       ],
       category: "daily-operations",
-      icon: Clock,
+      icon: 'Clock',
     },
     {
       id: "sourcing-referrals",
@@ -93,7 +93,7 @@ export const siteData: SiteData = {
         "Family-friendly events and outings",
       ],
       category: "finding-support",
-      icon: UserSearch,
+      icon: 'UserSearch',
     },
     {
       id: "education-guidance",
@@ -108,7 +108,7 @@ export const siteData: SiteData = {
         "Referrals to tutors and educational therapists",
       ],
       category: "finding-support",
-      icon: GraduationCap,
+      icon: 'GraduationCap',
     },
     {
       id: "parent-support",
@@ -124,7 +124,7 @@ export const siteData: SiteData = {
         "Emotional well-being strategies for parents",
       ],
       category: "wellness-growth",
-      icon: Baby,
+      icon: 'Baby',
     },
     {
       id: "family-wellness",
@@ -139,7 +139,7 @@ export const siteData: SiteData = {
         "Parent stress reduction plans and wellness support",
       ],
       category: "wellness-growth",
-      icon: Heart,
+      icon: 'Heart',
     },
   ],
   packages: [

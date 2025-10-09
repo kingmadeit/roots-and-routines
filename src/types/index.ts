@@ -36,7 +36,8 @@ export interface ServiceData {
   fullCopy: string; // detailed page copy
   features: string[];
   category: string;
-  icon: ElementType;
+  // icon: ElementType;
+  icon: string;
   meta?: MetaData;
   href?: string;
 }
