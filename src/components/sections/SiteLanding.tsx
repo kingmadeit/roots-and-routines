@@ -15,8 +15,6 @@ const loading = () => (<div className="animate-pulse h-[300px]" />);
 
 const ContactSection = dynamic(() => import('./ContactSection'), { loading })
 
-const LeadSection = dynamic(() => import('./LeadSection'), { loading })
-
 // Export metadata
 export const metadata = meta;
 
@@ -31,7 +29,6 @@ export default function HomePage() {
       <ServiceSection />
       <FAQSection />
       <ContactSection />
-      <LeadSection variant="accent" />
     </>
   );
 }

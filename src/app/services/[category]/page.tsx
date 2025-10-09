@@ -105,7 +105,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
   }
 
   return (
-    <ServiceCategory heroClassName={`${categoryColor}/40`} contentClassName="text-accent">
+    <ServiceCategory contentClassName="text-accent">
       <ServiceCategoryContent services={filteredServices} />
     </ServiceCategory>
   )

@@ -40,7 +40,7 @@ export default function Footer() {
   const [weekDays, time] = contact.businessHours!.split(",")
 
   return (
-    <footer className="relative bg-gradient-to-br from-secondary via-secondary to-secondary-light pt-20 pb-8 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-secondary via-secondary to-secondary-light pb-8 overflow-hidden">
       {/* Organic background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="absolute -top-20 -left-20 w-96 h-96 opacity-10" viewBox="0 0 400 400">
@@ -63,7 +63,7 @@ export default function Footer() {
         </svg>
       </div>
 
-      {/* <LeadSection /> */}
+      <LeadSection />
 
       <div className="relative container mx-auto px-4">
         {/* Main content grid */}
