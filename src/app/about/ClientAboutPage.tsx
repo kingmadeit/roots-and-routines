@@ -2,17 +2,18 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, Heart, Sparkles, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ValuesCard } from "@/components/ValuesCard"
 
 export const metadata: Metadata = {
     title: "About Us | Roots & Routines",
     description: "Every family deserves tailored support to feel grounded, balanced and at ease in their daily lives.",
 }
 
-export default function ClientAboutPage() {
+export default function AboutPage() {
     return (
         <main className="min-h-screen bg-primary">
             {/* Hero Section */}
-            <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
+            <section className="relative min-h-screen px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
                 <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
                     <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -28,9 +29,9 @@ export default function ClientAboutPage() {
                     </svg>
                 </div>
 
-                <div className="mx-auto max-w-[1400px]">
+                <div className="mx-auto max-w-[1400px] pt-16">
                     <div className="grid lg:grid-cols-12 gap-16 items-end">
-                        <div className="lg:col-span-7 space-y-8 relative z-10">
+                        <div className="lg:col-span-8 space-y-8 relative z-10">
                             <div className="space-y-6">
                                 <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
                                     <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -56,26 +57,93 @@ export default function ClientAboutPage() {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-5">
-                            <div className="relative">
-                                <div className="absolute -inset-4 bg-gradient-to-br from-accent/20 via-complementary/20 to-secondary/20 rounded-[2rem] blur-2xl" />
-                                <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-10 border border-accent/10 shadow-xl">
-                                    <div className="w-full h-48 mb-6">
-                                        <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                                            <circle cx="100" cy="75" r="40" fill="#f0bf99" opacity="0.3" />
-                                            <path
-                                                d="M100 45 L110 65 L130 70 L115 85 L118 105 L100 95 L82 105 L85 85 L70 70 L90 65 Z"
-                                                fill="#ca6c28"
-                                            />
-                                            <circle cx="60" cy="60" r="15" fill="#788a68" opacity="0.4" />
-                                            <circle cx="140" cy="90" r="20" fill="#bc9b0a" opacity="0.3" />
-                                            <path d="M50 120 Q100 100 150 120" stroke="#ca6c28" strokeWidth="2" fill="none" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-xl text-foreground/80 leading-relaxed font-light">
-                                        Founded with care and intention to help families create smoother routines and confident decisions
-                                    </p>
-                                </div>
+                        <div className="lg:col-span-4">
+                            <div className="w-full aspect-square mb-6">
+                                <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
+                                    {/* Background circle */}
+                                    <circle cx="150" cy="150" r="130" fill="#788a68" opacity="0.12" />
+
+                                    {/* Main organic shape */}
+                                    <path
+                                        d="M 150 60 Q 195 75 215 120 Q 235 165 210 205 Q 185 245 140 240 Q 95 235 75 195 Q 55 155 70 115 Q 85 75 130 65 Q 145 60 150 60 Z"
+                                        fill="#ca6c28"
+                                        opacity="0.85"
+                                    />
+
+                                    {/* Inner accent shape */}
+                                    <path
+                                        d="M 150 100 Q 175 110 185 135 Q 195 160 180 180 Q 165 200 145 195 Q 120 185 110 160 Q 100 135 115 115 Q 130 95 150 100 Z"
+                                        fill="#f0bf99"
+                                        opacity="0.75"
+                                    />
+
+                                    {/* Decorative dots */}
+                                    <circle cx="150" cy="150" r="7" fill="#fff8a9" />
+                                    <circle cx="125" cy="135" r="5" fill="#bc9b0a" opacity="0.7" />
+                                    <circle cx="175" cy="145" r="6" fill="#a3b185" opacity="0.7" />
+                                    <circle cx="140" cy="175" r="4" fill="#fdf2e0" />
+                                    <circle cx="165" cy="125" r="4" fill="#ca6c28" opacity="0.5" />
+
+                                    {/* Leaf-like elements */}
+                                    <path
+                                        d="M 150 150 Q 165 125 180 115"
+                                        stroke="#788a68"
+                                        strokeWidth="2.5"
+                                        fill="none"
+                                        strokeLinecap="round"
+                                    />
+                                    <ellipse
+                                        cx="185"
+                                        cy="110"
+                                        rx="7"
+                                        ry="13"
+                                        fill="#a3b185"
+                                        opacity="0.75"
+                                        transform="rotate(45 185 110)"
+                                    />
+
+                                    <path
+                                        d="M 150 150 Q 130 170 115 185"
+                                        stroke="#788a68"
+                                        strokeWidth="2.5"
+                                        fill="none"
+                                        strokeLinecap="round"
+                                    />
+                                    <ellipse
+                                        cx="110"
+                                        cy="190"
+                                        rx="7"
+                                        ry="13"
+                                        fill="#a3b185"
+                                        opacity="0.75"
+                                        transform="rotate(-30 110 190)"
+                                    />
+
+                                    {/* Heart icon integrated into design */}
+                                    <g transform="translate(150, 150)">
+                                        <circle cx="0" cy="0" r="22" fill="white" opacity="0.95" />
+                                        <path
+                                            d="M 0 -5 L -6 -11 Q -10 -15 -10 -10 Q -10 -5 -6 -1 L 0 5 L 6 -1 Q 10 -5 10 -10 Q 10 -15 6 -11 Z"
+                                            fill="#ca6c28"
+                                        />
+                                    </g>
+
+                                    {/* Sparkle elements */}
+                                    <g transform="translate(190, 120)">
+                                        <path
+                                            d="M 0 -4 L 1 -1 L 4 0 L 1 1 L 0 4 L -1 1 L -4 0 L -1 -1 Z"
+                                            fill="#bc9b0a"
+                                            opacity="0.8"
+                                        />
+                                    </g>
+                                    <g transform="translate(110, 130)">
+                                        <path
+                                            d="M 0 -3 L 0.7 -0.7 L 3 0 L 0.7 0.7 L 0 3 L -0.7 0.7 L -3 0 L -0.7 -0.7 Z"
+                                            fill="#ca6c28"
+                                            opacity="0.6"
+                                        />
+                                    </g>
+                                </svg>
                             </div>
                         </div>
                     </div>
@@ -191,7 +259,7 @@ export default function ClientAboutPage() {
 
                         <Link
                             href="/services"
-                            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
                         >
                             Explore All Services
                             <ArrowRight className="w-5 h-5" />
@@ -225,128 +293,39 @@ export default function ClientAboutPage() {
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-                        {/* Connection Card */}
-                        <div className="group relative">
-                            {/* Decorative SVG frame */}
-                            <svg
-                                className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-                                viewBox="0 0 400 500"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M50 50 Q50 50 50 100 L50 400 Q50 450 100 450 L300 450 Q350 450 350 400 L350 100 Q350 50 300 50 L100 50 Q50 50 50 50"
-                                    stroke="url(#gradientConnection)"
-                                    strokeWidth="3"
-                                    fill="none"
-                                    strokeDasharray="10 5"
-                                />
-                                <defs>
-                                    <linearGradient id="gradientConnection" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="#ca6c28" />
-                                        <stop offset="100%" stopColor="#d97d3f" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-
-                            <div className="relative p-10 lg:p-12 rounded-3xl border-2 border-accent/20 hover:border-accent/40 transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2">
-                                {/* Decorative corner elements */}
-                                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-xl" />
-                                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-xl" />
-
-                                <div className="relative">
-                                    <div className="w-16 h-16 rounded-2xl border-2 border-accent/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 bg-accent/5">
-                                        <Heart className="w-8 h-8 text-accent" />
-                                    </div>
-                                    <h3 className="font-quicksand text-3xl font-bold text-accent mb-4">Connection</h3>
-                                    <p className="text-foreground/70 text-lg leading-relaxed font-light">
-                                        Building meaningful relationships and trust with every family we support
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Calm Card */}
-                        <div className="group relative">
-                            {/* Decorative SVG frame */}
-                            <svg
-                                className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-                                viewBox="0 0 400 500"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M50 50 Q50 50 50 100 L50 400 Q50 450 100 450 L300 450 Q350 450 350 400 L350 100 Q350 50 300 50 L100 50 Q50 50 50 50"
-                                    stroke="url(#gradientCalm)"
-                                    strokeWidth="3"
-                                    fill="none"
-                                    strokeDasharray="10 5"
-                                />
-                                <defs>
-                                    <linearGradient id="gradientCalm" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="#788a68" />
-                                        <stop offset="100%" stopColor="#a3b185" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-
-                            <div className="relative p-10 lg:p-12 rounded-3xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2">
-                                {/* Decorative corner elements */}
-                                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-secondary/40 rounded-tl-xl" />
-                                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-secondary/40 rounded-br-xl" />
-
-                                <div className="relative">
-                                    <div className="w-16 h-16 rounded-2xl border-2 border-secondary/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 bg-secondary/5">
-                                        <Sparkles className="w-8 h-8 text-secondary" />
-                                    </div>
-                                    <h3 className="font-quicksand text-3xl font-bold text-secondary mb-4">Calm</h3>
-                                    <p className="text-foreground/70 text-lg leading-relaxed font-light">
-                                        Creating peaceful routines that reduce stress and bring ease to your days
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Quality Time Card */}
-                        <div className="group relative">
-                            {/* Decorative SVG frame */}
-                            <svg
-                                className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-                                viewBox="0 0 400 500"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M50 50 Q50 50 50 100 L50 400 Q50 450 100 450 L300 450 Q350 450 350 400 L350 100 Q350 50 300 50 L100 50 Q50 50 50 50"
-                                    stroke="url(#gradientQuality)"
-                                    strokeWidth="3"
-                                    fill="none"
-                                    strokeDasharray="10 5"
-                                />
-                                <defs>
-                                    <linearGradient id="gradientQuality" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="#bc9b0a" />
-                                        <stop offset="100%" stopColor="#d4b00b" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-
-                            <div className="relative p-10 lg:p-12 rounded-3xl border-2 border-complementary/20 hover:border-complementary/40 transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2">
-                                {/* Decorative corner elements */}
-                                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-complementary/40 rounded-tl-xl" />
-                                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-complementary/40 rounded-br-xl" />
-
-                                <div className="relative">
-                                    <div className="w-16 h-16 rounded-2xl border-2 border-complementary/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 bg-complementary/5">
-                                        <Users className="w-8 h-8 text-complementary" />
-                                    </div>
-                                    <h3 className="font-quicksand text-3xl font-bold text-complementary mb-4">Quality Time</h3>
-                                    <p className="text-foreground/70 text-lg leading-relaxed font-light">
-                                        Freeing you to focus on what truly matters—being present with your family
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <ValuesCard
+                            icon={Heart}
+                            title="Connection"
+                            description="Building meaningful relationships and trust with every family we support"
+                            gradientId="gradientConnection"
+                            gradientFrom="#ca6c28"
+                            gradientTo="#d97d3f"
+                            borderColor="border-accent/20 hover:border-accent/40"
+                            iconBgColor="bg-accent/5"
+                            titleColor="text-accent"
+                        />
+                        <ValuesCard
+                            icon={Sparkles}
+                            title="Calm"
+                            description="Creating peaceful routines that reduce stress and bring ease to your days"
+                            gradientId="gradientCalm"
+                            gradientFrom="#788a68"
+                            gradientTo="#a3b185"
+                            borderColor="border-secondary/20 hover:border-secondary/40"
+                            iconBgColor="bg-secondary/5"
+                            titleColor="text-secondary"
+                        />
+                        <ValuesCard
+                            icon={Users}
+                            title="Quality Time"
+                            description="Freeing you to focus on what truly matters—being present with your family"
+                            gradientId="gradientQuality"
+                            gradientFrom="#bc9b0a"
+                            gradientTo="#d4b00b"
+                            borderColor="border-complementary/20 hover:border-complementary/40"
+                            iconBgColor="bg-complementary/5"
+                            titleColor="text-complementary"
+                        />
                     </div>
                 </div>
             </section>
@@ -354,7 +333,7 @@ export default function ClientAboutPage() {
             {/* CTA Section */}
             <section className="px-6 py-24 lg:px-8 lg:py-32">
                 <div className="mx-auto max-w-[1400px]">
-                    <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary via-complementary to-secondary-light">
+                    <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-accent/20 via-complementary/20 to-secondary/20 rounded-[2rem] blur-2xl">
                         <div className="absolute inset-0 opacity-20">
                             <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                                 <path

@@ -9,37 +9,75 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-primary/70 pt-24">
+    <main className="min-h-screen bg-primary">
       {/* Hero Section */}
-      <section className="relative px-6 pt-24 pb-16 lg:px-8 lg:pt-32 lg:pb-20 overflow-hidden">
-        <div className="absolute top-20 left-0 w-96 h-96 opacity-20">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 opacity-20">
+          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
-              fill="url(#servicesBg1)"
+              d="M150 50 Q250 100 250 200 Q200 280 100 250 Q20 200 50 100 Q100 50 150 50 Z"
+              fill="url(#heroGrad1)"
             />
             <defs>
-              <linearGradient id="servicesBg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#788a68" />
-                <stop offset="100%" stopColor="#a3b185" />
+              <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#788a68" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#a3b185" stopOpacity="0.2" />
               </linearGradient>
             </defs>
           </svg>
         </div>
 
-        <div className="mx-auto max-w-[1400px] relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20 mb-8">
+        <div className="absolute bottom-20 right-10 w-96 h-96 opacity-15">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="150" fill="url(#heroGrad2)" />
+            <circle cx="200" cy="200" r="100" fill="url(#heroGrad3)" />
+            <defs>
+              <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ca6c28" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#bc9b0a" stopOpacity="0.2" />
+              </linearGradient>
+              <linearGradient id="heroGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f0bf99" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#fdf2e0" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="mx-auto max-w-5xl relative">
+          <div className="text-center space-y-12">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
               <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               <span className="text-accent font-medium text-sm tracking-wide">Our Services</span>
             </div>
 
-            <h1 className="font-quicksand text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              How we support your family
-            </h1>
-            <p className="text-2xl text-foreground/60 leading-relaxed font-light">
-              Comprehensive, personalized services designed around your unique needs and rhythm
-            </p>
+            <div className="space-y-6">
+              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
+                <span className="text-accent">How we support</span>
+                <br />
+                <span className="text-secondary">your family</span>
+              </h1>
+
+              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
+                Comprehensive, personalized services designed around your unique needs and rhythm
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 pt-4">
+              <div className="h-px w-16 bg-accent" />
+              <p className="text-sm uppercase tracking-widest text-accent font-medium font-quicksand">
+                Tailored for you
+              </p>
+              <div className="h-px w-16 bg-accent" />
+            </div>
+
+            {/* Decorative dots */}
+            <div className="flex justify-center gap-2 pt-8">
+              <div className="w-2 h-2 rounded-full bg-accent/40" />
+              <div className="w-2 h-2 rounded-full bg-secondary/40" />
+              <div className="w-2 h-2 rounded-full bg-complementary/40" />
+            </div>
           </div>
         </div>
       </section>
@@ -195,7 +233,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-accent/90">
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-accent via-complementary to-secondary">
             <div className="absolute inset-0 opacity-20">
               <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <path

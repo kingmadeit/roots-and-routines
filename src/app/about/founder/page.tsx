@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Heart, Lightbulb, Users, ArrowRight, Sparkles } from "lucide-react"
+import { Heart, Lightbulb, Users, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ValuesCard } from "@/components/ValuesCard"
 
 export const metadata: Metadata = {
   title: "Meet the Founder | Roots & Routines",
@@ -13,78 +14,74 @@ export default function FounderPage() {
     <main className="min-h-screen bg-primary">
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
-        <div className="absolute top-10 left-0 w-96 h-96 opacity-20">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="200" cy="200" rx="150" ry="180" fill="url(#heroGrad)" />
+        {/* Organic background shapes */}
+        <div className="absolute top-20 left-10 w-72 h-72 opacity-20">
+          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M150 50 Q250 100 250 200 Q200 280 100 250 Q20 200 50 100 Q100 50 150 50 Z"
+              fill="url(#heroGrad1)"
+            />
             <defs>
-              <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#788a68" stopOpacity="0.3" />
+              <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#788a68" stopOpacity="0.4" />
                 <stop offset="100%" stopColor="#a3b185" stopOpacity="0.2" />
               </linearGradient>
             </defs>
           </svg>
         </div>
 
-        <div className="mx-auto max-w-[1400px]">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="relative">
-                <div className="absolute -inset-8 bg-gradient-to-br from-accent/20 via-complementary/20 to-secondary/20 rounded-[3rem] blur-3xl" />
-                <div className="relative aspect-[4/5] rounded-[2.5rem] bg-gradient-to-br from-secondary via-secondary-light to-accent overflow-hidden shadow-2xl">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                      <circle cx="150" cy="150" r="80" fill="white" opacity="0.1" />
-                      <path
-                        d="M150 100 C170 100 185 115 185 135 C185 155 170 170 150 170 C130 170 115 155 115 135 C115 115 130 100 150 100 Z"
-                        fill="white"
-                        opacity="0.2"
-                      />
-                      <path
-                        d="M150 180 L150 250 M130 210 L150 230 L170 210 M120 270 L180 270"
-                        stroke="white"
-                        strokeWidth="3"
-                        opacity="0.2"
-                      />
-                      <text
-                        x="150"
-                        y="330"
-                        textAnchor="middle"
-                        fill="white"
-                        fontSize="32"
-                        opacity="0.9"
-                        fontFamily="serif"
-                      >
-                        Heart meets strategy
-                      </text>
-                    </svg>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-              </div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 opacity-15">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="150" fill="url(#heroGrad2)" />
+            <circle cx="200" cy="200" r="100" fill="url(#heroGrad3)" />
+            <defs>
+              <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ca6c28" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#bc9b0a" stopOpacity="0.2" />
+              </linearGradient>
+              <linearGradient id="heroGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f0bf99" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#fdf2e0" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="mx-auto max-w-5xl relative">
+          <div className="text-center space-y-12">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
             </div>
 
-            <div className="order-1 lg:order-2 space-y-8">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
-                </div>
+            {/* Main heading */}
+            <div className="space-y-6">
+              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[0.95]">
+                Helping families
+                <br />
+                <span className="text-accent italic font-nunito font-light">thrive</span>
+              </h1>
 
-                <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground leading-[0.95]">
-                  Helping families
-                  <br />
-                  <span className="text-accent italic">thrive</span>
-                </h1>
-              </div>
-
-              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-light">
+              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
                 Years of hands-on experience combined with strategic thinking
               </p>
+            </div>
 
-              <div className="flex items-center gap-3 pt-4">
-                <div className="h-px w-16 bg-accent" />
-                <p className="text-sm uppercase tracking-widest text-accent font-medium">Not just survive</p>
-              </div>
+            {/* Decorative element */}
+            <div className="flex items-center justify-center gap-3 pt-4">
+              <div className="h-px w-16 bg-accent" />
+              <p className="text-sm uppercase tracking-widest text-accent font-medium font-quicksand">
+                Not just survive
+              </p>
+              <div className="h-px w-16 bg-accent" />
+            </div>
+
+            {/* Decorative dots */}
+            <div className="flex justify-center gap-2 pt-8">
+              <div className="w-2 h-2 rounded-full bg-accent/40" />
+              <div className="w-2 h-2 rounded-full bg-secondary/40" />
+              <div className="w-2 h-2 rounded-full bg-complementary/40" />
             </div>
           </div>
         </div>
@@ -98,7 +95,7 @@ export default function FounderPage() {
               <div className="space-y-8">
                 <div className="w-12 h-1 bg-accent rounded-full" />
 
-                <h2 className="font-serif text-4xl lg:text-5xl font-light text-foreground leading-tight">
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                   The Journey to Roots & Routines
                 </h2>
 
@@ -114,7 +111,15 @@ export default function FounderPage() {
                     your lifestyle—I've seen firsthand how a bit of guidance can create lasting ease and joy at home.
                   </p>
 
-                  <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-accent to-[#d97d3f] overflow-hidden my-12">
+                  <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-complementary to-[#d4b00b] overflow-hidden my-12">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-10">
+                      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M20 45C20 30 28 20 40 20C48 20 54 26 54 34C54 42 48 48 40 48C38 48 36 47 34 46C34 54 38 60 46 60C48 60 50 59 52 58L54 66C50 68 46 70 40 70C28 70 20 60 20 45ZM60 45C60 30 68 20 80 20C88 20 94 26 94 34C94 42 88 48 80 48C78 48 76 47 74 46C74 54 78 60 86 60C88 60 90 59 92 58L94 66C90 68 86 70 80 70C68 70 60 60 60 45Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
                     <div className="relative">
                       <p className="text-2xl lg:text-3xl text-white leading-relaxed font-light">
@@ -133,37 +138,45 @@ export default function FounderPage() {
 
             <div className="lg:col-span-4">
               <div className="sticky top-8 space-y-6">
-                <div className="bg-white rounded-2xl p-8 border border-accent/10 shadow-lg">
-                  <h3 className="font-serif text-2xl text-foreground mb-6">Core Values</h3>
-                  <div className="space-y-5">
-                    {[
-                      { label: "Parent-led approach", color: "#ca6c28" },
-                      { label: "Experience-based", color: "#bc9b0a" },
-                      { label: "Strategic thinking", color: "#788a68" },
-                      { label: "Hands-on expertise", color: "#a3b185" },
-                      { label: "Personalized support", color: "#ca6c28" },
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center gap-4 group">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <svg
-                            viewBox="0 0 40 40"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-full h-full"
-                          >
-                            <circle cx="20" cy="20" r="18" fill={item.color} opacity="0.2" />
-                            <path
-                              d="M15 20 L18 23 L25 16"
-                              stroke={item.color}
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <p className="text-foreground/80 font-light">{item.label}</p>
+                <div className="relative bg-white rounded-3xl p-8 border-2 border-accent/20 shadow-xl overflow-hidden">
+                  {/* Decorative background element */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-complementary/5 rounded-full blur-2xl" />
+
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                        <Sparkles className="w-5 h-5 text-accent" />
                       </div>
-                    ))}
+                      <h3 className="font-quicksand text-2xl font-bold text-foreground">Core Values</h3>
+                    </div>
+
+                    <div className="space-y-4">
+                      {[
+                        { label: "Parent-led approach", color: "#ca6c28" },
+                        { label: "Experience-based", color: "#bc9b0a" },
+                        { label: "Strategic thinking", color: "#788a68" },
+                        { label: "Hands-on expertise", color: "#a3b185" },
+                        { label: "Personalized support", color: "#ca6c28" },
+                      ].map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-4 group/item p-3 rounded-xl hover:bg-primary/50 transition-all duration-300"
+                        >
+                          <div className="relative">
+                            <div
+                              className="w-10 h-10 rounded-full flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300"
+                              style={{ backgroundColor: `${item.color}15` }}
+                            >
+                              <CheckCircle2 className="w-5 h-5" style={{ color: item.color }} />
+                            </div>
+                          </div>
+                          <p className="text-foreground/80 font-nunito group-hover/item:text-foreground transition-colors">
+                            {item.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -176,7 +189,7 @@ export default function FounderPage() {
       <section className="px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
           <div className="max-w-3xl mb-20">
-            <h2 className="font-serif text-5xl lg:text-6xl font-light text-foreground mb-6 leading-tight">
+            <h2 className="font-quicksand text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               What I bring to your family
             </h2>
             <p className="text-xl text-foreground/60 leading-relaxed font-light">
@@ -184,69 +197,88 @@ export default function FounderPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-20">
-            <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-accent to-[#d97d3f] overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              <div className="relative">
-                <Heart className="w-14 h-14 text-white/90 mb-8" />
-                <h3 className="font-serif text-3xl text-white mb-4">Heart</h3>
-                <p className="text-white/90 text-lg leading-relaxed font-light">
-                  Deep passion for child wellbeing and genuine care for every family's unique journey
-                </p>
-              </div>
-            </div>
-
-            <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-complementary to-[#d4b00b] overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              <div className="relative">
-                <Lightbulb className="w-14 h-14 text-white/90 mb-8" />
-                <h3 className="font-serif text-3xl text-white mb-4">Strategy</h3>
-                <p className="text-white/90 text-lg leading-relaxed font-light">
-                  Research, admin and logistics expertise to create systems that actually work
-                </p>
-              </div>
-            </div>
-
-            <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-secondary to-secondary-light overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              <div className="relative">
-                <Users className="w-14 h-14 text-white/90 mb-8" />
-                <h3 className="font-serif text-3xl text-white mb-4">Experience</h3>
-                <p className="text-white/90 text-lg leading-relaxed font-light">
-                  Years of hands-on work in nannying, nutrition, and household management
-                </p>
-              </div>
-            </div>
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-20">
+            <ValuesCard
+              icon={Heart}
+              title="Heart"
+              description="Deep passion for child wellbeing and genuine care for every family's unique journey"
+              gradientId="gradientHeart"
+              gradientFrom="#ca6c28"
+              gradientTo="#d97d3f"
+              borderColor="border-accent/20 hover:border-accent/40"
+              iconBgColor="bg-accent/5"
+              titleColor="text-accent"
+            />
+            <ValuesCard
+              icon={Lightbulb}
+              title="Strategy"
+              description="Research, admin and logistics expertise to create systems that actually work"
+              gradientId="gradientStrategy"
+              gradientFrom="#bc9b0a"
+              gradientTo="#d4b00b"
+              borderColor="border-complementary/20 hover:border-complementary/40"
+              iconBgColor="bg-complementary/5"
+              titleColor="text-complementary"
+            />
+            <ValuesCard
+              icon={Users}
+              title="Experience"
+              description="Years of hands-on work in nannying, nutrition, and household management"
+              gradientId="gradientExperience"
+              gradientFrom="#788a68"
+              gradientTo="#a3b185"
+              borderColor="border-secondary/20 hover:border-secondary/40"
+              iconBgColor="bg-secondary/5"
+              titleColor="text-secondary"
+            />
           </div>
 
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-10 lg:p-16 border border-accent/10">
-            <h3 className="font-serif text-3xl text-foreground mb-12 text-center">Areas of Expertise</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Nannying & Childcare", color: "#ca6c28" },
-                { title: "Nutrition & Meal Planning", color: "#bc9b0a" },
-                { title: "Office Management", color: "#788a68" },
-                { title: "Household Management", color: "#a3b185" },
-                { title: "Research & Analysis", color: "#ca6c28" },
-                { title: "Administrative Systems", color: "#bc9b0a" },
-                { title: "Logistics & Planning", color: "#788a68" },
-                { title: "Family Support Services", color: "#a3b185" },
-              ].map((expertise, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 border border-accent/10 hover:border-accent/30 hover:-translate-y-1 overflow-hidden"
-                >
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <p className="text-foreground/80 font-light group-hover:text-accent transition-colors relative z-10">
-                    {expertise.title}
-                  </p>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                      <circle cx="50" cy="50" r="40" fill={expertise.color} />
-                    </svg>
-                  </div>
+          <div className="relative">
+            {/* Background decoration */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-complementary/5 rounded-full blur-3xl" />
+
+            <div className="relative bg-white/60 backdrop-blur-sm rounded-[2.5rem] p-10 lg:p-16 border-2 border-accent/10">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 bg-accent/10 px-5 py-2.5 rounded-full mb-6">
+                  <Sparkles className="w-4 h-4 text-accent" />
+                  <span className="text-accent font-quicksand font-bold text-sm tracking-wide">Expertise</span>
                 </div>
-              ))}
+                <h3 className="font-quicksand text-3xl lg:text-4xl font-bold text-foreground">Areas of Expertise</h3>
+              </div>
+
+              {/* Pill-style expertise badges */}
+              <div className="flex flex-wrap justify-center gap-4">
+                {[
+                  { title: "Nannying & Childcare", color: "#ca6c28" },
+                  { title: "Nutrition & Meal Planning", color: "#bc9b0a" },
+                  { title: "Office Management", color: "#788a68" },
+                  { title: "Household Management", color: "#a3b185" },
+                  { title: "Research & Analysis", color: "#ca6c28" },
+                  { title: "Administrative Systems", color: "#bc9b0a" },
+                  { title: "Logistics & Planning", color: "#788a68" },
+                  { title: "Family Support Services", color: "#a3b185" },
+                ].map((expertise, index) => (
+                  <div
+                    key={index}
+                    className="group/pill relative px-8 py-4 rounded-full border-2 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white"
+                    style={{ borderColor: `${expertise.color}40` }}
+                  >
+                    {/* Hover gradient background */}
+                    <div
+                      className="absolute inset-0 rounded-full opacity-0 group-hover/pill:opacity-100 transition-opacity duration-300"
+                      style={{ backgroundColor: `${expertise.color}08` }}
+                    />
+
+                    <p
+                      className="relative font-nunito font-medium text-foreground/80 group-hover/pill:font-bold transition-all"
+                      style={{ color: expertise.color }}
+                    >
+                      {expertise.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
