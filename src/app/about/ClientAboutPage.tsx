@@ -38,7 +38,7 @@ export default function AboutPage() {
                                     <span className="text-accent font-medium text-sm tracking-wide">About Roots & Routines</span>
                                 </div>
 
-                                <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[0.95]">
+                                <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
                                     Every family
                                     <br />
                                     <span className="text-accent italic font-light">deserves support</span>

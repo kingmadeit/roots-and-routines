@@ -54,7 +54,7 @@ export default function ServicesPage() {
 
             <div className="space-y-6">
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
-                <span className="text-accent">How we support</span>
+                <span className="text-complementary-dark text-[#715204]">How we support</span>
                 <br />
                 <span className="text-secondary">your family</span>
               </h1>

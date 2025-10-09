@@ -3,50 +3,63 @@ import { useState } from "react"
 import { siteData } from "@/data"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <nav className="nav relative z-50">
       <ul className="hidden md:flex gap-8 items-center bg-white/60 backdrop-blur-md px-6 py-3 rounded-full border border-primary/20">
-        {siteData.navigation.map((item, index) => (
-          <li key={item.href} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-            <Link
-              href={item.href}
-              className="relative text-secondary font-bold font-quicksand text-base group py-2 px-1 block"
-            >
-              <span className="relative z-10 group-hover:text-accent transition-colors duration-300">{item.label}</span>
+        {siteData.navigation.map((item, index) => {
+          const isActive = pathname === item.href
 
-              {/* Organic blob hover effect */}
-              <svg
-                className="absolute inset-0 w-full h-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                viewBox="0 0 100 40"
-                preserveAspectRatio="none"
+          return (
+            <li key={item.href} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <Link
+                href={item.href}
+                className="relative text-secondary font-bold font-quicksand text-base group py-2 px-1 block"
               >
-                <path
-                  d="M10,20 Q30,5 50,20 T90,20 Q90,30 50,30 T10,20"
-                  fill="url(#navGradient)"
-                  className="animate-blob-morph"
-                />
-                <defs>
-                  <linearGradient id="navGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="rgb(240, 191, 153)" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="rgb(202, 108, 40)" stopOpacity="0.3" />
-                  </linearGradient>
-                </defs>
-              </svg>
+                <span
+                  className={`relative z-10 transition-colors duration-300 ${isActive ? "text-accent" : "group-hover:text-accent"
+                    }`}
+                >
+                  {item.label}
+                </span>
 
-              {/* Decorative dot */}
-              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-complementary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
-          </li>
-        ))}
+                <svg
+                  className={`absolute inset-0 w-full h-full -z-10 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                    }`}
+                  viewBox="0 0 100 40"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M10,20 Q30,5 50,20 T90,20 Q90,30 50,30 T10,20"
+                    fill="url(#navGradient)"
+                    className="animate-blob-morph"
+                  />
+                  <defs>
+                    <linearGradient id="navGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="rgb(240, 191, 153)" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="rgb(202, 108, 40)" stopOpacity="0.3" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                <span
+                  className={`absolute -top-1 -right-1 w-1.5 h-1.5 bg-complementary rounded-full transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                    }`}
+                />
+              </Link>
+            </li>
+          )
+        })}
       </ul>
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={` p-4 fixed top-4 right-4 z-[60] rounded-2xl transition-all duration-300 shadow-lg ${isOpen
+        className={`md:hiddens p-4 fixed top-4 right-4 z-[60] rounded-2xl transition-all duration-300 shadow-lg ${isOpen
           ? "bg-white text-accent rotate-90 scale-110"
           : "bg-white/90 backdrop-blur-md text-accent hover:bg-accent hover:text-white border border-primary/20"
           }`}
@@ -57,12 +70,10 @@ const Nav = () => {
       </button>
 
       <div
-        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-gradient-to-br from-primary via-primary-light/50 to-primary  z-50 transition-all duration-500 ease-out shadow-2xl ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-gradient-to-br from-primary via-primary-light/50 to-primary md:hiddens z-50 transition-all duration-500 ease-out shadow-2xl ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        {/* Organic background decorations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Top organic shape */}
           <svg className="absolute -top-20 -right-20 w-64 h-64 opacity-30" viewBox="0 0 200 200">
             <path d="M50,100 Q80,50 120,70 T170,100 Q170,140 130,150 T50,100" fill="url(#mobileGradient1)" />
             <defs>
@@ -73,7 +84,6 @@ const Nav = () => {
             </defs>
           </svg>
 
-          {/* Bottom organic shape */}
           <svg className="absolute -bottom-20 -left-10 w-56 h-56 opacity-20" viewBox="0 0 200 200">
             <path d="M30,100 Q60,60 100,80 T150,100 Q150,130 110,140 T30,100" fill="url(#mobileGradient2)" />
             <defs>
@@ -84,45 +94,68 @@ const Nav = () => {
             </defs>
           </svg>
 
-          {/* Decorative dots */}
           <div className="absolute top-32 left-8 w-2 h-2 bg-accent/40 rounded-full" />
           <div className="absolute top-40 left-12 w-1.5 h-1.5 bg-complementary/30 rounded-full" />
           <div className="absolute bottom-40 right-12 w-2 h-2 bg-secondary/30 rounded-full" />
           <div className="absolute bottom-48 right-8 w-1 h-1 bg-accent/40 rounded-full" />
         </div>
 
-        {/* Navigation content */}
         <div className="relative h-full flex flex-col justify-between p-8 pt-24">
-          {/* Navigation links */}
           <ul className="flex flex-col gap-6">
-            {siteData.navigation.map((item, index) => (
-              <li
-                key={item.href}
-                className={`transform transition-all duration-500 ${isOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
-                  }`}
-                style={{ transitionDelay: isOpen ? `${index * 100 + 200}ms` : "0ms" }}
-              >
-                <Link
-                  href={item.href}
-                  className="relative text-secondary font-bold font-quicksand text-2xl hover:text-accent transition-colors duration-300 group flex items-center gap-3"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {/* Decorative line */}
-                  <span className="w-0 h-0.5 bg-accent group-hover:w-8 transition-all duration-300" />
+            {siteData.navigation.map((item, index) => {
+              const isActive = pathname === item.href
 
-                  <span className="relative">
-                    {item.label}
-                    {/* Number badge */}
-                    <span className="absolute -top-2 -right-6 text-xs text-complementary/60 font-nunito">
-                      0{index + 1}
+              return (
+                <li
+                  key={item.href}
+                  className={`transform transition-all duration-500 ${isOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
+                    }`}
+                  style={{ transitionDelay: isOpen ? `${index * 100 + 200}ms` : "0ms" }}
+                >
+                  <Link
+                    href={item.href}
+                    className="relative font-bold font-quicksand text-2xl group flex items-center gap-3"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <svg
+                      className={`absolute -inset-2 w-[calc(100%+1rem)] h-[calc(100%+1rem)] -z-10 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}
+                      viewBox="0 0 200 60"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M20,30 Q50,10 100,30 T180,30 Q180,45 100,45 T20,30"
+                        fill="url(#mobileNavGradient)"
+                        className="animate-blob-morph"
+                      />
+                      <defs>
+                        <linearGradient id="mobileNavGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="rgb(240, 191, 153)" stopOpacity="0.3" />
+                          <stop offset="100%" stopColor="rgb(202, 108, 40)" stopOpacity="0.4" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+
+                    <span
+                      className={`h-0.5 bg-accent transition-all duration-300 ${isActive ? "w-8" : "w-0 group-hover:w-8"
+                        }`}
+                    />
+
+                    <span
+                      className={`relative transition-colors duration-300 ${isActive ? "text-accent" : "text-secondary group-hover:text-accent"
+                        }`}
+                    >
+                      {item.label}
+                      <span className="absolute -top-2 -right-6 text-xs text-complementary/60 font-nunito">
+                        0{index + 1}
+                      </span>
                     </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
 
-          {/* Decorative footer element */}
           <div className="border-t border-secondary/20 pt-6 space-y-3">
             <p className="text-sm text-secondary/70 font-nunito italic">Building routines that work for your family</p>
             <div className="flex gap-2">
