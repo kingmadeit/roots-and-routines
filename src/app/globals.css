@@ -224,6 +224,41 @@ style[class*="darkreader"] {
     scroll-behavior: smooth;
     @apply bg-background text-foreground;
   }
+
+  /* Added fade-in animation for nav items */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Organic blob morph animation for nav hover */
+  @keyframes blob-morph {
+
+    0%,
+    100% {
+      d: path("M10,20 Q30,5 50,20 T90,20 Q90,30 50,30 T10,20");
+    }
+
+    50% {
+      d: path("M10,20 Q30,10 50,20 T90,20 Q90,25 50,30 T10,20");
+    }
+  }
+
+  .animate-blob-morph {
+    animation: blob-morph 3s ease-in-out infinite;
+  }
 }
 
 
