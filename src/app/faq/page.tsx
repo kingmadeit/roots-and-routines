@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-complementary">
+    <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-24 pb-12 px-4">
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -34,15 +34,6 @@ export default function FAQPage() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center">
-          {/* Back Button */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors duration-300 mb-8 font-nunito font-semibold group"
-          >
-            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
-            Back to Home
-          </Link>
-
           {/* Hero Content */}
           <div className="relative">
             <div className="inline-block mb-4">
@@ -96,9 +87,19 @@ export default function FAQPage() {
                 Get in Touch
               </Link>
             </div>
+
           </div>
         </div>
       </section>
+      {/* Back Button */}
+      <Link
+        href="/"
+        className="inline-flex items-center text-center border px-6 py-2 rounded-full my-16 gap-2 text-secondary hover:text-accent hover:bg-accent transition-colors duration-300 mb-8 font-nunito font-semibold group"
+      >
+        <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
+        Back to Home
+      </Link>
+
     </main>
   )
 }

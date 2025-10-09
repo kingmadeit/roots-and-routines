@@ -324,7 +324,7 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
       <div className="block md:hidden ">
         <TabNavigation tabs={tabs} selectedIndex={selectedIndex} onChange={handleTabClick} />
       </div>
-      <div className="sm:hidden md:block">
+      <div className="hidden md:block">
         <SmoothTabNav
           tabs={tabs}
           selectedIndex={selectedIndex}

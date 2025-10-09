@@ -37,14 +37,14 @@ export default function ClientAboutPage() {
                                     <span className="text-accent font-medium text-sm tracking-wide">About Roots & Routines</span>
                                 </div>
 
-                                <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground leading-[0.95]">
+                                <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[0.95]">
                                     Every family
                                     <br />
-                                    <span className="text-accent italic">deserves support</span>
+                                    <span className="text-accent italic font-light">deserves support</span>
                                 </h1>
                             </div>
 
-                            <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed max-w-2xl font-light">
+                            <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-light">
                                 Tailored guidance to help you feel grounded, balanced, and at ease in daily life
                             </p>
 
@@ -89,7 +89,7 @@ export default function ClientAboutPage() {
                         <div className="lg:col-span-4 flex flex-col justify-between">
                             <div>
                                 <div className="w-12 h-1 bg-accent rounded-full mb-8" />
-                                <h2 className="font-serif text-4xl lg:text-5xl font-light text-foreground leading-tight">
+                                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                                     Our
                                     <br />
                                     Philosophy
@@ -118,13 +118,37 @@ export default function ClientAboutPage() {
                                 </p>
                             </div>
 
-                            <div className="relative mt-12 p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-secondary via-secondary-light to-secondary overflow-hidden">
+                            <div className="relative mt-12 p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-complementary via-[#d4b00b] to-complementary overflow-hidden">
+                                <div className="absolute top-8 left-8 opacity-10">
+                                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M25 55C25 38.4315 38.4315 25 55 25V25C55 41.5685 41.5685 55 25 55V55Z"
+                                            fill="white"
+                                            fillOpacity="0.5"
+                                        />
+                                        <path
+                                            d="M25 95C25 78.4315 38.4315 65 55 65V65C55 81.5685 41.5685 95 25 95V95Z"
+                                            fill="white"
+                                            fillOpacity="0.5"
+                                        />
+                                        <path
+                                            d="M65 55C65 38.4315 78.4315 25 95 25V25C95 41.5685 81.5685 55 65 55V55Z"
+                                            fill="white"
+                                            fillOpacity="0.5"
+                                        />
+                                        <path
+                                            d="M65 95C65 78.4315 78.4315 65 95 65V65C95 81.5685 81.5685 95 65 95V95Z"
+                                            fill="white"
+                                            fillOpacity="0.5"
+                                        />
+                                    </svg>
+                                </div>
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
                                 <div className="relative">
                                     <p className="text-2xl lg:text-3xl text-white leading-relaxed font-light">
                                         From school searches to nanny placements, from nutritional meal prep to activity planning—we're here
                                         to take the stress out of the everyday so you can focus on what matters most:{" "}
-                                        <span className="font-medium">connection, calm and quality time.</span>
+                                        <span className="font-medium italic">connection, calm and quality time.</span>
                                     </p>
                                 </div>
                             </div>
@@ -134,128 +158,193 @@ export default function ClientAboutPage() {
             </section>
 
             {/* Services Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32 bg-white/40">
-                <div className="mx-auto max-w-[1400px]">
-                    <div className="max-w-3xl mb-20">
-                        <h2 className="font-serif text-5xl lg:text-6xl font-light text-foreground mb-6 leading-tight">
+            <section className="px-6 py-24 lg:px-8 lg:py-32 bg-white/40 relative overflow-hidden">
+                <div className="absolute top-20 left-0 w-96 h-96 opacity-20">
+                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
+                            fill="url(#servicesBg1)"
+                        />
+                        <defs>
+                            <linearGradient id="servicesBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#788a68" />
+                                <stop offset="100%" stopColor="#a3b185" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div className="mx-auto max-w-[1400px] relative z-10">
+                    <div className="text-center max-w-3xl mx-auto">
+                        <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20 mb-8">
+                            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                            <span className="text-accent font-medium text-sm tracking-wide">Our Services</span>
+                        </div>
+
+                        <h2 className="font-nunito text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                             How we support your family
                         </h2>
-                        <p className="text-xl text-foreground/60 leading-relaxed font-light">
-                            Comprehensive, personalized services designed around your unique needs and rhythm
+                        <p className="text-xl text-foreground/60 leading-relaxed font-light mb-12">
+                            From school searches to nanny placements, from nutritional meal prep to activity planning—comprehensive
+                            support designed around your unique needs
                         </p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[
-                            {
-                                title: "School Searches",
-                                description:
-                                    "Finding the perfect educational environment that aligns with your values and your child's needs",
-                                color: "from-secondary to-secondary-light",
-                                svgPath:
-                                    "M100 30 L140 50 L140 110 L100 130 L60 110 L60 50 Z M100 60 L120 70 L120 100 L100 110 L80 100 L80 70 Z",
-                            },
-                            {
-                                title: "Nanny Placements",
-                                description: "Connecting you with trusted, qualified caregivers who become part of your family",
-                                color: "from-accent to-[#d97d3f]",
-                                svgPath:
-                                    "M100 40 C120 40 135 55 135 75 C135 95 120 110 100 110 C80 110 65 95 65 75 C65 55 80 40 100 40 Z M70 120 L130 120 L125 150 L75 150 Z",
-                            },
-                            {
-                                title: "Nutritional Meal Prep",
-                                description: "Tailored meal planning that nourishes your family and fits your lifestyle",
-                                color: "from-complementary to-[#d4b00b]",
-                                svgPath:
-                                    "M100 30 L130 60 L130 100 C130 120 115 135 100 135 C85 135 70 120 70 100 L70 60 Z M85 70 L115 70 M85 90 L115 90",
-                            },
-                            {
-                                title: "Activity Planning",
-                                description: "Enriching experiences and routines that support development and joy",
-                                color: "from-secondary-light to-secondary",
-                                svgPath: "M100 40 L110 70 L140 75 L115 95 L120 125 L100 110 L80 125 L85 95 L60 75 L90 70 Z",
-                            },
-                            {
-                                title: "Home Routines",
-                                description: "Creating sustainable structure that brings ease and flow to daily life",
-                                color: "from-[#d97d3f] to-accent",
-                                svgPath: "M100 30 L150 70 L140 70 L140 130 L60 130 L60 70 L50 70 Z M85 90 L115 90 M85 110 L115 110",
-                            },
-                            {
-                                title: "Family Guidance",
-                                description: "Strategic support for confident parenting decisions and household management",
-                                color: "from-secondary to-accent",
-                                svgPath:
-                                    "M100 50 C115 50 127 62 127 77 C127 92 115 104 100 104 C85 104 73 92 73 77 C73 62 85 50 100 50 Z M100 104 L100 130 M80 115 L100 130 L120 115",
-                            },
-                        ].map((service, index) => (
-                            <div
-                                key={index}
-                                className="group relative bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-accent/10 hover:border-accent/30 hover:-translate-y-2 overflow-hidden"
-                            >
-                                <div className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="50" cy="50" r="40" fill="url(#serviceGrad)" opacity="0.1" />
-                                        <defs>
-                                            <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" stopColor="#ca6c28" />
-                                                <stop offset="100%" stopColor="#bc9b0a" />
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-
-                                <div className="relative">
-                                    <div className="w-16 h-16 mb-6 group-hover:scale-110 transition-transform duration-500">
-                                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                                            <path d={service.svgPath} fill="#ca6c28" opacity="0.8" />
-                                        </svg>
-                                    </div>
-                                    <h3 className="font-serif text-2xl text-foreground mb-4 group-hover:text-accent transition-colors">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-foreground/70 leading-relaxed font-light">{service.description}</p>
-                                </div>
-                            </div>
-                        ))}
+                        <Link
+                            href="/services"
+                            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                        >
+                            Explore All Services
+                            <ArrowRight className="w-5 h-5" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
             {/* Values Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32">
-                <div className="mx-auto max-w-[1400px]">
+            <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden">
+                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] opacity-10">
+                    <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M250 100C320 100 380 140 410 200C440 260 430 340 370 400C310 460 210 480 150 450C90 420 40 350 40 270C40 190 120 100 250 100Z"
+                            fill="url(#valuesBg)"
+                        />
+                        <defs>
+                            <linearGradient id="valuesBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#ca6c28" />
+                                <stop offset="50%" stopColor="#788a68" />
+                                <stop offset="100%" stopColor="#bc9b0a" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div className="mx-auto max-w-[1400px] relative z-10">
+                    <div className="text-center mb-16">
+                        <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Core Values</h2>
+                        <p className="text-xl text-foreground/60 font-light">The principles that guide everything we do</p>
+                    </div>
+
                     <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-                        <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-accent to-[#d97d3f] overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                            <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                            <div className="relative">
-                                <Heart className="w-12 h-12 text-white/90 mb-8" />
-                                <h3 className="font-serif text-3xl text-white mb-4">Connection</h3>
-                                <p className="text-white/90 text-lg leading-relaxed font-light">
-                                    Building meaningful relationships and trust with every family we support
-                                </p>
+                        {/* Connection Card */}
+                        <div className="group relative">
+                            {/* Decorative SVG frame */}
+                            <svg
+                                className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
+                                viewBox="0 0 400 500"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M50 50 Q50 50 50 100 L50 400 Q50 450 100 450 L300 450 Q350 450 350 400 L350 100 Q350 50 300 50 L100 50 Q50 50 50 50"
+                                    stroke="url(#gradientConnection)"
+                                    strokeWidth="3"
+                                    fill="none"
+                                    strokeDasharray="10 5"
+                                />
+                                <defs>
+                                    <linearGradient id="gradientConnection" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#ca6c28" />
+                                        <stop offset="100%" stopColor="#d97d3f" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+
+                            <div className="relative p-10 lg:p-12 rounded-3xl border-2 border-accent/20 hover:border-accent/40 transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2">
+                                {/* Decorative corner elements */}
+                                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-xl" />
+                                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-accent/40 rounded-br-xl" />
+
+                                <div className="relative">
+                                    <div className="w-16 h-16 rounded-2xl border-2 border-accent/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 bg-accent/5">
+                                        <Heart className="w-8 h-8 text-accent" />
+                                    </div>
+                                    <h3 className="font-quicksand text-3xl font-bold text-accent mb-4">Connection</h3>
+                                    <p className="text-foreground/70 text-lg leading-relaxed font-light">
+                                        Building meaningful relationships and trust with every family we support
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-secondary to-secondary-light overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                            <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                            <div className="relative">
-                                <Sparkles className="w-12 h-12 text-white/90 mb-8" />
-                                <h3 className="font-serif text-3xl text-white mb-4">Calm</h3>
-                                <p className="text-white/90 text-lg leading-relaxed font-light">
-                                    Creating peaceful routines that reduce stress and bring ease to your days
-                                </p>
+                        {/* Calm Card */}
+                        <div className="group relative">
+                            {/* Decorative SVG frame */}
+                            <svg
+                                className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
+                                viewBox="0 0 400 500"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M50 50 Q50 50 50 100 L50 400 Q50 450 100 450 L300 450 Q350 450 350 400 L350 100 Q350 50 300 50 L100 50 Q50 50 50 50"
+                                    stroke="url(#gradientCalm)"
+                                    strokeWidth="3"
+                                    fill="none"
+                                    strokeDasharray="10 5"
+                                />
+                                <defs>
+                                    <linearGradient id="gradientCalm" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#788a68" />
+                                        <stop offset="100%" stopColor="#a3b185" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+
+                            <div className="relative p-10 lg:p-12 rounded-3xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2">
+                                {/* Decorative corner elements */}
+                                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-secondary/40 rounded-tl-xl" />
+                                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-secondary/40 rounded-br-xl" />
+
+                                <div className="relative">
+                                    <div className="w-16 h-16 rounded-2xl border-2 border-secondary/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 bg-secondary/5">
+                                        <Sparkles className="w-8 h-8 text-secondary" />
+                                    </div>
+                                    <h3 className="font-quicksand text-3xl font-bold text-secondary mb-4">Calm</h3>
+                                    <p className="text-foreground/70 text-lg leading-relaxed font-light">
+                                        Creating peaceful routines that reduce stress and bring ease to your days
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-complementary to-[#d4b00b] overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                            <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                            <div className="relative">
-                                <Users className="w-12 h-12 text-white/90 mb-8" />
-                                <h3 className="font-serif text-3xl text-white mb-4">Quality Time</h3>
-                                <p className="text-white/90 text-lg leading-relaxed font-light">
-                                    Freeing you to focus on what truly matters—being present with your family
-                                </p>
+                        {/* Quality Time Card */}
+                        <div className="group relative">
+                            {/* Decorative SVG frame */}
+                            <svg
+                                className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
+                                viewBox="0 0 400 500"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M50 50 Q50 50 50 100 L50 400 Q50 450 100 450 L300 450 Q350 450 350 400 L350 100 Q350 50 300 50 L100 50 Q50 50 50 50"
+                                    stroke="url(#gradientQuality)"
+                                    strokeWidth="3"
+                                    fill="none"
+                                    strokeDasharray="10 5"
+                                />
+                                <defs>
+                                    <linearGradient id="gradientQuality" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#bc9b0a" />
+                                        <stop offset="100%" stopColor="#d4b00b" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+
+                            <div className="relative p-10 lg:p-12 rounded-3xl border-2 border-complementary/20 hover:border-complementary/40 transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2">
+                                {/* Decorative corner elements */}
+                                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-complementary/40 rounded-tl-xl" />
+                                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-complementary/40 rounded-br-xl" />
+
+                                <div className="relative">
+                                    <div className="w-16 h-16 rounded-2xl border-2 border-complementary/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 bg-complementary/5">
+                                        <Users className="w-8 h-8 text-complementary" />
+                                    </div>
+                                    <h3 className="font-quicksand text-3xl font-bold text-complementary mb-4">Quality Time</h3>
+                                    <p className="text-foreground/70 text-lg leading-relaxed font-light">
+                                        Freeing you to focus on what truly matters—being present with your family
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -265,14 +354,23 @@ export default function ClientAboutPage() {
             {/* CTA Section */}
             <section className="px-6 py-24 lg:px-8 lg:py-32">
                 <div className="mx-auto max-w-[1400px]">
-                    <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-secondary via-secondary-light to-secondary shadow-2xl">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" />
+                    <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-primary via-complementary to-secondary-light">
+                        <div className="absolute inset-0 opacity-20">
+                            <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                                <path
+                                    d="M600 50C680 50 750 90 780 160C810 230 790 320 720 370C650 420 540 430 470 400C400 370 350 300 350 220C350 140 480 50 600 50Z"
+                                    fill="white"
+                                    opacity="0.3"
+                                />
+                                <circle cx="200" cy="200" r="100" fill="white" opacity="0.2" />
+                            </svg>
+                        </div>
 
                         <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-0">
                             <div className="p-12 lg:p-16 flex flex-col justify-center">
                                 <div className="space-y-8">
                                     <div>
-                                        <h2 className="font-serif text-4xl lg:text-5xl font-light text-white mb-6 leading-tight">
+                                        <h2 className="font-nunito text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                                             Ready to bring more ease to your family life?
                                         </h2>
                                         <p className="text-xl text-white/90 leading-relaxed font-light">
@@ -283,7 +381,7 @@ export default function ClientAboutPage() {
                                     <Button
                                         asChild
                                         size="lg"
-                                        className="bg-white hover:bg-white/90 text-secondary text-lg px-10 py-7 h-auto rounded-full font-medium shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
+                                        className="bg-white hover:bg-white/90 text-secondary font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
                                     >
                                         <Link href="/founder" className="inline-flex items-center gap-3">
                                             Meet the Founder
@@ -294,21 +392,21 @@ export default function ClientAboutPage() {
                             </div>
 
                             <div className="hidden lg:flex items-center justify-center p-16 relative">
-                                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent" />
                                 <svg
                                     viewBox="0 0 300 300"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="w-full h-full max-w-sm"
                                 >
-                                    <circle cx="150" cy="150" r="100" fill="white" opacity="0.1" />
+                                    <circle cx="150" cy="150" r="100" fill="white" opacity="0.15" />
                                     <path
                                         d="M150 80 L170 120 L210 130 L180 160 L188 200 L150 178 L112 200 L120 160 L90 130 L130 120 Z"
                                         fill="white"
-                                        opacity="0.3"
+                                        opacity="0.4"
                                     />
-                                    <circle cx="100" cy="100" r="30" fill="white" opacity="0.15" />
-                                    <circle cx="200" cy="180" r="40" fill="white" opacity="0.1" />
+                                    <circle cx="100" cy="100" r="30" fill="white" opacity="0.2" />
+                                    <circle cx="200" cy="180" r="40" fill="white" opacity="0.15" />
+                                    <path d="M80 200 Q150 180 220 200" stroke="white" strokeWidth="3" opacity="0.3" fill="none" />
                                 </svg>
                             </div>
                         </div>
