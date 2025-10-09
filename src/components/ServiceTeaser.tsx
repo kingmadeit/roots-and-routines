@@ -228,7 +228,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       {/* Icon with enhanced styling */}
       <div className="relative w-24 h-24 mb-6">
         <div className="absolute inset-0 bg-white/25 rounded-3xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/35 transition-all duration-300 group-hover:scale-105">
-          <IconComponent className="w-12 h-12 text-white drop-shadow-lg" />
+          {/* <IconComponent className="w-12 h-12 text-white drop-shadow-lg" /> */}
         </div>
         {/* Decorative elements */}
         <div className="absolute -inset-3 bg-gradient-to-br from-white/15 to-transparent rounded-[2rem] -z-10 group-hover:from-white/25 transition-all"></div>
