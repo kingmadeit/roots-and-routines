@@ -1,18 +1,16 @@
 import { siteData } from "@/data/full-site";
 import FAQ from "../FAQ";
 
-const { 
-    faq
-  } = siteData;
+const {
+  faq
+} = siteData;
 
 const FAQSection = () => {
-    return (
-      <div className="container mx-auto">
-        <div className="rounded-section bg-accent/90 relative">
-          <FAQ data={faq} maxItemsToShow={6} />
-        </div>
-      </div>
-    );
+  return (
+    <div className="rounded-section bg-complementary/90 relative">
+      <FAQ data={faq} maxItemsToShow={6} />
+    </div>
+  );
 };
 
 export default FAQSection;
