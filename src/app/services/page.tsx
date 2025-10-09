@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
@@ -231,43 +231,97 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32">
-        <div className="mx-auto max-w-[1400px]">
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-accent via-complementary to-secondary">
-            <div className="absolute inset-0 opacity-20">
-              <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path
-                  d="M600 50C680 50 750 90 780 160C810 230 790 320 720 370C650 420 540 430 470 400C400 370 350 300 350 220C350 140 480 50 600 50Z"
-                  fill="white"
-                  opacity="0.3"
-                />
-                <circle cx="200" cy="200" r="100" fill="white" opacity="0.2" />
-              </svg>
-            </div>
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-complementary">
+        {/* Organic background shapes */}
+        <div className="absolute top-0 right-0 w-[550px] h-[550px] opacity-10">
+          <svg viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M275 75 Q400 125 450 250 Q500 375 375 475 Q250 525 125 450 Q50 350 75 225 Q125 100 275 75 Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div className="absolute bottom-0 left-0 w-[420px] h-[420px] opacity-10">
+          <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="210" cy="210" r="170" fill="white" />
+          </svg>
+        </div>
 
-            <div className="relative p-12 lg:p-16 text-center">
-              <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Ready to explore how we can support your family?
-              </h2>
-              <p className="text-xl text-white/90 leading-relaxed font-light mb-8 max-w-2xl mx-auto">
-                Browse our service categories to find the perfect fit for your needs
-              </p>
+        {/* Decorative dots */}
+        <div className="absolute top-24 left-24 w-3 h-3 rounded-full bg-white/30 animate-pulse" />
+        <div className="absolute bottom-32 right-32 w-2 h-2 rounded-full bg-white/20" />
+        <div
+          className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-white/25 animate-pulse"
+          style={{ animationDelay: "0.8s" }}
+        />
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mx-auto max-w-[1400px] relative z-10">
+          <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-16 border border-white/20">
+            {/* Decorative corner accents */}
+            <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2.5rem]" />
+            <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-accent/20 rounded-br-[2.5rem]" />
+
+            <div className="text-center space-y-8">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-complementary/10 border border-complementary/20">
+                  <Sparkles className="w-4 h-4 text-complementary" />
+                  <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">Get Started</span>
+                </div>
+
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                  Ready to explore how we can support your family?
+                </h2>
+                <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                  Browse our service categories to find the perfect fit for your needs
+                </p>
+              </div>
+
+              {/* Decorative divider */}
+              <div className="flex items-center justify-center gap-3 py-4">
+                <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-complementary/30" />
+                <div className="w-2 h-2 rounded-full bg-complementary/50" />
+                <div className="w-16 h-[2px] bg-complementary/30" />
+                <div className="w-2 h-2 rounded-full bg-accent/50" />
+                <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-complementary/30" />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link
                   href="/service/wellness-growth"
-                  className="inline-flex items-center gap-3 bg-white hover:bg-white/90 text-secondary font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                  className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
                 >
                   Wellness & Growth
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/service/daily-operations"
-                  className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 font-quicksand text-lg px-10 py-4 rounded-full font-bold backdrop-blur-sm transition-all hover:scale-105"
+                  className="inline-flex items-center gap-3 border-2 border-complementary text-complementary hover:bg-complementary/5 bg-transparent font-quicksand text-lg px-10 py-4 rounded-full font-bold transition-all hover:scale-105"
                 >
                   Daily Operations
                   <ArrowRight className="w-5 h-5" />
                 </Link>
+              </div>
+
+              {/* Trust indicators */}
+              <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-foreground/60 font-nunito">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-accent" />
+                  </div>
+                  <span className="font-medium">Personalized approach</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-secondary" />
+                  </div>
+                  <span className="font-medium">Expert guidance</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-complementary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-complementary" />
+                  </div>
+                  <span className="font-medium">Proven results</span>
+                </div>
               </div>
             </div>
           </div>

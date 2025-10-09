@@ -285,40 +285,97 @@ export default function FounderPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-secondary via-secondary-light to-secondary shadow-2xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-complementary/10 rounded-full blur-3xl" />
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-primary/50">
+        {/* Organic background shapes */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] opacity-10">
+          <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M300 100 Q450 150 500 300 Q550 450 400 550 Q250 600 150 500 Q50 400 100 250 Q150 100 300 100 Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] opacity-10">
+          <svg viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="225" cy="225" rx="180" ry="200" fill="white" />
+          </svg>
+        </div>
 
-            <div className="relative p-12 lg:p-20 text-center">
-              <div className="max-w-3xl mx-auto space-y-10">
-                <div className="space-y-6">
-                  <Sparkles className="w-16 h-16 text-white/90 mx-auto" />
-                  <h2 className="font-serif text-4xl lg:text-5xl font-light text-white leading-tight">
-                    Let's create your family's rhythm together
-                  </h2>
-                  <p className="text-xl text-white/90 leading-relaxed font-light">
-                    Parent-led, experience-based support tailored to your unique needs
-                  </p>
+        {/* Decorative dots */}
+        <div className="absolute top-32 right-32 w-3 h-3 rounded-full bg-white/30 animate-pulse" />
+        <div className="absolute bottom-40 left-40 w-2 h-2 rounded-full bg-white/20" />
+        <div
+          className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-white/25 animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
+
+        <div className="mx-auto max-w-[1200px] relative z-10">
+          <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-20 border border-white/20">
+            {/* Decorative corner accents */}
+            <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-secondary/20 rounded-tr-[2.5rem]" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 border-b-4 border-l-4 border-accent/20 rounded-bl-[2.5rem]" />
+
+            <div className="text-center space-y-8">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/10 border border-secondary/20">
+                  <Heart className="w-4 h-4 text-secondary" />
+                  <span className="text-sm font-bold text-secondary font-quicksand tracking-wide">Let's Connect</span>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-white/90 text-secondary text-lg px-10 py-7 h-auto rounded-full font-medium shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-                  >
-                    Get in Touch
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-white text-white hover:bg-white/10 bg-transparent text-lg px-10 py-7 h-auto rounded-full font-medium backdrop-blur-sm"
-                  >
-                    <Link href="/about">Explore Our Services</Link>
-                  </Button>
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                  Let's create your family's rhythm together
+                </h2>
+                <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                  Parent-led, experience-based support tailored to your unique needs
+                </p>
+              </div>
+
+              {/* Decorative divider */}
+              <div className="flex items-center justify-center gap-3 py-4">
+                <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-secondary/30" />
+                <div className="w-2 h-2 rounded-full bg-secondary/50" />
+                <div className="w-16 h-[2px] bg-secondary/30" />
+                <div className="w-2 h-2 rounded-full bg-accent/50" />
+                <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-secondary/30" />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                >
+                  Get in Touch
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-secondary text-secondary hover:bg-secondary/5 bg-transparent font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold transition-all hover:scale-105"
+                >
+                  <Link href="/services">Explore Our Services</Link>
+                </Button>
+              </div>
+
+              {/* Trust indicators */}
+              <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-foreground/60 font-nunito">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-accent" />
+                  </div>
+                  <span className="font-medium">Free consultation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-complementary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-complementary" />
+                  </div>
+                  <span className="font-medium">No obligation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-secondary" />
+                  </div>
+                  <span className="font-medium">Quick response</span>
                 </div>
               </div>
             </div>

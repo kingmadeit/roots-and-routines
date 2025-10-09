@@ -13,7 +13,7 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-primary">
             {/* Hero Section */}
-            <section className="relative min-h-screen px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
+            <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
                 <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
                     <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -29,7 +29,7 @@ export default function AboutPage() {
                     </svg>
                 </div>
 
-                <div className="mx-auto max-w-[1400px] pt-16">
+                <div className="mx-auto max-w-[1400px]">
                     <div className="grid lg:grid-cols-12 gap-16 items-end">
                         <div className="lg:col-span-8 space-y-8 relative z-10">
                             <div className="space-y-6">
@@ -58,92 +58,100 @@ export default function AboutPage() {
                         </div>
 
                         <div className="lg:col-span-4">
-                            <div className="w-full aspect-square mb-6">
-                                <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
-                                    {/* Background circle */}
-                                    <circle cx="150" cy="150" r="130" fill="#788a68" opacity="0.12" />
+                            <div className="relative">
+                                <div className="absolute -inset-4 bg-gradient-to-br from-accent/20 via-complementary/20 to-secondary/20 rounded-[2rem] blur-2xl" />
+                                <div className="relative backdrop-blur-sm rounded-3xl p-10">
+                                    <div className="w-full aspect-square mb-6">
+                                        <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
+                                            {/* Background circle */}
+                                            <circle cx="150" cy="150" r="130" fill="#788a68" opacity="0.12" />
 
-                                    {/* Main organic shape */}
-                                    <path
-                                        d="M 150 60 Q 195 75 215 120 Q 235 165 210 205 Q 185 245 140 240 Q 95 235 75 195 Q 55 155 70 115 Q 85 75 130 65 Q 145 60 150 60 Z"
-                                        fill="#ca6c28"
-                                        opacity="0.85"
-                                    />
+                                            {/* Main organic shape */}
+                                            <path
+                                                d="M 150 60 Q 195 75 215 120 Q 235 165 210 205 Q 185 245 140 240 Q 95 235 75 195 Q 55 155 70 115 Q 85 75 130 65 Q 145 60 150 60 Z"
+                                                fill="#ca6c28"
+                                                opacity="0.85"
+                                            />
 
-                                    {/* Inner accent shape */}
-                                    <path
-                                        d="M 150 100 Q 175 110 185 135 Q 195 160 180 180 Q 165 200 145 195 Q 120 185 110 160 Q 100 135 115 115 Q 130 95 150 100 Z"
-                                        fill="#f0bf99"
-                                        opacity="0.75"
-                                    />
+                                            {/* Inner accent shape */}
+                                            <path
+                                                d="M 150 100 Q 175 110 185 135 Q 195 160 180 180 Q 165 200 145 195 Q 120 185 110 160 Q 100 135 115 115 Q 130 95 150 100 Z"
+                                                fill="#f0bf99"
+                                                opacity="0.75"
+                                            />
 
-                                    {/* Decorative dots */}
-                                    <circle cx="150" cy="150" r="7" fill="#fff8a9" />
-                                    <circle cx="125" cy="135" r="5" fill="#bc9b0a" opacity="0.7" />
-                                    <circle cx="175" cy="145" r="6" fill="#a3b185" opacity="0.7" />
-                                    <circle cx="140" cy="175" r="4" fill="#fdf2e0" />
-                                    <circle cx="165" cy="125" r="4" fill="#ca6c28" opacity="0.5" />
+                                            {/* Decorative dots */}
+                                            <circle cx="150" cy="150" r="7" fill="#fff8a9" />
+                                            <circle cx="125" cy="135" r="5" fill="#bc9b0a" opacity="0.7" />
+                                            <circle cx="175" cy="145" r="6" fill="#a3b185" opacity="0.7" />
+                                            <circle cx="140" cy="175" r="4" fill="#fdf2e0" />
+                                            <circle cx="165" cy="125" r="4" fill="#ca6c28" opacity="0.5" />
 
-                                    {/* Leaf-like elements */}
-                                    <path
-                                        d="M 150 150 Q 165 125 180 115"
-                                        stroke="#788a68"
-                                        strokeWidth="2.5"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                    />
-                                    <ellipse
-                                        cx="185"
-                                        cy="110"
-                                        rx="7"
-                                        ry="13"
-                                        fill="#a3b185"
-                                        opacity="0.75"
-                                        transform="rotate(45 185 110)"
-                                    />
+                                            {/* Leaf-like elements */}
+                                            <path
+                                                d="M 150 150 Q 165 125 180 115"
+                                                stroke="#788a68"
+                                                strokeWidth="2.5"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                            />
+                                            <ellipse
+                                                cx="185"
+                                                cy="110"
+                                                rx="7"
+                                                ry="13"
+                                                fill="#a3b185"
+                                                opacity="0.75"
+                                                transform="rotate(45 185 110)"
+                                            />
 
-                                    <path
-                                        d="M 150 150 Q 130 170 115 185"
-                                        stroke="#788a68"
-                                        strokeWidth="2.5"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                    />
-                                    <ellipse
-                                        cx="110"
-                                        cy="190"
-                                        rx="7"
-                                        ry="13"
-                                        fill="#a3b185"
-                                        opacity="0.75"
-                                        transform="rotate(-30 110 190)"
-                                    />
+                                            <path
+                                                d="M 150 150 Q 130 170 115 185"
+                                                stroke="#788a68"
+                                                strokeWidth="2.5"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                            />
+                                            <ellipse
+                                                cx="110"
+                                                cy="190"
+                                                rx="7"
+                                                ry="13"
+                                                fill="#a3b185"
+                                                opacity="0.75"
+                                                transform="rotate(-30 110 190)"
+                                            />
 
-                                    {/* Heart icon integrated into design */}
-                                    <g transform="translate(150, 150)">
-                                        <circle cx="0" cy="0" r="22" fill="white" opacity="0.95" />
-                                        <path
-                                            d="M 0 -5 L -6 -11 Q -10 -15 -10 -10 Q -10 -5 -6 -1 L 0 5 L 6 -1 Q 10 -5 10 -10 Q 10 -15 6 -11 Z"
-                                            fill="#ca6c28"
-                                        />
-                                    </g>
+                                            {/* Heart icon integrated into design */}
+                                            <g transform="translate(150, 150)">
+                                                <circle cx="0" cy="0" r="22" fill="white" opacity="0.95" />
+                                                <path
+                                                    d="M 0 -5 L -6 -11 Q -10 -15 -10 -10 Q -10 -5 -6 -1 L 0 5 L 6 -1 Q 10 -5 10 -10 Q 10 -15 6 -11 Z"
+                                                    fill="#ca6c28"
+                                                />
+                                            </g>
 
-                                    {/* Sparkle elements */}
-                                    <g transform="translate(190, 120)">
-                                        <path
-                                            d="M 0 -4 L 1 -1 L 4 0 L 1 1 L 0 4 L -1 1 L -4 0 L -1 -1 Z"
-                                            fill="#bc9b0a"
-                                            opacity="0.8"
-                                        />
-                                    </g>
-                                    <g transform="translate(110, 130)">
-                                        <path
-                                            d="M 0 -3 L 0.7 -0.7 L 3 0 L 0.7 0.7 L 0 3 L -0.7 0.7 L -3 0 L -0.7 -0.7 Z"
-                                            fill="#ca6c28"
-                                            opacity="0.6"
-                                        />
-                                    </g>
-                                </svg>
+                                            {/* Sparkle elements */}
+                                            <g transform="translate(190, 120)">
+                                                <path
+                                                    d="M 0 -4 L 1 -1 L 4 0 L 1 1 L 0 4 L -1 1 L -4 0 L -1 -1 Z"
+                                                    fill="#bc9b0a"
+                                                    opacity="0.8"
+                                                />
+                                            </g>
+                                            <g transform="translate(110, 130)">
+                                                <path
+                                                    d="M 0 -3 L 0.7 -0.7 L 3 0 L 0.7 0.7 L 0 3 L -0.7 0.7 L -3 0 L -0.7 -0.7 Z"
+                                                    fill="#ca6c28"
+                                                    opacity="0.6"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <p className="text-xl text-foreground/80 leading-relaxed font-light font-nunito">
+                                        Founded with care and intention to help families create smoother routines and confident decisions
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -244,9 +252,9 @@ export default function AboutPage() {
 
                 <div className="mx-auto max-w-[1400px] relative z-10">
                     <div className="text-center max-w-3xl mx-auto">
-                        <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20 mb-8">
-                            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                            <span className="text-accent font-medium text-sm tracking-wide">Our Services</span>
+                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20 mb-8">
+                            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                            <span className="text-sm font-bold text-accent font-quicksand tracking-wide">Our Services</span>
                         </div>
 
                         <h2 className="font-nunito text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
@@ -331,62 +339,91 @@ export default function AboutPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32">
-                <div className="mx-auto max-w-[1400px]">
-                    <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-accent/20 via-complementary/20 to-secondary/20 rounded-[2rem] blur-2xl">
-                        <div className="absolute inset-0 opacity-20">
-                            <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                                <path
-                                    d="M600 50C680 50 750 90 780 160C810 230 790 320 720 370C650 420 540 430 470 400C400 370 350 300 350 220C350 140 480 50 600 50Z"
-                                    fill="white"
-                                    opacity="0.3"
-                                />
-                                <circle cx="200" cy="200" r="100" fill="white" opacity="0.2" />
-                            </svg>
-                        </div>
+            <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-accent">
+                {/* Organic background shapes */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] opacity-10">
+                    <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M250 50 Q350 100 400 200 Q450 300 350 400 Q250 450 150 400 Q50 300 50 200 Q100 100 250 50 Z"
+                            fill="white"
+                        />
+                    </svg>
+                </div>
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-10">
+                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="200" cy="200" r="150" fill="white" />
+                    </svg>
+                </div>
 
-                        <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-0">
-                            <div className="p-12 lg:p-16 flex flex-col justify-center">
-                                <div className="space-y-8">
-                                    <div>
-                                        <h2 className="font-nunito text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                                            Ready to bring more ease to your family life?
-                                        </h2>
-                                        <p className="text-xl text-white/90 leading-relaxed font-light">
-                                            Discover the heart and experience behind Roots & Routines
-                                        </p>
-                                    </div>
+                {/* Decorative dots */}
+                <div className="absolute top-20 left-20 w-3 h-3 rounded-full bg-white/30 animate-pulse" />
+                <div className="absolute top-40 right-40 w-2 h-2 rounded-full bg-white/20" />
+                <div
+                    className="absolute bottom-32 left-1/3 w-4 h-4 rounded-full bg-white/25 animate-pulse"
+                    style={{ animationDelay: "1s" }}
+                />
 
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        className="bg-white hover:bg-white/90 text-secondary font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
-                                    >
-                                        <Link href="/founder" className="inline-flex items-center gap-3">
-                                            Meet the Founder
-                                            <ArrowRight className="w-5 h-5" />
-                                        </Link>
-                                    </Button>
+                <div className="mx-auto container relative z-10">
+                    <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-20 border border-white/20">
+                        {/* Decorative corner accents */}
+                        <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-accent/20 rounded-tl-[2.5rem]" />
+                        <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-complementary/20 rounded-br-[2.5rem]" />
+
+                        <div className="text-center space-y-8">
+                            <div className="space-y-6">
+                                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20">
+                                    <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                                    <span className="text-sm font-bold text-accent font-quicksand tracking-wide">Next Step</span>
                                 </div>
+
+                                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                    Ready to bring more ease to your family life?
+                                </h2>
+                                <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                                    Discover the heart and experience behind Roots & Routines
+                                </p>
                             </div>
 
-                            <div className="hidden lg:flex items-center justify-center p-16 relative">
-                                <svg
-                                    viewBox="0 0 300 300"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="w-full h-full max-w-sm"
-                                >
-                                    <circle cx="150" cy="150" r="100" fill="white" opacity="0.15" />
-                                    <path
-                                        d="M150 80 L170 120 L210 130 L180 160 L188 200 L150 178 L112 200 L120 160 L90 130 L130 120 Z"
-                                        fill="white"
-                                        opacity="0.4"
-                                    />
-                                    <circle cx="100" cy="100" r="30" fill="white" opacity="0.2" />
-                                    <circle cx="200" cy="180" r="40" fill="white" opacity="0.15" />
-                                    <path d="M80 200 Q150 180 220 200" stroke="white" strokeWidth="3" opacity="0.3" fill="none" />
-                                </svg>
+                            {/* Decorative divider */}
+                            <div className="flex items-center justify-center gap-3 py-4">
+                                <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-accent/30" />
+                                <div className="w-2 h-2 rounded-full bg-accent/50" />
+                                <div className="w-16 h-[2px] bg-accent/30" />
+                                <div className="w-2 h-2 rounded-full bg-complementary/50" />
+                                <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-accent/30" />
+                            </div>
+
+                            <Button
+                                asChild
+                                size="lg"
+                                className="bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
+                            >
+                                <Link href="/founder" className="inline-flex items-center gap-3">
+                                    Meet the Founder
+                                    <ArrowRight className="w-5 h-5" />
+                                </Link>
+                            </Button>
+
+                            {/* Trust indicators */}
+                            <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-foreground/60 font-nunito">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-5 h-5 rounded-full bg-complementary/20 flex items-center justify-center">
+                                        <div className="w-2 h-2 rounded-full bg-complementary" />
+                                    </div>
+                                    <span className="font-medium">Parent-led approach</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
+                                        <div className="w-2 h-2 rounded-full bg-secondary" />
+                                    </div>
+                                    <span className="font-medium">Experience-based</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
+                                        <div className="w-2 h-2 rounded-full bg-accent" />
+                                    </div>
+                                    <span className="font-medium">Personalized support</span>
+                                </div>
                             </div>
                         </div>
                     </div>
