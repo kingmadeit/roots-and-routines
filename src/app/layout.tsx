@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   },
 };
 
+
+const isDev = process.env.NODE_ENV === 'development';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,29 +72,31 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} ${antonio.variable} font-quicksand antialiased w-full text-primary bg-primary`}
       >
-          {/* Floating Icons - covers entire page */}
-          <FloatingIcons 
-            count={12}
-            iconSize="md"
-            enableAnimation={true}
-            opacityRange={[0.3, 0.7]}
-            colorVariants={['accent', 'secondary', 'complementary', 'secondary-light']}
-            containerClassName="fixed inset-0 z-0"
-          />
-          {/* Main content - positioned above floating icons */}
-          <main className="w-full flex min-h-screen flex-col absolute z-10">
-            <Header />
-            <div className="w-full h-full">{children}</div>
-            <Footer />
-          </main>
+        {/* Floating Icons - covers entire page */}
+        <FloatingIcons
+          count={12}
+          iconSize="md"
+          enableAnimation={true}
+          opacityRange={[0.3, 0.7]}
+          colorVariants={['accent', 'secondary', 'complementary', 'secondary-light']}
+          containerClassName="fixed inset-0 z-0"
+        />
+        {/* Main content - positioned above floating icons */}
+        <main className="w-full flex min-h-screen flex-col absolute z-10" contentEditable={isDev}>
+          <Header />
+          <div className="w-full h-full">{children}</div>
+          <Footer />
+        </main>
 
-          {/* DEV / TESTING / DEBUGGING */}
-        <div className="fixed bottom-4 right-4 bg-black text-white px-3 py-2 rounded text-sm">
+        {/* DEV / TESTING / DEBUGGING */}
+        {isDev && <div className="fixed bottom-4 right-4 bg-black text-white px-3 py-2 rounded text-sm">
           <span className="md:hidden">Mobile (-md)</span>
           <span className="hidden md:block lg:hidden">Tablet (md)</span>
           <span className="hidden lg:block">Desktop (lg+)</span>
-        </div>
+        </div>}
       </body>
     </html>
   );
 }
+
+
