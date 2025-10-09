@@ -7,10 +7,10 @@ const {
 
 const ContactOptions = () => {
   return (
-    <div className="w-full p-6 md:p-8 rounded-3xl bg-gradient-to-br from-primary via-primary-light/20 to-primary relative overflow-hidden">
+    <div className="w-full p-6 md:p-8 rounded-3xl bg-primary/70 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <svg className="absolute top-0 right-0 w-64 h-64" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="80" fill="currentColor" className="text-accent" />
+          <circle cx="100" cy="100" r="80" fill="currentColor" className="text-complementary/40" />
         </svg>
         <svg className="absolute bottom-0 left-0 w-48 h-48" viewBox="0 0 200 200">
           <path
@@ -96,10 +96,14 @@ const ContactOptions = () => {
         </div>
 
         <div className="flex flex-col items-center md:items-start justify-center space-y-6 text-center md:text-left">
+          <div className="flex items-center gap-2 pt-2 bg-accent/10 rounded-full border border-accent/40 px-4 py-2">
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-xs font-medium text-accent/70">Available Monday - Friday, 9AM - 5PM</span>
+          </div>
           <div className="space-y-3">
-            <h3 className="text-accent font-extrabold text-3xl md:text-4xl lg:text-5xl leading-tight text-balance">
-              Our team is here to help
-            </h3>
+            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[0.95]">
+              Our team is <span className="text-accent italic font-light">here to <br />help</span>
+            </h2>
             <div className="w-20 h-1 bg-accent/30 rounded-full mx-auto md:mx-0" />
           </div>
 
@@ -110,7 +114,7 @@ const ContactOptions = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
             <a
-              className="group relative rounded-2xl bg-accent hover:bg-accent/90 transition-all duration-300 p-5 text-white shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 min-w-[160px]"
+              className="group relative rounded-2xl bg-complementary hover:bg-complementary/90 transition-all duration-300 p-5 text-white shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 min-w-[160px]"
               rel="noopener noreferrer"
               href={`mailto:${email}`}
             >
@@ -129,11 +133,6 @@ const ContactOptions = () => {
               <span className="font-semibold relative z-10">Call Us</span>
             </a>
           </div>
-
-          <div className="flex items-center gap-2 pt-2 opacity-60">
-            <div className="w-2 h-2 rounded-full bg-complementary animate-pulse" />
-            <span className="text-xs font-medium text-secondary">Available Monday - Friday, 9AM - 5PM</span>
-          </div>
         </div>
       </div>
     </div>
@@ -141,4 +140,3 @@ const ContactOptions = () => {
 }
 
 export default ContactOptions
-

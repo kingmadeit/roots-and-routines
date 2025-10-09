@@ -1,3 +1,4 @@
+import type React from "react"
 import Link from "next/link"
 import { siteData } from "@/data"
 import { Mail, Phone } from "lucide-react"
@@ -40,25 +41,24 @@ export default function Footer() {
   const [weekDays, time] = contact.businessHours!.split(",")
 
   return (
-    <footer className="relative bg-gradient-to-br from-secondary via-secondary to-secondary-light pb-8 overflow-hidden">
-      {/* Organic background shapes */}
+    <footer className="relative bg-complementary/90 pb-8 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="absolute -top-20 -left-20 w-96 h-96 opacity-10" viewBox="0 0 400 400">
           <path
             d="M200,50 Q300,100 350,200 T300,350 Q200,400 100,350 T50,200 Q100,100 200,50"
             fill="currentColor"
-            className="text-primary"
+            className="text-white"
           />
         </svg>
-        <svg className="absolute -bottom-32 -right-32 w-[500px] h-[500px] opacity-10" viewBox="0 0 500 500">
-          <circle cx="250" cy="250" r="200" fill="currentColor" className="text-accent" />
-          <circle cx="300" cy="200" r="120" fill="currentColor" className="text-complementary" />
+        <svg className="absolute -bottom-32 -right-32 w-[500px] h-[500px] opacity-5" viewBox="0 0 500 500">
+          <circle cx="250" cy="250" r="200" fill="currentColor" className="text-white" />
+          <circle cx="300" cy="200" r="120" fill="currentColor" className="text-primary" />
         </svg>
         <svg className="absolute top-1/2 left-1/4 w-64 h-64 opacity-5" viewBox="0 0 200 200">
           <path
             d="M100,20 Q150,50 170,100 T150,170 Q100,190 50,170 T30,100 Q50,50 100,20"
             fill="currentColor"
-            className="text-primary-light"
+            className="text-white"
           />
         </svg>
       </div>
@@ -66,47 +66,12 @@ export default function Footer() {
       <LeadSection />
 
       <div className="relative container mx-auto px-4">
-        {/* Main content grid */}
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 mb-16">
           {/* Column 1: Social + Hours with decorative card */}
-          {/* <div className="space-y-6">
-            <div className="bg-primary/10 backdrop-blur-sm rounded-2xl p-6 border border-primary/20">
-              <h4 className="text-lg font-semibold mb-4 text-primary-light">Connect With Us</h4>
-              <div className="flex gap-3 justify-start flex-wrap mb-6">
-                {socialLinks.map(({ platform, url, display }) => {
-                  const Icon = socialIcons[platform]
-                  return (
-                    <Link
-                      key={platform}
-                      href={url}
-                      aria-label={display}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative"
-                    >
-                      <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-                      <div className="relative bg-primary/20 hover:bg-accent p-3 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-6">
-                        {Icon && (
-                          <Icon className="h-5 w-5 text-primary-light group-hover:text-white transition-colors" />
-                        )}
-                      </div>
-                    </Link>
-                  )
-                })}
-              </div>
-              <div className="space-y-2 text-sm text-primary-light/80">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  <p>{weekDays}</p>
-                </div>
-                <p className="pl-4">{time}</p>
-              </div>
-            </div>
-          </div> */}
           <div className="space-y-6">
             <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-lg">
-              <h4 className="text-lg font-semibold mb-5 text-secondary-foreground flex items-center gap-2">
-                <div className="w-1 h-6 bg-accent rounded-full" />
+              <h4 className="text-lg font-semibold mb-5 text-white flex items-center gap-2">
+                <div className="w-1 h-6 bg-white rounded-full" />
                 Connect With Us
               </h4>
               <div className="grid grid-cols-3 gap-3 mb-6">
@@ -121,41 +86,42 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className="group relative flex items-center justify-center"
                     >
-                      <div className="absolute inset-0 bg-accent rounded-xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
-                      <div className="relative bg-white/30 hover:bg-accent hover:text-white p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md">
-                        {Icon && <Icon className="h-5 w-5 text-secondary group-hover:text-white transition-colors" />}
+                      <div className="absolute inset-0 bg-white rounded-xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
+                      <div className="relative bg-white/30 hover:bg-white p-3 rounded-xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 shadow-md">
+                        {Icon && <Icon className="h-5 w-5 text-white/80 group-hover:text-accent transition-colors" />}
                       </div>
                     </Link>
                   )
                 })}
               </div>
               <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                <div className="space-y-2 text-sm text-secondary">
+                <div className="space-y-2 text-sm text-white">
                   <div className="flex items-center gap-2 font-medium">
-                    <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                     <p>{weekDays}</p>
                   </div>
-                  <p className="pl-4 text-secondary/80">{time}</p>
+                  <p className="pl-4 text-white/80">{time}</p>
                 </div>
               </div>
             </div>
           </div>
+
           {/* Column 2: Main Nav */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-primary-light relative inline-block">
+          <div className="text-center lg:text-right">
+            <h4 className="text-lg font-semibold mb-6 text-white relative inline-block">
               Explore
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-accent rounded-full" />
+              <span className="absolute -bottom-2 left-0 lg:left-auto lg:right-0 w-12 h-1 bg-white rounded-full" />
             </h4>
             <ul className="space-y-3 text-sm">
               {navigation.map(({ label, href }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-primary-light/70 hover:text-primary-light transition-all duration-300 hover:translate-x-1 inline-block group"
+                    className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                   >
                     <span className="relative">
                       {label}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
                     </span>
                   </Link>
                 </li>
@@ -164,31 +130,31 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-primary-light relative inline-block">
+          <div className="text-center lg:text-right">
+            <h4 className="text-lg font-semibold mb-6 text-white relative inline-block">
               Quick Links
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-complementary rounded-full" />
+              <span className="absolute -bottom-2 left-0 lg:left-auto lg:right-0 w-12 h-1 bg-white rounded-full" />
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/contact"
-                  className="text-primary-light/70 hover:text-primary-light transition-all duration-300 hover:translate-x-1 inline-block group"
+                  className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                 >
                   <span className="relative">
                     Contact
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-complementary group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
                   </span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/faq"
-                  className="text-primary-light/70 hover:text-primary-light transition-all duration-300 hover:translate-x-1 inline-block group"
+                  className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                 >
                   <span className="relative">
                     FAQ
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-complementary group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
                   </span>
                 </Link>
               </li>
@@ -196,31 +162,31 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Legal */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-primary-light relative inline-block">
+          <div className="text-center lg:text-right">
+            <h4 className="text-lg font-semibold mb-6 text-white relative inline-block">
               Legal
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary-light rounded-full" />
+              <span className="absolute -bottom-2 left-0 lg:left-auto lg:right-0 w-12 h-1 bg-white rounded-full" />
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/terms"
-                  className="text-primary-light/70 hover:text-primary-light transition-all duration-300 hover:translate-x-1 inline-block group"
+                  className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                 >
                   <span className="relative">
                     Terms of Use
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-light group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
                   </span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/privacy"
-                  className="text-primary-light/70 hover:text-primary-light transition-all duration-300 hover:translate-x-1 inline-block group"
+                  className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                 >
                   <span className="relative">
                     Privacy Policy
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-light group-hover:w-full transition-all duration-300" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
                   </span>
                 </Link>
               </li>
@@ -231,24 +197,23 @@ export default function Footer() {
         {/* Decorative divider */}
         <div className="relative mb-8">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-primary-light/20" />
+            <div className="w-full border-t border-white/20" />
           </div>
           <div className="relative flex justify-center">
-            <div className="bg-accent px-6 py-2 rounded-full">
-              <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="currentColor">
+            <div className="bg-white px-6 py-2 rounded-full">
+              <svg className="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
               </svg>
             </div>
           </div>
         </div>
 
-        {/* Bottom copyright with enhanced styling */}
         <div className="text-center">
-          <p className="text-sm text-primary-light/60">
-            © {new Date().getFullYear()} <span className="text-primary-light font-semibold">{company.name}</span>. All
-            rights reserved.
+          <p className="text-sm text-white/80">
+            © {new Date().getFullYear()} <span className="text-white font-semibold">{company.name}</span>. All rights
+            reserved.
           </p>
-          <p className="text-xs text-primary-light/40 mt-2">Crafted with care and attention to detail</p>
+          <p className="text-xs text-white/60 mt-2">Crafted with care and attention to detail</p>
         </div>
       </div>
     </footer>
