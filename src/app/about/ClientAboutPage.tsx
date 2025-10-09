@@ -13,7 +13,7 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-primary">
             {/* Hero Section */}
-            <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
+            <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
                 <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
                     <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -59,7 +59,6 @@ export default function AboutPage() {
 
                         <div className="lg:col-span-4">
                             <div className="relative">
-                                <div className="absolute -inset-4 bg-gradient-to-br from-accent/20 via-complementary/20 to-secondary/20 rounded-[2rem] blur-2xl" />
                                 <div className="relative backdrop-blur-sm rounded-3xl p-10">
                                     <div className="w-full aspect-square mb-6">
                                         <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
@@ -148,9 +147,6 @@ export default function AboutPage() {
                                             </g>
                                         </svg>
                                     </div>
-                                    <p className="text-xl text-foreground/80 leading-relaxed font-light font-nunito">
-                                        Founded with care and intention to help families create smoother routines and confident decisions
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -339,7 +335,7 @@ export default function AboutPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-accent">
+            <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-accent/40">
                 {/* Organic background shapes */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] opacity-10">
                     <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
