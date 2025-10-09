@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { siteData } from "@/data"
 import { Mail, Phone } from "lucide-react"
+import LeadSection from "./sections/LeadSection"
 
 interface IconProps {
   className?: string
@@ -39,7 +40,7 @@ export default function Footer() {
   const [weekDays, time] = contact.businessHours!.split(",")
 
   return (
-    <footer className="relative bg-gradient-to-br from-secondary via-secondary to-secondary-light pt-20 pb-8 translate-y-[60px] overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-secondary via-secondary to-secondary-light pt-20 pb-8 overflow-hidden">
       {/* Organic background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="absolute -top-20 -left-20 w-96 h-96 opacity-10" viewBox="0 0 400 400">
@@ -62,7 +63,9 @@ export default function Footer() {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4">
+      {/* <LeadSection /> */}
+
+      <div className="relative container mx-auto px-4">
         {/* Main content grid */}
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 mb-16">
           {/* Column 1: Social + Hours with decorative card */}

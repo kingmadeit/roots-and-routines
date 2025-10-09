@@ -31,7 +31,7 @@ export default function HomePage() {
       <ServiceSection />
       <FAQSection />
       <ContactSection />
-      <LeadSection />
+      <LeadSection variant="accent" />
     </>
   );
 }
