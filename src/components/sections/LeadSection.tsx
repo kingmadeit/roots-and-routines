@@ -78,7 +78,7 @@ const LeadSection = ({
                   className={`text-4xl md:text-5xl lg:text-7xl leading-[1.3] font-quicksand font-extrabold ${getTextClasses()} ${i}`}
                 >
                   {item}
-                  <span className="mx-8 text-accent/40">•</span>
+                  <span className="mx-8 text-complementary/40">•</span>
                 </h2>
               ))}
             </div>
