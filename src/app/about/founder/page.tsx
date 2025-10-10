@@ -316,7 +316,7 @@ export default function FounderPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-secondary">
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-complementary/80">
         {/* Organic background shapes */}
         <div className="absolute top-0 left-0 w-[600px] h-[600px] opacity-10">
           <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -382,7 +382,7 @@ export default function FounderPage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-2 border-secondary text-secondary hover:bg-secondary/5 bg-transparent font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold transition-all hover:scale-105"
+                  className="border-2 border-complementary text-complementary hover:bg-complementary/70! bg-transparent font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold transition-all hover:scale-105"
                 >
                   <Link href="/services">Explore Our Services</Link>
                 </Button>
