@@ -1,15 +1,72 @@
+import type React from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles, Utensils, Clock, UserSearch, GraduationCap, Baby, Heart } from "lucide-react"
+import { siteData } from "@/data"
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
   description: "Comprehensive, personalized family support services designed around your unique needs and rhythm",
 }
 
+const getCategoryClasses = (category: string) => {
+  switch (category) {
+    case "daily-operations":
+      return {
+        bg: "bg-accent",
+        text: "text-accent",
+        border: "border-accent",
+        gradient: "from-accent to-accent/70",
+      }
+    case "finding-support":
+      return {
+        bg: "bg-secondary",
+        text: "text-secondary",
+        border: "border-secondary",
+        gradient: "from-secondary to-secondary/70",
+      }
+    case "wellness-growth":
+      return {
+        bg: "bg-complementary",
+        text: "text-complementary",
+        border: "border-complementary",
+        gradient: "from-complementary to-complementary/70",
+      }
+    default:
+      return {
+        bg: "bg-accent",
+        text: "text-accent",
+        border: "border-accent",
+        gradient: "from-accent to-accent/70",
+      }
+  }
+}
+
+const getHoverTextClass = (category: string) => {
+  switch (category) {
+    case "daily-operations":
+      return "group-hover:text-accent"
+    case "finding-support":
+      return "group-hover:text-secondary"
+    case "wellness-growth":
+      return "group-hover:text-complementary"
+    default:
+      return "group-hover:text-accent"
+  }
+}
+
+const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {
+  Utensils,
+  Clock,
+  UserSearch,
+  GraduationCap,
+  Baby,
+  Heart,
+}
+
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-primary">
+    <main className="min-h-screen bg-primary/40">
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 opacity-20">
@@ -53,13 +110,13 @@ export default function ServicesPage() {
             </div>
 
             <div className="space-y-6">
-              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
-                <span className="text-accent">How we support</span>
+              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-complementary">
+                How we support
                 <br />
-                <span className="text-secondary">your family</span>
+                your family
               </h1>
 
-              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
+              <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
                 Comprehensive, personalized services designed around your unique needs and rhythm
               </p>
             </div>
@@ -83,7 +140,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid Section */}
-      <section className="px-6 py-16 lg:px-8 lg:py-24 relative overflow-hidden bg-accent">
+      <section className="px-6 py-16 bg-complementary/70 lg:px-8 lg:py-24 relative overflow-hidden">
         <div className="absolute bottom-20 right-0 w-96 h-96 opacity-15">
           <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -100,139 +157,93 @@ export default function ServicesPage() {
         </div>
 
         <div className="mx-auto max-w-[1400px] relative z-10">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Services</h2>
+            <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
+              Explore our comprehensive range of family support services
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "School Searches",
-                description:
-                  "Finding the perfect educational environment that aligns with your values and your child's needs",
-                icon: (
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <path d="M100 30 L160 60 L160 120 L100 150 L40 120 L40 60 Z" fill="#ca6c28" opacity="0.2" />
-                    <path d="M100 50 L140 70 L140 110 L100 130 L60 110 L60 70 Z" fill="#ca6c28" opacity="0.6" />
-                    <rect x="85" y="80" width="30" height="35" fill="#ca6c28" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Nanny Placements",
-                description: "Connecting you with trusted, qualified caregivers who become part of your family",
-                icon: (
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <circle cx="100" cy="70" r="35" fill="#788a68" opacity="0.6" />
-                    <path d="M60 120 Q100 110 140 120 L135 170 Q100 180 65 170 Z" fill="#788a68" opacity="0.6" />
-                    <circle cx="85" cy="65" r="5" fill="#788a68" />
-                    <circle cx="115" cy="65" r="5" fill="#788a68" />
-                    <path d="M90 85 Q100 90 110 85" stroke="#788a68" strokeWidth="3" fill="none" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Nutritional Meal Prep",
-                description: "Tailored meal planning that nourishes your family and fits your lifestyle",
-                icon: (
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <ellipse cx="100" cy="100" rx="60" ry="70" fill="#bc9b0a" opacity="0.2" />
-                    <path
-                      d="M100 40 L130 70 L130 110 C130 130 115 145 100 145 C85 145 70 130 70 110 L70 70 Z"
-                      fill="#bc9b0a"
-                      opacity="0.6"
-                    />
-                    <line x1="80" y1="80" x2="120" y2="80" stroke="#bc9b0a" strokeWidth="3" />
-                    <line x1="80" y1="100" x2="120" y2="100" stroke="#bc9b0a" strokeWidth="3" />
-                    <circle cx="100" cy="120" r="8" fill="#bc9b0a" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Activity Planning",
-                description: "Enriching experiences and routines that support development and joy",
-                icon: (
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <circle cx="100" cy="100" r="60" fill="#a3b185" opacity="0.2" />
-                    <path
-                      d="M100 40 L110 75 L145 80 L117 105 L125 140 L100 122 L75 140 L83 105 L55 80 L90 75 Z"
-                      fill="#a3b185"
-                      opacity="0.7"
-                    />
-                    <circle cx="100" cy="100" r="15" fill="#a3b185" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Home Routines",
-                description: "Creating sustainable structure that brings ease and flow to daily life",
-                icon: (
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <path d="M100 30 L170 80 L155 80 L155 150 L45 150 L45 80 L30 80 Z" fill="#ca6c28" opacity="0.6" />
-                    <rect x="75" y="100" width="50" height="50" fill="#ca6c28" opacity="0.3" />
-                    <rect x="80" y="105" width="15" height="15" fill="white" opacity="0.5" />
-                    <rect x="105" y="105" width="15" height="15" fill="white" opacity="0.5" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Family Guidance",
-                description: "Strategic support for confident parenting decisions and household management",
-                icon: (
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <circle cx="100" cy="65" r="30" fill="#788a68" opacity="0.6" />
-                    <path
-                      d="M100 95 L100 130 M80 110 L100 130 L120 110"
-                      stroke="#788a68"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      opacity="0.6"
-                    />
-                    <circle cx="70" cy="140" r="20" fill="#788a68" opacity="0.4" />
-                    <circle cx="130" cy="140" r="20" fill="#788a68" opacity="0.4" />
-                  </svg>
-                ),
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 border border-accent/10 overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 0 L100 50 Q100 100 50 100 L0 100 L0 0 Z" fill="url(#cornerGrad)" opacity="0.1" />
-                    <defs>
-                      <linearGradient id="cornerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#ca6c28" />
-                        <stop offset="100%" stopColor="#bc9b0a" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
+            {siteData.services.map((service, index) => {
+              const categoryClasses = getCategoryClasses(service.category)
+              const hoverTextClass = getHoverTextClass(service.category)
+              const IconComponent = service.icon ? iconComponents[service.icon] : null
 
-                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-quicksand font-bold text-sm">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
+              return (
+                <Link
+                  key={service.id}
+                  href={`/services/${service.category}`}
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent/20 overflow-hidden cursor-pointer"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${categoryClasses.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                  />
 
-                <div className="relative">
-                  <div className="w-20 h-20 mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    {service.icon}
+                  {/* Corner decoration */}
+                  <div className="absolute top-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M100 0 L100 50 Q100 100 50 100 L0 100 L0 0 Z"
+                        fill="currentColor"
+                        className={`${categoryClasses.text} opacity-10`}
+                      />
+                    </svg>
                   </div>
-                  <h3 className="font-quicksand text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-foreground/70 leading-relaxed font-light">{service.description}</p>
-                </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-complementary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </div>
-            ))}
+                  {/* Category badge */}
+                  <div
+                    className={`absolute top-6 right-6 px-3 py-1.5 rounded-full ${categoryClasses.bg}/10 border ${categoryClasses.border}/20`}
+                  >
+                    <span className={`${categoryClasses.text} font-quicksand font-bold text-xs`}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <div className="relative space-y-4">
+                    <div
+                      className={`w-16 h-16 rounded-2xl ${categoryClasses.bg}/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
+                    >
+                      {IconComponent ? (
+                        <IconComponent className={`w-8 h-8 ${categoryClasses.text}`} />
+                      ) : (
+                        <div className={`w-8 h-8 rounded-lg ${categoryClasses.bg}/20`} />
+                      )}
+                    </div>
+
+                    {/* Updated text color */}
+                    <h3
+                      className={`font-quicksand text-2xl font-bold text-[#581b04] ${hoverTextClass} transition-colors duration-300`}
+                    >
+                      {service.title}
+                    </h3>
+
+                    {/* Updated text color */}
+                    <p className="text-[#581b04]/70 leading-relaxed font-light font-nunito">{service.shortCopy}</p>
+
+                    {/* Learn more indicator */}
+                    <div
+                      className={`flex items-center gap-2 pt-2 ${categoryClasses.text} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    >
+                      <span className="text-sm font-medium font-quicksand">Learn more</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${categoryClasses.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                  />
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-primary">
-        {/* Organic background shapes */}
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[550px] h-[550px] opacity-10">
           <svg viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -247,7 +258,6 @@ export default function ServicesPage() {
           </svg>
         </div>
 
-        {/* Decorative dots */}
         <div className="absolute top-24 left-24 w-3 h-3 rounded-full bg-white/30 animate-pulse" />
         <div className="absolute bottom-32 right-32 w-2 h-2 rounded-full bg-white/20" />
         <div
@@ -255,9 +265,8 @@ export default function ServicesPage() {
           style={{ animationDelay: "0.8s" }}
         />
 
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="mx-auto max-w-5xl relative z-10">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-16 border border-white/20">
-            {/* Decorative corner accents */}
             <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2.5rem]" />
             <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-accent/20 rounded-br-[2.5rem]" />
 
@@ -268,15 +277,16 @@ export default function ServicesPage() {
                   <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">Get Started</span>
                 </div>
 
-                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                {/* Updated text color */}
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                   Ready to explore how we can support your family?
                 </h2>
-                <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                {/* Updated text color */}
+                <p className="text-xl text-[#581b04]/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
                   Browse our service categories to find the perfect fit for your needs
                 </p>
               </div>
 
-              {/* Decorative divider */}
               <div className="flex items-center justify-center gap-3 py-4">
                 <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-complementary/30" />
                 <div className="w-2 h-2 rounded-full bg-complementary/50" />
@@ -288,29 +298,29 @@ export default function ServicesPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link
                   href="/services/wellness-growth"
-                  className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                  className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
                 >
                   Wellness & Growth
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/services/daily-operations"
-                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
                 >
                   Daily Operations
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/services/finding-support"
-                  className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                  className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
                 >
                   Finding Support
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
 
-              {/* Trust indicators */}
-              <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-foreground/60 font-nunito">
+              {/* Updated text color */}
+              <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-[#581b04]/60 font-nunito">
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-accent" />
