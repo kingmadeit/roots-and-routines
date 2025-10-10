@@ -1,8 +1,9 @@
+
+import { ValuesCard } from "@/components/ValuesCard"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Heart, Lightbulb, Users, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ValuesCard } from "@/components/ValuesCard"
 
 export const metadata: Metadata = {
   title: "Meet the Founder | Roots & Routines",
@@ -11,77 +12,114 @@ export const metadata: Metadata = {
 
 export default function FounderPage() {
   return (
-    <main className="min-h-screen bg-primary">
+    <main className="min-h-screen bg-primary pt-24">
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
         {/* Organic background shapes */}
-        <div className="absolute top-20 left-10 w-72 h-72 opacity-20">
-          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M150 50 Q250 100 250 200 Q200 280 100 250 Q20 200 50 100 Q100 50 150 50 Z"
-              fill="url(#heroGrad1)"
+              d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
+              fill="url(#gradient1)"
             />
             <defs>
-              <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#788a68" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#a3b185" stopOpacity="0.2" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-
-        <div className="absolute bottom-20 right-10 w-96 h-96 opacity-15">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="150" fill="url(#heroGrad2)" />
-            <circle cx="200" cy="200" r="100" fill="url(#heroGrad3)" />
-            <defs>
-              <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ca6c28" stopOpacity="0.3" />
+              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#788a68" stopOpacity="0.3" />
                 <stop offset="100%" stopColor="#bc9b0a" stopOpacity="0.2" />
               </linearGradient>
-              <linearGradient id="heroGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f0bf99" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#fdf2e0" stopOpacity="0.1" />
-              </linearGradient>
             </defs>
           </svg>
         </div>
 
-        <div className="mx-auto max-w-5xl relative">
-          <div className="text-center space-y-12">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
-            </div>
+        <div className="w-full text-left relative">
+          {/* SVG Illustration - Positioned on right side */}
+          <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-[400px] h-[400px]">
+            <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
+              {/* Background circle */}
+              <circle cx="150" cy="150" r="130" fill="#ca6c28" opacity="0.12" />
 
-            {/* Main heading */}
+              {/* Tree trunk/stem - representing growth */}
+              <path
+                d="M 140 200 L 140 120 Q 140 110 150 110 Q 160 110 160 120 L 160 200"
+                fill="#788a68"
+                opacity="0.85"
+              />
+
+              {/* Roots - organic flowing lines */}
+              <path
+                d="M 145 200 Q 120 220 100 240 M 155 200 Q 180 220 200 240 M 150 205 Q 150 230 150 250"
+                stroke="#788a68"
+                strokeWidth="4"
+                fill="none"
+                strokeLinecap="round"
+                opacity="0.7"
+              />
+
+              {/* Root details - smaller branches */}
+              <path
+                d="M 110 230 Q 90 240 80 250 M 190 230 Q 210 240 220 250"
+                stroke="#a3b185"
+                strokeWidth="2.5"
+                fill="none"
+                strokeLinecap="round"
+                opacity="0.6"
+              />
+
+              {/* Heart at the center - representing care */}
+              <path
+                d="M 150 100 C 145 95 138 95 135 100 C 132 105 132 110 135 115 L 150 130 L 165 115 C 168 110 168 105 165 100 C 162 95 155 95 150 100 Z"
+                fill="#ca6c28"
+                opacity="0.9"
+              />
+
+              {/* Strategic grid pattern emerging from heart */}
+              <g opacity="0.6">
+                {/* Grid lines */}
+                <line x1="130" y1="70" x2="170" y2="70" stroke="#bc9b0a" strokeWidth="1.5" />
+                <line x1="130" y1="80" x2="170" y2="80" stroke="#bc9b0a" strokeWidth="1.5" />
+                <line x1="130" y1="90" x2="170" y2="90" stroke="#bc9b0a" strokeWidth="1.5" />
+                <line x1="140" y1="60" x2="140" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+                <line x1="150" y1="60" x2="150" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+                <line x1="160" y1="60" x2="160" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+              </g>
+
+              {/* Decorative dots around the composition */}
+              <circle cx="80" cy="120" r="3" fill="#ca6c28" opacity="0.7" />
+              <circle cx="220" cy="120" r="3" fill="#bc9b0a" opacity="0.7" />
+              <circle cx="100" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
+              <circle cx="200" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
+              <circle cx="150" cy="50" r="2" fill="#ca6c28" opacity="0.5" />
+
+              {/* Sparkle elements */}
+              <path d="M 90 100 L 92 102 L 90 104 L 88 102 Z" fill="#bc9b0a" opacity="0.8" />
+              <path d="M 210 100 L 212 102 L 210 104 L 208 102 Z" fill="#bc9b0a" opacity="0.8" />
+              <path d="M 150 260 L 152 262 L 150 264 L 148 262 Z" fill="#ca6c28" opacity="0.7" />
+            </svg>
+          </div>
+
+          {/* Left-aligned Text Content */}
+          <div className="space-y-8 relative z-10 max-w-4xl">
             <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
+              </div>
+
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[0.95]">
-                Helping families
+                Where heart
                 <br />
-                <span className="text-accent italic font-nunito font-light">thrive</span>
+                <span className="text-accent italic font-light">meets strategy</span>
               </h1>
-
-              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
-                Years of hands-on experience combined with strategic thinking
-              </p>
             </div>
 
-            {/* Decorative element */}
-            <div className="flex items-center justify-center gap-3 pt-4">
-              <div className="h-px w-16 bg-accent" />
-              <p className="text-sm uppercase tracking-widest text-accent font-medium font-quicksand">
-                Not just survive
-              </p>
-              <div className="h-px w-16 bg-accent" />
-            </div>
+            <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-light">
+              Bringing years of experience in childcare, education, and family support
+            </p>
 
-            {/* Decorative dots */}
-            <div className="flex justify-center gap-2 pt-8">
-              <div className="w-2 h-2 rounded-full bg-accent/40" />
-              <div className="w-2 h-2 rounded-full bg-secondary/40" />
-              <div className="w-2 h-2 rounded-full bg-complementary/40" />
+            <div className="flex items-center gap-3 pt-4">
+              <div className="h-px w-16 bg-accent" />
+              <p className="text-sm uppercase tracking-widest text-accent font-medium">Experience-based · Parent-led</p>
+              <div className="h-px w-16 bg-accent" />
             </div>
           </div>
         </div>
@@ -203,7 +241,7 @@ export default function FounderPage() {
               title="Heart"
               description="Deep passion for child wellbeing and genuine care for every family's unique journey"
               gradientId="gradientHeart"
-              gradientFrom="#ca6c28"
+              gradientFrom="#788a68"
               gradientTo="#d97d3f"
               borderColor="border-accent/20 hover:border-accent/40"
               iconBgColor="bg-accent/5"
@@ -285,7 +323,7 @@ export default function FounderPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-primary/50">
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-secondary">
         {/* Organic background shapes */}
         <div className="absolute top-0 left-0 w-[600px] h-[600px] opacity-10">
           <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
