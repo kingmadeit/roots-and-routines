@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-primary/70">
+    <main className="min-h-screen bg-primary/70 pt-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center relative">
