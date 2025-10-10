@@ -66,7 +66,7 @@ const iconComponents: Record<string, React.ComponentType<{ className?: string }>
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-primary/40">
+    <main className="min-h-screen bg-primary/60">
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 opacity-20">
@@ -110,15 +110,10 @@ export default function ServicesPage() {
             </div>
 
             <div className="space-y-6">
-              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-complementary">
-                How we support
-                <br />
-                your family
+              <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-[#581b04]">
+                Comprehensive, <br />
+                <span className="font-nunito text-6xl md:text-7xl lg:text-8xl text-accent italic font-nunito font-light">personalized services</span><br /> designed around your <br/>unique needs and rhythm
               </h1>
-
-              <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
-                Comprehensive, personalized services designed around your unique needs and rhythm
-              </p>
             </div>
 
             <div className="flex items-center justify-center gap-3 pt-4">

@@ -24,10 +24,10 @@ export function ValuesCard({
   titleColor,
 }: ValuesCardProps) {
   return (
-    <div className="group relative">
+    <div className="group relative h-full">
       {/* Decorative SVG frame */}
       <svg
-        className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-30 group-hover:opacity-50 transition-opacity duration-500"
+        className="absolute -inset-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] opacity-70 group-hover:opacity-90 transition-opacity duration-500"
         viewBox="0 0 400 500"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -48,20 +48,20 @@ export function ValuesCard({
       </svg>
 
       <div
-        className={`relative p-10 lg:p-12 rounded-3xl border-2 ${borderColor} transition-all duration-500 bg-white/60 backdrop-blur-sm hover:shadow-2xl hover:-translate-y-2`}
+        className={`relative p-10 lg:p-12 rounded-3xl border-2 ${borderColor} transition-all duration-500 bg-white/10 backdrop-blur-sm hover:bg-white/40 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col`}
       >
         {/* Decorative corner elements */}
         <div className={`absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 ${borderColor} rounded-tl-xl`} />
         <div className={`absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 ${borderColor} rounded-br-xl`} />
 
-        <div className="relative">
+        <div className="relative flex-1 flex flex-col">
           <div
             className={`w-16 h-16 rounded-2xl border-2 ${borderColor} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 ${iconBgColor}`}
           >
             <Icon className={`w-8 h-8 ${titleColor}`} />
           </div>
           <h3 className={`font-quicksand text-3xl font-bold ${titleColor} mb-4`}>{title}</h3>
-          <p className="text-foreground/70 text-lg leading-relaxed font-light">{description}</p>
+          <p className="text-[#581b04]/70 text-lg leading-relaxed font-light">{description}</p>
         </div>
       </div>
     </div>
