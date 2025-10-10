@@ -7,7 +7,7 @@ const {
 
 const ContactOptions = () => {
   return (
-    <div className="w-full p-6 md:p-8 rounded-3xl bg-primary/70 relative overflow-hidden">
+    <div className="w-full p-6 md:p-8 rounded-3xl bg-primary/70 relative overflow-hidden my-16 md:mb-0">
       <div className="absolute inset-0 opacity-10">
         <svg className="absolute top-0 right-0 w-64 h-64" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="80" fill="currentColor" className="text-complementary/40" />
@@ -101,7 +101,7 @@ const ContactOptions = () => {
             <span className="text-xs font-medium text-accent/70">Available Monday - Friday, 9AM - 5PM</span>
           </div>
           <div className="space-y-3">
-            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[0.95]">
+            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
               Our team is <span className="text-accent italic font-light">here to <br />help</span>
             </h2>
             <div className="w-20 h-1 bg-accent/30 rounded-full mx-auto md:mx-0" />
