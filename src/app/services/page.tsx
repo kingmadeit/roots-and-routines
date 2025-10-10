@@ -54,7 +54,7 @@ export default function ServicesPage() {
 
             <div className="space-y-6">
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
-                <span className="text-complementary-dark text-[#715204]">How we support</span>
+                <span className="text-accent">How we support</span>
                 <br />
                 <span className="text-secondary">your family</span>
               </h1>
@@ -231,7 +231,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden">
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-complementary">
         {/* Organic background shapes */}
         <div className="absolute top-0 right-0 w-[550px] h-[550px] opacity-10">
           <svg viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -255,7 +255,7 @@ export default function ServicesPage() {
           style={{ animationDelay: "0.8s" }}
         />
 
-        <div className="mx-auto container relative z-10">
+        <div className="mx-auto max-w-[1400px] relative z-10">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-16 border border-white/20">
             {/* Decorative corner accents */}
             <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2.5rem]" />
@@ -287,17 +287,24 @@ export default function ServicesPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link
-                  href="/service/wellness-growth"
+                  href="/services/wellness-growth"
                   className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
                 >
                   Wellness & Growth
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="/service/daily-operations"
-                  className="inline-flex items-center gap-3 border-2 border-complementary text-complementary hover:bg-complementary/5 bg-transparent font-quicksand text-lg px-10 py-4 rounded-full font-bold transition-all hover:scale-105"
+                  href="/services/daily-operations"
+                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
                 >
                   Daily Operations
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/services/finding-support"
+                  className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                >
+                  Finding Support
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
