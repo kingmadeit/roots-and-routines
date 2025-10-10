@@ -347,7 +347,7 @@ export default function FounderPage() {
           style={{ animationDelay: "1.5s" }}
         />
 
-        <div className="mx-auto max-w-[1200px] relative z-10">
+        <div className="max-w-5xl mx-auto relative z-10">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-20 border border-white/20">
             {/* Decorative corner accents */}
             <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-secondary/20 rounded-tr-[2.5rem]" />

@@ -1,4 +1,3 @@
-import { pagesData } from "@/data";
 import ClientAboutPage from "./ClientAboutPage";
 
 export const metadata = {
@@ -25,14 +24,9 @@ export const metadata = {
   },
 };
 
-const {
-  about: { },
-} = pagesData;
-
 const About = () => {
   return (
     <ClientAboutPage />
-    // <PageWrapper><ComingSoon /></PageWrapper>
   );
 };
 

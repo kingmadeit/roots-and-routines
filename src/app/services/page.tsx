@@ -83,7 +83,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid Section */}
-      <section className="px-6 py-16 lg:px-8 lg:py-24 relative overflow-hidden">
+      <section className="px-6 py-16 lg:px-8 lg:py-24 relative overflow-hidden bg-accent">
         <div className="absolute bottom-20 right-0 w-96 h-96 opacity-15">
           <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -231,7 +231,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-complementary">
+      <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-primary">
         {/* Organic background shapes */}
         <div className="absolute top-0 right-0 w-[550px] h-[550px] opacity-10">
           <svg viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -255,7 +255,7 @@ export default function ServicesPage() {
           style={{ animationDelay: "0.8s" }}
         />
 
-        <div className="mx-auto max-w-[1400px] relative z-10">
+        <div className="max-w-5xl mx-auto relative z-10">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-16 border border-white/20">
             {/* Decorative corner accents */}
             <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2.5rem]" />

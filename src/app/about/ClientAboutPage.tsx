@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-primary">
+        <main className="min-h-screen bg-primary/60">
             {/* Hero Section */}
             <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
                 <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
@@ -45,7 +45,7 @@ export default function AboutPage() {
                                 </h1>
                             </div>
 
-                            <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-light">
+                            <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-light">
                                 Tailored guidance to help you feel grounded, balanced, and at ease in daily life
                             </p>
 
@@ -155,13 +155,13 @@ export default function AboutPage() {
             </section>
 
             {/* Philosophy Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32">
+            <section className="px-6 py-24 bg-white/40 lg:px-8 lg:py-32">
                 <div className="mx-auto max-w-[1400px]">
                     <div className="grid lg:grid-cols-12 gap-16">
                         <div className="lg:col-span-4 flex flex-col justify-between">
                             <div>
                                 <div className="w-12 h-1 bg-accent rounded-full mb-8" />
-                                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                                     Our
                                     <br />
                                     Philosophy
@@ -178,12 +178,12 @@ export default function AboutPage() {
 
                         <div className="lg:col-span-8 space-y-8">
                             <div className="prose prose-xl max-w-none">
-                                <p className="text-2xl text-foreground/80 leading-relaxed font-light mb-8">
+                                <p className="text-2xl text-[#581b04]/80 leading-relaxed font-light mb-8">
                                     At Roots & Routines we believe every family deserves tailored support to feel grounded, balanced and
                                     at ease in their daily lives.
                                 </p>
 
-                                <p className="text-xl text-foreground/70 leading-relaxed font-light">
+                                <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
                                     Our support is parent-led and experience-based. Roots and Routines Family Concierge is a personalised
                                     service dedicated to helping families create smoother home routines, find trusted support and make
                                     confident decisions for their child's wellbeing.
@@ -229,49 +229,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32 bg-white/40 relative overflow-hidden">
-                <div className="absolute top-20 left-0 w-96 h-96 opacity-20">
-                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
-                            fill="url(#servicesBg1)"
-                        />
-                        <defs>
-                            <linearGradient id="servicesBg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#788a68" />
-                                <stop offset="100%" stopColor="#a3b185" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-
-                <div className="mx-auto max-w-[1400px] relative z-10">
-                    <div className="text-center max-w-3xl mx-auto">
-                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20 mb-8">
-                            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                            <span className="text-sm font-bold text-accent font-quicksand tracking-wide">Our Services</span>
-                        </div>
-
-                        <h2 className="font-nunito text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                            How we support your family
-                        </h2>
-                        <p className="text-xl text-foreground/60 leading-relaxed font-light mb-12">
-                            From school searches to nanny placements, from nutritional meal prep to activity planning—comprehensive
-                            support designed around your unique needs
-                        </p>
-
-                        <Link
-                            href="/services"
-                            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
-                        >
-                            Explore All Services
-                            <ArrowRight className="w-5 h-5" />
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
             {/* Values Section */}
             <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden">
                 <div className="absolute bottom-0 right-0 w-[500px] h-[500px] opacity-10">
@@ -292,8 +249,8 @@ export default function AboutPage() {
 
                 <div className="mx-auto max-w-[1400px] relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground mb-4">Our Core Values</h2>
-                        <p className="text-xl text-foreground/60 font-light">The principles that guide everything we do</p>
+                        <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] mb-4">Our Core Values</h2>
+                        <p className="text-xl text-[#581b04]/60 font-light">The principles that guide everything we do</p>
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
@@ -334,8 +291,51 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Services Section */}
+            <section className="px-6 py-24 lg:px-8 lg:py-32 bg-white/40 relative overflow-hidden">
+                <div className="absolute top-20 left-0 w-96 h-96 opacity-20">
+                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
+                            fill="url(#servicesBg1)"
+                        />
+                        <defs>
+                            <linearGradient id="servicesBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#788a68" />
+                                <stop offset="100%" stopColor="#a3b185" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div className="mx-auto max-w-[1400px] relative z-10">
+                    <div className="text-center max-w-3xl mx-auto">
+                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20 mb-8">
+                            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                            <span className="text-sm font-bold text-accent font-quicksand tracking-wide">Our Services</span>
+                        </div>
+
+                        <h2 className="font-nunito text-5xl lg:text-6xl font-bold text-[#581b04] mb-6 leading-tight">
+                            How we support your family
+                        </h2>
+                        <p className="text-xl text-[#581b04]/60 leading-relaxed font-light mb-12">
+                            From school searches to nanny placements, from nutritional meal prep to activity planning—comprehensive
+                            support designed around your unique needs
+                        </p>
+
+                        <Link
+                            href="/services"
+                            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
+                        >
+                            Explore All Services
+                            <ArrowRight className="w-5 h-5" />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
-            <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-accent/40">
+            <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden">
                 {/* Organic background shapes */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] opacity-10">
                     <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -359,7 +359,7 @@ export default function AboutPage() {
                     style={{ animationDelay: "1s" }}
                 />
 
-                <div className="mx-auto container relative z-10">
+                <div className="max-w-5xl mx-auto relative z-10">
                     <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-20 border border-white/20">
                         {/* Decorative corner accents */}
                         <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-accent/20 rounded-tl-[2.5rem]" />
@@ -372,10 +372,10 @@ export default function AboutPage() {
                                     <span className="text-sm font-bold text-accent font-quicksand tracking-wide">Next Step</span>
                                 </div>
 
-                                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                                     Ready to bring more ease to your family life?
                                 </h2>
-                                <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                                <p className="text-xl text-[#581b04]/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
                                     Discover the heart and experience behind Roots & Routines
                                 </p>
                             </div>
@@ -401,7 +401,7 @@ export default function AboutPage() {
                             </Button>
 
                             {/* Trust indicators */}
-                            <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-foreground/60 font-nunito">
+                            <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-[#581b04]/60 font-nunito">
                                 <div className="flex items-center gap-2">
                                     <div className="w-5 h-5 rounded-full bg-complementary/20 flex items-center justify-center">
                                         <div className="w-2 h-2 rounded-full bg-complementary" />
