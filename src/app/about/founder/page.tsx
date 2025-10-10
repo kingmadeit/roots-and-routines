@@ -373,7 +373,7 @@ export default function FounderPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button
                   size="lg"
-                  className="bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                  className="bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105"
                 >
                   Get in Touch
                   <ArrowRight className="ml-2 w-5 h-5" />
