@@ -905,13 +905,13 @@ function ServiceCard({
 
   const getHoverClasses = () => {
     if (categoryClasses.bg === "bg-accent") {
-      return "hover:bg-accent hover:text-white hover:border-accent"
+      return "hover:bg-accent! hover:text-white hover:border-accent!"
     } else if (categoryClasses.bg === "bg-secondary") {
-      return "hover:bg-secondary hover:text-white hover:border-secondary"
+      return "hover:bg-secondary! hover:text-white hover:border-secondary!"
     } else if (categoryClasses.bg === "bg-complementary") {
-      return "hover:bg-complementary hover:text-white hover:border-complementary"
+      return "hover:bg-complementary! hover:text-white hover:border-complementary!"
     }
-    return "hover:bg-accent hover:text-white hover:border-accent"
+    return "hover:bg-accent! hover:text-white hover:border-accent!"
   }
 
   return (
@@ -944,7 +944,7 @@ function ServiceCard({
             <Button
               variant="outline"
               size="lg"
-              className={`cursor-pointer border-2 ${categoryClasses.border} ${categoryClasses.text} ${getHoverClasses()} font-semibold rounded-full px-8 transition-all duration-300 bg-transparent font-quicksand`}
+              className={`cursor-pointer border-2 ${categoryClasses.border} ${categoryClasses.text} ${getHoverClasses()} font-semibold rounded-full px-8 transition-all duration-300 font-quicksand`}
             >
               Get Started
               <ArrowRight className="ml-2 w-4 h-4" />

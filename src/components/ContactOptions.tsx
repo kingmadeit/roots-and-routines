@@ -124,7 +124,7 @@ const ContactOptions = () => {
             </a>
 
             <a
-              className="group relative rounded-2xl bg-secondary hover:bg-secondary/90 transition-all duration-300 p-5 text-white shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 min-w-[160px]"
+              className="group relative rounded-2xl bg-accent hover:bg-accent/90 transition-all duration-300 p-5 text-white shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 min-w-[160px]"
               rel="noopener noreferrer"
               href={`tel:${phone}`}
             >
