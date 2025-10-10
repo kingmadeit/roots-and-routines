@@ -57,7 +57,7 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
           "transition-all duration-300 rounded-xl",
           "hover:bg-primary/20 focus-visible:outline-none focus-visible:ring-2",
           "focus-visible:ring-accent focus-visible:ring-offset-2",
-          isOpen ? "bg-primary/10" : "bg-white/5",
+          isOpen ? "bg-primary/10" : "bg-white/10",
         )}
         aria-expanded={isOpen}
         aria-controls={`answer-${item.id}`}
@@ -66,8 +66,8 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
           <div
             className={clsx(
               "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center",
-              "font-antonio font-bold text-sm transition-all duration-300",
-              isOpen ? "bg-accent text-white" : "bg-primary/30 text-white/70 group-hover:bg-primary/50",
+              "font-antonio bg-accent font-bold text-sm transition-all duration-300",
+              isOpen ? " text-white" : "text-white/70 group-hover:bg-primary/50",
             )}
           >
             {index + 1}
@@ -77,8 +77,8 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
         <div
           className={clsx(
             "flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full",
-            "transition-all duration-300",
-            isOpen ? "bg-accent text-white rotate-180" : "bg-primary/30 text-white/70 group-hover:bg-primary/50",
+            "transition-all duration-300 bg-accent",
+            isOpen ? " text-white rotate-180" : "text-white/70 group-hover:bg-primary/50",
           )}
         >
           {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
@@ -134,7 +134,7 @@ const FAQHeader = memo<{ title: string }>(function FAQHeader({ title }) {
         as="p"
         {...ANIMATION_CONFIG.stagger}
         transition={{ ...ANIMATION_CONFIG.stagger.transition, delay: 0.1 }}
-        className="font-nunito text-secondary-foreground/80 max-w-2xl mx-auto"
+        className="font-nunito text-[#581b04] max-w-2xl mx-auto"
       >
         Find answers to common questions about our services and approach
       </Animated>
