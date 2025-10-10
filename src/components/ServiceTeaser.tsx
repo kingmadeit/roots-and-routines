@@ -243,7 +243,7 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             </div>
 
             {/*  CTA button */}
-            <Link href={`/services/${selectedTab.id}`} className="relative z-10 block">
+            <Link href={`/services/${selectedTab.id}`} className="relative pt-1 z-10 block">
               <button className="mx-auto mt-4 bg-white hover:bg-[#581b04] text-[#581b04] hover:text-white font-bold py-5 px-10 rounded-full transition-all duration-300 flex flex-col items-center justify-center group shadow-lg hover:shadow-2xl hover:shadow-white/30 hover:scale-105 font-[family-name:var(--font-quicksand)] cursor-pointer">
                 <div className="flex items-center">
                   <span className="text-lg">Explore {selectedTab.title}</span>
@@ -270,38 +270,6 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
   return (
     <section className="py-16 md:py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Enhanced hero heading */}
-        <div className="text-center mb-12 md:mb-16 relative">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-complementary via-accent to-complementary leading-tight font-[family-name:var(--font-antonio)] tracking-wide px-4">
-            Supporting families through every stage
-          </h2>
-          <p className="mt-6 text-lg md:text-xl text-secondary max-w-3xl mx-auto font-[family-name:var(--font-nunito)] px-4">
-            From daily meal planning to finding the right childcare, we&apos;re here to make family life smoother and
-            more joyful.
-          </p>
-
-          {/* Decorative underline */}
-          <div className="flex justify-center mt-6">
-            <svg
-              width="200"
-              height="12"
-              viewBox="0 0 200 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="hidden md:block"
-            >
-              <path d="M2 6C50 2, 150 10, 198 6" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round" />
-              <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#bc9b0a" />
-                  <stop offset="50%" stopColor="#ca6c28" />
-                  <stop offset="100%" stopColor="#bc9b0a" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-
         <SmoothTab />
       </div>
     </section>
