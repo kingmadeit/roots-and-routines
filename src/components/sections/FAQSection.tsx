@@ -5,12 +5,6 @@ const {
   faq
 } = siteData;
 
-const FAQSection = () => {
-  return (
-    <div className="rounded-section bg-complementary/90 relative">
-      <FAQ data={faq} maxItemsToShow={6} />
-    </div>
-  );
-};
+const FAQSection = () => <FAQ data={faq} maxItemsToShow={6} />
 
 export default FAQSection;

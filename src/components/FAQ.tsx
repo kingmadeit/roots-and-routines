@@ -1,159 +1,3 @@
-// "use client";
-// import { memo, useState, useCallback, useMemo } from "react";
-// import { AnimatePresence } from "motion/react";
-// import { Plus, Minus } from "lucide-react";
-// import clsx from "clsx";
-// import { FAQData, FAQItem } from "@/types";
-// import Animated from "./Animated";
-
-// interface FAQComponentProps {
-//   data: FAQData;
-//   showTitle?: boolean;
-//   maxItemsToShow?: number;
-//   className?: string;
-// }
-
-// interface AccordionItemProps {
-//   item: FAQItem;
-//   isOpen: boolean;
-//   onToggle: () => void;
-//   index: number;
-// }
-
-// // Constants
-// const ANIMATION_CONFIG = {
-//   accordion: {
-//     initial: { height: 0, opacity: 0 },
-//     animate: { height: "auto", opacity: 1 },
-//     exit: { height: 0, opacity: 0 },
-//     transition: { duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] },
-//   },
-//   stagger: {
-//     initial: { opacity: 0, y: 20 },
-//     animate: { opacity: 1, y: 0 },
-//     transition: { duration: 0.4, ease: "easeOut" },
-//   },
-// } as const;
-
-// // Memoized Components
-// const AccordionItem = memo<AccordionItemProps>(function AccordionItem({
-//   item,
-//   isOpen,
-//   onToggle,
-//   index
-// }) {
-//   const { question, answer } = item;
-
-//   return (
-//     <Animated
-//       as="div"
-//       {...ANIMATION_CONFIG.stagger}
-//       transition={{ ...ANIMATION_CONFIG.stagger.transition, delay: index * 0.05 }}
-//       className="border-b border-white/20"
-//     >
-//       <button
-//         type="button"
-//         onClick={onToggle}
-//         className="w-full px-2 py-4 text-left cursor-pointer flex items-center justify-between hover:bg-secondary/30 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2"
-//         aria-expanded={isOpen}
-//         aria-controls={`answer-${item.id}`}
-//       >
-//         <h3 className="font-nunito font-semibold md:text-lg pr-4">
-//           {question}
-//         </h3>
-//         <div className={clsx(
-//           "flex-shrink-0 w-6 h-6 flex items-center bg-primary/20 rounded-full justify-center transition-transform duration-200",
-//         )}>
-//           {isOpen ? (
-//             <Minus className="w-4 h-4" />
-//           ) : (
-//             <Plus className="w-4 h-4" />
-//           )}
-//         </div>
-//       </button>
-
-//       <AnimatePresence mode="wait">
-//         {isOpen && (
-//           <Animated as="div"
-//             id={`answer-${item.id}`}
-//             {...ANIMATION_CONFIG.accordion}
-
-//           >
-//             <div className="px-6 pb-5 pt-4 bg-primary/10 rounded-t-lg">
-//               <p className="font-nunito leading-relaxed text-sm md:text-base">
-//                 {answer}
-//               </p>
-//             </div>
-//           </Animated>
-//         )}
-//       </AnimatePresence>
-//     </Animated>
-//   );
-// });
-
-// const FAQHeader = memo<{ title: string }>(function FAQHeader({
-//   title,
-// }) {
-//   return (
-//     <div className="text-center mb-12">
-//       <Animated as="h1"
-//         {...ANIMATION_CONFIG.stagger}
-//         className="text-heading text-primary mb-4"
-//       >
-//         {title}
-//       </Animated>
-//     </div>
-//   );
-// });
-
-// const FAQ = memo<FAQComponentProps>(function FAQ({
-//   data,
-//   showTitle = true,
-//   maxItemsToShow,
-//   className = ""
-// }) {
-//   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
-
-//   const displayedQuestions = useMemo(() => {
-//     return maxItemsToShow ? data.questions.slice(0, maxItemsToShow) : data.questions;
-//   }, [data.questions, maxItemsToShow]);
-
-//   const handleToggleItem = useCallback((itemId: string) => {
-//     setOpenItems(prev => {
-//       const newSet = new Set(prev);
-//       if (newSet.has(itemId)) {
-//         newSet.delete(itemId);
-//       } else {
-//         newSet.add(itemId);
-//       }
-//       return newSet;
-//     });
-//   }, []);
-
-//   return (
-//     <section className={clsx("py-16 px-4 font-nunito", className)}>
-//       <div className="max-w-4xl mx-auto">
-//         {showTitle && (
-//           <FAQHeader title={data.title} />
-//         )}
-
-//         <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white flex flex-col">
-//           {displayedQuestions.map((question, index) => (
-//             <AccordionItem
-//               key={question.id}
-//               item={question}
-//               isOpen={openItems.has(question.id)}
-//               onToggle={() => handleToggleItem(question.id)}
-//               index={index}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// });
-
-// export default FAQ;
 "use client"
 
 import { memo, useState, useCallback, useMemo } from "react"
@@ -180,10 +24,10 @@ interface AccordionItemProps {
 // Constants
 const ANIMATION_CONFIG = {
   accordion: {
-    initial: { height: 0, opacity: 0 },
-    animate: { height: "auto", opacity: 1 },
-    exit: { height: 0, opacity: 0 },
-    transition: { duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] },
+    initial: { opacity: 0, overflow: "hidden" },
+    animate: { opacity: 1, overflow: "hidden" },
+    exit: { opacity: 0, overflow: "hidden" },
+    transition: { duration: 0.2, ease: "easeInOut" },
   },
   stagger: {
     initial: { opacity: 0, y: 20 },
@@ -223,18 +67,18 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
             className={clsx(
               "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center",
               "font-antonio font-bold text-sm transition-all duration-300",
-              isOpen ? "bg-accent text-white scale-110" : "bg-secondary/20 text-secondary group-hover:bg-secondary/30",
+              isOpen ? "bg-accent text-white" : "bg-primary/30 text-white/70 group-hover:bg-primary/50",
             )}
           >
             {index + 1}
           </div>
-          <h3 className="font-quicksand font-bold text-base md:text-lg pr-4 text-secondary-foreground">{question}</h3>
+          <h3 className="font-quicksand font-bold text-base md:text-lg pr-4 text-white">{question}</h3>
         </div>
         <div
           className={clsx(
             "flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full",
             "transition-all duration-300",
-            isOpen ? "bg-accent text-white rotate-180" : "bg-primary/30 text-accent group-hover:bg-primary/50",
+            isOpen ? "bg-accent text-white rotate-180" : "bg-primary/30 text-white/70 group-hover:bg-primary/50",
           )}
         >
           {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
@@ -243,15 +87,22 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
 
       <AnimatePresence mode="wait">
         {isOpen && (
-          <Animated as="div" id={`answer-${item.id}`} {...ANIMATION_CONFIG.accordion}>
+          <motion.div
+            id={`answer-${item.id}`}
+            initial={{ opacity: 0, maxHeight: 0 }}
+            animate={{ opacity: 1, maxHeight: 500 }}
+            exit={{ opacity: 0, maxHeight: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
             <div className="px-6 pb-6 pt-2 ml-12">
               <div className="pl-6 border-l-2 border-accent/30">
-                <p className="font-nunito leading-relaxed text-sm md:text-base text-secondary-foreground/90">
+                <p className="font-nunito leading-relaxed text-sm md:text-base text-white/90">
                   {answer}
                 </p>
               </div>
             </div>
-          </Animated>
+          </motion.div>
         )}
       </AnimatePresence>
     </Animated>
@@ -281,7 +132,7 @@ const FAQHeader = memo<{ title: string }>(function FAQHeader({ title }) {
       <Animated
         as="h1"
         {...ANIMATION_CONFIG.stagger}
-        className="text-4xl md:text-5xl font-bold text-secondary mb-3"
+        className="text-4xl md:text-5xl font-bold text-[#581b04] mb-3"
       >
         {title}
       </Animated>
@@ -312,11 +163,11 @@ const TabNav = memo<{
               key={category.id}
               onClick={() => onCategoryChange(category.id)}
               className={clsx(
-                "relative px-6 py-3 rounded-full font-quicksand font-bold text-sm md:text-base",
+                "cursor-pointer relative px-6 py-3 rounded-full font-quicksand font-bold text-sm md:text-base",
                 "transition-all duration-300 whitespace-nowrap",
                 isActive
                   ? "text-white bg-accent shadow-lg scale-105"
-                  : "text-secondary bg-white/40 hover:bg-white/60 hover:scale-105",
+                  : "text-[#581b04] bg-white/40 hover:bg-white/60 hover:scale-105",
               )}
             >
               {category.name}
@@ -389,7 +240,7 @@ const FAQ = memo<FAQComponentProps>(function FAQ({ data, showTitle = true, maxIt
 
         <TabNav categories={data.categories} activeCategory={activeCategory} onCategoryChange={handleCategoryChange} />
 
-        <div className="bg-primary/40 backdrop-blur-sm rounded-3xl p-4 md:p-8 shadow-xl border border-white/10">
+        <div className="bg-[#581b04] backdrop-blur-sm rounded-3xl p-4 md:p-8 shadow-xl border border-white/10">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
