@@ -15,15 +15,6 @@ export default function FAQPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center relative">
-          {/* Back Button */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors duration-300 mb-8 font-nunito font-semibold group cursor-pointer"
-          >
-            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
-            Back to Home
-          </Link>
-
           <div className="relative">
             {/* Badge */}
             <div className="inline-block mb-6">
