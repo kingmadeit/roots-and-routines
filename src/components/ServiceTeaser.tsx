@@ -394,17 +394,6 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             {/* Decorative blurred circles */}
             <div className="absolute top-12 right-12 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-12 left-12 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-
-            {/* Category header */}
-            <div className="relative z-10 mb-10">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 font-[family-name:var(--font-antonio)] tracking-wide uppercase">
-                {selectedTab.title}
-              </h3>
-              <p className="text-white/90 text-base md:text-lg font-[family-name:var(--font-nunito)]">
-                {selectedTab.description}
-              </p>
-            </div>
-
             {/* Content grid with staggered animations */}
             <div className="relative z-10 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 mb-8">
               {selectedServices.map((service, index) => (
