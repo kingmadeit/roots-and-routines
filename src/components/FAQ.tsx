@@ -97,9 +97,7 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
           >
             <div className="px-6 pb-6 pt-2 ml-12">
               <div className="pl-6 border-l-2 border-accent/30">
-                <p className="font-nunito leading-relaxed text-sm md:text-base text-white/90">
-                  {answer}
-                </p>
+                <p className="font-nunito leading-relaxed text-sm md:text-base text-white/90">{answer}</p>
               </div>
             </div>
           </motion.div>
@@ -129,11 +127,7 @@ const FAQHeader = memo<{ title: string }>(function FAQHeader({ title }) {
           <circle cx="600" cy="100" r="6" fill="currentColor" className="text-accent" />
         </svg>
       </div>
-      <Animated
-        as="h1"
-        {...ANIMATION_CONFIG.stagger}
-        className="text-4xl md:text-5xl font-bold text-[#581b04] mb-3"
-      >
+      <Animated as="h1" {...ANIMATION_CONFIG.stagger} className="text-4xl md:text-5xl font-bold text-[#581b04] mb-3">
         {title}
       </Animated>
       <Animated
@@ -154,7 +148,7 @@ const TabNav = memo<{
   onCategoryChange: (categoryId: string) => void
 }>(function TabNav({ categories, activeCategory, onCategoryChange }) {
   return (
-    <div className="mb-8 overflow-x-auto">
+    <div className="mb-8 overflow-x-auto py-4">
       <div className="flex gap-2 min-w-max mx-auto justify-center px-4">
         {categories.map((category) => {
           const isActive = activeCategory === category.id
