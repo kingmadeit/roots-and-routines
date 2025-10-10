@@ -1,4 +1,3 @@
-
 import { ValuesCard } from "@/components/ValuesCard"
 import type { Metadata } from "next"
 import Link from "next/link"
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function FounderPage() {
   return (
-    <main className="min-h-screen bg-primary pt-24">
+    <main className="min-h-screen bg-primary/70 pt-24">
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
         {/* Organic background shapes */}
@@ -31,7 +30,7 @@ export default function FounderPage() {
           </svg>
         </div>
 
-        <div className="w-full text-left relative">
+        <div className="w-full text-left relative max-w-[1400px] mx-auto">
           {/* SVG Illustration - Positioned on right side */}
           <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-[400px] h-[400px]">
             <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
@@ -105,7 +104,7 @@ export default function FounderPage() {
                 <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
               </div>
 
-              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[0.95]">
+              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
                 Where heart
                 <br />
                 <span className="text-accent italic font-light">meets strategy</span>
@@ -133,7 +132,7 @@ export default function FounderPage() {
               <div className="space-y-8">
                 <div className="w-12 h-1 bg-accent rounded-full" />
 
-                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-secondary leading-tight">
                   The Journey to Roots & Routines
                 </h2>
 
@@ -145,8 +144,9 @@ export default function FounderPage() {
                   </p>
 
                   <p className="text-xl text-foreground/70 leading-relaxed font-light">
-                    Whether it's building nourishing routines, finding the right nanny or planning meals that work for
-                    your lifestyle—I've seen firsthand how a bit of guidance can create lasting ease and joy at home.
+                    Whether it&apos;s building nourishing routines, finding the right nanny or planning meals that work
+                    for your lifestyle—I've seen firsthand how a bit of guidance can create lasting ease and joy at
+                    home.
                   </p>
 
                   <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-complementary to-[#d4b00b] overflow-hidden my-12">
@@ -176,7 +176,7 @@ export default function FounderPage() {
 
             <div className="lg:col-span-4">
               <div className="sticky top-8 space-y-6">
-                <div className="relative bg-white rounded-3xl p-8 border-2 border-accent/20 shadow-xl overflow-hidden">
+                <div className="relative bg-primary/30 rounded-3xl p-8 border-2 border-accent/20 shadow-xl overflow-hidden">
                   {/* Decorative background element */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-complementary/5 rounded-full blur-2xl" />
@@ -186,7 +186,7 @@ export default function FounderPage() {
                       <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                         <Sparkles className="w-5 h-5 text-accent" />
                       </div>
-                      <h3 className="font-quicksand text-2xl font-bold text-foreground">Core Values</h3>
+                      <h3 className="font-quicksand text-2xl font-bold text-[#581b04]">Core Values</h3>
                     </div>
 
                     <div className="space-y-4">
@@ -199,7 +199,7 @@ export default function FounderPage() {
                       ].map((item, index) => (
                         <div
                           key={index}
-                          className="flex items-center gap-4 group/item p-3 rounded-xl hover:bg-primary/50 transition-all duration-300"
+                          className="flex items-center gap-4 group/item p-3 rounded-xl hover:bg-primary/50 transition-all duration-300 hover:scale-105 bg-white/50"
                         >
                           <div className="relative">
                             <div
@@ -209,7 +209,7 @@ export default function FounderPage() {
                               <CheckCircle2 className="w-5 h-5" style={{ color: item.color }} />
                             </div>
                           </div>
-                          <p className="text-foreground/80 font-nunito group-hover/item:text-foreground transition-colors">
+                          <p className="text-[#581b04]/80 font-nunito group-hover/item:text-[#581b04] transition-colors">
                             {item.label}
                           </p>
                         </div>
@@ -227,7 +227,7 @@ export default function FounderPage() {
       <section className="px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
           <div className="max-w-3xl mb-20">
-            <h2 className="font-quicksand text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="font-quicksand text-5xl lg:text-6xl font-bold text-[#581b04] mb-6 leading-tight">
               What I bring to your family
             </h2>
             <p className="text-xl text-foreground/60 leading-relaxed font-light">
@@ -282,11 +282,11 @@ export default function FounderPage() {
                   <Sparkles className="w-4 h-4 text-accent" />
                   <span className="text-accent font-quicksand font-bold text-sm tracking-wide">Expertise</span>
                 </div>
-                <h3 className="font-quicksand text-3xl lg:text-4xl font-bold text-foreground">Areas of Expertise</h3>
+                <h3 className="font-quicksand text-3xl lg:text-4xl font-bold text-[#581b04]">Areas of Expertise</h3>
               </div>
 
               {/* Pill-style expertise badges */}
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-3">
                 {[
                   { title: "Nannying & Childcare", color: "#ca6c28" },
                   { title: "Nutrition & Meal Planning", color: "#bc9b0a" },
@@ -299,19 +299,12 @@ export default function FounderPage() {
                 ].map((expertise, index) => (
                   <div
                     key={index}
-                    className="group/pill relative px-8 py-4 rounded-full border-2 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white"
-                    style={{ borderColor: `${expertise.color}40` }}
+                    className="group/pill relative px-4 py-2 rounded-full border-2 border-[#581b04]/30 hover:border-[#581b04]/50 hover:shadow-lg transition-all duration-300 hover:scale-105 bg-white"
                   >
                     {/* Hover gradient background */}
-                    <div
-                      className="absolute inset-0 rounded-full opacity-0 group-hover/pill:opacity-100 transition-opacity duration-300"
-                      style={{ backgroundColor: `${expertise.color}08` }}
-                    />
+                    <div className="absolute inset-0 rounded-full opacity-0 group-hover/pill:opacity-100 transition-opacity duration-300 bg-[#581b04]/5" />
 
-                    <p
-                      className="relative font-nunito font-medium text-foreground/80 group-hover/pill:font-bold transition-all"
-                      style={{ color: expertise.color }}
-                    >
+                    <p className="relative font-nunito text-sm font-medium text-[#581b04]/80 group-hover/pill:text-[#581b04] group-hover/pill:font-bold transition-all">
                       {expertise.title}
                     </p>
                   </div>
@@ -360,7 +353,7 @@ export default function FounderPage() {
                   <span className="text-sm font-bold text-secondary font-quicksand tracking-wide">Let's Connect</span>
                 </div>
 
-                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                   Let's create your family's rhythm together
                 </h2>
                 <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
