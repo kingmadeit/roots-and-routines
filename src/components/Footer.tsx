@@ -41,7 +41,7 @@ export default function Footer() {
   const [weekDays, time] = contact.businessHours!.split(",")
 
   return (
-    <footer className="relative bg-complementary/90 pb-8 overflow-hidden">
+    <footer className="relative bg-secondary/90 pb-8 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="absolute -top-20 -left-20 w-96 h-96 opacity-10" viewBox="0 0 400 400">
           <path
@@ -69,9 +69,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 mb-16">
           {/* Column 1: Social + Hours with decorative card */}
           <div className="space-y-6">
-            <div className="bg-accent/80 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-lg">
+            <div className="bg-complementary/80 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-lg">
               <h4 className="text-lg font-semibold mb-5 text-white flex items-center gap-2">
-                <div className="w-1 h-6 bg-white/30 rounded-full" />
+                <div className="w-1 h-6 bg-accent rounded-full" />
                 Connect With Us
               </h4>
               <div className="grid grid-cols-3 gap-3 mb-6">
@@ -97,7 +97,7 @@ export default function Footer() {
               <div className="bg-white/10 rounded-xl p-4 border border-white/20">
                 <div className="space-y-2 text-sm text-white">
                   <div className="flex items-center gap-2 font-medium">
-                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
                     <p>{weekDays}</p>
                   </div>
                   <p className="pl-4 text-white/80">{time}</p>
