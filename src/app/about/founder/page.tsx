@@ -111,7 +111,7 @@ export default function FounderPage() {
               </h1>
             </div>
 
-            <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-light">
+            <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-light">
               Bringing years of experience in childcare, education, and family support
             </p>
 
@@ -132,18 +132,18 @@ export default function FounderPage() {
               <div className="space-y-8">
                 <div className="w-12 h-1 bg-accent rounded-full" />
 
-                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-secondary leading-tight">
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                   The Journey to Roots & Routines
                 </h2>
 
                 <div className="prose prose-xl max-w-none space-y-6">
-                  <p className="text-xl text-foreground/80 leading-relaxed font-light">
+                  <p className="text-xl text-[#581b04]/80 leading-relaxed font-light">
                     With years of hands-on experience in nannying, nutrition, office and household management and a deep
                     passion for child wellbeing and family support, I created Roots & Routines to help families thrive,
                     not just survive.
                   </p>
 
-                  <p className="text-xl text-foreground/70 leading-relaxed font-light">
+                  <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
                     Whether it&apos;s building nourishing routines, finding the right nanny or planning meals that work
                     for your lifestyle—I've seen firsthand how a bit of guidance can create lasting ease and joy at
                     home.
@@ -167,7 +167,7 @@ export default function FounderPage() {
                     </div>
                   </div>
 
-                  <p className="text-xl text-foreground/70 leading-relaxed font-light">
+                  <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
                     With you as the lead, let's build your family's rhythm together.
                   </p>
                 </div>
@@ -226,11 +226,12 @@ export default function FounderPage() {
       {/* What I Bring Section */}
       <section className="px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
+            <div className="w-12 h-1 bg-accent mb-6 rounded-full" />
           <div className="max-w-3xl mb-20">
             <h2 className="font-quicksand text-5xl lg:text-6xl font-bold text-[#581b04] mb-6 leading-tight">
               What I bring to your family
             </h2>
-            <p className="text-xl text-foreground/60 leading-relaxed font-light">
+            <p className="text-xl text-[#581b04]/60 leading-relaxed font-light">
               A unique combination of heart, strategy, and hands-on experience
             </p>
           </div>
@@ -356,7 +357,7 @@ export default function FounderPage() {
                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                   Let's create your family's rhythm together
                 </h2>
-                <p className="text-xl text-foreground/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                <p className="text-xl text-black/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
                   Parent-led, experience-based support tailored to your unique needs
                 </p>
               </div>

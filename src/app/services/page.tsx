@@ -110,18 +110,20 @@ export default function ServicesPage() {
             </div>
 
             <div className="space-y-6">
-              <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-[#581b04]">
+              <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
                 Comprehensive, <br />
-                <span className="font-nunito text-6xl md:text-7xl lg:text-8xl text-accent italic font-nunito font-light">personalized services</span><br /> designed around your <br/>unique needs and rhythm
+                <span className="font-nunito text-6xl md:text-7xl lg:text-8xl text-accent font-nunito font-extrabold">personalised services</span>
+                <br /> designed around your <br/>
+                <span className="font-nunito text-5xl md:text-7xl lg:text-8xl text-[#581b04] font-nunito font-extrabold">unique needs</span> and rhythm
               </h1>
             </div>
 
             <div className="flex items-center justify-center gap-3 pt-4">
-              <div className="h-px w-16 bg-accent" />
-              <p className="text-sm uppercase tracking-widest text-accent font-medium font-quicksand">
+              <div className="h-px w-16 bg-[#581b04]" />
+              <p className="text-sm uppercase tracking-widest text-[#581b04] font-medium font-quicksand">
                 Tailored for you
               </p>
-              <div className="h-px w-16 bg-accent" />
+              <div className="h-px w-16 bg-[#581b04]" />
             </div>
 
             {/* Decorative dots */}
@@ -136,20 +138,8 @@ export default function ServicesPage() {
 
       {/* Services Grid Section */}
       <section className="px-6 py-16 bg-complementary/70 lg:px-8 lg:py-24 relative overflow-hidden">
-        <div className="absolute bottom-20 right-0 w-96 h-96 opacity-15">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
-              fill="url(#servicesBg2)"
-            />
-            <defs>
-              <linearGradient id="servicesBg2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ca6c28" />
-                <stop offset="100%" stopColor="#bc9b0a" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
+        <div className="absolute top-20 -right-10 animate-pulse animation-duration-5000 w-96 h-96 rounded-full bg-accent/30"></div>
+        <div className="absolute -bottom-10 left-5 w-96 h-96 animate-pulse animation-duration-5000 rounded-full bg-secondary/15"></div>
 
         <div className="mx-auto max-w-[1400px] relative z-10">
           <div className="text-center mb-16 space-y-4">

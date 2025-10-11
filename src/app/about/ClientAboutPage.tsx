@@ -325,7 +325,7 @@ export default function AboutPage() {
 
                         <Link
                             href="/services"
-                            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
+                            className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
                         >
                             Explore All Services
                             <ArrowRight className="w-5 h-5" />
