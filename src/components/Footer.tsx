@@ -51,7 +51,7 @@ export default function Footer() {
           />
         </svg>
         <svg className="absolute -bottom-32 -right-32 w-[500px] h-[500px] opacity-5" viewBox="0 0 500 500">
-          <circle cx="250" cy="250" r="200" fill="currentColor" className="text-white" />
+          <circle cx="250" cy="250" r="200" fill="var(--accent)" className="text-white" />
           <circle cx="300" cy="200" r="120" fill="currentColor" className="text-primary" />
         </svg>
         <svg className="absolute top-1/2 left-1/4 w-64 h-64 opacity-5" viewBox="0 0 200 200">
@@ -170,7 +170,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/terms"
+                  href="/terms-conditions"
                   className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                 >
                   <span className="relative">
@@ -181,7 +181,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href="/privacy-policy"
                   className="text-white/70 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group"
                 >
                   <span className="relative">
