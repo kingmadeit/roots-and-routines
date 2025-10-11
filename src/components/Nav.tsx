@@ -11,7 +11,7 @@ const Nav = () => {
 
   return (
     <nav className="nav relative z-50">
-      <ul className="hidden md:flex gap-8 items-center bg-white/60 backdrop-blur-md px-6 py-3 rounded-full border border-primary/20">
+      <ul className="hidden gap-8 items-center bg-white/60 backdrop-blur-md px-6 py-3 rounded-full border border-primary/20">
         {siteData.navigation.map((item, index) => {
           const isActive = pathname === item.href
 
@@ -59,9 +59,9 @@ const Nav = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`md:hiddens p-4 fixed top-4 right-4 z-[60] rounded-2xl transition-all duration-300 shadow-lg ${isOpen
-          ? "bg-white text-accent rotate-90 scale-110"
-          : "bg-white/90 backdrop-blur-md text-accent hover:bg-accent hover:text-white border border-primary/20"
+        className={`cursor-pointer p-4 fixed top-4 bg-accent right-4 text-white z-[60] hover:bg-secondary! rounded-2xl transition-all duration-300 shadow-lg ${isOpen
+          ? "rotate-90 scale-110"
+          : "backdrop-blur-md border border-primary/20"
           }`}
         aria-label="Toggle navigation"
         aria-expanded={isOpen}
