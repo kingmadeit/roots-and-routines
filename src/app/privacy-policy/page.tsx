@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight, Mail, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { LegalPageHero } from "@/components/LegalPageHero"
+import { LegalPageCTA } from "@/components/LegalPageCTA"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Roots & Routines",
@@ -10,16 +9,15 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen py-16 bg-gradient-to-b from-complementary/5 via-white to-secondary/5">
+    <main className="min-h-screen pt-32 bg-gradient-to-b from-complementary/5 via-white to-secondary/5">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-[#581b04] mb-6">
-            Privacy Policy
-          </h1>
-          <p className="text-lg text-[#581b04]/70 font-nunito">Last updated: January 2025</p>
-        </div>
-      </section>
+      <LegalPageHero
+        title="Privacy Policy"
+        lastUpdated="January 2025"
+        gradientFrom="from-complementary/5"
+        gradientVia="via-white"
+        gradientTo="to-secondary/5"
+      />
 
       {/* Content Section */}
       <section className="py-12 md:py-16">
@@ -261,62 +259,21 @@ export default function PrivacyPolicyPage() {
             </div>
 
             {/* Contact */}
-            <div className="mt-20 relative">
-              {/* Decorative background elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 opacity-5">
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="100" r="80" fill="#bc9b0a" />
-                </svg>
-              </div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 opacity-5">
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="100" r="80" fill="#788a68" />
-                </svg>
-              </div>
-
-              <div className="relative rounded-[2rem] text-center  bg-white/95 backdrop-blur-sm shadow-xl p-10 lg:p-14 border border-complementary/10">
-                {/* Decorative corner accents */}
-                <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2rem]" />
-                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-secondary/20 rounded-br-[2rem]" />
-
-                <div className="space-y-6 relative z-10">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-complementary/10 border border-complementary/20">
-                    <div className="w-1.5 h-1.5 rounded-full bg-complementary animate-pulse" />
-                    <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">
-                      Privacy Matters
-                    </span>
-                  </div>
-
-                  <h2 className="font-quicksand text-3xl lg:text-4xl font-bold text-[#581b04] leading-tight">
-                    Questions about your privacy?
-                  </h2>
-                  <p className="text-lg text-[#581b04]/70 font-nunito leading-relaxed">
-                    If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your
-                    personal information, we're here to help.
-                  </p>
-
-                  {/* Decorative divider */}
-                  <div className="flex items-center justify-center gap-3 py-2">
-                    <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-complementary/30" />
-                    <div className="w-2 h-2 rounded-full bg-complementary/50" />
-                    <div className="w-16 h-[2px] bg-complementary/30" />
-                    <div className="w-2 h-2 rounded-full bg-secondary/50" />
-                    <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-complementary/30" />
-                  </div>
-                  <Button
-                      asChild
-                      size="lg"
-                      className="bg-complementary pt-2 hover:bg-complementary/90 text-white font-quicksand text-base px-8 py-6 h-auto rounded-full font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                    >
-                      <Link href="/contact" className="inline-flex items-center gap-2">
-                        <Mail className="w-5 h-5" />
-                        Get in Touch
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
-                </div>
-              </div>
-            </div>
+            <LegalPageCTA
+              badgeText="Privacy Matters"
+              badgeColor="bg-complementary/10 border border-complementary/20"
+              title="Questions about your privacy?"
+              description="If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, we're here to help."
+              buttonColor="bg-complementary"
+              buttonHoverColor="hover:bg-complementary/90"
+              decorativeColor1="#bc9b0a"
+              decorativeColor2="#788a68"
+              borderColor="border-complementary/10"
+              cornerBorderColor1="border-complementary/20"
+              cornerBorderColor2="border-secondary/20"
+              dividerColor1="to-complementary/30"
+              dividerColor2="to-secondary/30"
+            />
           </div>
         </div>
       </section>

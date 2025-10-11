@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight, Mail, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { LegalPageHero } from "@/components/LegalPageHero"
+import { LegalPageCTA } from "@/components/LegalPageCTA"
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Roots & Routines",
@@ -10,16 +9,15 @@ export const metadata: Metadata = {
 
 export default function TermsConditionsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-secondary/5 via-white to-complementary/5 py-16">
+    <main className="min-h-screen bg-gradient-to-b pt-32 from-secondary/5 via-white to-complementary/5">
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 overflow-hidden">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-[#581b04] mb-6">
-            Terms & Conditions
-          </h1>
-          <p className="text-lg text-[#581b04]/70 font-nunito">Last updated: January 2025</p>
-        </div>
-      </section>
+      <LegalPageHero
+        title="Terms & Conditions"
+        lastUpdated="January 2025"
+        gradientFrom="from-secondary/5"
+        gradientVia="via-white"
+        gradientTo="to-complementary/5"
+      />
 
       {/* Content Section */}
       <section className="py-12 md:py-16">
@@ -181,59 +179,21 @@ export default function TermsConditionsPage() {
             </div>
 
             {/* Contact CTA Section */}
-            <div className="mt-20 relative">
-              {/* Decorative background elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 opacity-5">
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="100" r="80" fill="#788a68" />
-                </svg>
-              </div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 opacity-5">
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="100" r="80" fill="#ca6c28" />
-                </svg>
-              </div>
-
-              <div className="relative rounded-[2rem] bg-white/95 backdrop-blur-sm shadow-xl p-10 text-center lg:p-14 border border-secondary/10">
-                {/* Decorative corner accents */}
-                <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-secondary/20 rounded-tl-[2rem]" />
-                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-accent/20 rounded-br-[2rem]" />
-
-                <div className="space-y-6 relative z-10">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-                    <span className="text-sm font-bold text-secondary font-quicksand tracking-wide">Questions?</span>
-                  </div>
-
-                  <h2 className="font-quicksand text-3xl lg:text-4xl font-bold text-[#581b04] leading-tight">
-                    Need clarification on our terms?
-                  </h2>
-                  <p className="text-lg text-[#581b04]/70 font-nunito leading-relaxed">
-                    If you have any questions about these Terms and Conditions, we're here to help.
-                  </p>
-
-                  {/* Decorative divider */}
-                  <div className="flex items-center gap-3 py-2 justify-center">
-                    <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-secondary/30" />
-                    <div className="w-2 h-2 rounded-full bg-secondary/50" />
-                    <div className="w-16 h-[2px] bg-secondary/30" />
-                    <div className="w-2 h-2 rounded-full bg-accent/50" />
-                    <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-secondary/30" />
-                  </div>
-                    <Button
-                      asChild
-                      size="lg"
-                      className="bg-secondary mt-2 hover:bg-secondary/90 text-white font-quicksand text-base px-8 py-6 h-auto rounded-full font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                    >
-                      <Link href="/contact" className="inline-flex items-center gap-2">
-                        <Mail className="w-5 h-5" />
-                        Get in Touch
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </Button>
-                </div>
-              </div>
-            </div>
+            <LegalPageCTA
+              badgeText="Questions?"
+              badgeColor="bg-secondary/10 border border-secondary/20"
+              title="Need clarification on our terms?"
+              description="If you have any questions about these Terms and Conditions, we're here to help."
+              buttonColor="bg-secondary"
+              buttonHoverColor="hover:bg-secondary/90"
+              decorativeColor1="#788a68"
+              decorativeColor2="#ca6c28"
+              borderColor="border-secondary/10"
+              cornerBorderColor1="border-secondary/20"
+              cornerBorderColor2="border-accent/20"
+              dividerColor1="to-secondary/30"
+              dividerColor2="to-accent/30"
+            />
           </div>
         </div>
       </section>
