@@ -3,6 +3,7 @@ import Link from "next/link"
 import { siteData } from "@/data"
 import { Mail, Phone } from "lucide-react"
 import LeadSection from "./sections/LeadSection"
+import Image from 'next/image'
 
 interface IconProps {
   className?: string
@@ -200,16 +201,14 @@ export default function Footer() {
             <div className="w-full border-t border-white/20" />
           </div>
           <div className="relative flex justify-center">
-            <div className="bg-white px-6 py-2 rounded-full">
-              <svg className="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-              </svg>
+            <div className="bg-primary overflow-hidden px-6 py-2 rounded-full">
+              <Image src="/logo.png" width={80} height={50} alt="site logo" />
             </div>
           </div>
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-white/80">
+          <p className="text-xs text-white/80">
             © {new Date().getFullYear()} <span className="text-white font-semibold">{company.name}</span>. All rights
             reserved.
           </p>
