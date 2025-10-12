@@ -181,7 +181,7 @@ export default function AboutPage() {
                                 <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
                                     Our support is parent-led and experience-based. Roots and Routines Family Concierge is a personalised
                                     service dedicated to helping families create smoother home routines, find trusted support and make
-                                    confident decisions for their child's wellbeing.
+                                    confident decisions for their child&apos;s wellbeing.
                                 </p>
                             </div>
 
@@ -213,7 +213,7 @@ export default function AboutPage() {
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
                                 <div className="relative">
                                     <p className="text-2xl lg:text-3xl text-white leading-relaxed font-light">
-                                        From school searches to nanny placements, from nutritional meal prep to activity planning—we're here
+                                        From school searches to nanny placements, from nutritional meal prep to activity planning—we&apos;re here
                                         to take the stress out of the everyday so you can focus on what matters most:{" "}
                                         <span className="font-medium italic">connection, calm and quality time.</span>
                                     </p>

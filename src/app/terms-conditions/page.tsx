@@ -66,11 +66,11 @@ export default function TermsConditionsPage() {
                 As a client of Roots & Routines, you agree to:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[#581b04]/80 font-nunito">
-                <li>Provide accurate and complete information about your family's needs</li>
+                <li>Provide accurate and complete information about your family&apos;s needs</li>
                 <li>Communicate openly and honestly about your expectations</li>
                 <li>Conduct your own due diligence when engaging third-party professionals we recommend</li>
                 <li>Make timely payments for services rendered</li>
-                <li>Respect our team's time and professional boundaries</li>
+                <li>Respect our team&apos;s time and professional boundaries</li>
               </ul>
             </div>
 
@@ -123,7 +123,7 @@ export default function TermsConditionsPage() {
             <div className="mb-10">
               <h2 className="font-quicksand text-2xl md:text-3xl font-bold text-[#581b04] mb-4">6. Confidentiality</h2>
               <p className="text-[#581b04]/80 font-nunito leading-relaxed">
-                We respect your family's privacy. All information shared with Roots & Routines will be kept strictly
+                We respect your family&apos;s privacy. All information shared with Roots & Routines will be kept strictly
                 confidential and will not be disclosed to third parties without your explicit consent, except as
                 required by law.
               </p>

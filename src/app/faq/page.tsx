@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { siteData } from "@/data"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
 import FAQ from "@/components/FAQ"
 
 export const metadata: Metadata = {
@@ -76,7 +75,7 @@ export default function FAQPage() {
             <div className="relative ">
               <h2 className="font-quicksand text-3xl md:text-4xl font-bold text-white mb-4">Still Have Questions?</h2>
               <p className="font-nunito text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                We're here to help! Reach out and we'll get back to you as soon as possible.
+                We&apos;re here to help! Reach out and we&apos;ll get back to you as soon as possible.
               </p>
               <Link
                 href="/contact"

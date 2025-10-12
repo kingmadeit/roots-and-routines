@@ -1,12 +1,4 @@
 import { SiteData } from "@/types";
-import {
-  Heart,
-  Baby,
-  Utensils,
-  Clock,
-  GraduationCap,
-  UserSearch,
-} from "lucide-react";
 const sloganSplit = "--split--";
 
 export const siteData: SiteData = {

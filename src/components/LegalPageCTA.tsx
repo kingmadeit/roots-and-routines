@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Mail, Phone } from "lucide-react"
+import { ArrowRight, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface LegalPageCTAProps {

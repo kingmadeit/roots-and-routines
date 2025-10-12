@@ -12,7 +12,7 @@ interface ServiceCategoryContentProps {
   categoryColor?: string
 }
 
-export function ServiceCategoryContent({ services, categoryColor }: ServiceCategoryContentProps) {
+export function ServiceCategoryContent({ services }: ServiceCategoryContentProps) {
   if (!services.length) return null
 
   const categoryName = services[0].category
@@ -89,7 +89,7 @@ export function ServiceCategoryContent({ services, categoryColor }: ServiceCateg
               </h1>
 
               <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
-                Discover transformative services designed to elevate your family's journey
+                Discover transformative services designed to elevate your family&apos;s journey
               </p>
             </div>
 
@@ -145,7 +145,7 @@ export function ServiceCategoryContent({ services, categoryColor }: ServiceCateg
                   Ready to Begin Your Journey?
                 </h2>
                 <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
-                  Let's create a personalised plan that aligns with your goals and values
+                  Let&apos;s create a personalised plan that aligns with your goals and values
                 </p>
               </div>
 

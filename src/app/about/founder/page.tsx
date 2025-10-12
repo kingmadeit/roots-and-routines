@@ -150,7 +150,7 @@ export default function FounderPage() {
 
                   <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
                     Whether it&apos;s building nourishing routines, finding the right nanny or planning meals that work
-                    for your lifestyle—I've seen firsthand how a bit of guidance can create lasting ease and joy at
+                    for your lifestyle—I&apos;ve seen firsthand how a bit of guidance can create lasting ease and joy at
                     home.
                   </p>
 
@@ -166,14 +166,14 @@ export default function FounderPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
                     <div className="relative">
                       <p className="text-2xl lg:text-3xl text-white leading-relaxed font-light">
-                        My background also includes research, admin and logistics, which means with me you're not just
-                        getting heart—<span className="font-medium">you're getting strategy.</span>
+                        My background also includes research, admin and logistics, which means with me you&apos;re not just
+                        getting heart—<span className="font-medium">you&apos;re getting strategy.</span>
                       </p>
                     </div>
                   </div>
 
                   <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
-                    With you as the lead, let's build your family's rhythm together.
+                    With you as the lead, let&apos;s build your family&apos;s rhythm together.
                   </p>
                 </div>
               </div>
@@ -356,11 +356,11 @@ export default function FounderPage() {
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/10 border border-secondary/20">
                   <Heart className="w-4 h-4 text-secondary" />
-                  <span className="text-sm font-bold text-secondary font-quicksand tracking-wide">Let's Connect</span>
+                  <span className="text-sm font-bold text-secondary font-quicksand tracking-wide">Let&apos;s Connect</span>
                 </div>
 
                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
-                  Let's create your family's rhythm together
+                  Let&apos;s create your family&apos;s rhythm together
                 </h2>
                 <p className="text-xl text-black/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
                   Parent-led, experience-based support tailored to your unique needs

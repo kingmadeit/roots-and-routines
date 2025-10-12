@@ -90,12 +90,17 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
                   </span>
                 </>
               );
-
               return (
                 <Animated
                   as="button"
                   key={tab.id}
-                  ref={(el: HTMLButtonElement) => { el ? buttonRefs.current.set(tab.id, el) : buttonRefs.current.delete(tab.id) }}
+                  ref={(el: HTMLButtonElement) => {
+                    if (el) {
+                      buttonRefs.current.set(tab.id, el);
+                    } else {
+                      buttonRefs.current.delete(tab.id);
+                    }
+                  }}
                   type="button"
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => isLink ? e.preventDefault() : handleOnChange(tab)}
                   onMouseEnter={() => isLink && handleOnChange(tab)}

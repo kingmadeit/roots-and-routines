@@ -47,11 +47,11 @@ export default function PrivacyPolicyPage() {
                   <strong>Personal Information:</strong> Name, email address, phone number, mailing address
                 </li>
                 <li>
-                  <strong>Family Information:</strong> Details about your family structure, children's ages, dietary
+                  <strong>Family Information:</strong> Details about your family structure, children&apos;s ages, dietary
                   preferences, and specific needs
                 </li>
                 <li>
-                  <strong>Service Preferences:</strong> Information about the services you're interested in and your
+                  <strong>Service Preferences:</strong> Information about the services you&apos;re interested in and your
                   scheduling preferences
                 </li>
                 <li>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[#581b04]/80 font-nunito">
                 <li>Provide, maintain, and improve our family concierge services</li>
-                <li>Personalize your experience and tailor recommendations to your family's needs</li>
+                <li>Personalize your experience and tailor recommendations to your family&apos;s needs</li>
                 <li>Communicate with you about services, appointments, and updates</li>
                 <li>Process payments and manage billing</li>
                 <li>Source and vet appropriate professionals for your family</li>
@@ -212,7 +212,7 @@ export default function PrivacyPolicyPage() {
             {/* Section 8 */}
             <div className="mb-10">
               <h2 className="font-quicksand text-2xl md:text-3xl font-bold text-[#581b04] mb-4">
-                8. Children's Privacy
+                8. Children&apos;s Privacy
               </h2>
               <p className="text-[#581b04]/80 font-nunito leading-relaxed">
                 While our services are designed to support families with children, our website and services are intended
@@ -253,7 +253,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-[#581b04]/80 font-nunito leading-relaxed">
                 We may update this Privacy Policy from time to time to reflect changes in our practices or legal
                 requirements. We will notify you of significant changes by posting the updated policy on our website
-                with a new "Last Updated" date. Your continued use of our services after changes constitutes acceptance
+                with a new &quot;Last Updated&quot; date. Your continued use of our services after changes constitutes acceptance
                 of the updated policy.
               </p>
             </div>
@@ -263,7 +263,7 @@ export default function PrivacyPolicyPage() {
               badgeText="Privacy Matters"
               badgeColor="bg-complementary/10 border border-complementary/20"
               title="Questions about your privacy?"
-              description="If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, we're here to help."
+              description="If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, we&apos;re here to help."
               buttonColor="bg-complementary"
               buttonHoverColor="hover:bg-complementary/90"
               decorativeColor1="#bc9b0a"

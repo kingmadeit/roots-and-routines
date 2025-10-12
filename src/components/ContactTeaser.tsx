@@ -3,12 +3,7 @@ import ContactOptions from "./ContactOptions"
 import { Button } from "./ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
 
-type ContactTeaserProps = {
-  quote?: string
-  founderName?: string
-}
-
-const ContactTeaser = ({ quote }: ContactTeaserProps) => {
+const ContactTeaser = () => {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-primary/50 via-primary-light/30 to-primary/50">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

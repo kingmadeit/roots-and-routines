@@ -1,9 +1,6 @@
 "use client"
 import { memo, useMemo } from "react"
-import { Button } from "@/components/ui/button"
 import type { HeroSection } from "@/types"
-import Link from "next/link"
-import { DottedArrow } from "./svgs"
 // import CircularGallery from "./CircularGallery"
 
 // Types
@@ -20,13 +17,6 @@ interface TitleDisplayProps {
   splitTitle?: string[]
 }
 
-const BUTTON_STYLES =
-  "bg-secondary hover:scale-[0.95] hover:bg-secondary/90 text-white font-quicksand font-bold cursor-pointer transition-all duration-300" as const
-
-// Utility function
-const splitTitleBySeparator = (title: string, separator?: string): string[] | null => {
-  return separator ? title.split(separator) : null
-}
 
 const HeroBackgroundShapes = memo(function HeroBackgroundShapes() {
   return (
@@ -169,11 +159,11 @@ const ContentSection = memo<{
   )
 })
 
-const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
+const Hero = memo<HeroProps>(function Hero({ info }) {
   const { title, subtitle, titleSeparator } = info
   // const peekHeight = useGalleryPeekHeight()
 
-  const splitTitle = useMemo(() => splitTitleBySeparator(title, titleSeparator), [title, titleSeparator])
+  const splitTitle = useMemo(() => title.split(titleSeparator), [title, titleSeparator])
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-primary/40 via-primary/60 to-primary/50">

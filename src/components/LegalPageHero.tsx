@@ -9,9 +9,6 @@ interface LegalPageHeroProps {
 export function LegalPageHero({
   title,
   lastUpdated,
-  gradientFrom = "from-secondary/5",
-  gradientVia = "via-white",
-  gradientTo = "to-complementary/5",
 }: LegalPageHeroProps) {
   return (
     <section className="relative py-32 md:pt-40 overflow-hidden">

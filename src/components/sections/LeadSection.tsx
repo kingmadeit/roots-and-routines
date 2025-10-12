@@ -12,7 +12,6 @@ interface LeadSectionProps {
 const LeadSection = ({
   text = "Let us help you build the flow that works for you",
   variant = "default",
-  fadeColor = "white",
   className = "",
 }: LeadSectionProps) => {
   useEffect(() => {
