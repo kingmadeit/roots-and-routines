@@ -22,7 +22,7 @@ const AboutTeaser = () => {
             {/* Decorative accent line */}
             <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-complementary via-complementary/50 to-transparent rounded-full" />
 
-            <p className="font-nunito text-lg md:text-xl lg:text-2xl text-secondary/80 leading-relaxed">
+            <p className="font-nunito text-lg md:text-xl lg:text-2xl text-secondary leading-relaxed">
               Founded with{" "}
               <span className="font-bold text-4xl md:text-5xl lg:text-6xl text-complementary block my-4">
                 care and intention,
@@ -49,7 +49,7 @@ const AboutTeaser = () => {
             {/* Decorative accent line on right */}
             <div className="absolute -right-4 top-0 w-1 h-full bg-gradient-to-b from-accent via-accent/50 to-transparent rounded-full" />
 
-            <p className="font-nunito text-lg md:text-xl lg:text-2xl text-secondary/80 leading-relaxed text-right">
+            <p className="font-nunito text-lg md:text-xl lg:text-2xl text-secondary leading-relaxed text-right">
               Your family&apos;s rhythm doesn&apos;t have to match anyone else&apos;s.{" "}
               <span className="font-bold text-4xl md:text-5xl lg:text-6xl text-accent block my-4">
                 Build routines that work
@@ -71,24 +71,23 @@ const AboutTeaser = () => {
             {/* Top decorative line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-[#581b04] to-transparent rounded-full mb-8" />
 
-            <div className="py-12">
-              <p className="font-bold text-4xl md:text-5xl lg:text-7xl text-[#581b04] mb-8">No more guesswork.</p>
+            <div className="py-12  text-accent/90 ">
+              <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-[#581b04] mb-8">No more guesswork</p>
 
-              <p className="font-nunito text-lg md:text-xl lg:text-2xl text-accent/80 leading-relaxed mb-6">
+              <p className="font-nunito text-lg md:text-xl lg:text-2xl leading-relaxed mb-6">
                 Ever feel like you&apos;re winging it every day?
               </p>
 
               <p className="font-nunito text-lg md:text-xl lg:text-2xl leading-relaxed">
                 <span className="text-accent/80">
-                  The mental load that comes with parenting is real. Having a home structure helps to free up brain
-                  space, reduce decision fatigue and gives your{" "}
+                  The mental load that comes with parenting is real.
                 </span>
-                <span className="font-bold text-3xl md:text-4xl lg:text-5xl text-[#581b04] block my-6">
-                  family more time to connect.
+                <span className="font-bold text-4xl md:text-5xl lg:text-6xl text-[#581b04] block my-6">
+                  Having a home structure helps to free up brain space, reduce decision fatigue and gives yourfamily more time to connect.
                 </span>
               </p>
 
-              <p className="font-nunito text-lg md:text-xl lg:text-2xl text-accent/80 leading-relaxed mt-6">
+              <p className="font-nunito text-lg md:text-xl lg:text-2xl leading-relaxed mt-6">
                 Let us help you build a flow that works for you.
               </p>
             </div>

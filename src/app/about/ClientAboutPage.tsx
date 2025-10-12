@@ -33,11 +33,6 @@ export default function AboutPage() {
                     <div className="flex items-center gap-16 ">
                         <div className=" space-y-8 relative ">
                             <div className="space-y-6">
-                                <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                                    <span className="text-accent font-medium text-sm tracking-wide">About Roots & Routines</span>
-                                </div>
-
                                 <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-complementary leading-[0.95]">
                                     Every family
                                     <br />
@@ -362,11 +357,6 @@ export default function AboutPage() {
 
                         <div className="text-center space-y-8">
                             <div className="space-y-6">
-                                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20">
-                                    <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                                    <span className="text-sm font-bold text-accent font-quicksand tracking-wide">Next Step</span>
-                                </div>
-
                                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                                     Ready to bring more ease to your family life?
                                 </h2>

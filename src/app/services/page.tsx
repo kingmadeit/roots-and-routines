@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const getCategoryClasses = (category: string) => {
   switch (category) {
-    case "daily-operations":
+    case "everyday-support":
       return {
         bg: "bg-accent",
         text: "text-accent",
@@ -44,7 +44,7 @@ const getCategoryClasses = (category: string) => {
 
 const getHoverTextClass = (category: string) => {
   switch (category) {
-    case "daily-operations":
+    case "everyday-support":
       return "group-hover:text-accent"
     case "finding-support":
       return "group-hover:text-secondary"
@@ -103,18 +103,12 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-5xl relative">
           <div className="text-center space-y-12">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-accent font-medium text-sm tracking-wide">Our Services</span>
-            </div>
-
             <div className="space-y-6">
               <h1 className="font-nunito text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
                 Comprehensive, <br />
                 <span className="font-quicksand text-6xl md:text-7xl text-[#581b04] lg:text-8xl font-bold tracking-tight leading-[0.95]">personalised services</span>
                 <br /> designed around your <br />
-                <span className="text-6xl md:text-7xl lg:text-8xl text-[#581b04] font-quicksand font-extrabold">unique needs</span> and rhythm
+                <span className="text-6xl md:text-7xl lg:text-8xl text-[#581b04] font-quicksand font-extrabold">family needs</span> and rhythm
               </h1>
             </div>
 
@@ -286,7 +280,7 @@ export default function ServicesPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="/services/daily-operations"
+                  href="/services/everyday-support"
                   className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
                 >
                   Daily Operations

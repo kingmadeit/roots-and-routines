@@ -81,7 +81,7 @@ const TabNavigation: React.FC<{
 
   const getContainerBgClass = () => {
     switch (selectedTab.id) {
-      case "daily-operations":
+      case "everyday-support":
         return "bg-accent/40"
       case "finding-support":
         return "bg-secondary/40"

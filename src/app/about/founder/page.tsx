@@ -35,10 +35,6 @@ export default function FounderPage() {
             {/* Left-aligned Text Content */}
             <div className="space-y-8 relative  max-w-4xl">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
-                </div>
 
                 <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
                   Where heart
@@ -172,7 +168,7 @@ export default function FounderPage() {
                     </div>
                   </div>
 
-                  <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
+                  <p className="text-2xl text-accent leading-relaxed font-bold">
                     With you as the lead, let&apos;s build your family&apos;s rhythm together.
                   </p>
                 </div>
@@ -284,11 +280,11 @@ export default function FounderPage() {
 
             <div className="relative bg-white/60 backdrop-blur-sm rounded-[2.5rem] p-10 lg:p-16 border-2 border-accent/10">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 bg-accent/10 px-5 py-2.5 rounded-full mb-6">
+                <div className="inline-flex items-center gap-2 bg-accent/10 px-5 py-2.5 rounded-full mb-2">
                   <Sparkles className="w-4 h-4 text-accent" />
                   <span className="text-accent font-quicksand font-bold text-sm tracking-wide">Expertise</span>
                 </div>
-                <h3 className="font-quicksand text-3xl lg:text-4xl font-bold text-[#581b04]">Areas of Expertise</h3>
+                {/* <h3 className="font-quicksand text-3xl lg:text-4xl font-bold text-[#581b04]">Areas of Expertise</h3> */}
               </div>
 
               {/* Pill-style expertise badges */}
@@ -354,15 +350,10 @@ export default function FounderPage() {
 
             <div className="text-center space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/10 border border-secondary/20">
-                  <Heart className="w-4 h-4 text-secondary" />
-                  <span className="text-sm font-bold text-secondary font-quicksand tracking-wide">Let&apos;s Connect</span>
-                </div>
-
-                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
+                <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-secondary leading-tight">
                   Let&apos;s create your family&apos;s rhythm together
                 </h2>
-                <p className="text-xl text-black/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
+                <p className="text-xl text-[#581b04]/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
                   Parent-led, experience-based support tailored to your unique needs
                 </p>
               </div>
@@ -392,28 +383,6 @@ export default function FounderPage() {
                 >
                   <Link href="/services">Explore Our Services</Link>
                 </Button>
-              </div>
-
-              {/* Trust indicators */}
-              <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-sm text-foreground/60 font-nunito">
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
-                  </div>
-                  <span className="font-medium">Free consultation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-complementary/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-complementary" />
-                  </div>
-                  <span className="font-medium">No obligation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-secondary" />
-                  </div>
-                  <span className="font-medium">Quick response</span>
-                </div>
               </div>
             </div>
           </div>

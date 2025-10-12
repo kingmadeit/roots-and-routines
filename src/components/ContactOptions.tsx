@@ -96,9 +96,9 @@ const ContactOptions = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center space-y-6 text-center md:text-left">
-          <div className="flex items-center gap-2 pt-2 bg-accent/10 rounded-full border border-accent/40 px-4 py-2">
+          <div className="flex items-center gap-2 pt-2 bg-accent/10 rounded-full border border-accent/40 px-8 py-2">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-medium text-accent/70">Available Monday - Friday, 9AM - 5PM</span>
+            <span className="text-xs font-medium text-accent/70">Available <br/><span className="text-[#581b04]/70 font-bold">Mon - Fri, 8AM - 6PM <br />Sat - Sun, 10AM - 4PM</span></span>
           </div>
           <div className="space-y-3">
             <h2 className="font-quicksand text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#581b04] leading-[0.95]">

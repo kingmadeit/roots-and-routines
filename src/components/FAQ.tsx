@@ -63,15 +63,6 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
         aria-controls={`answer-${item.id}`}
       >
         <div className="flex items-start gap-4 flex-1">
-          <div
-            className={clsx(
-              "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center",
-              "font-antonio bg-accent font-bold text-sm transition-all duration-300",
-              isOpen ? " text-white" : "text-white/70 group-hover:bg-primary/50",
-            )}
-          >
-            {index + 1}
-          </div>
           <h3 className="font-quicksand font-bold text-base md:text-lg pr-4 text-white">{question}</h3>
         </div>
         <div
@@ -165,7 +156,6 @@ const TabNav = memo<{
               )}
             >
               {category.name}
-              <span className="ml-2 text-xs opacity-70">({category.questions.length})</span>
             </button>
           )
         })}

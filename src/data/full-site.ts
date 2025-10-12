@@ -53,7 +53,7 @@ export const siteData: SiteData = {
         "Child nutrition tips",
         "Picky eater strategies",
       ],
-      category: "daily-operations",
+      category: "everyday-support",
       icon: 'Utensils',
     },
     {
@@ -68,7 +68,7 @@ export const siteData: SiteData = {
         "Calendar and schedule planning",
         "Support building consistent habits",
       ],
-      category: "daily-operations",
+      category: "everyday-support",
       icon: 'Clock',
     },
     {

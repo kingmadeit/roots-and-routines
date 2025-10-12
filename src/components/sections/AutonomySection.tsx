@@ -8,7 +8,7 @@ const AutonomySection = () => {
       <span className="w-[150px]">
         <RotatingText
           texts={['Home', 'Pace', 'Peace']}
-          mainClassName="sm:px-2 md:px-4 bg-secondary text-primary overflow-hidden sm:py-1 md:py-2 justify-center rounded-4xl"
+          mainClassName="sm:px-2 md:px-4 bg-accent text-primary overflow-hidden sm:py-1 md:py-2 justify-center rounded-4xl"
           staggerFrom={"last"}
           initial={{ y: "100%" }}
           animate={{ y: 0 }}

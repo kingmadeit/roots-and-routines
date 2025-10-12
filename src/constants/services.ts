@@ -8,8 +8,8 @@ export interface ServiceCategory {
   
 export const serviceCategories: ServiceCategory[] = [
     {
-      id: "daily-operations",
-      title: "Daily Operations",
+      id: "everyday-support",
+      title: "Everyday Support",
       color: "bg-accent",
       description: "Streamline your family's daily routines",
     },

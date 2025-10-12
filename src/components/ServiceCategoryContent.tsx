@@ -18,7 +18,7 @@ export function ServiceCategoryContent({ services }: ServiceCategoryContentProps
   const categoryName = services[0].category
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" & ")
+    .join(" ")
 
   const categoryInfo = serviceCategories.find((cat) => cat.id === services[0].category)
   const categoryBgClass = categoryInfo?.color || "bg-accent"
@@ -73,15 +73,6 @@ export function ServiceCategoryContent({ services }: ServiceCategoryContentProps
 
         <div className="mx-auto max-w-5xl relative">
           <div className="text-center space-y-12">
-            {/* Badge */}
-            <div
-              className={`inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border ${categoryClasses.border}/20`}
-            >
-              <div className={`w-1.5 h-1.5 rounded-full ${categoryClasses.bg} animate-pulse`} />
-              <span className={`${categoryClasses.text} font-medium text-sm tracking-wide`}>
-                {services.length} {services.length === 1 ? "Service" : "Services"} Available
-              </span>
-            </div>
 
             <div className="space-y-6">
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">

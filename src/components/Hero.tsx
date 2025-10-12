@@ -96,7 +96,7 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
             </span>
 
             {/* Line 2: Secondary gradient for main emphasis */}
-            <span className="block w-full uppercase text-[clamp(4rem,10vw,12rem)] bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent font-extrabold leading-[0.9] my-1">
+            <span className="block w-full uppercase text-[clamp(4rem,10vw,12rem)]  text-accent font-extrabold leading-[0.9] my-1">
               {splitTitle[1]}
             </span>
 
@@ -134,11 +134,6 @@ const TitleDisplay = memo<TitleDisplayProps>(function TitleDisplay({ title, spli
           />
         </svg>
       </div>
-
-      <div className="absolute -bottom-4 left-[10%] flex items-center gap-2 opacity-30">
-        <div className="w-12 h-0.5 bg-accent" />
-        <div className="w-2 h-2 rounded-full bg-accent" />
-      </div>
     </div>
   )
 })
@@ -152,7 +147,7 @@ const ContentSection = memo<{
     <div className="relative p-4 md:p-16 flex flex-col space-y-6 items-center justify-center">
       <TitleDisplay title={title} splitTitle={splitTitle} />
 
-      <h2 className="animate-on-scroll max-w-[90%] md:max-w-[500px] font-nuunito font-normal text-md md:text-lg text-[#581b04]/60 text-center leading-relaxed">
+      <h2 className="animate-on-scroll max-w-[90%] md:max-w-[500px] font-bold text-md md:text-lg text-accent text-center leading-relaxed">
         {subtitle}
       </h2>
     </div>
