@@ -38,8 +38,7 @@ const socialIcons: Record<string, IconComponent> = {
 }
 
 export default function Footer() {
-  const { company, navigation, socialLinks, contact } = siteData
-  const [weekDays, time] = contact.businessHours!.split(",")
+  const { company, navigation, socialLinks } = siteData
 
   return (
     <footer className="relative bg-secondary/90 pb-8 overflow-hidden">
@@ -96,12 +95,14 @@ export default function Footer() {
                 })}
               </div>
               <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                <div className="space-y-2 text-sm text-white">
+                <div className="text-sm text-white">
                   <div className="flex items-center gap-2 font-medium">
-                    <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                    <p>{weekDays}</p>
+                    <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                    <span className="text-xs text-white/70">Available</span>
                   </div>
-                  <p className="pl-4 text-white/80">{time}</p>
+                  <span className="pl-4 text-xs font-bold text-white/70">
+                    Mon - Fri, 8AM - 6PM <br /><span className="pl-4">Sat - Sun, 10AM - 4PM</span>
+                  </span>
                 </div>
               </div>
             </div>

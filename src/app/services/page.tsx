@@ -1,8 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Sparkles, Utensils, Clock, UserSearch, GraduationCap, Baby, Heart } from "lucide-react"
+import { ArrowRight, Utensils, Clock, UserSearch, GraduationCap, Baby, Heart } from "lucide-react"
 import { siteData } from "@/data"
+import { serviceCategories } from "@/constants/services"
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
@@ -248,11 +249,6 @@ export default function ServicesPage() {
 
             <div className="text-center space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-complementary/10 border border-complementary/20">
-                  <Sparkles className="w-4 h-4 text-complementary" />
-                  <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">Get Started</span>
-                </div>
-
                 {/* Updated text color */}
                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                   Ready to explore how we can support your family?
@@ -272,27 +268,16 @@ export default function ServicesPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link
-                  href="/services/wellness-growth"
-                  className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
-                >
-                  Wellness & Growth
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/services/everyday-support"
-                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
-                >
-                  Daily Operations
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/services/finding-support"
-                  className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
-                >
-                  Finding Support
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
+                {serviceCategories.map((category) => (
+                  <Link
+                    key={category.id}
+                    href={`/services/${category.id}`}
+                    className={`inline-flex items-center gap-3 ${category.color} hover:${category.color}/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer`}
+                  >
+                    {category.title}
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                ))}
               </div>
 
               {/* Updated text color */}
