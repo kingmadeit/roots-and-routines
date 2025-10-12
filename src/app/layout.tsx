@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="theme-light" suppressHydrationWarning={true}>
       <body
-        className={`${quicksand.variable} ${nunito.variable} ${antonio.variable} font-quicksand antialiased w-full text-primary bg-primary`}
+        className={`${quicksand.variable} ${nunito.variable} ${antonio.variable} font-quicksand antialiased w-full text-primary bg-primary overflow-x-hidden`}
       >
         {/* Floating Icons - covers entire page */}
         <FloatingIcons
