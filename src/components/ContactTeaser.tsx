@@ -1,7 +1,8 @@
 "use client"
-import ContactOptions from "./ContactOptions"
+// import ContactOptions from "./ContactOptions"
 import { Button } from "./ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
+// import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
+import Link from 'next/link';
 
 const ContactTeaser = () => {
   return (
@@ -82,32 +83,35 @@ const ContactTeaser = () => {
                 <div className="w-2 h-2 rounded-full bg-complementary/50" />
                 <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-secondary/30" />
               </div>
+              <Link href="/contact">
+                <Button
+                  className="mt-4 bg-accent hover:bg-accent/90 text-white font-bold text-lg px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-quicksand group relative overflow-hidden"
+                  size="lg"
+                >
+                  <span className="relative  flex items-center gap-2">
+                    Enquire Now
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                </Button>
+              </Link>
 
               {/* CTA Button with Dialog */}
-              <Dialog>
+              {/* <Dialog>
                 <DialogTrigger asChild>
-                  <Button
-                    className="mt-4 bg-accent hover:bg-accent/90 text-white font-bold text-lg px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-quicksand group relative overflow-hidden"
-                    size="lg"
-                  >
-                    <span className="relative  flex items-center gap-2">
-                      Enquire Now
-                      <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 7l5 5m0 0l-5 5m5-5H6"
-                        />
-                      </svg>
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  </Button>
+           
                 </DialogTrigger>
                 <DialogContent className="bg-secondary/95 backdrop-blur-xl rounded-[2rem] md:max-w-4xl w-[95%] border-2 border-white/10 shadow-2xl">
                   <DialogHeader className="space-y-3">
@@ -122,7 +126,7 @@ const ContactTeaser = () => {
                     <ContactOptions />
                   </div>
                 </DialogContent>
-              </Dialog>
+              </Dialog> */}
 
               {/* Trust indicators */}
               <div className="flex flex-wrap items-center justify-center gap-6 pt-8 text-sm text-secondary/60 font-nunito">

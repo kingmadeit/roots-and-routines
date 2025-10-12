@@ -389,7 +389,7 @@ export default function AboutPage() {
                                 size="lg"
                                 className="bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-7 h-auto rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-fit"
                             >
-                                <Link href="/founder" className="inline-flex items-center gap-3">
+                                <Link href="/about/founder" className="inline-flex items-center gap-3">
                                     Meet the Founder
                                     <ArrowRight className="w-5 h-5" />
                                 </Link>
