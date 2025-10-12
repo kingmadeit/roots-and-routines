@@ -14,7 +14,7 @@ const {
 
 const loading = () => (<div className="animate-pulse h-[300px]" />);
 
-const ContactSection = dynamic(() => import('./ContactSection'), { loading });
+const ContactSection = dynamic(() => import('../ContactTeaser'), { loading });
 const FAQSection = dynamic(() => import('../FAQ'), { loading });
 
 // Export metadata
