@@ -6,7 +6,6 @@ export { default as Hero } from './Hero';
 export { default as AboutTeaser } from './AboutTeaser';
 export { default as ServiceTeaser } from './ServiceTeaser';
 export { default as PackagesTeaser } from './PackagesTeaser';
-export { default as FeaturedService } from './FeaturedService';
 export { default as FounderQuote } from './FounderQuote';
 export { default as ContactTeaser } from './ContactTeaser';
 export { default as ContactInfo } from './ContactInfo';
