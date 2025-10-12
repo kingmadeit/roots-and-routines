@@ -110,11 +110,11 @@ export default function ServicesPage() {
             </div>
 
             <div className="space-y-6">
-              <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
+              <h1 className="font-nunito text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
                 Comprehensive, <br />
-                <span className="font-nunito text-6xl md:text-7xl lg:text-8xl text-accent font-nunito font-extrabold">personalised services</span>
+                <span className="font-quicksand text-6xl md:text-7xl text-[#581b04] lg:text-8xl font-bold tracking-tight leading-[0.95]">personalised services</span>
                 <br /> designed around your <br />
-                <span className="font-nunito text-5xl md:text-7xl lg:text-8xl text-[#581b04] font-nunito font-extrabold">unique needs</span> and rhythm
+                <span className="text-6xl md:text-7xl lg:text-8xl text-[#581b04] font-quicksand font-extrabold">unique needs</span> and rhythm
               </h1>
             </div>
 
@@ -143,10 +143,7 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-[1400px] relative ">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Services</h2>
-            <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
-              Explore our comprehensive range of family support services
-            </p>
+            <h2 className="font-quicksand text-3xl md:text-4xl lg:text-5xl md:max-w-[60%] md:mx-auto font-bold text-white">Explore our comprehensive range of family support services</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
