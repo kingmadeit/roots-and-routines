@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "clean": "rm -rf .next",
+    "lint": "next lint --no-cache",
+    "lint:fix": "next lint --fix --no-cache",
+    "clean": "rm -rf .next .turbo node_modules/.cache .eslintcache *.tsbuildinfo",
     "clean-build": "npm run clean && npm run build",
+    "clean:all": "npm run clean && rm -rf node_modules package-lock.json && npm install",
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
