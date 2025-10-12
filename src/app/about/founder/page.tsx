@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function FounderPage() {
   return (
-    <main className="min-h-screen bg-primary/70 pt-24 md:pt-0">
+    <main className="min-h-screen bg-primary/70 pt-32 lg:pt-0">
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
         {/* Organic background shapes */}
-        <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
+        <div className="absolute -top-10  right-0 w-96 h-96 opacity-10">
           <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
@@ -31,96 +31,101 @@ export default function FounderPage() {
         </div>
 
         <div className="w-full text-left relative max-w-[1400px] mx-auto">
-          {/* SVG Illustration - Positioned on right side */}
-          <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-[400px] h-[400px]">
-            <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
-              {/* Background circle */}
-              <circle cx="150" cy="150" r="130" fill="#ca6c28" opacity="0.12" />
+          <div className="flex gap-16">
+            {/* Left-aligned Text Content */}
+            <div className="space-y-8 relative  max-w-4xl">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
+                </div>
 
-              {/* Tree trunk/stem - representing growth */}
-              <path
-                d="M 140 200 L 140 120 Q 140 110 150 110 Q 160 110 160 120 L 160 200"
-                fill="#788a68"
-                opacity="0.85"
-              />
-
-              {/* Roots - organic flowing lines */}
-              <path
-                d="M 145 200 Q 120 220 100 240 M 155 200 Q 180 220 200 240 M 150 205 Q 150 230 150 250"
-                stroke="#788a68"
-                strokeWidth="4"
-                fill="none"
-                strokeLinecap="round"
-                opacity="0.7"
-              />
-
-              {/* Root details - smaller branches */}
-              <path
-                d="M 110 230 Q 90 240 80 250 M 190 230 Q 210 240 220 250"
-                stroke="#a3b185"
-                strokeWidth="2.5"
-                fill="none"
-                strokeLinecap="round"
-                opacity="0.6"
-              />
-
-              {/* Heart at the center - representing care */}
-              <path
-                d="M 150 100 C 145 95 138 95 135 100 C 132 105 132 110 135 115 L 150 130 L 165 115 C 168 110 168 105 165 100 C 162 95 155 95 150 100 Z"
-                fill="#ca6c28"
-                opacity="0.9"
-              />
-
-              {/* Strategic grid pattern emerging from heart */}
-              <g opacity="0.6">
-                {/* Grid lines */}
-                <line x1="130" y1="70" x2="170" y2="70" stroke="#bc9b0a" strokeWidth="1.5" />
-                <line x1="130" y1="80" x2="170" y2="80" stroke="#bc9b0a" strokeWidth="1.5" />
-                <line x1="130" y1="90" x2="170" y2="90" stroke="#bc9b0a" strokeWidth="1.5" />
-                <line x1="140" y1="60" x2="140" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
-                <line x1="150" y1="60" x2="150" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
-                <line x1="160" y1="60" x2="160" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
-              </g>
-
-              {/* Decorative dots around the composition */}
-              <circle cx="80" cy="120" r="3" fill="#ca6c28" opacity="0.7" />
-              <circle cx="220" cy="120" r="3" fill="#bc9b0a" opacity="0.7" />
-              <circle cx="100" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
-              <circle cx="200" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
-              <circle cx="150" cy="50" r="2" fill="#ca6c28" opacity="0.5" />
-
-              {/* Sparkle elements */}
-              <path d="M 90 100 L 92 102 L 90 104 L 88 102 Z" fill="#bc9b0a" opacity="0.8" />
-              <path d="M 210 100 L 212 102 L 210 104 L 208 102 Z" fill="#bc9b0a" opacity="0.8" />
-              <path d="M 150 260 L 152 262 L 150 264 L 148 262 Z" fill="#ca6c28" opacity="0.7" />
-            </svg>
-          </div>
-
-          {/* Left-aligned Text Content */}
-          <div className="space-y-8 relative  max-w-4xl">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-                <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                <span className="text-accent font-medium text-sm tracking-wide">Meet the Founder</span>
+                <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
+                  Where heart
+                  <br />
+                  <span className="text-accent italic font-light">meets strategy</span>
+                </h1>
               </div>
 
-              <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
-                Where heart
-                <br />
-                <span className="text-accent italic font-light">meets strategy</span>
-              </h1>
+              <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-light">
+                Bringing years of experience in childcare, education, and family support
+              </p>
+
+              <div className="flex items-center gap-3 pt-4">
+                <div className="h-px w-16 bg-accent" />
+                <p className="text-sm uppercase tracking-widest text-accent font-medium">Experience-based · Parent-led</p>
+                <div className="h-px w-16 bg-accent" />
+              </div>
             </div>
 
-            <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-light">
-              Bringing years of experience in childcare, education, and family support
-            </p>
+            {/* SVG Illustration - Positioned on right side */}
+            <div className="absolute opacity-30 lg:opacity-90 -bottom-60 -right-40 lg:static lg:block backdrop-blur-sm rounded-3xl p-10 w-full max-w-sm lg:max-w-lg aspect-square mb-6">
+              <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
+                {/* Background circle */}
+                <circle cx="150" cy="150" r="130" fill="#ca6c28" opacity="0.12" />
 
-            <div className="flex items-center gap-3 pt-4">
-              <div className="h-px w-16 bg-accent" />
-              <p className="text-sm uppercase tracking-widest text-accent font-medium">Experience-based · Parent-led</p>
-              <div className="h-px w-16 bg-accent" />
+                {/* Tree trunk/stem - representing growth */}
+                <path
+                  d="M 140 200 L 140 120 Q 140 110 150 110 Q 160 110 160 120 L 160 200"
+                  fill="#788a68"
+                  opacity="0.85"
+                />
+
+                {/* Roots - organic flowing lines */}
+                <path
+                  d="M 145 200 Q 120 220 100 240 M 155 200 Q 180 220 200 240 M 150 205 Q 150 230 150 250"
+                  stroke="#788a68"
+                  strokeWidth="4"
+                  fill="none"
+                  strokeLinecap="round"
+                  opacity="0.7"
+                />
+
+                {/* Root details - smaller branches */}
+                <path
+                  d="M 110 230 Q 90 240 80 250 M 190 230 Q 210 240 220 250"
+                  stroke="#a3b185"
+                  strokeWidth="2.5"
+                  fill="none"
+                  strokeLinecap="round"
+                  opacity="0.6"
+                />
+
+                {/* Heart at the center - representing care */}
+                <path
+                  d="M 150 100 C 145 95 138 95 135 100 C 132 105 132 110 135 115 L 150 130 L 165 115 C 168 110 168 105 165 100 C 162 95 155 95 150 100 Z"
+                  fill="#ca6c28"
+                  opacity="0.9"
+                />
+
+                {/* Strategic grid pattern emerging from heart */}
+                <g opacity="0.6">
+                  {/* Grid lines */}
+                  <line x1="130" y1="70" x2="170" y2="70" stroke="#bc9b0a" strokeWidth="1.5" />
+                  <line x1="130" y1="80" x2="170" y2="80" stroke="#bc9b0a" strokeWidth="1.5" />
+                  <line x1="130" y1="90" x2="170" y2="90" stroke="#bc9b0a" strokeWidth="1.5" />
+                  <line x1="140" y1="60" x2="140" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+                  <line x1="150" y1="60" x2="150" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+                  <line x1="160" y1="60" x2="160" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+                </g>
+
+                {/* Decorative dots around the composition */}
+                <circle cx="80" cy="120" r="3" fill="#ca6c28" opacity="0.7" />
+                <circle cx="220" cy="120" r="3" fill="#bc9b0a" opacity="0.7" />
+                <circle cx="100" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
+                <circle cx="200" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
+                <circle cx="150" cy="50" r="2" fill="#ca6c28" opacity="0.5" />
+
+                {/* Sparkle elements */}
+                <path d="M 90 100 L 92 102 L 90 104 L 88 102 Z" fill="#bc9b0a" opacity="0.8" />
+                <path d="M 210 100 L 212 102 L 210 104 L 208 102 Z" fill="#bc9b0a" opacity="0.8" />
+                <path d="M 150 260 L 152 262 L 150 264 L 148 262 Z" fill="#ca6c28" opacity="0.7" />
+              </svg>
             </div>
+
           </div>
+
+
         </div>
       </section>
 

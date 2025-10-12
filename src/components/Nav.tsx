@@ -59,7 +59,7 @@ const Nav = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`cursor-pointer p-4 fixed top-4 bg-accent right-4 text-white z-[60] hover:bg-secondary! rounded-2xl transition-all duration-300 shadow-lg ${isOpen ? "rotate-90 scale-110" : "backdrop-blur-md border border-primary/20"
+        className={`cursor-pointer p-4 fixed top-4 bg-accent right-4 text-white z-[60] hover:bg-accent/70! rounded-2xl transition-all duration-300 shadow-lg ${isOpen ? "rotate-90 scale-110" : "backdrop-blur-md border border-primary/20"
           }`}
         aria-label="Toggle navigation"
         aria-expanded={isOpen}
@@ -68,7 +68,7 @@ const Nav = () => {
       </button>
 
       <div
-        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-secondary md:hidden z-50 transition-all duration-500 ease-out shadow-2xl ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-secondary z-50 transition-all duration-500 ease-out shadow-2xl ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -112,23 +112,46 @@ const Nav = () => {
                 >
                   <Link
                     href={item.href}
-                    className={`relative font-bold font-quicksand text-3xl group flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 ${isActive ? "bg-white text-[#581b04]" : "bg-primary text-white hover:bg-white hover:text-[#581b04]"
-                      }`}
+                    className="relative font-bold font-quicksand text-3xl group flex items-center gap-3 px-6 py-4 transition-all duration-300 text-primary/70 hover:text-white"
                     onClick={() => setIsOpen(false)}
                   >
+                    <svg
+                      className={`absolute inset-0 left-10 w-full h-full transition-opacity duration-500 ${isActive ? "opacity-50" : "opacity-0 group-hover:opacity-50"
+                        }`}
+                      viewBox="0 0 300 80"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M20,40 Q60,10 100,40 T180,40 Q240,40 260,40 Q280,40 280,60 Q280,70 260,70 Q240,70 180,70 T100,70 Q60,70 20,60 Q0,50 20,40"
+                        fill="var(--bg-accent)"
+                        className="animate-blob-morph"
+                      />
+                      <defs>
+                        <linearGradient id="mobileNavGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="rgb(240, 191, 153)" stopOpacity="0.2" />
+                          <stop offset="100%" stopColor="rgb(202, 108, 40)" stopOpacity="0.3" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+
                     <span
-                      className={`h-0.5 transition-all duration-300 ${isActive ? "w-8 bg-accent" : "w-0 group-hover:w-8 group-hover:bg-accent"
+                      className={`h-0.5 transition-all duration-300 relative z-10 ${isActive ? "w-8 bg-complementary" : "w-0 group-hover:w-8 group-hover:bg-complementary/70"
                         }`}
                     />
 
-                    <span className="relative">
+                    <span className={`relative z-10 ${isActive && 'text-white'}`}>
                       {item.label}
                       <span
-                        className={`absolute -top-2 -right-6 text-xs font-nunito transition-colors duration-300 ${isActive ? "text-complementary/60" : "text-complementary/40 group-hover:text-complementary/60"
+                        className={`absolute -top-2 -right-6 text-xs font-nunito transition-colors duration-300 ${isActive ? "text-complementary" : "text-complementary group-hover:text-complementary/60"
                           }`}
                       >
                         0{index + 1}
                       </span>
+
+                      <span
+                        className={`absolute -top-1 -right-1 w-1.5 h-1.5 bg-complementary rounded-full transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                          }`}
+                      />
                     </span>
                   </Link>
                 </li>

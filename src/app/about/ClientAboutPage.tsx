@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-primary/60 pt-24 md:pt-0">
+        <main className="min-h-screen bg-primary/60 pt-32 lg:pt-0">
             {/* Hero Section */}
             <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
-                <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
+                <div className="absolute top-20 right-0 w-96 h-96 opacity-20">
                     <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
@@ -29,9 +29,9 @@ export default function AboutPage() {
                     </svg>
                 </div>
 
-                <div className="mx-auto max-w-[1400px]">
-                    <div className="grid lg:grid-cols-12 gap-16 items-end">
-                        <div className="lg:col-span-8 space-y-8 relative ">
+                <div className="mx-auto text-left relative max-w-[1400px]">
+                    <div className="flex items-center gap-16 ">
+                        <div className=" space-y-8 relative ">
                             <div className="space-y-6">
                                 <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
                                     <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -57,98 +57,93 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        <div className="lg:col-span-4">
-                            <div className="relative">
-                                <div className="relative backdrop-blur-sm rounded-3xl p-10">
-                                    <div className="w-full aspect-square mb-6">
-                                        <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
-                                            {/* Background circle */}
-                                            <circle cx="150" cy="150" r="130" fill="#788a68" opacity="0.12" />
+                        <div className="absolute opacity-30 lg:opacity-90 -bottom-70 -right-40 lg:static lg:block backdrop-blur-sm rounded-3xl p-10 w-full max-w-sm lg:max-w-lg aspect-square mb-6">
+                            <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
+                                {/* Background circle */}
+                                <circle cx="150" cy="150" r="130" fill="#788a68" opacity="0.12" />
 
-                                            {/* Main organic shape */}
-                                            <path
-                                                d="M 150 60 Q 195 75 215 120 Q 235 165 210 205 Q 185 245 140 240 Q 95 235 75 195 Q 55 155 70 115 Q 85 75 130 65 Q 145 60 150 60 Z"
-                                                fill="#ca6c28"
-                                                opacity="0.85"
-                                            />
+                                {/* Main organic shape */}
+                                <path
+                                    d="M 150 60 Q 195 75 215 120 Q 235 165 210 205 Q 185 245 140 240 Q 95 235 75 195 Q 55 155 70 115 Q 85 75 130 65 Q 145 60 150 60 Z"
+                                    fill="#ca6c28"
+                                    opacity="0.85"
+                                />
 
-                                            {/* Inner accent shape */}
-                                            <path
-                                                d="M 150 100 Q 175 110 185 135 Q 195 160 180 180 Q 165 200 145 195 Q 120 185 110 160 Q 100 135 115 115 Q 130 95 150 100 Z"
-                                                fill="#f0bf99"
-                                                opacity="0.75"
-                                            />
+                                {/* Inner accent shape */}
+                                <path
+                                    d="M 150 100 Q 175 110 185 135 Q 195 160 180 180 Q 165 200 145 195 Q 120 185 110 160 Q 100 135 115 115 Q 130 95 150 100 Z"
+                                    fill="#f0bf99"
+                                    opacity="0.75"
+                                />
 
-                                            {/* Decorative dots */}
-                                            <circle cx="150" cy="150" r="7" fill="#fff8a9" />
-                                            <circle cx="125" cy="135" r="5" fill="#bc9b0a" opacity="0.7" />
-                                            <circle cx="175" cy="145" r="6" fill="#a3b185" opacity="0.7" />
-                                            <circle cx="140" cy="175" r="4" fill="#fdf2e0" />
-                                            <circle cx="165" cy="125" r="4" fill="#ca6c28" opacity="0.5" />
+                                {/* Decorative dots */}
+                                <circle cx="150" cy="150" r="7" fill="#fff8a9" />
+                                <circle cx="125" cy="135" r="5" fill="#bc9b0a" opacity="0.7" />
+                                <circle cx="175" cy="145" r="6" fill="#a3b185" opacity="0.7" />
+                                <circle cx="140" cy="175" r="4" fill="#fdf2e0" />
+                                <circle cx="165" cy="125" r="4" fill="#ca6c28" opacity="0.5" />
 
-                                            {/* Leaf-like elements */}
-                                            <path
-                                                d="M 150 150 Q 165 125 180 115"
-                                                stroke="#788a68"
-                                                strokeWidth="2.5"
-                                                fill="none"
-                                                strokeLinecap="round"
-                                            />
-                                            <ellipse
-                                                cx="185"
-                                                cy="110"
-                                                rx="7"
-                                                ry="13"
-                                                fill="#a3b185"
-                                                opacity="0.75"
-                                                transform="rotate(45 185 110)"
-                                            />
+                                {/* Leaf-like elements */}
+                                <path
+                                    d="M 150 150 Q 165 125 180 115"
+                                    stroke="#788a68"
+                                    strokeWidth="2.5"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                />
+                                <ellipse
+                                    cx="185"
+                                    cy="110"
+                                    rx="7"
+                                    ry="13"
+                                    fill="#a3b185"
+                                    opacity="0.75"
+                                    transform="rotate(45 185 110)"
+                                />
 
-                                            <path
-                                                d="M 150 150 Q 130 170 115 185"
-                                                stroke="#788a68"
-                                                strokeWidth="2.5"
-                                                fill="none"
-                                                strokeLinecap="round"
-                                            />
-                                            <ellipse
-                                                cx="110"
-                                                cy="190"
-                                                rx="7"
-                                                ry="13"
-                                                fill="#a3b185"
-                                                opacity="0.75"
-                                                transform="rotate(-30 110 190)"
-                                            />
+                                <path
+                                    d="M 150 150 Q 130 170 115 185"
+                                    stroke="#788a68"
+                                    strokeWidth="2.5"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                />
+                                <ellipse
+                                    cx="110"
+                                    cy="190"
+                                    rx="7"
+                                    ry="13"
+                                    fill="#a3b185"
+                                    opacity="0.75"
+                                    transform="rotate(-30 110 190)"
+                                />
 
-                                            {/* Heart icon integrated into design */}
-                                            <g transform="translate(150, 150)">
-                                                <circle cx="0" cy="0" r="22" fill="white" opacity="0.95" />
-                                                <path
-                                                    d="M 0 -5 L -6 -11 Q -10 -15 -10 -10 Q -10 -5 -6 -1 L 0 5 L 6 -1 Q 10 -5 10 -10 Q 10 -15 6 -11 Z"
-                                                    fill="#ca6c28"
-                                                />
-                                            </g>
+                                {/* Heart icon integrated into design */}
+                                <g transform="translate(150, 150)">
+                                    <circle cx="0" cy="0" r="22" fill="white" opacity="0.95" />
+                                    <path
+                                        d="M 0 -5 L -6 -11 Q -10 -15 -10 -10 Q -10 -5 -6 -1 L 0 5 L 6 -1 Q 10 -5 10 -10 Q 10 -15 6 -11 Z"
+                                        fill="#ca6c28"
+                                    />
+                                </g>
 
-                                            {/* Sparkle elements */}
-                                            <g transform="translate(190, 120)">
-                                                <path
-                                                    d="M 0 -4 L 1 -1 L 4 0 L 1 1 L 0 4 L -1 1 L -4 0 L -1 -1 Z"
-                                                    fill="#bc9b0a"
-                                                    opacity="0.8"
-                                                />
-                                            </g>
-                                            <g transform="translate(110, 130)">
-                                                <path
-                                                    d="M 0 -3 L 0.7 -0.7 L 3 0 L 0.7 0.7 L 0 3 L -0.7 0.7 L -3 0 L -0.7 -0.7 Z"
-                                                    fill="#ca6c28"
-                                                    opacity="0.6"
-                                                />
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
+                                {/* Sparkle elements */}
+                                <g transform="translate(190, 120)">
+                                    <path
+                                        d="M 0 -4 L 1 -1 L 4 0 L 1 1 L 0 4 L -1 1 L -4 0 L -1 -1 Z"
+                                        fill="#bc9b0a"
+                                        opacity="0.8"
+                                    />
+                                </g>
+                                <g transform="translate(110, 130)">
+                                    <path
+                                        d="M 0 -3 L 0.7 -0.7 L 3 0 L 0.7 0.7 L 0 3 L -0.7 0.7 L -3 0 L -0.7 -0.7 Z"
+                                        fill="#ca6c28"
+                                        opacity="0.6"
+                                    />
+                                </g>
+                            </svg>
+
                         </div>
                     </div>
                 </div>
