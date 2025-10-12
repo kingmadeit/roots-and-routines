@@ -55,7 +55,7 @@ export function ServiceCategory({ children, heroClassName, contentClassName }: S
         </div>
 
         {/* Content container */}
-        <div className={cn("relative z-10", contentClassName)}>{children}</div>
+        <div className={cn("relative ", contentClassName)}>{children}</div>
       </div>
     </div>
   )

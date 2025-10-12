@@ -3,14 +3,14 @@ import Link from "next/link"
 
 const Logo = () => {
   return (
-    <Link href="/" className="relative group mt-4 cursor-pointer">
-      <div className="w-20 h-20 md:w-24 md:h-24 relative transition-transform duration-300 ease-out hover:scale-105">
+    <Link href="/" className="relative group cursor-pointer z-50">
+      <div className="w-20 h-20 md:w-24 md:h-24 relative rounded-full ring-bg-primary/20 group-hover:ring-2 group-hover:ring-bg-accent transition-all duration-300 ease-out group-hover:scale-105">
         <Image
           src="/logo.png"
           alt="Roots & Routines Logo"
           width={96}
           height={96}
-          className="rounded-full shadow-lg border border-transparent ring-4 ring-accent group-hover:border-1 group-hover:border-accent/50 transition-all duration-300"
+          className="rounded-full shadow-lg"
           priority
           sizes="(max-width: 768px) 80px, 96px"
         />

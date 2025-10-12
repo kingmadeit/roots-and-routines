@@ -58,7 +58,7 @@ export function LegalPageCTA({
           className={`absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 ${cornerBorderColor2} rounded-br-[2rem]`}
         />
 
-        <div className="space-y-6 relative z-10">
+        <div className="space-y-6 relative ">
           <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${badgeColor}`}>
             <div
               className={`w-1.5 h-1.5 rounded-full animate-pulse ${badgeColor.replace("/10", "").replace("bg-", "bg-")}`}

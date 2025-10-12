@@ -1,19 +1,21 @@
 'use client'
-import { pagesData } from "@/data";
+import { pagesData, siteData } from "@/data";
 import dynamic from "next/dynamic";
-import HeroSection from "./HeroSection";
-import AboutSection from "./AboutSection";
-import FAQSection from "./FAQSection";
 import AutonomySection from "./AutonomySection";
-import ServiceSection from "./ServicesSection";
+import AboutTeaser from "../AboutTeaser";
+import ServiceTeaser from "../ServiceTeaser";
+import Hero from "../Hero";
 
 
-const { home: { meta } } = pagesData;
-
+const { home: { hero, meta, gallery } } = pagesData;
+const {
+  faq
+} = siteData;
 
 const loading = () => (<div className="animate-pulse h-[300px]" />);
 
-const ContactSection = dynamic(() => import('./ContactSection'), { loading })
+const ContactSection = dynamic(() => import('./ContactSection'), { loading });
+const FAQSection = dynamic(() => import('../FAQ'), { loading });
 
 // Export metadata
 export const metadata = meta;
@@ -23,11 +25,11 @@ export default function HomePage() {
   //useInViewObserver({ selector: '.animate-on-scroll' })
   return (
     <>
-      <HeroSection />
+      <Hero info={hero} gallery={gallery} />
       <AutonomySection />
-      <AboutSection />
-      <ServiceSection />
-      <FAQSection />
+      <AboutTeaser />
+      <ServiceTeaser />
+      <FAQSection data={faq} />
       <ContactSection />
     </>
   );

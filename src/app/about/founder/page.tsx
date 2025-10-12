@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function FounderPage() {
   return (
-    <main className="min-h-screen bg-primary/70 pt-24">
+    <main className="min-h-screen bg-primary/70 pt-24 md:pt-0">
       {/* Hero Section */}
-      <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
+      <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
         {/* Organic background shapes */}
         <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
           <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@ export default function FounderPage() {
           </div>
 
           {/* Left-aligned Text Content */}
-          <div className="space-y-8 relative z-10 max-w-4xl">
+          <div className="space-y-8 relative  max-w-4xl">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
                 <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -195,7 +195,7 @@ export default function FounderPage() {
                         { label: "Experience-based", color: "#bc9b0a" },
                         { label: "Strategic thinking", color: "#788a68" },
                         { label: "Hands-on expertise", color: "#a3b185" },
-                        { label: "Personalized support", color: "#ca6c28" },
+                        { label: "personalised support", color: "#ca6c28" },
                       ].map((item, index) => (
                         <div
                           key={index}
@@ -226,7 +226,7 @@ export default function FounderPage() {
       {/* What I Bring Section */}
       <section className="px-6 py-24 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
-            <div className="w-12 h-1 bg-accent mb-6 rounded-full" />
+          <div className="w-12 h-1 bg-accent mb-6 rounded-full" />
           <div className="max-w-3xl mb-20">
             <h2 className="font-quicksand text-5xl lg:text-6xl font-bold text-[#581b04] mb-6 leading-tight">
               What I bring to your family
@@ -341,7 +341,7 @@ export default function FounderPage() {
           style={{ animationDelay: "1.5s" }}
         />
 
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="max-w-5xl mx-auto relative">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-20 border border-white/20">
             {/* Decorative corner accents */}
             <div className="absolute top-0 right-0 w-24 h-24 border-t-4 border-r-4 border-secondary/20 rounded-tr-[2.5rem]" />

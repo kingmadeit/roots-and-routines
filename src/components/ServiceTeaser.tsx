@@ -57,7 +57,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           <IconComponent className="w-12 h-12 text-white drop-shadow-lg" />
         </div>
         {/* Decorative elements */}
-        <div className="absolute -inset-3 bg-gradient-to-br from-white/15 to-transparent rounded-[2rem] -z-10 group-hover:from-white/25 transition-all"></div>
+        <div className="absolute -inset-3 bg-gradient-to-br from-white/15 to-transparent rounded-[2rem] - group-hover:from-white/25 transition-all"></div>
         <div className="absolute top-3 right-3 w-5 h-5 bg-white/40 rounded-full group-hover:scale-110 transition-transform"></div>
         <div className="absolute bottom-2 left-2 w-3 h-3 bg-white/50 rounded-full group-hover:scale-110 transition-transform"></div>
       </div>
@@ -111,8 +111,8 @@ const TabNavigation: React.FC<{
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}
-            <span className="relative z-10">{tab.title}</span>
-            <span className="relative z-10 text-xs md:text-sm font-nunito font-normal mt-1 opacity-80">{tab.description}</span>
+            <span className="relative ">{tab.title}</span>
+            <span className="relative  text-xs md:text-sm font-nunito font-normal mt-1 opacity-80">{tab.description}</span>
           </button>
         ))}
       </div>
@@ -229,7 +229,7 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             <div className="absolute top-12 right-12 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-12 left-12 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
             {/* Content grid with staggered animations */}
-            <div className="relative z-10 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 mb-8">
+            <div className="relative  grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 mb-8">
               {selectedServices.map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -243,7 +243,7 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             </div>
 
             {/*  CTA button */}
-            <Link href={`/services/${selectedTab.id}`} className="relative pt-1 z-10 block">
+            <Link href={`/services/${selectedTab.id}`} className="relative pt-1  block">
               <button className="mx-auto mt-4 bg-white hover:bg-[#581b04] text-[#581b04] hover:text-white font-bold py-5 px-10 rounded-full transition-all duration-300 flex flex-col items-center justify-center group shadow-lg hover:shadow-2xl hover:shadow-white/30 hover:scale-105 font-[family-name:var(--font-quicksand)] cursor-pointer">
                 <div className="flex items-center">
                   <span className="text-lg">Explore {selectedTab.title}</span>

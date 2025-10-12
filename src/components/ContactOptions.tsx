@@ -119,8 +119,8 @@ const ContactOptions = () => {
               href={`mailto:${email}`}
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Mail className="w-5 h-5 relative z-10" />
-              <span className="font-semibold relative z-10">Email Us</span>
+              <Mail className="w-5 h-5 relative " />
+              <span className="font-semibold relative ">Email Us</span>
             </a>
 
             <a
@@ -129,8 +129,8 @@ const ContactOptions = () => {
               href={`tel:${phone}`}
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Phone className="w-5 h-5 relative z-10" />
-              <span className="font-semibold relative z-10">Call Us</span>
+              <Phone className="w-5 h-5 relative " />
+              <span className="font-semibold relative ">Call Us</span>
             </a>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { siteData } from "@/data"
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
-  description: "Comprehensive, personalized family support services designed around your unique needs and rhythm",
+  description: "Comprehensive, personalised family support services designed around your unique needs and rhythm",
 }
 
 const getCategoryClasses = (category: string) => {
@@ -113,7 +113,7 @@ export default function ServicesPage() {
               <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
                 Comprehensive, <br />
                 <span className="font-nunito text-6xl md:text-7xl lg:text-8xl text-accent font-nunito font-extrabold">personalised services</span>
-                <br /> designed around your <br/>
+                <br /> designed around your <br />
                 <span className="font-nunito text-5xl md:text-7xl lg:text-8xl text-[#581b04] font-nunito font-extrabold">unique needs</span> and rhythm
               </h1>
             </div>
@@ -141,7 +141,7 @@ export default function ServicesPage() {
         <div className="absolute top-20 -right-10 animate-pulse animation-duration-5000 w-96 h-96 rounded-full bg-accent/30"></div>
         <div className="absolute -bottom-10 left-5 w-96 h-96 animate-pulse animation-duration-5000 rounded-full bg-secondary/15"></div>
 
-        <div className="mx-auto max-w-[1400px] relative z-10">
+        <div className="mx-auto max-w-[1400px] relative ">
           <div className="text-center mb-16 space-y-4">
             <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Services</h2>
             <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
@@ -250,7 +250,7 @@ export default function ServicesPage() {
           style={{ animationDelay: "0.8s" }}
         />
 
-        <div className="mx-auto max-w-5xl relative z-10">
+        <div className="mx-auto max-w-5xl relative ">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-16 border border-white/20">
             <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2.5rem]" />
             <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-accent/20 rounded-br-[2.5rem]" />
@@ -310,7 +310,7 @@ export default function ServicesPage() {
                   <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                   </div>
-                  <span className="font-medium">Personalized approach</span>
+                  <span className="font-medium">personalised approach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">

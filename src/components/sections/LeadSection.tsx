@@ -89,13 +89,13 @@ const LeadSection = ({
 
       {/* Gradient fade edges */}
       {/* <div
-        className="absolute inset-y-0 left-0 w-32 pointer-events-none z-10"
+        className="absolute inset-y-0 left-0 w-32 pointer-events-none "
         style={{
           background: `linear-gradient(to right, var(--${fadeColor}), transparent)`,
         }}
       />
       <div
-        className="absolute inset-y-0 right-0 w-32 pointer-events-none z-10"
+        className="absolute inset-y-0 right-0 w-32 pointer-events-none "
         style={{
           background: `linear-gradient(to left, transparent, var(--${fadeColor})`,
         }}

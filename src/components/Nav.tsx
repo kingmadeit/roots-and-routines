@@ -10,7 +10,7 @@ const Nav = () => {
   const pathname = usePathname()
 
   return (
-    <nav className="nav relative z-50">
+    <nav className="nav relative z-99">
       <ul className="hidden gap-8 items-center bg-white/60 backdrop-blur-md px-6 py-3 rounded-full border border-primary/20">
         {siteData.navigation.map((item, index) => {
           const isActive = pathname === item.href
@@ -22,14 +22,14 @@ const Nav = () => {
                 className="relative text-secondary font-bold font-quicksand text-base group py-2 px-1 block"
               >
                 <span
-                  className={`relative z-10 transition-colors duration-300 ${isActive ? "text-accent" : "group-hover:text-accent"
+                  className={`relative  transition-colors duration-300 ${isActive ? "text-accent" : "group-hover:text-accent"
                     }`}
                 >
                   {item.label}
                 </span>
 
                 <svg
-                  className={`absolute inset-0 w-full h-full -z-10 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  className={`absolute inset-0 w-full h-full - transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                     }`}
                   viewBox="0 0 100 40"
                   preserveAspectRatio="none"
@@ -118,7 +118,7 @@ const Nav = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     <svg
-                      className={`absolute -inset-2 w-[calc(100%+1rem)] h-[calc(100%+1rem)] -z-10 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                      className={`absolute -inset-2 w-[calc(100%+1rem)] h-[calc(100%+1rem)] - transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                         }`}
                       viewBox="0 0 200 60"
                       preserveAspectRatio="none"

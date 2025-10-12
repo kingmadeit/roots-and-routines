@@ -10,7 +10,7 @@ type ContactTeaserProps = {
 
 const ContactTeaser = ({ quote }: ContactTeaserProps) => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary-light/30 to-primary">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-primary/50 via-primary-light/30 to-primary/50">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Top right organic shape */}
         <svg className="absolute -top-20 -right-20 w-96 h-96 opacity-20" viewBox="0 0 400 400">
@@ -39,7 +39,7 @@ const ContactTeaser = ({ quote }: ContactTeaserProps) => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative">
         <div className="max-w-5xl mx-auto">
           <div className="relative rounded-[2.5rem] bg-white/80 backdrop-blur-md shadow-2xl p-8 md:p-12 lg:p-16 border border-secondary/10">
             {/* Decorative corner accents */}
@@ -95,7 +95,7 @@ const ContactTeaser = ({ quote }: ContactTeaserProps) => {
                     className="mt-4 bg-accent hover:bg-accent/90 text-white font-bold text-lg px-8 py-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-quicksand group relative overflow-hidden"
                     size="lg"
                   >
-                    <span className="relative z-10 flex items-center gap-2">
+                    <span className="relative  flex items-center gap-2">
                       Enquire Now
                       <svg
                         className="w-5 h-5 group-hover:translate-x-1 transition-transform"

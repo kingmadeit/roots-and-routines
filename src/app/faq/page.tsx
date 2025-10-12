@@ -73,7 +73,7 @@ export default function FAQPage() {
               </svg>
             </div>
 
-            <div className="relative z-10">
+            <div className="relative ">
               <h2 className="font-quicksand text-3xl md:text-4xl font-bold text-white mb-4">Still Have Questions?</h2>
               <p className="font-nunito text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                 We're here to help! Reach out and we'll get back to you as soon as possible.

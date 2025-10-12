@@ -176,7 +176,7 @@ const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
   const splitTitle = useMemo(() => splitTitleBySeparator(title, titleSeparator), [title, titleSeparator])
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-primary/40 via-primary/60 to-primary">
+    <section className="relative min-h-screen bg-gradient-to-b from-primary/40 via-primary/60 to-primary/50">
       <HeroBackgroundShapes />
 
       <div className="relative hero-content">
@@ -185,7 +185,7 @@ const Hero = memo<HeroProps>(function Hero({ info, gallery }) {
         </div>
       </div>
       {/* 
-      <div className="relative z-10 gallery-peek-area" style={{ height: `${peekHeight}px` }}>
+      <div className="relative  gallery-peek-area" style={{ height: `${peekHeight}px` }}>
         <div className="gallery-container">
           <CircularGallery items={gallery} bend={5} borderRadius={0.05} scrollEase={0.02} />
         </div>

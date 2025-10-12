@@ -139,13 +139,13 @@ export function ServiceCategoryContent({ services, categoryColor }: ServiceCateg
               </svg>
             </div>
 
-            <div className="relative z-10 text-center space-y-8">
+            <div className="relative  text-center space-y-8">
               <div className="space-y-4">
                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-white">
                   Ready to Begin Your Journey?
                 </h2>
                 <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
-                  Let's create a personalized plan that aligns with your goals and values
+                  Let's create a personalised plan that aligns with your goals and values
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ export function ServiceCategoryContent({ services, categoryColor }: ServiceCateg
               <div className="flex items-center justify-center gap-8 pt-8 text-white/80 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                  <span className="font-nunito">Personalized approach</span>
+                  <span className="font-nunito">personalised approach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />

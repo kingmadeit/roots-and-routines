@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
                 <li>Remember your preferences and settings</li>
                 <li>Understand how you use our website</li>
                 <li>Improve website functionality and performance</li>
-                <li>Provide personalized content and recommendations</li>
+                <li>Provide personalised content and recommendations</li>
               </ul>
               <p className="text-[#581b04]/80 font-nunito leading-relaxed mt-4">
                 You can control cookies through your browser settings. However, disabling cookies may affect your

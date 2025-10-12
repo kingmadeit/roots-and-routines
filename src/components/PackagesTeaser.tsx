@@ -25,7 +25,7 @@ const getFeaturedStyles = (isFeatured: boolean) => ({
 const GetStartedButton = memo<{ isFeatured: boolean; label?: string }>(
   ({ isFeatured, label = "Get Started" }) => {
     const styles = getFeaturedStyles(isFeatured);
-    
+
     return (
       <button
         type="button"
@@ -41,7 +41,7 @@ const GetStartedButton = memo<{ isFeatured: boolean; label?: string }>(
 const FeatureListItem = memo<{ children: React.ReactNode; isFeatured: boolean }>(
   ({ children, isFeatured }) => {
     const styles = getFeaturedStyles(isFeatured);
-    
+
     return (
       <li className="flex items-start gap-3">
         <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${styles.checkBg}`}>
@@ -57,9 +57,9 @@ const FeatureListItem = memo<{ children: React.ReactNode; isFeatured: boolean }>
 
 const PricingHeader = memo(() => {
   const { title, description } = pagesData.home.packagesTeaser;
-  
+
   return (
-    <header className="relative text-center mb-12 md:mb-20 px-4 z-10">
+    <header className="relative text-center mb-12 md:mb-20 px-4 ">
       <div
         aria-hidden="true"
       />
@@ -90,7 +90,7 @@ const PricingCard = memo<{
 }>(({ plan, currency = "$", price, description, features, isFeatured = false }) => {
   const styles = getFeaturedStyles(isFeatured);
   const buttonLabel = price === 0 ? "Get Started Free" : "Get Started";
-  
+
   return (
     <article
       className={`relative p-6 md:p-8 rounded-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 ${styles.card}`}
@@ -103,7 +103,7 @@ const PricingCard = memo<{
           </span>
         </div>
       )}
-      
+
       <div className="flex items-center gap-3 mb-6">
         <div className="relative">
           <Circle className={`w-5 h-5 ${styles.textSecondary}`} />
@@ -156,7 +156,7 @@ const PricingCard = memo<{
 });
 
 const Pricing4 = memo(() => {
-  const pricingPlans = useMemo(() => 
+  const pricingPlans = useMemo(() =>
     pagesData.home.packagesTeaser.packages.map((pkg) => ({
       id: pkg.id,
       plan: pkg.name,

@@ -110,7 +110,7 @@ const AccordionItem = memo<AccordionItemProps>(function AccordionItem({ item, is
 const FAQHeader = memo<{ title: string }>(function FAQHeader({ title }) {
   return (
     <div className="text-center mb-12 relative">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 - overflow-hidden">
         <svg
           className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl opacity-20"
           viewBox="0 0 800 200"
@@ -206,7 +206,7 @@ const FAQ = memo<FAQComponentProps>(function FAQ({ data, showTitle = true, maxIt
 
   return (
     <section className={clsx("py-16 px-4 font-nunito relative overflow-hidden", className)}>
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 - overflow-hidden pointer-events-none">
         <svg
           className="absolute top-20 right-10 w-32 h-32 opacity-10"
           viewBox="0 0 100 100"

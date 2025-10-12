@@ -2,7 +2,8 @@ import RotatingText from "../RotatingText";
 
 const AutonomySection = () => {
   return (
-    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center space-x-4 my-32">
+    <div className="text-5xl font-nunito font-extrabold flex justify-center items-center space-x-4 my-32 relative w-full">
+      <div className="w-50 h-55 bg-complementary/10 z-0 absolute -top-50 rounded-t-full rounded-bl-full -right-10"></div>
       <span className="text-secondary">Your</span>
       <span className="w-[150px]">
         <RotatingText

@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 
 const AboutTeaser = () => {
   return (
-    <section className="relative md:max-w-[95%] mx-auto py-24 overflow-hidden">
+    <section className="relative md:max-w-[95%] mx-auto py-24 overflow-hidden bg-primary/50">
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-complementary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
+      <div className="relative max-w-7xl mx-auto px-4">
         {/* First block - Large emphasis on left */}
         <motion.div
           className="mb-20 lg:mb-32 max-w-4xl"
@@ -29,7 +29,7 @@ const AboutTeaser = () => {
               </span>
               Roots & Routines Family Concierge is a{" "}
               <span className="font-bold text-3xl md:text-4xl lg:text-5xl text-complementary">
-                personalized service
+                personalised service
               </span>{" "}
               dedicated to helping families create smoother home routines, find trusted support, and make confident
               decisions for their child&apos;s wellbeing.

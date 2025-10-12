@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-primary/60">
+        <main className="min-h-screen bg-primary/60 pt-24 md:pt-0">
             {/* Hero Section */}
             <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
                 <div className="absolute top-20 right-0 w-96 h-96 opacity-30">
@@ -31,7 +31,7 @@ export default function AboutPage() {
 
                 <div className="mx-auto max-w-[1400px]">
                     <div className="grid lg:grid-cols-12 gap-16 items-end">
-                        <div className="lg:col-span-8 space-y-8 relative z-10">
+                        <div className="lg:col-span-8 space-y-8 relative ">
                             <div className="space-y-6">
                                 <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
                                     <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -247,7 +247,7 @@ export default function AboutPage() {
                     </svg>
                 </div>
 
-                <div className="mx-auto max-w-[1400px] relative z-10">
+                <div className="mx-auto max-w-[1400px] relative ">
                     <div className="text-center mb-16">
                         <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] mb-4">Our Core Values</h2>
                         <p className="text-xl text-[#581b04]/60 font-light">The principles that guide everything we do</p>
@@ -308,7 +308,7 @@ export default function AboutPage() {
                     </svg>
                 </div>
 
-                <div className="mx-auto max-w-[1400px] relative z-10">
+                <div className="mx-auto max-w-[1400px] relative ">
                     <div className="text-center max-w-3xl mx-auto">
                         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20 mb-8">
                             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -359,7 +359,7 @@ export default function AboutPage() {
                     style={{ animationDelay: "1s" }}
                 />
 
-                <div className="max-w-5xl mx-auto relative z-10">
+                <div className="max-w-5xl mx-auto relative ">
                     <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-20 border border-white/20">
                         {/* Decorative corner accents */}
                         <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-accent/20 rounded-tl-[2.5rem]" />
@@ -418,7 +418,7 @@ export default function AboutPage() {
                                     <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
                                         <div className="w-2 h-2 rounded-full bg-accent" />
                                     </div>
-                                    <span className="font-medium">Personalized support</span>
+                                    <span className="font-medium">personalised support</span>
                                 </div>
                             </div>
                         </div>
