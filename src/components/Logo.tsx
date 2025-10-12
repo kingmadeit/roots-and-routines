@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Logo = () => {
   return (
-    <Link href="/" className="relative group cursor-pointer z-50">
+    <Link href="/" className="relative mt-4 group cursor-pointer z-50">
       <div className="w-20 h-20 md:w-24 md:h-24 relative rounded-full ring-bg-primary/20 group-hover:ring-2 group-hover:ring-bg-accent transition-all duration-300 ease-out group-hover:scale-105">
         <Image
           src="/logo.png"
