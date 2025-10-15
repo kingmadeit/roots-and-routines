@@ -318,9 +318,9 @@ export const siteData: SiteData = {
           {
             id: "faq-services-4",
             category: "services",
-            question: "Can you help with school and nursery application?",
+            question: "Can you help with school and nursery applications?",
             answer:
-              "Yes - we do the research and shortlisting based on your needs, wants and expectations. We guide through every step to help you make confident decisions.",
+              "Yes - we do the research and shortlisting based on your needs, wants and expectations. We guide you through every step to help you make confident decisions.",
           },
         ],
       },
