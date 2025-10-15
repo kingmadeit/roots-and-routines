@@ -82,7 +82,7 @@ export default function RootLayout({
           containerClassName="fixed inset-0 z-0"
         />
         {/* Main content - positioned above floating icons */}
-        <main className="w-full flex min-h-screen flex-col absolute " contentEditable={isDev}>
+        <main className="w-full flex min-h-screen flex-col absolute ">
           <Header />
           <div className="w-full h-full">{children}</div>
           <Footer />

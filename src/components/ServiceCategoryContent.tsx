@@ -73,13 +73,22 @@ export function ServiceCategoryContent({ services }: ServiceCategoryContentProps
 
         <div className="mx-auto max-w-5xl relative">
           <div className="text-center space-y-12">
+            {/* Badge */}
+            <div
+              className={`inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border ${categoryClasses.border}/20`}
+            >
+              <div className={`w-1.5 h-1.5 rounded-full ${categoryClasses.bg} animate-pulse`} />
+              <span className={`${categoryClasses.text} font-medium text-sm tracking-wide`}>
+                {services.length} {services.length === 1 ? "Service" : "Services"} Available
+              </span>
+            </div>
 
             <div className="space-y-6">
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
                 <span className={categoryClasses.text}>{categoryName}</span>
               </h1>
 
-              <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
+              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
                 Discover transformative services designed to elevate your family&apos;s journey
               </p>
             </div>
@@ -130,13 +139,13 @@ export function ServiceCategoryContent({ services }: ServiceCategoryContentProps
               </svg>
             </div>
 
-            <div className="relative  text-center space-y-8">
+            <div className="relative z-10 text-center space-y-8">
               <div className="space-y-4">
                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-white">
                   Ready to Begin Your Journey?
                 </h2>
                 <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
-                  Let&apos;s create a personalised plan that aligns with your goals and values
+                  Let&apos;s create a personalized plan that aligns with your goals and values
                 </p>
               </div>
 
@@ -156,7 +165,7 @@ export function ServiceCategoryContent({ services }: ServiceCategoryContentProps
               <div className="flex items-center justify-center gap-8 pt-8 text-white/80 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                  <span className="font-nunito">personalised approach</span>
+                  <span className="font-nunito">Personalized approach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -866,6 +875,142 @@ const iconIllustrations: Record<string, JSX.Element> = {
       </defs>
     </svg>
   ),
+  Sparkles: (
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" fill="none">
+      {/* Central activity hub */}
+      <circle cx="200" cy="200" r="50" fill="url(#sparklesGrad1)" opacity="0.6" />
+      <circle cx="200" cy="200" r="40" fill="white" opacity="0.4" />
+
+      {/* Activity icons in a circle */}
+      {/* Art/Painting */}
+      <g transform="translate(200, 100)">
+        <rect x="-20" y="-20" width="40" height="40" rx="6" fill="url(#sparklesGrad2)" opacity="0.6" />
+        <path d="M-10 -5 Q0 -15 10 -5" stroke="url(#sparklesGrad3)" strokeWidth="3" fill="none" opacity="0.7" />
+        <circle cx="-8" cy="5" r="4" fill="#ca6c28" opacity="0.7" />
+        <circle cx="0" cy="8" r="4" fill="#bc9b0a" opacity="0.7" />
+        <circle cx="8" cy="5" r="4" fill="#788a68" opacity="0.7" />
+      </g>
+
+      {/* Music/Dance */}
+      <g transform="translate(280, 160)">
+        <circle cx="0" cy="0" r="25" fill="url(#sparklesGrad3)" opacity="0.6" />
+        <path d="M-8 5 L-8 -10 L8 -12 L8 3" stroke="white" strokeWidth="3" fill="none" opacity="0.7" />
+        <ellipse cx="-8" cy="5" rx="5" ry="7" fill="white" opacity="0.7" />
+        <ellipse cx="8" cy="3" rx="5" ry="7" fill="white" opacity="0.7" />
+      </g>
+
+      {/* Sports/Ball */}
+      <g transform="translate(280, 240)">
+        <circle cx="0" cy="0" r="25" fill="url(#sparklesGrad4)" opacity="0.6" />
+        <circle cx="0" cy="0" r="18" stroke="white" strokeWidth="2" fill="none" opacity="0.7" />
+        <path d="M-18 0 L18 0 M0 -18 L0 18" stroke="white" strokeWidth="2" opacity="0.6" />
+        <path d="M-13 -13 L13 13 M13 -13 L-13 13" stroke="white" strokeWidth="2" opacity="0.5" />
+      </g>
+
+      {/* Theater/Drama */}
+      <g transform="translate(200, 300)">
+        <ellipse cx="0" cy="0" rx="22" ry="28" fill="url(#sparklesGrad5)" opacity="0.6" />
+        <path d="M-10 -5 Q0 5 10 -5" stroke="white" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.7" />
+        <circle cx="-7" cy="-8" r="3" fill="white" opacity="0.7" />
+        <circle cx="7" cy="-8" r="3" fill="white" opacity="0.7" />
+      </g>
+
+      {/* Science/Discovery */}
+      <g transform="translate(120, 240)">
+        <circle cx="0" cy="0" r="25" fill="url(#sparklesGrad6)" opacity="0.6" />
+        <path d="M-8 -10 L-8 0 L-15 10 L15 10 L8 0 L8 -10 Z" stroke="white" strokeWidth="2" fill="none" opacity="0.7" />
+        <circle cx="-5" cy="5" r="3" fill="white" opacity="0.6" />
+        <circle cx="3" cy="3" r="2" fill="white" opacity="0.6" />
+        <circle cx="7" cy="6" r="2" fill="white" opacity="0.6" />
+      </g>
+
+      {/* Reading/Books */}
+      <g transform="translate(120, 160)">
+        <rect x="-18" y="-22" width="36" height="44" rx="4" fill="url(#sparklesGrad2)" opacity="0.6" />
+        <line x1="0" y1="-22" x2="0" y2="22" stroke="white" strokeWidth="2" opacity="0.6" />
+        <line x1="-12" y1="-8" x2="12" y2="-8" stroke="white" strokeWidth="2" opacity="0.5" />
+        <line x1="-12" y1="0" x2="12" y2="0" stroke="white" strokeWidth="2" opacity="0.5" />
+        <line x1="-12" y1="8" x2="12" y2="8" stroke="white" strokeWidth="2" opacity="0.5" />
+      </g>
+
+      {/* Sparkle effects around activities */}
+      <path
+        d="M200 50 L203 60 L213 63 L205 70 L207 80 L200 75 L193 80 L195 70 L187 63 L197 60 Z"
+        fill="url(#sparklesGrad3)"
+        opacity="0.7"
+      />
+      <path
+        d="M340 200 L342 206 L348 208 L342 210 L340 216 L338 210 L332 208 L338 206 Z"
+        fill="url(#sparklesGrad4)"
+        opacity="0.6"
+      />
+      <path
+        d="M60 200 L62 206 L68 208 L62 210 L60 216 L58 210 L52 208 L58 206 Z"
+        fill="url(#sparklesGrad5)"
+        opacity="0.6"
+      />
+      <path
+        d="M200 350 L202 356 L208 358 L202 360 L200 366 L198 360 L192 358 L198 356 Z"
+        fill="url(#sparklesGrad6)"
+        opacity="0.6"
+      />
+
+      {/* Small sparkles */}
+      <circle cx="150" cy="120" r="3" fill="url(#sparklesGrad3)" opacity="0.7" />
+      <circle cx="250" cy="120" r="3" fill="url(#sparklesGrad4)" opacity="0.7" />
+      <circle cx="320" cy="200" r="3" fill="url(#sparklesGrad5)" opacity="0.7" />
+      <circle cx="250" cy="280" r="3" fill="url(#sparklesGrad6)" opacity="0.7" />
+      <circle cx="150" cy="280" r="3" fill="url(#sparklesGrad2)" opacity="0.7" />
+      <circle cx="80" cy="200" r="3" fill="url(#sparklesGrad3)" opacity="0.7" />
+
+      {/* Connection lines showing enrichment network */}
+      <path d="M200 150 L200 100" stroke="url(#sparklesGrad2)" strokeWidth="2" strokeDasharray="4,4" opacity="0.3" />
+      <path d="M235 175 L280 160" stroke="url(#sparklesGrad3)" strokeWidth="2" strokeDasharray="4,4" opacity="0.3" />
+      <path d="M235 225 L280 240" stroke="url(#sparklesGrad4)" strokeWidth="2" strokeDasharray="4,4" opacity="0.3" />
+      <path d="M200 250 L200 300" stroke="url(#sparklesGrad5)" strokeWidth="2" strokeDasharray="4,4" opacity="0.3" />
+      <path d="M165 225 L120 240" stroke="url(#sparklesGrad6)" strokeWidth="2" strokeDasharray="4,4" opacity="0.3" />
+      <path d="M165 175 L120 160" stroke="url(#sparklesGrad2)" strokeWidth="2" strokeDasharray="4,4" opacity="0.3" />
+
+      {/* Outer circle showing variety */}
+      <circle
+        cx="200"
+        cy="200"
+        r="130"
+        stroke="url(#sparklesGrad3)"
+        strokeWidth="2"
+        strokeDasharray="10,5"
+        fill="none"
+        opacity="0.3"
+      />
+
+      <defs>
+        <linearGradient id="sparklesGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#bc9b0a" />
+          <stop offset="100%" stopColor="#f0bf99" />
+        </linearGradient>
+        <linearGradient id="sparklesGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#788a68" />
+          <stop offset="100%" stopColor="#a3b185" />
+        </linearGradient>
+        <linearGradient id="sparklesGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ca6c28" />
+          <stop offset="100%" stopColor="#f0bf99" />
+        </linearGradient>
+        <linearGradient id="sparklesGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#bc9b0a" />
+          <stop offset="100%" stopColor="#ca6c28" />
+        </linearGradient>
+        <linearGradient id="sparklesGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#a3b185" />
+          <stop offset="100%" stopColor="#bc9b0a" />
+        </linearGradient>
+        <linearGradient id="sparklesGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#788a68" />
+          <stop offset="100%" stopColor="#ca6c28" />
+        </linearGradient>
+      </defs>
+    </svg>
+  ),
 }
 
 const defaultIllustration = (
@@ -915,7 +1060,7 @@ function ServiceCard({
             {service.title}
           </h2>
 
-          <p className="text-xl text-[#581b04]/70 leading-relaxed font-nunito font-light">{service.fullCopy}</p>
+          <p className="text-xl text-foreground/70 leading-relaxed font-nunito font-light">{service.fullCopy}</p>
         </div>
 
         <div className="space-y-4">
@@ -924,7 +1069,7 @@ function ServiceCard({
               <div className="flex-shrink-0 mt-1">
                 <CheckCircle2 className={`w-5 h-5 ${categoryClasses.text}`} />
               </div>
-              <p className="text-[#581b04]/80 leading-relaxed flex-1 font-nunito">{feature}</p>
+              <p className="text-foreground/80 leading-relaxed flex-1 font-nunito">{feature}</p>
             </div>
           ))}
         </div>

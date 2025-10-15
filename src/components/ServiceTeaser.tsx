@@ -2,24 +2,9 @@
 import type React from "react"
 import { useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { siteData } from "@/data/full-site"
 import type { ServiceData } from "@/types"
 import { serviceCategories } from "@/constants/services"
 import Link from "next/link"
-import { Utensils, Clock, UserSearch, GraduationCap, Baby, Heart } from "lucide-react"
-
-const iconMapping: Record<string, React.ComponentType<{ className?: string }>> = {
-  Utensils,
-  Clock,
-  UserSearch,
-  GraduationCap,
-  Baby,
-  Heart,
-}
-
-interface ServiceCardProps {
-  service: ServiceData
-}
 
 interface SmoothTabProps {
   className?: string
@@ -30,47 +15,6 @@ interface ServiceTeaserProps {
 }
 
 const tabs = serviceCategories
-
-const { services } = siteData
-
-const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
-  const IconComponent = iconMapping[service.icon] || Heart
-
-  return (
-    <div className="group bg-white/15 backdrop-blur-md rounded-3xl p-8 text-white h-full flex flex-col border border-white/30 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-1 relative overflow-hidden">
-      {/* Organic background decoration */}
-      <svg
-        className="absolute -top-10 -right-10 w-40 h-40 opacity-10 group-hover:opacity-20 transition-opacity"
-        viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="currentColor"
-          d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,39.8,76.8C25.8,84.6,8.8,87.6,-7.2,87.1C-23.2,86.6,-38.4,82.6,-52.1,75.2C-65.8,67.8,-78,57,-84.6,43.2C-91.2,29.4,-92.2,12.6,-89.8,-3.4C-87.4,-19.4,-81.6,-34.6,-72.8,-47.4C-64,-60.2,-52.2,-70.6,-38.6,-78.1C-25,-85.6,-9.6,-90.2,4.2,-97.2C18,-104.2,30.6,-83.6,44.7,-76.4Z"
-          transform="translate(100 100)"
-        />
-      </svg>
-
-      {/* Icon with enhanced styling */}
-      <div className="relative w-24 h-24 mb-6">
-        <div className="absolute inset-0 bg-white/25 rounded-3xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/35 transition-all duration-300 group-hover:scale-105">
-          <IconComponent className="w-12 h-12 text-white drop-shadow-lg" />
-        </div>
-        {/* Decorative elements */}
-        <div className="absolute -inset-3 bg-gradient-to-br from-white/15 to-transparent rounded-[2rem] - group-hover:from-white/25 transition-all"></div>
-        <div className="absolute top-3 right-3 w-5 h-5 bg-white/40 rounded-full group-hover:scale-110 transition-transform"></div>
-        <div className="absolute bottom-2 left-2 w-3 h-3 bg-white/50 rounded-full group-hover:scale-110 transition-transform"></div>
-      </div>
-
-      <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-quicksand)] tracking-wide">
-        {service.title}
-      </h3>
-      <p className="text-white/95 mb-6 flex-grow text-base leading-relaxed font-[family-name:var(--font-nunito)]">
-        {service.fullCopy}
-      </p>
-    </div>
-  )
-}
 
 const TabNavigation: React.FC<{
   tabs: typeof serviceCategories
@@ -83,7 +27,7 @@ const TabNavigation: React.FC<{
     switch (selectedTab.id) {
       case "everyday-support":
         return "bg-accent/40"
-      case "finding-support":
+      case "helping-hands-and-resources":
         return "bg-secondary/40"
       case "wellness-growth":
         return "bg-complementary/40"
@@ -112,7 +56,6 @@ const TabNavigation: React.FC<{
               />
             )}
             <span className="relative ">{tab.title}</span>
-            <span className="relative  text-xs md:text-sm font-nunito font-normal mt-1 opacity-80">{tab.description}</span>
           </button>
         ))}
       </div>
@@ -124,7 +67,6 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
   const [direction, setDirection] = useState<number>(0)
   const selectedTab = tabs[selectedIndex]
-  const selectedServices = services.filter((service) => service.category === selectedTab.id)
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -229,17 +171,16 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             <div className="absolute top-12 right-12 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-12 left-12 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
             {/* Content grid with staggered animations */}
-            <div className="relative  grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 mb-8">
-              {selectedServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                >
-                  <ServiceCard service={service} />
-                </motion.div>
-              ))}
+            <div className="relative  grid gap-6 md:gap-8 grid-cols-1">
+              <motion.div
+                key={selectedTab.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.4 }}
+              >
+                {/* <ServiceCard service={service} /> */}
+                <h2 className="font-bold text-center mb-6 text-2xl md:text-3xl lg:text-4xl">{selectedTab.description}</h2>
+              </motion.div>
             </div>
 
             {/*  CTA button */}

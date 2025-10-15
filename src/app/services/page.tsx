@@ -1,13 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Utensils, Clock, UserSearch, GraduationCap, Baby, Heart } from "lucide-react"
+import { ArrowRight, Sparkles, Utensils, Clock, UserSearch, GraduationCap, Baby, Heart, Activity } from "lucide-react"
 import { siteData } from "@/data"
-import { serviceCategories } from "@/constants/services"
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
-  description: "Comprehensive, personalised family support services designed around your unique needs and rhythm",
+  description: "Comprehensive, personalized family support services designed around your unique needs and rhythm",
 }
 
 const getCategoryClasses = (category: string) => {
@@ -19,7 +18,7 @@ const getCategoryClasses = (category: string) => {
         border: "border-accent",
         gradient: "from-accent to-accent/70",
       }
-    case "finding-support":
+    case "helping-hands-and-resources":
       return {
         bg: "bg-secondary",
         text: "text-secondary",
@@ -47,7 +46,7 @@ const getHoverTextClass = (category: string) => {
   switch (category) {
     case "everyday-support":
       return "group-hover:text-accent"
-    case "finding-support":
+    case "helping-hands-and-resources":
       return "group-hover:text-secondary"
     case "wellness-growth":
       return "group-hover:text-complementary"
@@ -63,6 +62,7 @@ const iconComponents: Record<string, React.ComponentType<{ className?: string }>
   GraduationCap,
   Baby,
   Heart,
+  Activity
 }
 
 export default function ServicesPage() {
@@ -104,12 +104,23 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-5xl relative">
           <div className="text-center space-y-12">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              <span className="text-accent font-medium text-sm tracking-wide">Our Services</span>
+            </div>
+
             <div className="space-y-6">
-              <h1 className="font-nunito text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
+              <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
                 Comprehensive, <br />
-                <span className="font-quicksand text-6xl md:text-7xl text-[#581b04] lg:text-8xl font-bold tracking-tight leading-[0.95]">personalised services</span>
+                <span className="font-nunito text-6xl md:text-7xl lg:text-8xl text-accent font-nunito font-extrabold">
+                  personalised services
+                </span>
                 <br /> designed around your <br />
-                <span className="text-6xl md:text-7xl lg:text-8xl text-[#581b04] font-quicksand font-extrabold">family needs</span> and rhythm
+                <span className="font-nunito text-5xl md:text-7xl lg:text-8xl text-[#581b04] font-nunito font-extrabold">
+                  unique needs
+                </span>{" "}
+                and rhythm
               </h1>
             </div>
 
@@ -136,9 +147,12 @@ export default function ServicesPage() {
         <div className="absolute top-20 -right-10 animate-pulse animation-duration-5000 w-96 h-96 rounded-full bg-accent/30"></div>
         <div className="absolute -bottom-10 left-5 w-96 h-96 animate-pulse animation-duration-5000 rounded-full bg-secondary/15"></div>
 
-        <div className="mx-auto max-w-[1400px] relative ">
+        <div className="mx-auto max-w-[1400px] relative z-10">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-quicksand text-3xl md:text-4xl lg:text-5xl md:max-w-[60%] md:mx-auto font-bold text-white">Explore our comprehensive range of family support services</h2>
+            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Services</h2>
+            <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
+              Explore our comprehensive range of family support services
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -242,13 +256,18 @@ export default function ServicesPage() {
           style={{ animationDelay: "0.8s" }}
         />
 
-        <div className="mx-auto max-w-5xl relative ">
+        <div className="mx-auto max-w-5xl relative z-10">
           <div className="relative rounded-[2.5rem] bg-white/95 backdrop-blur-sm shadow-2xl p-12 lg:p-16 border border-white/20">
             <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-complementary/20 rounded-tl-[2.5rem]" />
             <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-accent/20 rounded-br-[2.5rem]" />
 
             <div className="text-center space-y-8">
               <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-complementary/10 border border-complementary/20">
+                  <Sparkles className="w-4 h-4 text-complementary" />
+                  <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">Get Started</span>
+                </div>
+
                 {/* Updated text color */}
                 <h2 className="font-quicksand text-4xl lg:text-5xl font-bold text-[#581b04] leading-tight">
                   Ready to explore how we can support your family?
@@ -268,16 +287,27 @@ export default function ServicesPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                {serviceCategories.map((category) => (
-                  <Link
-                    key={category.id}
-                    href={`/services/${category.id}`}
-                    className={`inline-flex items-center gap-3 ${category.color} hover:${category.color}/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer`}
-                  >
-                    {category.title}
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                ))}
+                <Link
+                  href="/services/wellness-growth"
+                  className="inline-flex items-center gap-3 bg-complementary hover:bg-complementary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+                >
+                  Wellness & Growth
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/services/everyday-support"
+                  className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+                >
+                  Everyday Support
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/services/helping-hands-and-resources"
+                  className="inline-flex items-center gap-3 bg-secondary hover:bg-secondary/90 text-white font-quicksand text-lg px-10 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+                >
+                  Helping Hands and Resources
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
 
               {/* Updated text color */}
@@ -286,7 +316,7 @@ export default function ServicesPage() {
                   <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                   </div>
-                  <span className="font-medium">personalised approach</span>
+                  <span className="font-medium">Personalized approach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">

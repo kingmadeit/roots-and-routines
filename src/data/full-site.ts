@@ -38,102 +38,130 @@ export const siteData: SiteData = {
     { platform: "phone", url: "tel:+44", display: "+44" },
   ],
 
+
   services: [
     {
       id: "family-meals",
-      title: "Family Meals & Nutrition",
-      shortCopy:
-        "Stress-free meal planning and nutrition support tailored to your family.",
+      title: "Meals & Nutrition",
+      shortCopy: "Stress-free meal planning and nutrition support tailored to your family.",
       fullCopy:
         "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for picky eaters, ensuring every child gets the nourishment they need.",
       features: [
-        "Weekly meal planning",
-        "Tailored grocery shopping lists",
-        "Light meal prep guidance",
-        "Child nutrition tips",
-        "Picky eater strategies",
+        "Weekly meal planning and tailored grocery list",
+        "Simple, balanced recipes",
+        "Weaning and snack support for little ones",
+        "Easy and nutritious lunch box planning and prep",
+        "Nutrition support for fussy eaters",
       ],
       category: "everyday-support",
-      icon: 'Utensils',
+      icon: "Utensils",
     },
     {
       id: "routines-scheduling",
       title: "Routines & Scheduling",
-      shortCopy:
-        "Custom family routines and scheduling support for a smoother daily flow.",
+      shortCopy: "Custom family routines and scheduling support for a smoother daily flow.",
       fullCopy:
         "We create bespoke daily, weekly, and monthly routines to help your family thrive. From calendars to consistent habits, our support ensures structure without stress, making it easier to balance work, school, and family life.",
       features: [
-        "Custom daily/weekly/monthly routines",
-        "Calendar and schedule planning",
-        "Support building consistent habits",
+        "Family calendar and customised time management plan",
+        "After school and weekend activity scheduling",
+        "Morning and bedtime routine support and planning",
+        "Support in creating a calm and consistent rhythm at home",
       ],
       category: "everyday-support",
-      icon: 'Clock',
+      icon: "Clock",
     },
     {
-      id: "sourcing-referrals",
-      title: "Sourcing & Referrals",
-      shortCopy:
-        "Vetted professionals and family-friendly services delivered to your fingertips.",
+      id: "childcare",
+      title: "Childcare",
+      shortCopy: "Trusted childcare professionals tailored to your family's needs.",
       fullCopy:
-        "Finding reliable childcare, tutors, or enrichment programs can be stressful. We connect you with vetted babysitters, therapists, tutors, holiday clubs, after-school activities, and family-friendly events to ensure your household runs smoothly with trustworthy support.",
+        "Finding reliable childcare can be stressful. We connect you with trusted nannies, maternity nurses, night nannies and babysitters for ongoing or short-term support tailored to your child's needs.",
       features: [
-        "Vetted babysitters and nannies",
-        "Child therapists and tutors",
-        "Holiday clubs and after-school activities",
-        "Family-friendly events and outings",
+        "Trusted nannies, maternity nurses, night nannies and babysitters",
+        "Ongoing or short-term support tailored to your child's needs",
       ],
-      category: "finding-support",
-      icon: 'UserSearch',
+      category: "helping-hands-and-resources",
+      icon: "UserSearch",
     },
+    // {
+    //   id: "sourcing-referrals",
+    //   title: "Sourcing & Referrals",
+    //   shortCopy: "Vetted professionals and family-friendly services delivered to your fingertips.",
+    //   fullCopy:
+    //     "Finding reliable childcare, tutors, or enrichment programs can be stressful. We connect you with vetted babysitters, therapists, tutors, holiday clubs, after-school activities, and family-friendly events to ensure your household runs smoothly with trustworthy support.",
+    //   features: [
+    //     "Vetted babysitters and nannies",
+    //     "Child therapists and tutors",
+    //     "Holiday clubs and after-school activities",
+    //     "Family-friendly events and outings",
+    //   ],
+    //   category: "helping-hands-and-resources",
+    //   icon: "UserSearch",
+    // },
     {
       id: "education-guidance",
-      title: "School & Activity Guidance",
-      shortCopy:
-        "Expert guidance to find schools, nurseries, and activities aligned with your values.",
+      title: "Education & Learning",
+      shortCopy: "Expert guidance to find schools, nurseries, and activities aligned with your values.",
       fullCopy:
         "We help families find nurseries, schools, and after-school clubs that match your values and needs. From shortlisting and visit prep to application guidance, we support decision-making and connect you with trusted educational professionals.",
       features: [
-        "School and nursery search aligned with family values",
-        "Support with visits, shortlisting, and applications",
-        "Referrals to tutors and educational therapists",
+        "Nursery, school & tutor recommendations",
+        "Guidance and support through applications and admissions",
+        "Shortlisting and decision making support",
       ],
-      category: "finding-support",
-      icon: 'GraduationCap',
+      category: "helping-hands-and-resources",
+      icon: "GraduationCap",
+    },
+    {
+      id: "activities-enrichment",
+      title: "Activities & Enrichment",
+      shortCopy: "Enriching activities and experiences for your family.",
+      fullCopy:
+        "We help you find local after school clubs, weekend classes, holiday camps and family-friendly events. From cultural experiences to creative activities, we connect you with enriching opportunities for children of all ages.",
+      features: [
+        "Finding local after school clubs, weekend classes and activities",
+        "Holiday camps and family friendly local and national events",
+        "Finding cultural and creative experiences for families and children of all ages",
+      ],
+      category: "helping-hands-and-resources",
+      icon: "Activity",
     },
     {
       id: "parent-support",
       title: "New Parent Support",
-      shortCopy:
-        "Guidance and trusted referrals for new parents navigating early family life.",
+      shortCopy: "Guidance and trusted referrals for new parents navigating early family life.",
       fullCopy:
         "Navigating early parenthood can be overwhelming. We provide referrals to trusted maternity and night nannies, offer breastfeeding and weaning tips, support daily routines and sleep schedules, and provide emotional well-being guidance to help parents feel supported and confident.",
       features: [
-        "Trusted maternity and night nanny referrals",
-        "Breastfeeding and weaning guidance",
-        "Daily routine and sleep support",
-        "Emotional well-being strategies for parents",
+        "Pre natal and postnatal wellbeing support",
+        "Access to trusted local resources and services",
+        "Referrals to maternity and night nannies",
+        "Feeding, weaning and sleeping guidance",
+        "Gentle scheduling for daily balance and calm",
+        "Pre natal and postnatal nutrition guidance",
       ],
       category: "wellness-growth",
-      icon: 'Baby',
+      icon: "Baby",
     },
     {
       id: "family-wellness",
-      title: "Family Wellness Add-Ons",
-      shortCopy:
-        "Holistic support for sleep, emotional regulation, and stress reduction.",
+      title: "Wellness + Add-Ons",
+      shortCopy: "Holistic support for sleep, emotional regulation, and stress reduction.",
       fullCopy:
         "We offer additional wellness support for families, including establishing healthy sleep and hygiene routines, strategies for children's emotional regulation, and stress reduction plans for parents, ensuring the entire family thrives together.",
       features: [
-        "Sleep and hygiene routines",
-        "Emotional regulation strategies for children",
-        "Parent stress reduction plans and wellness support",
+        "Family wellbeing check-ins and resources",
+        "Stress reduction and mindfulness strategies",
+        "Sleep and hygiene guidance for children",
+        "Emotional regulation and behavioural support",
+        "Connections to local family support groups",
       ],
       category: "wellness-growth",
-      icon: 'Heart',
+      icon: "Heart",
     },
   ],
+
   packages: [
     {
       id: "first-steps",
@@ -235,30 +263,30 @@ export const siteData: SiteData = {
           {
             id: "faq-general-1",
             category: "general",
-            question: "What is Roots & Routines Family Concierge?",
+            question: "What is Roots & Routines?",
             answer:
-              "Roots & Routines is a family-focused concierge service designed to bring ease, structure, and support into your home. We help parents with everything from meal planning and nutrition guidance to sourcing childcare, setting routines, and finding trusted family resources. Think of us as your go-to support system for family life.",
+              "We're a family-focused concierge service offering tailored support for parents and children - from nutrition to childcare sourcing, school help and family wellness. We bring ease, structure and joy into everyday family life.",
           },
           {
             id: "faq-general-2",
             category: "general",
-            question: "Who can benefit from your services?",
+            question: "Who do we support?",
             answer:
-              "Any parent, parent-to-be, or family who wants extra support in managing the busy demands of home life. Whether you're a new parent navigating sleepless nights, a busy family juggling schedules, or simply looking for more structure and calm—we're here for you.",
+              "We work with families of all shapes and sizes - new parents, busy working families and those looking for balance and structure at home.",
           },
           {
             id: "faq-general-3",
             category: "general",
-            question: "How do I get started with Roots & Routines?",
+            question: "Are your services only available in the UK?",
             answer:
-              "You can start by reaching out through our contact form or social media links. We'll arrange an initial consultation to understand your family's needs and create a tailored support plan that works for you.",
+              "We support families across the UK and internationally - our services are available both online and in-person.",
           },
           {
             id: "faq-general-4",
             category: "general",
-            question: "Do you work with families outside of your location?",
+            question: "How do I get started?",
             answer:
-              "Yes! While we love working with families locally, many of our services—such as meal planning, nutrition support, routines, and sourcing—can be provided virtually.",
+              "You can get in touch via email or WhatsApp. We'll schedule a short consultation to understand your needs and create a plan that suits your family.",
           },
         ],
       },
@@ -269,71 +297,30 @@ export const siteData: SiteData = {
           {
             id: "faq-services-1",
             category: "services",
-            question: "What types of support do you provide for new parents?",
+            question: "What kind of support do you offer?",
             answer:
-              "We offer practical and emotional support including referrals to trusted maternity and night nannies, breastfeeding and weaning guidance, sleep and hygiene routines, and wellbeing add-ons like stress reduction and emotional regulation tips for new parents.",
+              "Our services include nutrition advice and support, family routines and scheduling, new parents guidance, sourcing childcare and schools, activity and extra curricular sourcing and family wellness add-ons.",
           },
           {
             id: "faq-services-2",
             category: "services",
-            question: "Do you help with finding childcare (nannies, babysitters, maternity nurses, night nannies)?",
+            question: "Can I choose a combination of services?",
             answer:
-              "Yes. We carefully source and recommend childcare professionals, ensuring they are trusted, experienced, and suited to your family's unique needs.",
+              "We specialise in personalised family plans - whether you need a one-off consultation or ongoing support we'll tailor it to fit the lifestyle, needs and values of your family.",
           },
           {
             id: "faq-services-3",
             category: "services",
-            question: "Can you assist with meal planning and nutrition?",
+            question: "Do you help find nannies and babysitters?",
             answer:
-              "Absolutely. From tailored weekly grocery lists to healthy meal prep and child nutrition advice, we help families eat well with ease.",
+              "Yes. We connect families with trusted and vetted childcare professionals - from nannies to au pairs, babysitters, maternity nurses and night nannies. All on either long-term or short-term basis.",
           },
           {
             id: "faq-services-4",
             category: "services",
-            question: "Do you help families find schools, nurseries, or after-school clubs?",
+            question: "Can you help with school and nursery application?",
             answer:
-              "Yes—we research and provide recommendations for schools, nurseries, after-school activities, holiday clubs, and even family-friendly events to fit your lifestyle and needs.",
-          },
-          {
-            id: "faq-services-5",
-            category: "services",
-            question: "Do you provide routine or scheduling support for families?",
-            answer:
-              "We specialise in creating personalised routines that bring balance to your home—covering sleep, meals, school schedules, playtime, and parent self-care.",
-          },
-        ],
-      },
-      {
-        id: "bookings",
-        name: "Bookings & Pricing",
-        questions: [
-          {
-            id: "faq-bookings-1",
-            category: "bookings",
-            question: "How do I book your services?",
-            answer:
-              "Simply contact us via email or social media. We'll arrange a consultation to understand your needs and suggest the best support package.",
-          },
-          {
-            id: "faq-bookings-2",
-            category: "bookings",
-            question: "Do you offer one-time consultations or ongoing support packages?",
-            answer:
-              "Both. Some families prefer one-time guidance, while others benefit from ongoing, hands-on support. We'll work with you to find the right fit.",
-          },
-          {
-            id: "faq-bookings-3",
-            category: "bookings",
-            question: "What are your rates?",
-            answer:
-              "Our services are tailored, so pricing depends on your specific needs. We'll provide a clear outline after our initial consultation.",
-          },
-          {
-            id: "faq-bookings-4",
-            category: "bookings",
-            question: "Is there a minimum or maximum commitment required?",
-            answer:
-              "No—you can book what works best for your family, whether that's a single session or a long-term package.",
+              "Yes - we do the research and shortlisting based on your needs, wants and expectations. We guide through every step to help you make confident decisions.",
           },
         ],
       },
@@ -344,22 +331,56 @@ export const siteData: SiteData = {
           {
             id: "faq-trust-1",
             category: "trust",
-            question: "How do you choose or vet the professionals you recommend (nannies, therapists, etc.)?",
+            question: "How do you ensure the professionals you recommend are trustworthy?",
             answer:
-              "We only recommend trusted, experienced professionals. Each referral is thoroughly researched, and we ensure they meet high standards for safety, professionalism, and care.",
+              "We carefully vet all professionals - we check references, qualifications, experience and have DBS checks.",
           },
           {
             id: "faq-trust-2",
             category: "trust",
-            question: "Are your services confidential?",
+            question: "Is my family's information kept private?",
             answer:
-              "Yes. Your family's privacy is our priority. All conversations and arrangements are kept completely confidential.",
+              "We take confidentiality very seriously. Your personal information and family's details are always handled with care and discretion. Any sensitive information you choose to share with us is only known by our founder and any other professional you work with through us and only when you've given us permission to share it with them.",
           },
           {
             id: "faq-trust-3",
             category: "trust",
-            question: "Do you provide references or testimonials?",
-            answer: "Yes—upon request, we're happy to share feedback from families we've supported.",
+            question: "Are your recommendations independent?",
+            answer:
+              "YES! With you leading and us supporting we choose what's genuinely best for your family with no third party influence or sponsorship.",
+          },
+        ],
+      },
+      {
+        id: "bookings",
+        name: "Bookings & Pricing",
+        questions: [
+          {
+            id: "faq-bookings-1",
+            category: "bookings",
+            question: "How do I book a consultation or service?",
+            answer: "You can book by contacting us through email or WhatsApp.",
+          },
+          {
+            id: "faq-bookings-2",
+            category: "bookings",
+            question: "Do you offer packages or one-time sessions?",
+            answer:
+              "Both. You can book single sessions for specific needs or choose ongoing concierge packages for consistent family support.",
+          },
+          {
+            id: "faq-bookings-3",
+            category: "bookings",
+            question: "How do I make payments?",
+            answer:
+              "We accept secure online payments via bank transfer or payment links once your service plan is confirmed.",
+          },
+          {
+            id: "faq-bookings-4",
+            category: "bookings",
+            question: "Do you charge for the initial consultation?",
+            answer:
+              "We offer a paid consultation to discuss your family's needs in detail and outline the best plan for you. If you choose to go ahead with our services the consultation fee is then credited towards your chosen service package.",
           },
         ],
       },
@@ -370,16 +391,23 @@ export const siteData: SiteData = {
           {
             id: "faq-extras-1",
             category: "extras",
-            question: "Can I gift Roots & Routines services to a family member or friend?",
+            question: "Do you provide ongoing check-ins?",
             answer:
-              "Yes! Support is a beautiful gift. We offer gift options for expecting parents, new parents, and busy families.",
+              "Yes! Families who book an ongoing service receive regular check-ins, updates and follow-ups for continued support and adjustments.",
           },
           {
             id: "faq-extras-2",
             category: "extras",
-            question: "Do you offer virtual support as well as in-person?",
+            question: "Can you customise a plan if we have specific family needs?",
             answer:
-              "Yes—many of our services, such as meal planning, routines, nutrition support, and sourcing, are available virtually for families everywhere.",
+              "Of course - every family is different and we pride ourselves in offering flexible, thoughtful and personal guidance.",
+          },
+          {
+            id: "faq-extras-3",
+            category: "extras",
+            question: "Can you help with family events and holidays?",
+            answer:
+              "Definitely - we can help source family friendly getaways both nationally and internationally, local activities and events to help you create lasting memories together.",
           },
         ],
       },

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { siteData } from "@/data"
-import { serviceCategories } from "@/constants/services"
 import { ServiceCategoryContent } from "@/components/ServiceCategoryContent"
 
 type Params = {
@@ -40,11 +39,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 export default async function ServiceCategoryPage({ params }: { params: Promise<Params> }) {
   const { category } = await params
   const filteredServices = siteData.services.filter((s) => s.category === category)
-  const categoryColor = serviceCategories.find((c) => c.id === category)?.color
 
   if (!filteredServices.length) {
     return <div>Service category not found.</div>
   }
 
-  return <ServiceCategoryContent services={filteredServices} categoryColor={categoryColor} />
+  return <ServiceCategoryContent services={filteredServices} />
 }
