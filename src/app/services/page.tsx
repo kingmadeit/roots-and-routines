@@ -104,12 +104,6 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-5xl relative">
           <div className="text-center space-y-12">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border border-accent/20">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-accent font-medium text-sm tracking-wide">Our Services</span>
-            </div>
-
             <div className="space-y-6">
               <h1 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5] text-primary-light">
                 Comprehensive, <br />

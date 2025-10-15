@@ -73,22 +73,12 @@ export function ServiceCategoryContent({ services }: ServiceCategoryContentProps
 
         <div className="mx-auto max-w-5xl relative">
           <div className="text-center space-y-12">
-            {/* Badge */}
-            <div
-              className={`inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-5 py-2.5 rounded-full border ${categoryClasses.border}/20`}
-            >
-              <div className={`w-1.5 h-1.5 rounded-full ${categoryClasses.bg} animate-pulse`} />
-              <span className={`${categoryClasses.text} font-medium text-sm tracking-wide`}>
-                {services.length} {services.length === 1 ? "Service" : "Services"} Available
-              </span>
-            </div>
-
             <div className="space-y-6">
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
                 <span className={categoryClasses.text}>{categoryName}</span>
               </h1>
 
-              <p className="text-2xl md:text-3xl text-foreground/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
+              <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
                 Discover transformative services designed to elevate your family&apos;s journey
               </p>
             </div>
@@ -1060,7 +1050,7 @@ function ServiceCard({
             {service.title}
           </h2>
 
-          <p className="text-xl text-foreground/70 leading-relaxed font-nunito font-light">{service.fullCopy}</p>
+          <p className="text-xl text-[#581b04]/70 leading-relaxed font-nunito font-light">{service.fullCopy}</p>
         </div>
 
         <div className="space-y-4">
@@ -1069,7 +1059,7 @@ function ServiceCard({
               <div className="flex-shrink-0 mt-1">
                 <CheckCircle2 className={`w-5 h-5 ${categoryClasses.text}`} />
               </div>
-              <p className="text-foreground/80 leading-relaxed flex-1 font-nunito">{feature}</p>
+              <p className={`font-bold text-${categoryClasses.bg.replace('bg-', '')} text-large md:text-1xl lg:text-2xl leading-relaxed flex-1 font-nunito`}>{feature}</p>
             </div>
           ))}
         </div>

@@ -45,7 +45,7 @@ export const siteData: SiteData = {
       title: "Meals & Nutrition",
       shortCopy: "Stress-free meal planning and nutrition support tailored to your family.",
       fullCopy:
-        "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for picky eaters, ensuring every child gets the nourishment they need.",
+        "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for fussy eaters, ensuring every child gets the nourishment they need.",
       features: [
         "Weekly meal planning and tailored grocery list",
         "Simple, balanced recipes",
@@ -155,7 +155,7 @@ export const siteData: SiteData = {
         "Stress reduction and mindfulness strategies",
         "Sleep and hygiene guidance for children",
         "Emotional regulation and behavioural support",
-        "Connections to local family support groups",
+        "Connections to local family support groups and services",
       ],
       category: "wellness-growth",
       icon: "Heart",
