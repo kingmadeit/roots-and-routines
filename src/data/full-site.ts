@@ -28,14 +28,14 @@ export const siteData: SiteData = {
 
   socialLinks: [
     { platform: "instagram", url: "https://www.instagram.com/routinesandroots", display: "Instagram" },
-    { platform: "tiktok", url: "#", display: "TikTok" },
+    { platform: "tiktok", url: "https://www.tiktok.com/@rootsroutines6", display: "TikTok" },
     {
       platform: "email",
       url: "mailto:rootsandroutines@gmail.com",
       display: "rootsandroutines@gmail.com",
     },
-    { platform: "whatsapp", url: "#", display: "WhatsApp" },
-    { platform: "phone", url: "tel:+44", display: "+44" },
+    { platform: "whatsapp", url: "https://wa.me/447784972534", display: "WhatsApp" },
+    { platform: "phone", url: "tel:+447784972534", display: "+44" },
   ],
 
 
@@ -247,9 +247,9 @@ export const siteData: SiteData = {
   },
 
   contact: {
-    email: "hello@rootsandroutines.co.uk",
-    phone: "+44 11 1234 5678",
-    whatsapp: "#123456789",
+    email: "rootsandroutines@gmail.com",
+    phone: "+447784972534",
+    whatsapp: "https://wa.me/447784972534",
     businessHours: "Monday - Friday, 9:00 AM - 6:00 PM",
   },
 
