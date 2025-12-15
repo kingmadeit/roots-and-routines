@@ -1,19 +1,19 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-const Carousel = dynamic(
-  () =>
-    import("./ui/carousel").then(
-      (mod) =>
-        new Promise<typeof mod>((resolve) =>
-          setTimeout(() => resolve(mod), 1000)
-        )
-    ),
-  {
-    ssr: false,
-  }
-);
+// const Carousel = dynamic(
+//   () =>
+//     import("./ui/carousel").then(
+//       (mod) =>
+//         new Promise<typeof mod>((resolve) =>
+//           setTimeout(() => resolve(mod), 1000)
+//         )
+//     ),
+//   {
+//     ssr: false,
+//   }
+// );
 
 export default function CarouselWrapper() {
   const [inView, setInView] = useState(false);
@@ -45,7 +45,7 @@ export default function CarouselWrapper() {
     <div ref={ref}>
       {inView ? (
         <div>
-          <Carousel />
+          {/* <Carousel /> */}
         </div>
       ) : (
         <div className="w-full h-full bg-gray-100 rounded animate-pulse" />

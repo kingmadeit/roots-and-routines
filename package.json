@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "clean": "rm -rf .next",
+    "lint": "next lint --no-cache",
+    "lint:fix": "next lint --fix --no-cache",
+    "clean": "rm -rf .next .turbo node_modules/.cache .eslintcache *.tsbuildinfo",
     "clean-build": "npm run clean && npm run build",
+    "clean:all": "npm run clean && rm -rf node_modules package-lock.json && npm install",
     "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
@@ -20,7 +22,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.539.0",
     "motion": "^12.23.12",
-    "next": "15.4.5",
+    "next": "15.4.10",
     "ogl": "^1.0.11",
     "react": "19.1.0",
     "react-dom": "19.1.0",

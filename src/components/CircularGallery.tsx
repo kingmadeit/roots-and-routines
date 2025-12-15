@@ -18,15 +18,6 @@ function lerp(p1: number, p2: number, t: number): number {
   return p1 + (p2 - p1) * t;
 }
 
-function autoBind(instance: any): void {
-  const proto = Object.getPrototypeOf(instance);
-  Object.getOwnPropertyNames(proto).forEach(key => {
-    if (key !== 'constructor' && typeof instance[key] === 'function') {
-      instance[key] = instance[key].bind(instance);
-    }
-  });
-}
-
 interface ScreenSize {
   width: number;
   height: number;
@@ -267,7 +258,7 @@ interface AppConfig {
   borderRadius?: number;
   scrollSpeed?: number;
   scrollEase?: number;
-  isMobile?:boolean;
+  isMobile?: boolean;
 }
 
 class App {
@@ -291,7 +282,7 @@ class App {
   screen!: { width: number; height: number };
   viewport!: { width: number; height: number };
   raf: number = 0;
-  isMobile:boolean;
+  isMobile: boolean;
 
   boundOnResize!: () => void;
   boundOnWheel!: (e: Event) => void;
@@ -331,9 +322,9 @@ class App {
 
   setActive(active: boolean) {
     if (this.isActive === active) return;
-    
+
     this.isActive = active;
-    
+
     if (active) {
       console.log('adding raf');
       this.addEventListeners();
@@ -385,28 +376,28 @@ class App {
   ) {
 
     // TODO: CHANGE THIS (for testing)
-    const defaultItems = this.isMobile ? 
-    [
-      { image: `img-1.webp` },
-      { image: `img-2.webp` },
-      { image: `img-3.webp` },
-      { image: `img-4.webp` },
-      { image: `img-2.webp` },
-    ] :
-    [
-      { image: `img-1.webp` },
-      { image: `img-2.webp` },
-      { image: `img-3.webp` },
-      { image: `img-4.webp` },
-      { image: `img-2.webp` },
-      { image: `img-1.webp` },
-      { image: `img-2.webp` },
-      { image: `img-4.webp` },
-      { image: `img-3.webp` },
-      { image: `img-1.webp` },
-      { image: `img-2.webp` },
-      { image: `img-4.webp` }
-    ];
+    const defaultItems = this.isMobile ?
+      [
+        { image: `img-1.webp` },
+        { image: `img-2.webp` },
+        { image: `img-3.webp` },
+        { image: `img-4.webp` },
+        { image: `img-2.webp` },
+      ] :
+      [
+        { image: `img-1.webp` },
+        { image: `img-2.webp` },
+        { image: `img-3.webp` },
+        { image: `img-4.webp` },
+        { image: `img-2.webp` },
+        { image: `img-1.webp` },
+        { image: `img-2.webp` },
+        { image: `img-4.webp` },
+        { image: `img-3.webp` },
+        { image: `img-1.webp` },
+        { image: `img-2.webp` },
+        { image: `img-4.webp` }
+      ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
     this.medias = this.mediasImages.map((data, index) => {
@@ -479,7 +470,7 @@ class App {
 
   update() {
     if (!this.isActive) return;
-    
+
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     if (this.medias) {
@@ -571,7 +562,7 @@ export default function CircularGallery({
   // Initialize the WebGL app
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     const app = new App(containerRef.current, {
       items,
       bend,
@@ -580,14 +571,14 @@ export default function CircularGallery({
       scrollEase,
       isMobile
     });
-    
+
     appRef.current = app;
 
     return () => {
       app.destroy();
       appRef.current = null;
     };
-  }, [items, bend, borderRadius, scrollSpeed, scrollEase]);
+  }, [items, bend, borderRadius, scrollSpeed, scrollEase, isMobile]);
 
   // Control app activity based on visibility
   useEffect(() => {

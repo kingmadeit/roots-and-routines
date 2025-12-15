@@ -1,4 +1,3 @@
-import { ElementType } from "react";
 
 export interface MetaData {
   title: string;
@@ -36,7 +35,8 @@ export interface ServiceData {
   fullCopy: string; // detailed page copy
   features: string[];
   category: string;
-  icon: ElementType;
+  // icon: ElementType;
+  icon: string;
   meta?: MetaData;
   href?: string;
 }
@@ -231,15 +231,22 @@ export interface PagesData {
 // FAQ Types
 //====================================
 export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
+  id: string
+  question: string
+  answer: string
+  category: string
 }
 
+export interface FAQCategory {
+  id: string
+  name: string
+  questions: FAQItem[]
+}
+
+
 export interface FAQData {
-  title: string;
-  subtitle: string;
-  questions: FAQItem[];
+  title: string
+  categories: FAQCategory[]
 }
 
 export interface FAQComponentProps {

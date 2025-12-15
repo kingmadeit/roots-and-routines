@@ -23,7 +23,7 @@ export const pagesData: PagesData = {
     servicesTeaser: {
       title: "Our Services",
       description:
-        "Practical, personalized support for every stage of family life.",
+        "Practical, personalised support for every stage of family life.",
       featuredServices: siteData.services.map((service) => ({
         id: service.id,
         title: service.title,
@@ -155,7 +155,7 @@ export const pagesData: PagesData = {
     meta: {
       title: `Contact | ${siteData.company.name}`,
       description:
-        "Get in touch with Roots & Routines for personalized family support.",
+        "Get in touch with Roots & Routines for personalised family support.",
       image: "/images/contact-og.jpg",
     },
     email: siteData.contact.email,

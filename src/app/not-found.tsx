@@ -6,7 +6,7 @@ import { Squirrel } from 'lucide-react';
 const NotFound = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-accent text-center p-4">
-      
+
       {/* SVG Icon for Not Found */}
       <Squirrel strokeWidth={1} className="w-40 h-40 text-accent" />
       {/* Main Heading */}
@@ -15,7 +15,7 @@ const NotFound = () => {
       </h1>
 
       {/* Subtitle */}
-      <p className="text-2xl md:text-3xl font-semibold mb-6">
+      <p className="text-2xl md:text-3xl text-[#581b04] font-semibold mb-6">
         Oops! Page not found.
       </p>
 

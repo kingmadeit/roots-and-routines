@@ -1,25 +1,20 @@
 export { default as Nav } from './Nav';
 export { default as Header } from './Header';
 export { default as Footer } from './Footer';
-export { default as PaymentForm } from './PaymentForm';
 export { default as Testimonial } from './Testimonial';
 export { default as Hero } from './Hero';
 export { default as AboutTeaser } from './AboutTeaser';
 export { default as ServiceTeaser } from './ServiceTeaser';
 export { default as PackagesTeaser } from './PackagesTeaser';
-export { default as FeaturedService } from './FeaturedService';
 export { default as FounderQuote } from './FounderQuote';
 export { default as ContactTeaser } from './ContactTeaser';
 export { default as ContactInfo } from './ContactInfo';
-export { default as CarouselWrapper } from './CarouselWrapper';
 export { default as FAQ } from './FAQ';
 export { default as FloatingIcons } from './FloatingIcons';
 export { default as Logo } from './Logo';
-export { default as CircularGallery } from './CircularGallery';
 export { default as ComingSoon } from './ComingSoon';
 export { default as ContactOptions } from './ContactOptions';
 export { default as PageWrapper } from './PageWrapper';
-export { default as MediaBlock } from './MediaBlock';
 export { default as Animated } from './Animated';
-export { default as ServiceCategory} from './ServiceCategory'
-export { default as ServiceCategoryContent} from './ServiceCategoryContent'
+// export { default as ServiceCategory} from './ServiceCategory'
+// export { default as ServiceCategoryContent} from './ServiceCategoryContent'

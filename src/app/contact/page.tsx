@@ -1,9 +1,10 @@
-import {ComingSoon} from '@/components'
-import React from 'react'
+import ContactOptions from '@/components/ContactOptions'
 
 const Contact = () => {
   return (
-    <ComingSoon />
+    <div className='w-full min-h-screen grid grid-col-1 place-content-center'>
+      <ContactOptions />
+    </div>
   )
 }
 

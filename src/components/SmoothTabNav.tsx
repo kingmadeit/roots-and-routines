@@ -22,8 +22,8 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
   const [dimensions, setDimensions] = useState({ width: 0, left: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
-  
-  const selectedTab = tabs[selectedIndex]; 
+
+  const selectedTab = tabs[selectedIndex];
 
   const updateDimensions = useCallback((tabId: string) => {
     const button = buttonRefs.current.get(tabId);
@@ -39,7 +39,7 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
   }, []);
 
   useLayoutEffect(() => {
-    const handleResize = () => updateDimensions(selectedTab.id); 
+    const handleResize = () => updateDimensions(selectedTab.id);
     requestAnimationFrame(() => updateDimensions(selectedTab.id));
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -58,9 +58,9 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
       <div className={`flex justify-center mb-8 ${className || ""}`}>
         <div
           ref={containerRef}
-          className={clsx("flex w-full h-full items-start gap-2 p-2 relative rounded-3xl", 
-          bgColorMap[selectedTab.color] || 'bg-accent/40')}
-        > 
+          className={clsx("flex w-full h-full items-start gap-2 p-2 relative rounded-3xl",
+            bgColorMap[selectedTab.color] || 'bg-accent/40')}
+        >
           <Animated as="div"
             className={`absolute rounded-2xl z-[1] ${selectedTab?.color || "bg-accent"} shadow-lg`}
             initial={false}
@@ -80,7 +80,7 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
           <div className="flex gap-2 h-full relative z-[2]">
             {tabs.map((tab) => {
               const isSelected = selectedTab.id === tab.id;
-              const isLink = !!tab.linksTo; 
+              const isLink = !!tab.linksTo;
 
               const content: ReactNode = (
                 <>
@@ -90,12 +90,17 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
                   </span>
                 </>
               );
-
               return (
                 <Animated
                   as="button"
                   key={tab.id}
-                  ref={(el: HTMLButtonElement) => {el ? buttonRefs.current.set(tab.id, el) : buttonRefs.current.delete(tab.id)}}
+                  ref={(el: HTMLButtonElement) => {
+                    if (el) {
+                      buttonRefs.current.set(tab.id, el);
+                    } else {
+                      buttonRefs.current.delete(tab.id);
+                    }
+                  }}
                   type="button"
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => isLink ? e.preventDefault() : handleOnChange(tab)}
                   onMouseEnter={() => isLink && handleOnChange(tab)}
@@ -121,5 +126,6 @@ const SmoothTabNav: React.FC<SmoothTabNavProps> = memo(({ tabs, className, selec
     </div>
   );
 });
+SmoothTabNav.displayName = 'SmoothTabNav';
 
 export default SmoothTabNav;

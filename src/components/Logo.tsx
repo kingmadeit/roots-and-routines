@@ -1,30 +1,24 @@
-
-import Image from "next/image";
-import Link from "next/link";
-import { Animated } from ".";
+import Image from "next/image"
+import Link from "next/link"
 
 const Logo = () => {
   return (
-    <Link href="/" className="cursor-pointer translate-y-5">
-      <Animated 
-        as='div'
-        initial={{ x: -100, opacity: 0, scale: 1.25 }}
-        animate={{ x: 0, opacity: 1, scale: 1.25 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="w-[clamp(6rem,6vw,6rem)] h-[clamp(6rem,6vw,6rem)]"
-      >
+    <Link href="/" className="relative mt-4 group cursor-pointer z-50">
+      <div className="w-20 h-20 md:w-24 md:h-24 relative rounded-full ring-bg-primary/20 group-hover:ring-2 group-hover:ring-bg-accent transition-all duration-300 ease-out group-hover:scale-105">
         <Image
           src="/logo.png"
-          alt="Company Logo"
-          width={200}
-          height={200}
-          className="logo rounded-full"
+          alt="Roots & Routines Logo"
+          width={96}
+          height={96}
+          className="rounded-full shadow-lg"
           priority
-          sizes="(max-width: 640px) 12vw, (max-width: 1024px) 8vw, 6vw"
+          sizes="(max-width: 768px) 80px, 96px"
         />
-      </Animated>
+        {/* Decorative accent dot */}
+        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-background opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
     </Link>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo
