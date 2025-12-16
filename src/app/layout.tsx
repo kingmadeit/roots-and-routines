@@ -50,13 +50,16 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Roots and Routines",
-      url: "https://rootsnroutines.com.uk",
+      url: "https://rootsnroutines.com",
     },
   ],
   other: {
     "color-scheme": "light",
     "darkreader-lock": "",
   },
+  verification: {
+    google: 'ZRa3SBGYuiRcRNvsAAZo87C8ZtKrk5WMuC9mjJYjHTY'
+  }
 };
 
 
