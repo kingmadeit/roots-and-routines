@@ -14,7 +14,7 @@ export const siteData: SiteData = {
     philosophy:
       "Families today are stretched, and one-size-fits-all solutions don’t work. Our experience in childcare, nutrition, and household management ensures personalised, reliable support for your unique family needs.",
     story:
-      "Founded with care and intention, Roots & Routines Family Concierge is a personalised service dedicated to helping families create smoother home routines, find trusted support, and make confident decisions for their child's wellbeing.",
+      "Founded with care and intention, Roots & Routines Family Concierge is a personalised service dedicated to helping families create smoother home routines, find trusted support, and make confident decisions for their children wellbeing.",
     logo: "/logo.png",
   },
 
@@ -27,23 +27,35 @@ export const siteData: SiteData = {
   ],
 
   socialLinks: [
-    { platform: "instagram", url: "https://www.instagram.com/routinesandroots", display: "Instagram" },
-    { platform: "tiktok", url: "https://www.tiktok.com/@rootsroutines6", display: "TikTok" },
+    {
+      platform: "instagram",
+      url: "https://www.instagram.com/routinesandroots",
+      display: "Instagram",
+    },
+    {
+      platform: "tiktok",
+      url: "https://www.tiktok.com/@rootsroutines6",
+      display: "TikTok",
+    },
     {
       platform: "email",
       url: "mailto:rootsandroutines@gmail.com",
       display: "rootsandroutines@gmail.com",
     },
-    { platform: "whatsapp", url: "https://wa.me/447784972534", display: "WhatsApp" },
+    {
+      platform: "whatsapp",
+      url: "https://wa.me/447784972534",
+      display: "WhatsApp",
+    },
     { platform: "phone", url: "tel:+447784972534", display: "+44" },
   ],
-
 
   services: [
     {
       id: "family-meals",
       title: "Meals & Nutrition",
-      shortCopy: "Stress-free meal planning and nutrition support tailored to your family.",
+      shortCopy:
+        "Stress-free meal planning and nutrition support tailored to your family.",
       fullCopy:
         "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for fussy eaters, ensuring every child gets the nourishment they need.",
       features: [
@@ -59,7 +71,8 @@ export const siteData: SiteData = {
     {
       id: "routines-scheduling",
       title: "Routines & Scheduling",
-      shortCopy: "Custom family routines and scheduling support for a smoother daily flow.",
+      shortCopy:
+        "Custom family routines and scheduling support for a smoother daily flow.",
       fullCopy:
         "We create bespoke daily, weekly, and monthly routines to help your family thrive. From calendars to consistent habits, our support ensures structure without stress, making it easier to balance work, school, and family life.",
       features: [
@@ -74,7 +87,8 @@ export const siteData: SiteData = {
     {
       id: "childcare",
       title: "Childcare",
-      shortCopy: "Trusted childcare professionals tailored to your family's needs.",
+      shortCopy:
+        "Trusted childcare professionals tailored to your family's needs.",
       fullCopy:
         "Finding reliable childcare can be stressful. We connect you with trusted nannies, maternity nurses, night nannies and babysitters for ongoing or short-term support tailored to your child's needs.",
       features: [
@@ -102,7 +116,8 @@ export const siteData: SiteData = {
     {
       id: "education-guidance",
       title: "Education & Learning",
-      shortCopy: "Expert guidance to find schools, nurseries, and activities aligned with your values.",
+      shortCopy:
+        "Expert guidance to find schools, nurseries, and activities aligned with your values.",
       fullCopy:
         "We help families find nurseries, schools, and after-school clubs that match your values and needs. From shortlisting and visit prep to application guidance, we support decision-making and connect you with trusted educational professionals.",
       features: [
@@ -130,7 +145,8 @@ export const siteData: SiteData = {
     {
       id: "parent-support",
       title: "New Parent Support",
-      shortCopy: "Guidance and trusted referrals for new parents navigating early family life.",
+      shortCopy:
+        "Guidance and trusted referrals for new parents navigating early family life.",
       fullCopy:
         "Navigating early parenthood can be overwhelming. We provide referrals to trusted maternity and night nannies, offer breastfeeding and weaning tips, support daily routines and sleep schedules, and provide emotional well-being guidance to help parents feel supported and confident.",
       features: [
@@ -147,7 +163,8 @@ export const siteData: SiteData = {
     {
       id: "family-wellness",
       title: "Wellness + Add-Ons",
-      shortCopy: "Holistic support for sleep, emotional regulation, and stress reduction.",
+      shortCopy:
+        "Holistic support for sleep, emotional regulation, and stress reduction.",
       fullCopy:
         "We offer additional wellness support for families, including establishing healthy sleep and hygiene routines, strategies for children's emotional regulation, and stress reduction plans for parents, ensuring the entire family thrives together.",
       features: [
@@ -236,7 +253,7 @@ export const siteData: SiteData = {
       "Nannying, nutrition, and family wellbeing expertise",
       "Years in office management, admin, and research",
       "Supported busy households and coordinated schedules",
-      "Sourced trusted childcare and organized daily routines",
+      "Sourced trusted childcare and organised daily routines",
       "Passionate about helping families thrive",
     ],
     meta: {
@@ -331,7 +348,8 @@ export const siteData: SiteData = {
           {
             id: "faq-trust-1",
             category: "trust",
-            question: "How do you ensure the professionals you recommend are trustworthy?",
+            question:
+              "How do you ensure the professionals you recommend are trustworthy?",
             answer:
               "We carefully vet all professionals - we check references, qualifications, experience and have DBS checks.",
           },
@@ -398,7 +416,8 @@ export const siteData: SiteData = {
           {
             id: "faq-extras-2",
             category: "extras",
-            question: "Can you customise a plan if we have specific family needs?",
+            question:
+              "Can you customise a plan if we have specific family needs?",
             answer:
               "Of course - every family is different and we pride ourselves in offering flexible, thoughtful and personal guidance.",
           },
@@ -413,5 +432,4 @@ export const siteData: SiteData = {
       },
     ],
   },
-
 };

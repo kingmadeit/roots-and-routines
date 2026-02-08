@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[#581b04]/80 font-nunito">
                 <li>Provide, maintain, and improve our family concierge services</li>
-                <li>Personalize your experience and tailor recommendations to your family&apos;s needs</li>
+                <li>Personalise your experience and tailor recommendations to your family&apos;s needs</li>
                 <li>Communicate with you about services, appointments, and updates</li>
                 <li>Process payments and manage billing</li>
                 <li>Source and vet appropriate professionals for your family</li>

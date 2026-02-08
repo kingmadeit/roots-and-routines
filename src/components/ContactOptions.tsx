@@ -1,18 +1,27 @@
-import { Mail, Phone } from "lucide-react"
-import { siteData } from "@/data"
+import { Mail, Phone } from "lucide-react";
+import { siteData } from "@/data";
 
 const {
   contact: { email, phone },
-} = siteData
+} = siteData;
 
 const ContactOptions = () => {
   return (
     <div className="w-full p-6 md:p-8 rounded-3xl bg-primary/70 relative overflow-hidden my-16 md:mb-0">
       <div className="absolute inset-0 opacity-10">
         <svg className="absolute top-0 right-0 w-64 h-64" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="80" fill="currentColor" className="text-complementary/40" />
+          <circle
+            cx="100"
+            cy="100"
+            r="80"
+            fill="currentColor"
+            className="text-complementary/40"
+          />
         </svg>
-        <svg className="absolute bottom-0 left-0 w-48 h-48" viewBox="0 0 200 200">
+        <svg
+          className="absolute bottom-0 left-0 w-48 h-48"
+          viewBox="0 0 200 200"
+        >
           <path
             d="M 50 100 Q 100 50 150 100 T 250 100"
             fill="none"
@@ -28,7 +37,10 @@ const ContactOptions = () => {
         <div className="w-full h-full flex items-center justify-center p-8">
           <div className="relative w-full max-w-sm aspect-square">
             {/* Organic illustration with theme colors */}
-            <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-2xl">
+            <svg
+              viewBox="0 0 300 300"
+              className="w-full h-full drop-shadow-2xl"
+            >
               {/* Background circle */}
               <circle cx="150" cy="150" r="140" fill="#788a68" opacity="0.15" />
 
@@ -60,7 +72,15 @@ const ContactOptions = () => {
                 fill="none"
                 strokeLinecap="round"
               />
-              <ellipse cx="185" cy="105" rx="8" ry="15" fill="#a3b185" opacity="0.8" transform="rotate(45 185 105)" />
+              <ellipse
+                cx="185"
+                cy="105"
+                rx="8"
+                ry="15"
+                fill="#a3b185"
+                opacity="0.8"
+                transform="rotate(45 185 105)"
+              />
 
               <path
                 d="M 150 150 Q 130 170 110 185"
@@ -69,7 +89,15 @@ const ContactOptions = () => {
                 fill="none"
                 strokeLinecap="round"
               />
-              <ellipse cx="105" cy="190" rx="8" ry="15" fill="#a3b185" opacity="0.8" transform="rotate(-30 105 190)" />
+              <ellipse
+                cx="105"
+                cy="190"
+                rx="8"
+                ry="15"
+                fill="#a3b185"
+                opacity="0.8"
+                transform="rotate(-30 105 190)"
+              />
 
               {/* Contact icons integrated into design */}
               <g transform="translate(135, 140)">
@@ -98,18 +126,28 @@ const ContactOptions = () => {
         <div className="flex flex-col items-center justify-center space-y-6 text-center md:text-left">
           <div className="flex items-center gap-2 pt-2 bg-accent/10 rounded-full border border-accent/40 px-8 py-2">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-medium text-accent/70">Available <br/><span className="text-[#581b04]/70 font-bold">Mon - Fri, 8AM - 6PM <br />Sat - Sun, 10AM - 4PM</span></span>
+            <span className="text-xs font-medium text-accent/70">
+              Available <br />
+              <span className="text-[#581b04]/70 font-bold">
+                Mon - Fri, 8AM - 6PM <br />
+                Sat - Sun, 10AM - 4PM
+              </span>
+            </span>
           </div>
           <div className="space-y-3">
             <h2 className="font-quicksand text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
-              Our team is <span className="text-accent italic font-light">here <br />to help</span>
+              Our team is{" "}
+              <span className="text-accent italic font-light">
+                here <br />
+                to help
+              </span>
             </h2>
             <div className="w-20 h-1 bg-accent/30 rounded-full mx-auto md:mx-0" />
           </div>
 
           <p className="text-base md:text-lg font-medium text-[#581b04] max-w-md leading-relaxed">
-            Contact us today to schedule your free consultation and take the first step towards a more organized, joyful
-            home.
+            Contact us today to schedule your free consultation and take the
+            first step towards a more organised and joyful home.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
@@ -136,7 +174,7 @@ const ContactOptions = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactOptions
+export default ContactOptions;

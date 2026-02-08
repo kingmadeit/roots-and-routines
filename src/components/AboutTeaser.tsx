@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const AboutTeaser = () => {
   return (
@@ -31,8 +31,9 @@ const AboutTeaser = () => {
               <span className="font-bold text-3xl md:text-4xl lg:text-5xl text-complementary">
                 personalised service
               </span>{" "}
-              dedicated to helping families create smoother home routines, find trusted support, and make confident
-              decisions for their child&apos;s wellbeing.
+              dedicated to helping families create smoother home routines, find
+              trusted support, and make confident decisions for their
+              child&apos;s wellbeing.
             </p>
           </div>
         </motion.div>
@@ -50,7 +51,8 @@ const AboutTeaser = () => {
             <div className="absolute -right-4 top-0 w-1 h-full bg-gradient-to-b from-accent via-accent/50 to-transparent rounded-full" />
 
             <p className="font-nunito text-lg md:text-xl lg:text-2xl text-secondary leading-relaxed text-right">
-              Your family&apos;s rhythm doesn&apos;t have to match anyone else&apos;s.{" "}
+              Your family&apos;s rhythm doesn&apos;t have to match anyone
+              else&apos;s.{" "}
               <span className="font-bold text-4xl md:text-5xl lg:text-6xl text-accent block my-4">
                 Build routines that work
               </span>
@@ -72,7 +74,9 @@ const AboutTeaser = () => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-[#581b04] to-transparent rounded-full mb-8" />
 
             <div className="py-12  text-accent/90 ">
-              <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-[#581b04] mb-8">No more guesswork</p>
+              <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-[#581b04] mb-8">
+                No more guesswork
+              </p>
 
               <p className="font-nunito text-lg md:text-xl lg:text-2xl leading-relaxed mb-6">
                 Ever feel like you&apos;re winging it every day?
@@ -83,7 +87,8 @@ const AboutTeaser = () => {
                   The mental load that comes with parenting is real.
                 </span>
                 <span className="font-bold text-4xl md:text-5xl lg:text-6xl text-[#581b04] block my-6">
-                  Having a home structure helps to free up brain space, reduce decision fatigue and gives yourfamily more time to connect.
+                  Having a home structure helps to free up brain space, reduce
+                  decision fatigue and gives your family more time to connect.
                 </span>
               </p>
 
@@ -118,7 +123,7 @@ const AboutTeaser = () => {
         </svg>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutTeaser
+export default AboutTeaser;

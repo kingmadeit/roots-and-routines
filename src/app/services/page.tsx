@@ -1,13 +1,24 @@
-import type React from "react"
-import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight, Sparkles, Utensils, Clock, UserSearch, GraduationCap, Baby, Heart, Activity } from "lucide-react"
-import { siteData } from "@/data"
+import type React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Sparkles,
+  Utensils,
+  Clock,
+  UserSearch,
+  GraduationCap,
+  Baby,
+  Heart,
+  Activity,
+} from "lucide-react";
+import { siteData } from "@/data";
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
-  description: "Comprehensive, personalized family support services designed around your unique needs and rhythm",
-}
+  description:
+    "Comprehensive, personalised family support services designed around your unique needs and rhythm",
+};
 
 const getCategoryClasses = (category: string) => {
   switch (category) {
@@ -17,53 +28,56 @@ const getCategoryClasses = (category: string) => {
         text: "text-accent",
         border: "border-accent",
         gradient: "from-accent to-accent/70",
-      }
+      };
     case "helping-hands-and-resources":
       return {
         bg: "bg-secondary",
         text: "text-secondary",
         border: "border-secondary",
         gradient: "from-secondary to-secondary/70",
-      }
+      };
     case "wellness-growth":
       return {
         bg: "bg-complementary",
         text: "text-complementary",
         border: "border-complementary",
         gradient: "from-complementary to-complementary/70",
-      }
+      };
     default:
       return {
         bg: "bg-accent",
         text: "text-accent",
         border: "border-accent",
         gradient: "from-accent to-accent/70",
-      }
+      };
   }
-}
+};
 
 const getHoverTextClass = (category: string) => {
   switch (category) {
     case "everyday-support":
-      return "group-hover:text-accent"
+      return "group-hover:text-accent";
     case "helping-hands-and-resources":
-      return "group-hover:text-secondary"
+      return "group-hover:text-secondary";
     case "wellness-growth":
-      return "group-hover:text-complementary"
+      return "group-hover:text-complementary";
     default:
-      return "group-hover:text-accent"
+      return "group-hover:text-accent";
   }
-}
+};
 
-const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {
+const iconComponents: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
   Utensils,
   Clock,
   UserSearch,
   GraduationCap,
   Baby,
   Heart,
-  Activity
-}
+  Activity,
+};
 
 export default function ServicesPage() {
   return (
@@ -71,13 +85,23 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-32 lg:pb-40 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 opacity-20">
-          <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 300 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M150 50 Q250 100 250 200 Q200 280 100 250 Q20 200 50 100 Q100 50 150 50 Z"
               fill="url(#heroGrad1)"
             />
             <defs>
-              <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="heroGrad1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#788a68" stopOpacity="0.4" />
                 <stop offset="100%" stopColor="#a3b185" stopOpacity="0.2" />
               </linearGradient>
@@ -86,15 +110,31 @@ export default function ServicesPage() {
         </div>
 
         <div className="absolute bottom-20 right-10 w-96 h-96 opacity-15">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 400 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <circle cx="200" cy="200" r="150" fill="url(#heroGrad2)" />
             <circle cx="200" cy="200" r="100" fill="url(#heroGrad3)" />
             <defs>
-              <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="heroGrad2"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#ca6c28" stopOpacity="0.3" />
                 <stop offset="100%" stopColor="#bc9b0a" stopOpacity="0.2" />
               </linearGradient>
-              <linearGradient id="heroGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="heroGrad3"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#f0bf99" stopOpacity="0.2" />
                 <stop offset="100%" stopColor="#fdf2e0" stopOpacity="0.1" />
               </linearGradient>
@@ -143,7 +183,9 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-[1400px] relative z-10">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Services</h2>
+            <h2 className="font-quicksand text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              Our Services
+            </h2>
             <p className="text-xl text-white/90 font-nunito font-light max-w-2xl mx-auto">
               Explore our comprehensive range of family support services
             </p>
@@ -151,9 +193,11 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {siteData.services.map((service, index) => {
-              const categoryClasses = getCategoryClasses(service.category)
-              const hoverTextClass = getHoverTextClass(service.category)
-              const IconComponent = service.icon ? iconComponents[service.icon] : null
+              const categoryClasses = getCategoryClasses(service.category);
+              const hoverTextClass = getHoverTextClass(service.category);
+              const IconComponent = service.icon
+                ? iconComponents[service.icon]
+                : null;
 
               return (
                 <Link
@@ -168,7 +212,11 @@ export default function ServicesPage() {
 
                   {/* Corner decoration */}
                   <div className="absolute top-0 right-0 w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         d="M100 0 L100 50 Q100 100 50 100 L0 100 L0 0 Z"
                         fill="currentColor"
@@ -181,7 +229,9 @@ export default function ServicesPage() {
                   <div
                     className={`absolute top-6 right-6 px-3 py-1.5 rounded-full ${categoryClasses.bg}/10 border ${categoryClasses.border}/20`}
                   >
-                    <span className={`${categoryClasses.text} font-quicksand font-bold text-xs`}>
+                    <span
+                      className={`${categoryClasses.text} font-quicksand font-bold text-xs`}
+                    >
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -191,9 +241,13 @@ export default function ServicesPage() {
                       className={`w-16 h-16 rounded-2xl ${categoryClasses.bg}/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
                     >
                       {IconComponent ? (
-                        <IconComponent className={`w-8 h-8 ${categoryClasses.text}`} />
+                        <IconComponent
+                          className={`w-8 h-8 ${categoryClasses.text}`}
+                        />
                       ) : (
-                        <div className={`w-8 h-8 rounded-lg ${categoryClasses.bg}/20`} />
+                        <div
+                          className={`w-8 h-8 rounded-lg ${categoryClasses.bg}/20`}
+                        />
                       )}
                     </div>
 
@@ -205,13 +259,17 @@ export default function ServicesPage() {
                     </h3>
 
                     {/* Updated text color */}
-                    <p className="text-[#581b04]/70 leading-relaxed font-light font-nunito">{service.shortCopy}</p>
+                    <p className="text-[#581b04]/70 leading-relaxed font-light font-nunito">
+                      {service.shortCopy}
+                    </p>
 
                     {/* Learn more indicator */}
                     <div
                       className={`flex items-center gap-2 pt-2 ${categoryClasses.text} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     >
-                      <span className="text-sm font-medium font-quicksand">Learn more</span>
+                      <span className="text-sm font-medium font-quicksand">
+                        Learn more
+                      </span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -221,7 +279,7 @@ export default function ServicesPage() {
                     className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${categoryClasses.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
                   />
                 </Link>
-              )
+              );
             })}
           </div>
         </div>
@@ -230,7 +288,11 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[550px] h-[550px] opacity-10">
-          <svg viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 550 550"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M275 75 Q400 125 450 250 Q500 375 375 475 Q250 525 125 450 Q50 350 75 225 Q125 100 275 75 Z"
               fill="white"
@@ -238,7 +300,11 @@ export default function ServicesPage() {
           </svg>
         </div>
         <div className="absolute bottom-0 left-0 w-[420px] h-[420px] opacity-10">
-          <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 420 420"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <circle cx="210" cy="210" r="170" fill="white" />
           </svg>
         </div>
@@ -259,7 +325,9 @@ export default function ServicesPage() {
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-complementary/10 border border-complementary/20">
                   <Sparkles className="w-4 h-4 text-complementary" />
-                  <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">Get Started</span>
+                  <span className="text-sm font-bold text-complementary font-quicksand tracking-wide">
+                    Get Started
+                  </span>
                 </div>
 
                 {/* Updated text color */}
@@ -268,7 +336,8 @@ export default function ServicesPage() {
                 </h2>
                 {/* Updated text color */}
                 <p className="text-xl text-[#581b04]/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
-                  Browse our service categories to find the perfect fit for your needs
+                  Browse our service categories to find the perfect fit for your
+                  needs
                 </p>
               </div>
 
@@ -310,7 +379,7 @@ export default function ServicesPage() {
                   <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                   </div>
-                  <span className="font-medium">Personalized approach</span>
+                  <span className="font-medium">Personalised approach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center">
@@ -330,5 +399,5 @@ export default function ServicesPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
