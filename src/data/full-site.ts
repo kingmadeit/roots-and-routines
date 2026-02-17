@@ -57,7 +57,7 @@ export const siteData: SiteData = {
       shortCopy:
         "Stress-free meal planning and nutrition support tailored to your family.",
       fullCopy:
-        "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals, and provide light meal prep guidance. We also give tips for fussy eaters, ensuring every child gets the nourishment they need.",
+        "Dinner doesn't have to be stressful. At Roots & Routines, we help busy families create weekly meal plans, generate grocery lists that fit your nutritional goals and needs, and provide easy meal prep guidance. We also give tips for fussy eaters, ensuring every child gets the nourishment they need.",
       features: [
         "Weekly meal planning and tailored grocery list",
         "Simple, balanced recipes",
@@ -90,7 +90,7 @@ export const siteData: SiteData = {
       shortCopy:
         "Trusted childcare professionals tailored to your family's needs.",
       fullCopy:
-        "Finding reliable childcare can be stressful. We connect you with trusted nannies, maternity nurses, night nannies and babysitters for ongoing or short-term support tailored to your child's needs.",
+        "Finding reliable childcare can be stressful. We connect you with trusted nannies, maternity nurses, night nannies and babysitters for ongoing or short-term support tailored to the need of your children.",
       features: [
         "Trusted nannies, maternity nurses, night nannies and babysitters",
         "Ongoing or short-term support tailored to your child's needs",
@@ -150,12 +150,11 @@ export const siteData: SiteData = {
       fullCopy:
         "Navigating early parenthood can be overwhelming. We provide referrals to trusted maternity and night nannies, offer breastfeeding and weaning tips, support daily routines and sleep schedules, and provide emotional well-being guidance to help parents feel supported and confident.",
       features: [
-        "Pre natal and postnatal wellbeing support",
+        "Prenatal and postnatal nutrition guidance and wellbeing support",
         "Access to trusted local resources and services",
         "Referrals to maternity and night nannies",
         "Feeding, weaning and sleeping guidance",
         "Gentle scheduling for daily balance and calm",
-        "Pre natal and postnatal nutrition guidance",
       ],
       category: "wellness-growth",
       icon: "Baby",

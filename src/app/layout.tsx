@@ -28,7 +28,7 @@ const antonio = Antonio({
 export const metadata: Metadata = {
   title: "Roots and Routines",
   description:
-    "personalised service dedicated to helping families create smoother home routines, find trusted support and make confident decisions for their child’s wellbeing.",
+    "personalised service dedicated to helping families create smoother home routines, find trusted support and make confident decisions for their children wellbeing.",
   // icons: {
   //   icon: "/favicon.ico",
   //   apple: "/apple-touch-icon.png",

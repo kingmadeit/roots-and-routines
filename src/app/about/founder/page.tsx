@@ -196,7 +196,7 @@ export default function FounderPage() {
                         { label: "Experience-based", color: "#bc9b0a" },
                         { label: "Strategic thinking", color: "#788a68" },
                         { label: "Hands-on expertise", color: "#a3b185" },
-                        { label: "personalised support", color: "#ca6c28" },
+                        { label: "Personalised support", color: "#ca6c28" },
                       ].map((item, index) => (
                         <div
                           key={index}

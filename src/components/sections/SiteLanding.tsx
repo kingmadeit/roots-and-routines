@@ -22,7 +22,6 @@ export const metadata = meta;
 
 // Main page component with floating icons overlay
 export default function HomePage() {
-  //useInViewObserver({ selector: '.animate-on-scroll' })
   return (
     <>
       <Hero info={hero} gallery={gallery} />

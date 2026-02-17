@@ -1896,17 +1896,6 @@ function ServiceCard({
       >
         <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-primary-light/40 to-white/40 border-2 border-accent/10">
           {illustration}
-
-          {/* Service number badge */}
-          <div
-            className={`absolute bottom-8 right-8 w-20 h-20 rounded-full bg-white border-2 ${categoryClasses.border} flex items-center justify-center shadow-lg`}
-          >
-            <span
-              className={`text-3xl font-bold ${categoryClasses.text} font-quicksand`}
-            >
-              {String(index + 1).padStart(2, "0")}
-            </span>
-          </div>
         </div>
 
         {/* Floating accent elements */}

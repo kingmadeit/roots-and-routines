@@ -201,7 +201,7 @@ export default function AboutPage() {
                   Routines Family Concierge is a personalised service dedicated
                   to helping families create smoother home routines, find
                   trusted support and make confident decisions for their
-                  child&apos;s wellbeing.
+                  children wellbeing.
                 </p>
               </div>
 

@@ -1,8 +1,9 @@
 import { Mail, Phone } from "lucide-react";
 import { siteData } from "@/data";
+import { WhatsAppIcon } from "./Footer";
 
 const {
-  contact: { email, phone },
+  contact: { email, phone, whatsapp },
 } = siteData;
 
 const ContactOptions = () => {
@@ -160,6 +161,18 @@ const ContactOptions = () => {
               <Mail className="w-5 h-5 relative " />
               <span className="font-semibold relative ">Email Us</span>
             </a>
+            
+            <a
+              className="group relative rounded-2xl bg-secondary hover:bg-complementary/90 transition-all duration-300 p-5 text-white shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 min-w-[160px]"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={whatsapp}
+            >
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <WhatsAppIcon className="w-5 h-5 relative " />
+              <span className="font-semibold relative ">WhatsApp</span>
+            </a>
+            
 
             <a
               className="group relative rounded-2xl bg-accent hover:bg-accent/90 transition-all duration-300 p-5 text-white shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-3 min-w-[160px]"
