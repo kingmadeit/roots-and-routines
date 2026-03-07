@@ -1,40 +1,40 @@
-"use client"
-import type React from "react"
-import { useState, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import type { ServiceData } from "@/types"
-import { serviceCategories } from "@/constants/services"
-import Link from "next/link"
+"use client";
+import type React from "react";
+import { useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import type { ServiceData } from "@/types";
+import { serviceCategories } from "@/constants/services";
+import Link from "next/link";
 
 interface SmoothTabProps {
-  className?: string
+  className?: string;
 }
 
 interface ServiceTeaserProps {
-  services?: ServiceData[]
+  services?: ServiceData[];
 }
 
-const tabs = serviceCategories
+const tabs = serviceCategories;
 
 const TabNavigation: React.FC<{
-  tabs: typeof serviceCategories
-  selectedIndex: number
-  onChange: (tabId: string) => void
+  tabs: typeof serviceCategories;
+  selectedIndex: number;
+  onChange: (tabId: string) => void;
 }> = ({ tabs, selectedIndex, onChange }) => {
-  const selectedTab = tabs[selectedIndex]
+  const selectedTab = tabs[selectedIndex];
 
   const getContainerBgClass = () => {
     switch (selectedTab.id) {
       case "everyday-support":
-        return "bg-accent/40"
+        return "bg-accent/40";
       case "helping-hands-and-resources":
-        return "bg-secondary/40"
+        return "bg-secondary/40";
       case "wellness-growth":
-        return "bg-complementary/40"
+        return "bg-complementary/40";
       default:
-        return "bg-white/40"
+        return "bg-white/40";
     }
-  }
+  };
 
   return (
     <div className="flex justify-start md:justify-center mb-12 overflow-x-auto pb-2 scrollbar-hide">
@@ -45,8 +45,11 @@ const TabNavigation: React.FC<{
           <button
             key={tab.id}
             onClick={() => onChange(tab.id)}
-            className={`relative px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 font-[family-name:var(--font-quicksand)] text-base md:text-md whitespace-nowrap flex flex-col items-center ${selectedIndex === index ? "text-white" : "text-white/70 hover:text-white/90"
-              }`}
+            className={`relative px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 font-[family-name:var(--font-quicksand)] text-base md:text-md whitespace-nowrap flex flex-col items-center ${
+              selectedIndex === index
+                ? "text-white"
+                : "text-white/70 hover:text-white/90"
+            }`}
           >
             {selectedIndex === index && (
               <motion.div
@@ -60,13 +63,13 @@ const TabNavigation: React.FC<{
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
-  const [selectedIndex, setSelectedIndex] = useState<number>(0)
-  const [direction, setDirection] = useState<number>(0)
-  const selectedTab = tabs[selectedIndex]
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  const [direction, setDirection] = useState<number>(0);
+  const selectedTab = tabs[selectedIndex];
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -87,29 +90,33 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
       filter: "blur(8px)",
       scale: 0.95,
     }),
-  }
+  };
 
   const transition = {
     duration: 0.4,
     ease: [0.32, 0.72, 0, 1] as const,
-  }
+  };
 
   const handleTabClick = useCallback(
     (tabId: string): void => {
-      const currentIndex = tabs.findIndex((tab) => tab.id === selectedTab.id)
-      const newIndex = tabs.findIndex((tab) => tab.id === tabId)
-      setDirection(newIndex > currentIndex ? 1 : -1)
-      setSelectedIndex(newIndex)
+      const currentIndex = tabs.findIndex((tab) => tab.id === selectedTab.id);
+      const newIndex = tabs.findIndex((tab) => tab.id === tabId);
+      setDirection(newIndex > currentIndex ? 1 : -1);
+      setSelectedIndex(newIndex);
     },
-    [selectedTab.id],
-  )
+    [selectedTab.id]
+  );
 
   return (
     <div className={`w-full max-w-7xl mx-auto ${className || ""}`}>
-      <TabNavigation tabs={tabs} selectedIndex={selectedIndex} onChange={handleTabClick} />
+      <TabNavigation
+        tabs={tabs}
+        selectedIndex={selectedIndex}
+        onChange={handleTabClick}
+      />
 
       {/* Content Area with animated transitions */}
-      <div className="relative min-h-[600px]">
+      <div className="relative">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={selectedTab.id}
@@ -119,7 +126,9 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
             animate="center"
             exit="exit"
             transition={transition}
-            className={`${selectedTab?.color || "bg-accent/40"} rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl`}
+            className={`${
+              selectedTab?.color || "bg-accent/40"
+            } rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl`}
           >
             {/* Organic SVG background illustrations */}
             <svg
@@ -143,9 +152,27 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
               />
 
               {/* Small accent circles */}
-              <circle cx="150" cy="200" r="80" fill="currentColor" opacity="0.2" />
-              <circle cx="1050" cy="650" r="60" fill="currentColor" opacity="0.15" />
-              <circle cx="600" cy="150" r="40" fill="currentColor" opacity="0.2" />
+              <circle
+                cx="150"
+                cy="200"
+                r="80"
+                fill="currentColor"
+                opacity="0.2"
+              />
+              <circle
+                cx="1050"
+                cy="650"
+                r="60"
+                fill="currentColor"
+                opacity="0.15"
+              />
+              <circle
+                cx="600"
+                cy="150"
+                r="40"
+                fill="currentColor"
+                opacity="0.2"
+              />
 
               {/* Flowing lines */}
               <path
@@ -179,12 +206,17 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
                 transition={{ delay: 0.1, duration: 0.4 }}
               >
                 {/* <ServiceCard service={service} /> */}
-                <h2 className="font-bold text-center mb-6 text-2xl md:text-3xl lg:text-4xl">{selectedTab.description}</h2>
+                <h2 className="font-bold text-center mb-6 text-2xl md:text-3xl lg:text-4xl">
+                  {selectedTab.description}
+                </h2>
               </motion.div>
             </div>
 
             {/*  CTA button */}
-            <Link href={`/services/${selectedTab.id}`} className="relative pt-1  block">
+            <Link
+              href={`/services/${selectedTab.id}`}
+              className="relative pt-1  block"
+            >
               <button className="mx-auto mt-4 bg-white hover:bg-[#581b04] text-[#581b04] hover:text-white font-bold py-5 px-10 rounded-full transition-all duration-300 flex flex-col items-center justify-center group shadow-lg hover:shadow-2xl hover:shadow-white/30 hover:scale-105 font-[family-name:var(--font-quicksand)] cursor-pointer">
                 <div className="flex items-center">
                   <span className="text-lg">Explore {selectedTab.title}</span>
@@ -195,7 +227,11 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={2.5}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
                   </svg>
                 </div>
               </button>
@@ -204,8 +240,8 @@ const SmoothTab: React.FC<SmoothTabProps> = ({ className }) => {
         </AnimatePresence>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
   return (
@@ -214,7 +250,7 @@ const ServiceTeaser: React.FC<ServiceTeaserProps> = () => {
         <SmoothTab />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ServiceTeaser
+export default ServiceTeaser;

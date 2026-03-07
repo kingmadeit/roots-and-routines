@@ -268,7 +268,98 @@ export const siteData: SiteData = {
     whatsapp: "https://wa.me/447784972534",
     businessHours: "Monday - Friday, 9:00 AM - 6:00 PM",
   },
-
+  testimonials: [
+    {
+      headline: "The support we didn’t realise we needed.",
+      content:
+        "Working with Roots & Routines was one of the best decisions we made as new parents. The guidance was calm, practical and never overwhelming. It felt like having someone in our corner who truly understood what early parenthood is like.",
+      author: "Emily & Daniel",
+    },
+    {
+      headline: null,
+      content:
+        "What began as support during the newborn stage has grown into a trusted relationship. The guidance continues to help us as our child grows.",
+      author: "Maya & Jonathan",
+    },
+    {
+      headline: null,
+      content:
+        "Roots & Routines provided a level of personalised support that felt truly concierge. Every detail was thoughtfully considered, and the nanny we were matched with has been wonderful.",
+      author: "Charlotte & Oliver",
+    },
+    {
+      headline: null,
+      content:
+        "With a toddler already at home, welcoming a newborn felt overwhelming. The support helped us balance both children and create routines that worked for the whole family.",
+      author: "Sophie",
+    },
+    {
+      headline: null,
+      content:
+        "Our families live abroad, so we felt quite alone when our baby arrived. Roots & Routines helped create the sense of a village we were missing",
+      author: "Anna & Daniel",
+    },
+    {
+      headline: null,
+      content:
+        "We appreciated how respectful and thoughtful the support was around our cultural traditions and parenting preferences. It felt very personal and conditioner.",
+      author: "Fatima & Khalid",
+    },
+    {
+      headline: null,
+      content:
+        "Recovering from a C-section while learning to care for a newborn was challenging. The support we received allowed me to focus on healing while still feeling involved and confident as a new mum.",
+      author: "Natalie",
+    },
+    {
+      headline: null,
+      content:
+        "As first-time parents we had so many questions. Sammie-Joe never made us feel silly for asking them. Her guidance helped us feel confident in our decisions and reminded us that every family finds their own rhythm.",
+      author: "Isabelle",
+    },
+    {
+      headline: null,
+      content:
+        "Having twins was wonderful but also incredibly intense in the early weeks. The support and structure we received through Roots & Routines helped us establish a rhythm that worked for both babies and ourselves.",
+      author: "Laura & Ben",
+    },
+    {
+      headline: null,
+      content:
+        "Moving to London with a newborn felt overwhelming at first. Roots & Routines helped us build a support network, from childcare guidance to local recommendations. It felt like having someone who truly understood what families need when settling into a new city.",
+      author: "Amira & Hassan",
+    },
+    {
+      headline: null,
+      content:
+        "With demanding careers and no family nearby, we knew we needed the right support after our daughter arrived. Roots & Routines helped us find a maternity nurse who was exceptional, and the guidance we received made the transition into parenthood far calmer than we expected.",
+      author: "Victoria & James",
+    },
+    {
+      headline: "Parent-led support that truly listens.",
+      content:
+        "What we loved most was that nothing felt forced. Sammie-Joe listened to what we wanted for our baby and helped us build routines that worked for our family rather than pushing a rigid system. That approach made all the difference.",
+      author: "Aisha & Kareem",
+    },
+    {
+      headline: "A calm presence during a very emotional time.",
+      content:
+        "Those first weeks after our baby arrived were a mixture of joy and exhaustion. Having guidance and reassurance from someone experienced helped us feel more confident and less alone.",
+      author: "Hannah",
+    },
+    {
+      headline: "Like having a village again.",
+      content:
+        "We don’t have family nearby, so having Roots & Routines support us felt like having a village around us. The help was thoughtful, personalised and exactly what we needed.",
+      author: "Laura & James",
+    },
+    {
+      headline: "Professional yet deeply personal support.",
+      content:
+        "The experience and care behind Roots & Routines is clear from the moment you start working together. It’s not just childcare support — it’s guidance that helps families feel confident and supported.",
+      author: "Sophie & Daniel",
+    },
+  ],
   faq: {
     title: "Frequently Asked Questions",
     categories: [

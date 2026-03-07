@@ -1,8 +1,12 @@
+import { TestimonialData } from "@/types";
 
-const Testimonial = () => {
-  return (
-    <div>Testimonial</div>
-  )
-}
+// TODO: implement
+const TestimonyCard = () => {};
 
-export default Testimonial
+const Testimonial = ({ data }: { data: TestimonialData[] | undefined }) => {
+  if (!data) return;
+  console.log(`TES`);
+  return <div>Testimonial {data?.length ?? 0}</div>;
+};
+
+export default Testimonial;

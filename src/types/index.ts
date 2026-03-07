@@ -1,4 +1,3 @@
-
 export interface MetaData {
   title: string;
   description: string;
@@ -77,9 +76,15 @@ export interface SiteData {
   packages: PackageData[];
   founder: FounderData;
   contact: ContactData;
+  testimonials?: TestimonialData[];
   faq: FAQData;
 }
 
+export interface TestimonialData {
+  headline: null | string;
+  content: string;
+  author: string;
+}
 /// full data
 // Common types
 interface Meta {
@@ -231,22 +236,21 @@ export interface PagesData {
 // FAQ Types
 //====================================
 export interface FAQItem {
-  id: string
-  question: string
-  answer: string
-  category: string
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
 }
 
 export interface FAQCategory {
-  id: string
-  name: string
-  questions: FAQItem[]
+  id: string;
+  name: string;
+  questions: FAQItem[];
 }
 
-
 export interface FAQData {
-  title: string
-  categories: FAQCategory[]
+  title: string;
+  categories: FAQCategory[];
 }
 
 export interface FAQComponentProps {
