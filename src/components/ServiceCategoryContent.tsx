@@ -22,6 +22,15 @@ export function ServiceCategoryContent({
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  const cateryNameMapping: { [key: string]: string } = {
+    "wellness-growth": categoryName.replace(" ", " & "),
+    "helping-hands-and-resources": categoryName.replace("And", "&"),
+  };
+
+  const cleanCategoryName =
+    cateryNameMapping[services[0].category] ?? categoryName;
+  console.log(Object.keys(cateryNameMapping));
+  console.log(categoryName.toLocaleLowerCase());
   const categoryInfo = serviceCategories.find(
     (cat) => cat.id === services[0].category
   );
@@ -120,7 +129,9 @@ export function ServiceCategoryContent({
           <div className="text-center space-y-12">
             <div className="space-y-6">
               <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
-                <span className={categoryClasses.text}>{categoryName}</span>
+                <span className={categoryClasses.text}>
+                  {cleanCategoryName}
+                </span>
               </h1>
 
               <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">

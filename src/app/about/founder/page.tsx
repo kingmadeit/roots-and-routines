@@ -1,13 +1,21 @@
-import { ValuesCard } from "@/components/ValuesCard"
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Heart, Lightbulb, Users, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ValuesCard } from "@/components/ValuesCard";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  Heart,
+  Lightbulb,
+  Users,
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Meet the Founder | Roots & Routines",
-  description: "Learn about the experience and passion behind Roots & Routines Family Concierge.",
-}
+  description:
+    "Learn about the experience and passion behind Roots & Routines Family Concierge.",
+};
 
 export default function FounderPage() {
   return (
@@ -16,13 +24,23 @@ export default function FounderPage() {
       <section className="relative px-6 pt-24 pb-32 lg:px-8 lg:pt-55 lg:pb-40 overflow-hidden">
         {/* Organic background shapes */}
         <div className="absolute -top-10  right-0 w-96 h-96 opacity-10">
-          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 400 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M200 50C250 50 300 80 320 130C340 180 330 240 290 280C250 320 180 340 130 320C80 300 40 250 40 190C40 130 90 50 200 50Z"
               fill="url(#gradient1)"
             />
             <defs>
-              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient
+                id="gradient1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#788a68" stopOpacity="0.3" />
                 <stop offset="100%" stopColor="#bc9b0a" stopOpacity="0.2" />
               </linearGradient>
@@ -35,30 +53,43 @@ export default function FounderPage() {
             {/* Left-aligned Text Content */}
             <div className="space-y-8 relative  max-w-4xl">
               <div className="space-y-6">
-
                 <h1 className="font-quicksand text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#581b04] leading-[0.95]">
                   Where heart
                   <br />
-                  <span className="text-accent italic font-light">meets strategy</span>
+                  <span className="text-accent italic font-light">
+                    meets strategy
+                  </span>
                 </h1>
               </div>
 
               <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-light">
-                Bringing years of experience in childcare, education, and family support
+                Bringing years of experience in childcare, education, and family
+                support
               </p>
 
               <div className="flex items-center gap-3 pt-4">
                 <div className="h-px w-16 bg-accent" />
-                <p className="text-sm uppercase tracking-widest text-accent font-medium">Experience-based · Parent-led</p>
+                <p className="text-sm uppercase tracking-widest text-accent font-medium">
+                  Experience-based · Parent-led
+                </p>
                 <div className="h-px w-16 bg-accent" />
               </div>
             </div>
 
             {/* SVG Illustration - Positioned on right side */}
             <div className="absolute opacity-30 lg:opacity-90 -bottom-60 -right-40 lg:static lg:block backdrop-blur-sm rounded-3xl p-10 w-full max-w-sm lg:max-w-lg aspect-square mb-6">
-              <svg viewBox="0 0 300 300" className="w-full h-full drop-shadow-lg">
+              <svg
+                viewBox="0 0 300 300"
+                className="w-full h-full drop-shadow-lg"
+              >
                 {/* Background circle */}
-                <circle cx="150" cy="150" r="130" fill="#ca6c28" opacity="0.12" />
+                <circle
+                  cx="150"
+                  cy="150"
+                  r="130"
+                  fill="#ca6c28"
+                  opacity="0.12"
+                />
 
                 {/* Tree trunk/stem - representing growth */}
                 <path
@@ -97,31 +128,94 @@ export default function FounderPage() {
                 {/* Strategic grid pattern emerging from heart */}
                 <g opacity="0.6">
                   {/* Grid lines */}
-                  <line x1="130" y1="70" x2="170" y2="70" stroke="#bc9b0a" strokeWidth="1.5" />
-                  <line x1="130" y1="80" x2="170" y2="80" stroke="#bc9b0a" strokeWidth="1.5" />
-                  <line x1="130" y1="90" x2="170" y2="90" stroke="#bc9b0a" strokeWidth="1.5" />
-                  <line x1="140" y1="60" x2="140" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
-                  <line x1="150" y1="60" x2="150" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
-                  <line x1="160" y1="60" x2="160" y2="95" stroke="#bc9b0a" strokeWidth="1.5" />
+                  <line
+                    x1="130"
+                    y1="70"
+                    x2="170"
+                    y2="70"
+                    stroke="#bc9b0a"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="130"
+                    y1="80"
+                    x2="170"
+                    y2="80"
+                    stroke="#bc9b0a"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="130"
+                    y1="90"
+                    x2="170"
+                    y2="90"
+                    stroke="#bc9b0a"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="140"
+                    y1="60"
+                    x2="140"
+                    y2="95"
+                    stroke="#bc9b0a"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="150"
+                    y1="60"
+                    x2="150"
+                    y2="95"
+                    stroke="#bc9b0a"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="160"
+                    y1="60"
+                    x2="160"
+                    y2="95"
+                    stroke="#bc9b0a"
+                    strokeWidth="1.5"
+                  />
                 </g>
 
                 {/* Decorative dots around the composition */}
                 <circle cx="80" cy="120" r="3" fill="#ca6c28" opacity="0.7" />
                 <circle cx="220" cy="120" r="3" fill="#bc9b0a" opacity="0.7" />
-                <circle cx="100" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
-                <circle cx="200" cy="180" r="2.5" fill="#788a68" opacity="0.6" />
+                <circle
+                  cx="100"
+                  cy="180"
+                  r="2.5"
+                  fill="#788a68"
+                  opacity="0.6"
+                />
+                <circle
+                  cx="200"
+                  cy="180"
+                  r="2.5"
+                  fill="#788a68"
+                  opacity="0.6"
+                />
                 <circle cx="150" cy="50" r="2" fill="#ca6c28" opacity="0.5" />
 
                 {/* Sparkle elements */}
-                <path d="M 90 100 L 92 102 L 90 104 L 88 102 Z" fill="#bc9b0a" opacity="0.8" />
-                <path d="M 210 100 L 212 102 L 210 104 L 208 102 Z" fill="#bc9b0a" opacity="0.8" />
-                <path d="M 150 260 L 152 262 L 150 264 L 148 262 Z" fill="#ca6c28" opacity="0.7" />
+                <path
+                  d="M 90 100 L 92 102 L 90 104 L 88 102 Z"
+                  fill="#bc9b0a"
+                  opacity="0.8"
+                />
+                <path
+                  d="M 210 100 L 212 102 L 210 104 L 208 102 Z"
+                  fill="#bc9b0a"
+                  opacity="0.8"
+                />
+                <path
+                  d="M 150 260 L 152 262 L 150 264 L 148 262 Z"
+                  fill="#ca6c28"
+                  opacity="0.7"
+                />
               </svg>
             </div>
-
           </div>
-
-
         </div>
       </section>
 
@@ -139,20 +233,26 @@ export default function FounderPage() {
 
                 <div className="prose prose-xl max-w-none space-y-6">
                   <p className="text-xl text-[#581b04]/80 leading-relaxed font-light">
-                    With years of hands-on experience in nannying, nutrition, office and household management and a deep
-                    passion for child wellbeing and family support, I created Roots & Routines to help families thrive,
-                    not just survive.
+                    With years of hands-on experience in nannying, nutrition,
+                    office and household management and a deep passion for child
+                    wellbeing and family support, I created Roots & Routines to
+                    help families thrive, not just survive.
                   </p>
 
                   <p className="text-xl text-[#581b04]/70 leading-relaxed font-light">
-                    Whether it&apos;s building nourishing routines, finding the right nanny or planning meals that work
-                    for your lifestyle—I&apos;ve seen firsthand how a bit of guidance can create lasting ease and joy at
-                    home.
+                    Whether it&apos;s building nourishing routines, finding the
+                    right nanny or planning meals that work for your
+                    lifestyle—I&apos;ve seen firsthand how a bit of guidance can
+                    create lasting ease and joy at home.
                   </p>
 
                   <div className="relative p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-complementary to-[#d4b00b] overflow-hidden my-12">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-10">
-                      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg
+                        viewBox="0 0 100 100"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
                           d="M20 45C20 30 28 20 40 20C48 20 54 26 54 34C54 42 48 48 40 48C38 48 36 47 34 46C34 54 38 60 46 60C48 60 50 59 52 58L54 66C50 68 46 70 40 70C28 70 20 60 20 45ZM60 45C60 30 68 20 80 20C88 20 94 26 94 34C94 42 88 48 80 48C78 48 76 47 74 46C74 54 78 60 86 60C88 60 90 59 92 58L94 66C90 68 86 70 80 70C68 70 60 60 60 45Z"
                           fill="white"
@@ -162,14 +262,19 @@ export default function FounderPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
                     <div className="relative">
                       <p className="text-2xl lg:text-3xl text-white leading-relaxed font-light">
-                        My background also includes research, admin and logistics, which means with me you&apos;re not just
-                        getting heart—<span className="font-medium">you&apos;re getting strategy.</span>
+                        My background also includes research, admin and
+                        logistics, which means with me you&apos;re not just
+                        getting heart—
+                        <span className="font-medium">
+                          you&apos;re getting strategy.
+                        </span>
                       </p>
                     </div>
                   </div>
 
                   <p className="text-2xl text-accent leading-relaxed font-bold">
-                    With you as the lead, let&apos;s build your family&apos;s rhythm together.
+                    With you as the lead, let&apos;s build your family&apos;s
+                    rhythm together.
                   </p>
                 </div>
               </div>
@@ -187,7 +292,9 @@ export default function FounderPage() {
                       <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                         <Sparkles className="w-5 h-5 text-accent" />
                       </div>
-                      <h3 className="font-quicksand text-2xl font-bold text-[#581b04]">Core Values</h3>
+                      <h3 className="font-quicksand text-2xl font-bold text-[#581b04]">
+                        Core Values
+                      </h3>
                     </div>
 
                     <div className="space-y-4">
@@ -207,7 +314,10 @@ export default function FounderPage() {
                               className="w-10 h-10 rounded-full flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300"
                               style={{ backgroundColor: `${item.color}15` }}
                             >
-                              <CheckCircle2 className="w-5 h-5" style={{ color: item.color }} />
+                              <CheckCircle2
+                                className="w-5 h-5"
+                                style={{ color: item.color }}
+                              />
                             </div>
                           </div>
                           <p className="text-[#581b04]/80 font-nunito group-hover/item:text-[#581b04] transition-colors">
@@ -230,7 +340,7 @@ export default function FounderPage() {
           <div className="w-12 h-1 bg-accent mb-6 rounded-full" />
           <div className="max-w-3xl mb-20">
             <h2 className="font-quicksand text-5xl lg:text-6xl font-bold text-[#581b04] mb-6 leading-tight">
-              What I bring to your family
+              What we bring to your family
             </h2>
             <p className="text-xl text-[#581b04]/60 leading-relaxed font-light">
               A unique combination of heart, strategy, and hands-on experience
@@ -282,7 +392,9 @@ export default function FounderPage() {
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-2 bg-accent/10 px-5 py-2.5 rounded-full mb-2">
                   <Sparkles className="w-4 h-4 text-accent" />
-                  <span className="text-accent font-quicksand font-bold text-sm tracking-wide">Expertise</span>
+                  <span className="text-accent font-quicksand font-bold text-sm tracking-wide">
+                    Expertise
+                  </span>
                 </div>
                 {/* <h3 className="font-quicksand text-3xl lg:text-4xl font-bold text-[#581b04]">Areas of Expertise</h3> */}
               </div>
@@ -321,7 +433,11 @@ export default function FounderPage() {
       <section className="px-6 py-24 lg:px-8 lg:py-32 relative overflow-hidden bg-complementary/80">
         {/* Organic background shapes */}
         <div className="absolute top-0 left-0 w-[600px] h-[600px] opacity-10">
-          <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 600 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M300 100 Q450 150 500 300 Q550 450 400 550 Q250 600 150 500 Q50 400 100 250 Q150 100 300 100 Z"
               fill="white"
@@ -329,7 +445,11 @@ export default function FounderPage() {
           </svg>
         </div>
         <div className="absolute bottom-0 right-0 w-[450px] h-[450px] opacity-10">
-          <svg viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            viewBox="0 0 450 450"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <ellipse cx="225" cy="225" rx="180" ry="200" fill="white" />
           </svg>
         </div>
@@ -354,7 +474,8 @@ export default function FounderPage() {
                   Let&apos;s create your family&apos;s rhythm together
                 </h2>
                 <p className="text-xl text-[#581b04]/70 leading-relaxed font-light font-nunito max-w-2xl mx-auto">
-                  Parent-led, experience-based support tailored to your unique needs
+                  Parent-led, experience-based support tailored to your unique
+                  needs
                 </p>
               </div>
 
@@ -389,5 +510,5 @@ export default function FounderPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
