@@ -10,22 +10,27 @@ import type { JSX } from "react";
 interface ServiceCategoryContentProps {
   services: ServiceData[];
   categoryColor?: string;
+  isChildContent?: boolean;
 }
 
 export function ServiceCategoryContent({
   services,
+  isChildContent = false,
 }: ServiceCategoryContentProps) {
   if (!services.length) return null;
 
-  const categoryName = services[0].category
+  const service = isChildContent ? services[0].title : services[0].category;
+  const categoryName = service
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  const cateryNameMapping: { [key: string]: string } = {
-    "wellness-growth": categoryName.replace(" ", " & "),
-    "helping-hands-and-resources": categoryName.replace("And", "&"),
-  };
+  const cateryNameMapping: { [key: string]: string } = !isChildContent
+    ? {
+        "wellness-growth": categoryName.replace(" ", " & "),
+        "helping-hands-and-resources": categoryName.replace("And", "&"),
+      }
+    : {};
 
   const cleanCategoryName =
     cateryNameMapping[services[0].category] ?? categoryName;
@@ -134,10 +139,12 @@ export function ServiceCategoryContent({
                 </span>
               </h1>
 
-              <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
-                Discover transformative services designed to elevate your
-                family&apos;s journey
-              </p>
+              {!isChildContent && (
+                <p className="text-2xl md:text-3xl text-[#581b04]/60 leading-relaxed font-nunito font-light max-w-3xl mx-auto">
+                  Discover transformative services designed to elevate your
+                  family&apos;s journey
+                </p>
+              )}
             </div>
 
             <div className="flex items-center justify-center gap-3 pt-4">
@@ -169,6 +176,7 @@ export function ServiceCategoryContent({
               service={service}
               index={index}
               categoryClasses={categoryClasses}
+              isChild={isChildContent}
             />
           ))}
         </div>
@@ -243,7 +251,7 @@ export function ServiceCategoryContent({
   );
 }
 
-const iconIllustrations: Record<string, JSX.Element> = {
+export const iconIllustrations: Record<string, JSX.Element> = {
   Utensils: (
     <svg
       className="absolute inset-0 w-full h-full"
@@ -1820,10 +1828,12 @@ function ServiceCard({
   service,
   index,
   categoryClasses,
+  isChild = false,
 }: {
   service: ServiceData;
   index: number;
   categoryClasses: { text: string; border: string; bg: string };
+  isChild: boolean;
 }) {
   const isEven = index % 2 === 0;
 
@@ -1852,11 +1862,13 @@ function ServiceCard({
       <div className={`space-y-8 ${!isEven ? "lg:col-start-2" : ""}`}>
         {/* Header */}
         <div className="space-y-6">
-          <h2
-            className={`font-quicksand text-4xl lg:text-5xl font-bold ${categoryClasses.text} leading-tight`}
-          >
-            {service.title}
-          </h2>
+          {!isChild && (
+            <h2
+              className={`font-quicksand text-4xl lg:text-5xl font-bold ${categoryClasses.text} leading-tight`}
+            >
+              {service.title}
+            </h2>
+          )}
 
           <p className="text-xl text-[#581b04]/70 leading-relaxed font-nunito font-light">
             {service.fullCopy}

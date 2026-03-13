@@ -85,7 +85,7 @@ export const siteData: SiteData = {
       icon: "Clock",
     },
     {
-      id: "childcare",
+      id: "child-care",
       title: "Childcare",
       shortCopy:
         "Trusted childcare professionals tailored to your family's needs.",

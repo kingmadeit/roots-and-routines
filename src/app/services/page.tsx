@@ -14,9 +14,10 @@ import {
 import { siteData } from "@/data";
 import dynamic from "next/dynamic";
 
-const loading = () => (<div className="animate-pulse h-[300px]" />);
-const ContactTeaser = dynamic(() => import('@/components/ContactTeaser'), { loading });
-  
+const loading = () => <div className="animate-pulse h-[300px]" />;
+const ContactTeaser = dynamic(() => import("@/components/ContactTeaser"), {
+  loading,
+});
 
 export const metadata: Metadata = {
   title: "Our Services | Roots & Routines",
@@ -206,7 +207,7 @@ export default function ServicesPage() {
               return (
                 <Link
                   key={service.id}
-                  href={`/services/${service.category}`}
+                  href={`/services/${service.category}/${service.id}`}
                   className="group relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent/20 overflow-hidden cursor-pointer"
                 >
                   {/* Gradient overlay on hover */}
