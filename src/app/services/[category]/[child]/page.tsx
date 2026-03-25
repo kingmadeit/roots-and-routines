@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { siteData } from "@/data";
 import { notFound } from "next/navigation";
-import { ServiceCategoryContent } from "@/components/ServiceCategoryContent";
+import { childServices } from "@/data/child-services";
+import { ServiceCategoryChlidContent } from "@/components/ServiceCategoryChildContent";
 type Params = {
   category: string;
   child: string;
@@ -50,14 +51,12 @@ export default async function ServiceChildPage({
 
   console.log(category, params);
 
-  const service = siteData.services.find(
-    (s) => s.category === category && s.id === child
-  );
+  const service = childServices.find((s) => s.id === child);
 
   if (!service) {
     // triggers the global not-found.tsx page
     notFound();
   }
 
-  return <ServiceCategoryContent services={[service]} isChildContent={true} />;
+  return <ServiceCategoryChlidContent service={service} />;
 }
