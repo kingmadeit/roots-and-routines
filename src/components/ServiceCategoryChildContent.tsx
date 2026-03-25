@@ -1182,7 +1182,7 @@ function ServiceCard({
   service: ServiceDataFull;
   categoryClasses: CategoryClasses;
 }) {
-  const isEven = 1 % 2 === 0;
+  const isEven = true;
   const illustration = service.icon
     ? iconIllustrations[service.icon] ?? defaultIllustration
     : defaultIllustration;

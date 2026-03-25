@@ -20,8 +20,6 @@ const FAQSection = dynamic(() => import("../FAQ"), { loading });
 // Export metadata
 export const metadata = meta;
 
-console.log(testimonials);
-
 // Main page component with floating icons overlay
 export default function HomePage() {
   return (
@@ -30,11 +28,7 @@ export default function HomePage() {
       <AutonomySection />
       <AboutTeaser />
       <ServiceTeaser />
-      {testimonials && testimonials?.length > 0 && false && (
-        <>
-          <Testimonial data={testimonials} />
-        </>
-      )}
+      <Testimonial data={testimonials} />
       <FAQSection data={faq} />
       <ContactSection />
     </>
